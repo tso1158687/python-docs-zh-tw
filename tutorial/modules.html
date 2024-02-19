@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. 模組 (Module) &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. 模組 (Module) &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -147,7 +147,7 @@
           <a href="datastructures.html" title="5. 資料結構"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -157,7 +157,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
@@ -318,7 +318,7 @@
 <ul class="simple">
 <li><p>可以在 Python 指令上使用開關參數 (switch) <a class="reference internal" href="../using/cmdline.html#cmdoption-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a> 或 <a class="reference internal" href="../using/cmdline.html#cmdoption-OO"><code class="xref std std-option docutils literal notranslate"><span class="pre">-OO</span></code></a> 來減小已編譯模組的大小。開關參數 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 刪除 assert（斷言）陳述式，而 <code class="docutils literal notranslate"><span class="pre">-OO</span></code> 同時刪除 assert 陳述式和 __doc__ 字串。由於有些程式可能依賴於上述這些內容，因此只有在你知道自己在做什麼時，才應使用此參數。「已優化」模組有 <code class="docutils literal notranslate"><span class="pre">opt-</span></code> 標記，且通常較小。未來的版本可能會改變優化的效果。</p></li>
 <li><p>讀取 <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> 檔案時，程式的執行速度並不會比讀取 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 檔案快。唯一比較快的地方是載入的速度。</p></li>
-<li><p>模組 <a class="reference internal" href="../library/compileall.html#module-compileall" title="compileall: Tools for byte-compiling all Python source files in a directory tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code></a> 可以為資料夾中的所有模組創建 .pyc 檔。</p></li>
+<li><p>模組 <a class="reference internal" href="../library/compileall.html#module-compileall" title="compileall: Tools for byte-compiling all Python source files in a directory tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code></a> 可以為資料夾中的所有模組建立 .pyc 檔。</p></li>
 <li><p>更多的細節，包括決策流程圖，請參考<span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-3147/"><strong>PEP 3147</strong></a>。</p></li>
 </ul>
 </section>
@@ -448,7 +448,7 @@
 </pre></div>
 </div>
 <p>Import 套件時，Python 會搜尋 <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 裡的目錄，尋找套件的子目錄。</p>
-<p>目錄中必須含有 <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> 檔案，才會被 Pyhon 當成套件；這樣可以避免一些以常用名稱命名（例如 <code class="docutils literal notranslate"><span class="pre">string</span></code>）的目錄，無意中隱藏了較晚出現在模組搜尋路徑中的有效模組。在最簡單的情況，<code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> 可以只是一個空白檔案；但它也可以執行套件的初始化程式碼，或設置 <code class="docutils literal notranslate"><span class="pre">__all__</span></code> 變數，之後會詳述。</p>
+<p>目錄中必須含有 <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> 檔案，才會被 Pyhon 當成套件（除非有使用 <a class="reference internal" href="../glossary.html#term-namespace-package"><span class="xref std std-term">namespace package</span></a>，為一個相對進階的功能）；這樣可以避免一些以常用名稱命名（例如 <code class="docutils literal notranslate"><span class="pre">string</span></code>）的目錄，無意中隱藏了較晚出現在模組搜尋路徑中的有效模組。在最簡單的情況，<code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> 可以只是一個空白檔案；但它也可以執行套件的初始化程式碼，或設置 <code class="docutils literal notranslate"><span class="pre">__all__</span></code> 變數，之後會詳述。</p>
 <p>套件使用者可以從套件中 import 個別模組，例如：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sound.effects.echo</span>
 </pre></div>
@@ -605,7 +605,7 @@
           <a href="datastructures.html" title="5. 資料結構"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -615,7 +615,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
@@ -644,13 +644,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -658,7 +659,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

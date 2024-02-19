@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xmlrpc.server --- Basic XML-RPC servers &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlrpc.server --- Basic XML-RPC servers &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,44 +86,14 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler</span></code></a></li>
 <li><a class="reference internal" href="#simplexmlrpcserver-objects">SimpleXMLRPCServer 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_function"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_function()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_instance"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_instance()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_introspection_functions"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_introspection_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_multicall_functions"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_multicall_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler.rpc_paths</span></code></a></li>
 <li><a class="reference internal" href="#simplexmlrpcserver-example">SimpleXMLRPCServer 範例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cgixmlrpcrequesthandler">CGIXMLRPCRequestHandler</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_function()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_instance"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_instance()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_introspection_functions"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_introspection_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_multicall_functions"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_multicall_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.handle_request"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.handle_request()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#documenting-xmlrpc-server">Documenting XMLRPC server</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCRequestHandler</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#docxmlrpcserver-objects">DocXMLRPCServer 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_title"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_title()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_name"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_name()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_documentation"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_documentation()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#doccgixmlrpcrequesthandler">DocCGIXMLRPCRequestHandler</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_title"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_title()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_name"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_name()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_documentation"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_documentation()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#cgixmlrpcrequesthandler">CGIXMLRPCRequestHandler</a></li>
+<li><a class="reference internal" href="#documenting-xmlrpc-server">Documenting XMLRPC server</a></li>
+<li><a class="reference internal" href="#docxmlrpcserver-objects">DocXMLRPCServer 物件</a></li>
+<li><a class="reference internal" href="#doccgixmlrpcrequesthandler">DocCGIXMLRPCRequestHandler</a></li>
 </ul>
 </li>
 </ul>
@@ -171,7 +141,7 @@
           <a href="xmlrpc.client.html" title="xmlrpc.client --- XML-RPC client access"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -181,7 +151,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -289,11 +259,11 @@ alone XML-RPC servers.</p>
 <span class="sig-prename descclassname"><span class="pre">SimpleXMLRPCServer.</span></span><span class="sig-name descname"><span class="pre">register_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.SimpleXMLRPCServer.register_function" title="Link to this definition">¶</a></dt>
 <dd><p>Register a function that can respond to XML-RPC requests.  If <em>name</em> is given,
 it will be the method name associated with <em>function</em>, otherwise
-<code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.  <em>name</em> is a string, and may contain
+<a class="reference internal" href="../reference/datamodel.html#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a> will be used.  <em>name</em> is a string, and may contain
 characters not legal in Python identifiers, including the period character.</p>
 <p>This method can also be used as a decorator.  When used as a decorator,
 <em>name</em> can only be given as a keyword argument to register <em>function</em> under
-<em>name</em>.  If no <em>name</em> is given, <code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.</p>
+<em>name</em>.  If no <em>name</em> is given, <a class="reference internal" href="../reference/datamodel.html#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a> will be used.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.7 版的變更: </span><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_function" title="xmlrpc.server.SimpleXMLRPCServer.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> 也可被當作裝飾器使用。</p>
 </div>
@@ -499,11 +469,11 @@ requests sent to Python CGI scripts.</p>
 <span class="sig-prename descclassname"><span class="pre">CGIXMLRPCRequestHandler.</span></span><span class="sig-name descname"><span class="pre">register_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function" title="Link to this definition">¶</a></dt>
 <dd><p>Register a function that can respond to XML-RPC requests.  If <em>name</em> is given,
 it will be the method name associated with <em>function</em>, otherwise
-<code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.  <em>name</em> is a string, and may contain
+<a class="reference internal" href="../reference/datamodel.html#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a> will be used.  <em>name</em> is a string, and may contain
 characters not legal in Python identifiers, including the period character.</p>
 <p>This method can also be used as a decorator.  When used as a decorator,
 <em>name</em> can only be given as a keyword argument to register <em>function</em> under
-<em>name</em>.  If no <em>name</em> is given, <code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.</p>
+<em>name</em>.  If no <em>name</em> is given, <a class="reference internal" href="../reference/datamodel.html#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a> will be used.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.7 版的變更: </span><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function" title="xmlrpc.server.CGIXMLRPCRequestHandler.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> 也可被當作裝飾器使用。</p>
 </div>
@@ -663,44 +633,14 @@ will appear as a paragraph, below the server name, in the documentation.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler</span></code></a></li>
 <li><a class="reference internal" href="#simplexmlrpcserver-objects">SimpleXMLRPCServer 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_function"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_function()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_instance"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_instance()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_introspection_functions"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_introspection_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_multicall_functions"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCServer.register_multicall_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths"><code class="docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler.rpc_paths</span></code></a></li>
 <li><a class="reference internal" href="#simplexmlrpcserver-example">SimpleXMLRPCServer 範例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cgixmlrpcrequesthandler">CGIXMLRPCRequestHandler</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_function()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_instance"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_instance()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_introspection_functions"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_introspection_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_multicall_functions"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.register_multicall_functions()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.handle_request"><code class="docutils literal notranslate"><span class="pre">CGIXMLRPCRequestHandler.handle_request()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#documenting-xmlrpc-server">Documenting XMLRPC server</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCRequestHandler"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCRequestHandler</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#docxmlrpcserver-objects">DocXMLRPCServer 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_title"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_title()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_name"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_name()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer.set_server_documentation"><code class="docutils literal notranslate"><span class="pre">DocXMLRPCServer.set_server_documentation()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#doccgixmlrpcrequesthandler">DocCGIXMLRPCRequestHandler</a><ul>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_title"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_title()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_name"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_name()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler.set_server_documentation"><code class="docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler.set_server_documentation()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#cgixmlrpcrequesthandler">CGIXMLRPCRequestHandler</a></li>
+<li><a class="reference internal" href="#documenting-xmlrpc-server">Documenting XMLRPC server</a></li>
+<li><a class="reference internal" href="#docxmlrpcserver-objects">DocXMLRPCServer 物件</a></li>
+<li><a class="reference internal" href="#doccgixmlrpcrequesthandler">DocCGIXMLRPCRequestHandler</a></li>
 </ul>
 </li>
 </ul>
@@ -751,7 +691,7 @@ will appear as a paragraph, below the server name, in the documentation.</p>
           <a href="xmlrpc.client.html" title="xmlrpc.client --- XML-RPC client access"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -761,7 +701,7 @@ will appear as a paragraph, below the server name, in the documentation.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -791,13 +731,14 @@ will appear as a paragraph, below the server name, in the documentation.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -805,7 +746,7 @@ will appear as a paragraph, below the server name, in the documentation.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

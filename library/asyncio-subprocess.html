@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>子行程 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子行程 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,31 +86,9 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#">子行程</a><ul>
-<li><a class="reference internal" href="#creating-subprocesses">建立子行程</a><ul>
-<li><a class="reference internal" href="#asyncio.create_subprocess_exec"><code class="docutils literal notranslate"><span class="pre">create_subprocess_exec()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.create_subprocess_shell"><code class="docutils literal notranslate"><span class="pre">create_subprocess_shell()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#constants">常數</a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.PIPE"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.PIPE</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.STDOUT"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.STDOUT</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.DEVNULL"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.DEVNULL</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#creating-subprocesses">建立子行程</a></li>
+<li><a class="reference internal" href="#constants">常數</a></li>
 <li><a class="reference internal" href="#interacting-with-subprocesses">Interacting with Subprocesses</a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.Process"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process</span></code></a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.wait"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.wait()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.communicate"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.communicate()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.send_signal"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.send_signal()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.terminate"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.terminate()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.kill"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.kill()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stdin"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stdin</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stdout"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stdout</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stderr"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stderr</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.pid"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.pid</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.returncode"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.returncode</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#subprocess-and-threads">子行程與線程</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 </ul>
@@ -162,7 +140,7 @@
           <a href="asyncio-sync.html" title="同步化原始物件 (Synchronization Primitives)"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -172,7 +150,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -419,7 +397,7 @@ this method if the data size is large or unlimited.</p>
 <dd><p>Sends the signal <em>signal</em> to the child process.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>On Windows, <code class="xref py py-data docutils literal notranslate"><span class="pre">SIGTERM</span></code> is an alias for <a class="reference internal" href="#asyncio.subprocess.Process.terminate" title="asyncio.subprocess.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminate()</span></code></a>.
+<p>On Windows, <a class="reference internal" href="signal.html#signal.SIGTERM" title="signal.SIGTERM"><code class="xref py py-const docutils literal notranslate"><span class="pre">SIGTERM</span></code></a> is an alias for <a class="reference internal" href="#asyncio.subprocess.Process.terminate" title="asyncio.subprocess.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminate()</span></code></a>.
 <code class="docutils literal notranslate"><span class="pre">CTRL_C_EVENT</span></code> and <code class="docutils literal notranslate"><span class="pre">CTRL_BREAK_EVENT</span></code> can be sent to processes
 started with a <em>creationflags</em> parameter which includes
 <code class="docutils literal notranslate"><span class="pre">CREATE_NEW_PROCESS_GROUP</span></code>.</p>
@@ -430,7 +408,7 @@ started with a <em>creationflags</em> parameter which includes
 <dt class="sig sig-object py" id="asyncio.subprocess.Process.terminate">
 <span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.subprocess.Process.terminate" title="Link to this definition">¶</a></dt>
 <dd><p>Stop the child process.</p>
-<p>On POSIX systems this method sends <a class="reference internal" href="signal.html#signal.SIGTERM" title="signal.SIGTERM"><code class="xref py py-const docutils literal notranslate"><span class="pre">signal.SIGTERM</span></code></a> to the
+<p>On POSIX systems this method sends <a class="reference internal" href="signal.html#signal.SIGTERM" title="signal.SIGTERM"><code class="xref py py-const docutils literal notranslate"><span class="pre">SIGTERM</span></code></a> to the
 child process.</p>
 <p>On Windows the Win32 API function <code class="xref c c-func docutils literal notranslate"><span class="pre">TerminateProcess()</span></code> is
 called to stop the child process.</p>
@@ -563,31 +541,9 @@ written using low-level APIs.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#">子行程</a><ul>
-<li><a class="reference internal" href="#creating-subprocesses">建立子行程</a><ul>
-<li><a class="reference internal" href="#asyncio.create_subprocess_exec"><code class="docutils literal notranslate"><span class="pre">create_subprocess_exec()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.create_subprocess_shell"><code class="docutils literal notranslate"><span class="pre">create_subprocess_shell()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#constants">常數</a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.PIPE"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.PIPE</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.STDOUT"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.STDOUT</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.DEVNULL"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.DEVNULL</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#creating-subprocesses">建立子行程</a></li>
+<li><a class="reference internal" href="#constants">常數</a></li>
 <li><a class="reference internal" href="#interacting-with-subprocesses">Interacting with Subprocesses</a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.Process"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process</span></code></a><ul>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.wait"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.wait()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.communicate"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.communicate()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.send_signal"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.send_signal()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.terminate"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.terminate()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.kill"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.kill()</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stdin"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stdin</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stdout"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stdout</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.stderr"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.stderr</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.pid"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.pid</span></code></a></li>
-<li><a class="reference internal" href="#asyncio.subprocess.Process.returncode"><code class="docutils literal notranslate"><span class="pre">asyncio.subprocess.Process.returncode</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#subprocess-and-threads">子行程與線程</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 </ul>
@@ -642,7 +598,7 @@ written using low-level APIs.</p>
           <a href="asyncio-sync.html" title="同步化原始物件 (Synchronization Primitives)"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -652,7 +608,7 @@ written using low-level APIs.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -683,13 +639,14 @@ written using low-level APIs.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -697,7 +654,7 @@ written using low-level APIs.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

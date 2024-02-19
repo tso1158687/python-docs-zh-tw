@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>16. 附錄 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. 附錄 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -140,7 +140,7 @@
           <a href="floatingpoint.html" title="15. 浮點數運算：問題與限制"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -150,7 +150,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
@@ -190,7 +190,7 @@
 <span id="tut-interac"></span><h2><span class="section-number">16.1. </span>互動模式<a class="headerlink" href="#interactive-mode" title="Link to this heading">¶</a></h2>
 <section id="error-handling">
 <span id="tut-error"></span><h3><span class="section-number">16.1.1. </span>錯誤處理<a class="headerlink" href="#error-handling" title="Link to this heading">¶</a></h3>
-<p>當一個錯誤發生時，直譯器會印出一個錯誤訊息和堆疊回溯。在互動模式下，它將返回主提示字元；當輸入來自檔案時，它在印出堆疊回溯後以非零退出狀態退出。 (由 <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> 子句在 <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> 陳述式中處理的例外在這種情況下不是錯誤。) 有些錯誤是無條件嚴重的，會導致非零退出；這適用於內部不一致和一些記憶體耗盡的情況。所有的錯誤訊息都被寫入標準錯誤輸出；被執行指令的正常輸出被寫入標準輸出。</p>
+<p>當一個錯誤發生時，直譯器會印出一個錯誤訊息和堆疊回溯。在互動模式下，它將返回主提示字元；當輸入來自檔案時，它在印出堆疊回溯後以非零退出狀態 (nonzero exit status) 退出。 (由 <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> 子句在 <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> 陳述式中處理的例外在這種情況下不是錯誤。) 有些錯誤是無條件嚴重的，會導致非零退出狀態；這適用於內部不一致和一些記憶體耗盡的情況。所有的錯誤訊息都被寫入標準錯誤輸出；被執行指令的正常輸出被寫入標準輸出。</p>
 <p>向主提示字元或次提示字元輸入中斷字元（通常是 <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd> 或 <kbd class="kbd docutils literal notranslate">Delete</kbd> ）會取消輸入並返回到主提示字元。 <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 在指令執行過程中輸入一個中斷，會引發 <a class="reference internal" href="../library/exceptions.html#KeyboardInterrupt" title="KeyboardInterrupt"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code></a> 例外，但可以通過 <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> 陳述式來處理。</p>
 </section>
 <section id="executable-python-scripts">
@@ -228,8 +228,8 @@
 <span class="go">&#39;/home/user/.local/lib/python3.5/site-packages&#39;</span>
 </pre></div>
 </div>
-<p>現在，您可以在該目錄中創建一個名為 <code class="file docutils literal notranslate"><span class="pre">usercustomize.py</span></code> 的檔案，並將您想要的任何內容放入其中。它會影響 Python 的每次呼叫，除非它以 <a class="reference internal" href="../using/cmdline.html#cmdoption-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> 選項啟動以禁用自動 import 。</p>
-<p><span class="target" id="index-16"></span>sitecustomize 的運作方式相同，但通常是由電腦的管理員在全域 site-packages 目錄下創建，並在 <span class="target" id="index-17"></span>usercustomize 之前 import 。更多細節請參閱 <a class="reference internal" href="../library/site.html#module-site" title="site: Module responsible for site-specific configuration."><code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code></a> 模組的文件。</p>
+<p>現在，您可以在該目錄中建立一個名為 <code class="file docutils literal notranslate"><span class="pre">usercustomize.py</span></code> 的檔案，並將您想要的任何內容放入其中。它會影響 Python 的每次呼叫，除非它以 <a class="reference internal" href="../using/cmdline.html#cmdoption-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> 選項啟動以禁用自動 import 。</p>
+<p><span class="target" id="index-16"></span>sitecustomize 的運作方式相同，但通常是由電腦的管理員在全域 site-packages 目錄下建立，並在 <span class="target" id="index-17"></span>usercustomize 之前 import 。更多細節請參閱 <a class="reference internal" href="../library/site.html#module-site" title="site: Module responsible for site-specific configuration."><code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code></a> 模組的文件。</p>
 <p class="rubric">註解</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
@@ -309,7 +309,7 @@
           <a href="floatingpoint.html" title="15. 浮點數運算：問題與限制"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -319,7 +319,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
@@ -348,13 +348,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -362,7 +363,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

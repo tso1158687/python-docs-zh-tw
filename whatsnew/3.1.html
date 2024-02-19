@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 3.1 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3.1 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -141,7 +141,7 @@
           <a href="3.2.html" title="Python 3.2 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -151,7 +151,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -222,6 +222,27 @@ written by Raymond Hettinger.</p>
 </dd>
 </dl>
 </div>
+<p>Since an ordered dictionary remembers its insertion order, it can be used
+in conjunction with sorting to make a sorted dictionary:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># regular unsorted dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># dictionary sorted by key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">OrderedDict([(&#39;apple&#39;, 4), (&#39;banana&#39;, 3), (&#39;orange&#39;, 2), (&#39;pear&#39;, 1)])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># dictionary sorted by value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="go">OrderedDict([(&#39;pear&#39;, 1), (&#39;orange&#39;, 2), (&#39;banana&#39;, 3), (&#39;apple&#39;, 4)])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># dictionary sorted by length of the key string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="go">OrderedDict([(&#39;pear&#39;, 1), (&#39;apple&#39;, 4), (&#39;orange&#39;, 2), (&#39;banana&#39;, 3)])</span>
+</pre></div>
+</div>
+<p>The new sorted dictionaries maintain their sort order when entries
+are deleted.  But when new keys are added, the keys are appended
+to the end and the sort is not maintained.</p>
 </section>
 <section id="pep-378-format-specifier-for-thousands-separator">
 <h2>PEP 378: Format Specifier for Thousands Separator<a class="headerlink" href="#pep-378-format-specifier-for-thousands-separator" title="Link to this heading">¶</a></h2>
@@ -485,15 +506,19 @@ using the <a class="reference internal" href="../reference/compound_stmts.html#w
 </pre></div>
 </div>
 <p>In addition, several new assertion methods were added including
-<code class="xref py py-func docutils literal notranslate"><span class="pre">assertSetEqual()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">assertDictEqual()</span></code>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">assertDictContainsSubset()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">assertListEqual()</span></code>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">assertTupleEqual()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">assertSequenceEqual()</span></code>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">assertRaisesRegexp()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">assertIsNone()</span></code>,
-and <code class="xref py py-func docutils literal notranslate"><span class="pre">assertIsNotNone()</span></code>.</p>
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertSetEqual" title="unittest.TestCase.assertSetEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertSetEqual()</span></code></a>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertDictEqual" title="unittest.TestCase.assertDictEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertDictEqual()</span></code></a>,
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">assertDictContainsSubset()</span></code>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertListEqual" title="unittest.TestCase.assertListEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertListEqual()</span></code></a>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertTupleEqual" title="unittest.TestCase.assertTupleEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertTupleEqual()</span></code></a>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertSequenceEqual" title="unittest.TestCase.assertSequenceEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertSequenceEqual()</span></code></a>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertRaisesRegex" title="unittest.TestCase.assertRaisesRegex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertRaisesRegexp()</span></code></a>,
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertIsNone" title="unittest.TestCase.assertIsNone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertIsNone()</span></code></a>,
+and <a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertIsNotNone" title="unittest.TestCase.assertIsNotNone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertIsNotNone()</span></code></a>.</p>
 <p>（由 Benjamin Peterson 和 Antoine Pitrou 貢獻。）</p>
 </li>
-<li><p>The <a class="reference internal" href="../library/io.html#module-io" title="io: Core tools for working with streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> module has three new constants for the <code class="xref py py-meth docutils literal notranslate"><span class="pre">seek()</span></code>
-method <code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_SET</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_CUR</span></code>, and <code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_END</span></code>.</p></li>
+<li><p>The <a class="reference internal" href="../library/io.html#module-io" title="io: Core tools for working with streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> module has three new constants for the <a class="reference internal" href="../library/io.html#io.IOBase.seek" title="io.IOBase.seek"><code class="xref py py-meth docutils literal notranslate"><span class="pre">seek()</span></code></a>
+method: <a class="reference internal" href="../library/os.html#os.SEEK_SET" title="os.SEEK_SET"><code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_SET</span></code></a>, <a class="reference internal" href="../library/os.html#os.SEEK_CUR" title="os.SEEK_CUR"><code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_CUR</span></code></a>, and <a class="reference internal" href="../library/os.html#os.SEEK_END" title="os.SEEK_END"><code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_END</span></code></a>.</p></li>
 <li><p>The <a class="reference internal" href="../library/sys.html#sys.version_info" title="sys.version_info"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.version_info</span></code></a> tuple is now a named tuple:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
 <span class="go">sys.version_info(major=3, minor=1, micro=0, releaselevel=&#39;alpha&#39;, serial=2)</span>
@@ -737,7 +762,7 @@ See the discussion above for more details.</p></li>
           <a href="3.2.html" title="Python 3.2 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -747,7 +772,7 @@ See the discussion above for more details.</p></li>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -776,13 +801,14 @@ See the discussion above for more details.</p></li>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -790,7 +816,7 @@ See the discussion above for more details.</p></li>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 2.7 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 2.7 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -180,7 +180,7 @@
           <a href="3.0.html" title="Python 3.0 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -190,7 +190,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -432,11 +432,11 @@ ignores the insertion order and just compares the keys and values.</p>
 doubly linked list of keys, appending new keys to the list as they're inserted.
 A secondary dictionary maps keys to their corresponding list node, so
 deletion doesn't have to traverse the entire linked list and therefore
-remains O(1).</p>
+remains <em>O</em>(1).</p>
 <p>The standard library now supports use of ordered dictionaries in several
 modules.</p>
 <ul class="simple">
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code> module uses them by default, meaning that
+<li><p>The <a class="reference internal" href="../library/configparser.html#module-configparser" title="configparser: Configuration file parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code></a> module uses them by default, meaning that
 configuration files can now be read, modified, and then written back
 in their original order.</p></li>
 <li><p>The <a class="reference internal" href="../library/collections.html#collections.somenamedtuple._asdict" title="collections.somenamedtuple._asdict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_asdict()</span></code></a> method for
@@ -596,10 +596,10 @@ a varying number of handlers.</p>
 <p>All this flexibility can require a lot of configuration.  You can
 write Python statements to create objects and set their properties,
 but a complex set-up requires verbose but boring code.
-<a class="reference internal" href="../library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> also supports a <code class="xref py py-func docutils literal notranslate"><span class="pre">fileConfig()</span></code>
+<a class="reference internal" href="../library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> also supports a <a class="reference internal" href="../library/logging.config.html#logging.config.fileConfig" title="logging.config.fileConfig"><code class="xref py py-func docutils literal notranslate"><span class="pre">fileConfig()</span></code></a>
 function that parses a file, but the file format doesn't support
 configuring filters, and it's messier to generate programmatically.</p>
-<p>Python 2.7 adds a <code class="xref py py-func docutils literal notranslate"><span class="pre">dictConfig()</span></code> function that
+<p>Python 2.7 adds a <a class="reference internal" href="../library/logging.config.html#logging.config.dictConfig" title="logging.config.dictConfig"><code class="xref py py-func docutils literal notranslate"><span class="pre">dictConfig()</span></code></a> function that
 uses a dictionary to configure logging.  There are many ways to
 produce a dictionary from different sources: construct one with code;
 parse a file containing JSON; or use a YAML parsing library if one is
@@ -666,7 +666,7 @@ For example, once you retrieve a logger by doing <code class="docutils literal n
 calling <code class="docutils literal notranslate"><span class="pre">log.getChild('network.listen')</span></code> is equivalent to
 <code class="docutils literal notranslate"><span class="pre">getLogger('app.network.listen')</span></code>.</p></li>
 <li><p>The <a class="reference internal" href="../library/logging.html#logging.LoggerAdapter" title="logging.LoggerAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoggerAdapter</span></code></a> class gained an
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">isEnabledFor()</span></code> method that takes a
+<a class="reference internal" href="../library/logging.html#logging.Logger.isEnabledFor" title="logging.Logger.isEnabledFor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">isEnabledFor()</span></code></a> method that takes a
 <em>level</em> and returns whether the underlying logger would
 process a message of that level of importance.</p></li>
 </ul>
@@ -958,9 +958,10 @@ Victor Stinner; <a class="reference external" href="https://bugs.python.org/issu
 <code class="docutils literal notranslate"><span class="pre">None</span></code> as its first argument.  (Fixed by Georg Brandl;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4759">bpo-4759</a>.)</p>
 </li>
-<li><p>When using <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> to wrap
+<li><p>When using <a class="reference internal" href="../library/functions.html#classmethod" title="classmethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">&#64;classmethod</span></code></a> and
+<a class="reference internal" href="../library/functions.html#staticmethod" title="staticmethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code></a> to wrap
 methods as class or static methods, the wrapper object now
-exposes the wrapped function as their <a class="reference internal" href="../reference/datamodel.html#instance-methods"><span class="std std-ref">__func__</span></a>
+exposes the wrapped function as their <a class="reference internal" href="../reference/datamodel.html#method.__func__" title="method.__func__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__func__</span></code></a>
 attribute.
 (Contributed by Amaury Forgeot d'Arc, after a suggestion by
 George Sakkis; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5982">bpo-5982</a>.)</p></li>
@@ -1001,7 +1002,7 @@ containing warning settings, equivalent to those
 used with the <a class="reference internal" href="../using/cmdline.html#cmdoption-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> switch, separated by commas.
 (Contributed by Brian Curtin; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7301">bpo-7301</a>.)</p>
 <p>For example, the following setting will print warnings every time
-they occur, but turn warnings from the <code class="xref py py-mod docutils literal notranslate"><span class="pre">Cookie</span></code> module into an
+they occur, but turn warnings from the <a class="reference internal" href="../library/http.cookies.html#module-http.cookies" title="http.cookies: Support for HTTP state management (cookies)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">Cookie</span></code></a> module into an
 error.  (The exact syntax for setting an environment variable varies
 across operating systems and shells.)</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PYTHONWARNINGS</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">error</span><span class="p">:::</span><span class="n">Cookie</span><span class="p">:</span><span class="mi">0</span>
@@ -1185,12 +1186,12 @@ position within the list of fields:</p>
 </pre></div>
 </div>
 <p>(Added by Raymond Hettinger; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1818">bpo-1818</a>.)</p>
-<p>Finally, the <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code> abstract base class now
+<p>Finally, the <a class="reference internal" href="../library/collections.abc.html#collections.abc.Mapping" title="collections.abc.Mapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a> abstract base class now
 returns <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-const docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> if a mapping is compared to
 another type that isn't a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>.
 (Fixed by Daniel Stutzbach; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8729">bpo-8729</a>.)</p>
 </li>
-<li><p>Constructors for the parsing classes in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code> module now
+<li><p>Constructors for the parsing classes in the <a class="reference internal" href="../library/configparser.html#module-configparser" title="configparser: Configuration file parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code></a> module now
 take an <em>allow_no_value</em> parameter, defaulting to false; if true,
 options without values will be allowed.  For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ConfigParser</span><span class="o">,</span> <span class="nn">StringIO</span>
@@ -1218,7 +1219,7 @@ options without values will be allowed.  For example:</p>
 handling more than one context manager with a single <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a>
 statement, has been deprecated, because the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> statement
 now supports multiple context managers.</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code> module now ignores cookies that have an invalid
+<li><p>The <a class="reference internal" href="../library/http.cookiejar.html#module-http.cookiejar" title="http.cookiejar: Classes for automatic handling of HTTP cookies."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code></a> module now ignores cookies that have an invalid
 version field, one that doesn't contain an integer value.  (Fixed by
 John J. Lee; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3924">bpo-3924</a>.)</p></li>
 <li><p>The <a class="reference internal" href="../library/copy.html#module-copy" title="copy: Shallow and deep copy operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code></a> module's <a class="reference internal" href="../library/copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">deepcopy()</span></code></a> function will now
@@ -1234,7 +1235,7 @@ gained a <a class="reference internal" href="../library/datetime.html#datetime.t
 number of seconds in the duration.  (Contributed by Brian Quinlan; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5788">bpo-5788</a>.)</p></li>
 <li><p>New method: the <a class="reference internal" href="../library/decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a> class gained a
 <a class="reference internal" href="../library/decimal.html#decimal.Decimal.from_float" title="decimal.Decimal.from_float"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_float()</span></code></a> class method that performs an exact
-conversion of a floating-point number to a <a class="reference internal" href="../library/decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a>.
+conversion of a floating-point number to a <code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code>.
 This exact conversion strives for the
 closest decimal approximation to the floating-point representation's value;
 the resulting decimal value will therefore still include the inaccuracy,
@@ -1249,7 +1250,7 @@ Python's default rules for comparing objects, which produced arbitrary
 results based on their type.  Note that you still cannot combine
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code> and floating-point in other operations such as addition,
 since you should be explicitly choosing how to convert between float and
-<a class="reference internal" href="../library/decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a>.  (Fixed by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2531">bpo-2531</a>.)</p>
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code>.  (Fixed by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2531">bpo-2531</a>.)</p>
 <p>The constructor for <a class="reference internal" href="../library/decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code></a> now accepts
 floating-point numbers (added by Raymond Hettinger; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8257">bpo-8257</a>)
 and non-European Unicode characters such as Arabic-Indic digits
@@ -1263,7 +1264,7 @@ methods.  (Patch by Juan José Conti; <a class="reference external" href="https:
 left-alignment.  This has been changed to right-alignment, which is
 more sensible for numeric types.  (Changed by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6857">bpo-6857</a>.)</p>
 <p>Comparisons involving a signaling NaN value (or <code class="docutils literal notranslate"><span class="pre">sNAN</span></code>) now signal
-<code class="xref py py-const docutils literal notranslate"><span class="pre">InvalidOperation</span></code> instead of silently returning a true or
+<a class="reference internal" href="../library/decimal.html#decimal.InvalidOperation" title="decimal.InvalidOperation"><code class="xref py py-const docutils literal notranslate"><span class="pre">InvalidOperation</span></code></a> instead of silently returning a true or
 false value depending on the comparison operator.  Quiet NaN values
 (or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>) are now hashable.  (Fixed by Mark Dickinson;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7279">bpo-7279</a>.)</p>
@@ -1278,7 +1279,7 @@ Techtonik; <a class="reference external" href="https://bugs.python.org/issue?&#6
 <code class="file docutils literal notranslate"><span class="pre">setup.py</span></code> files haven't been modified, the user might have
 created some new files that should be included.
 (Fixed by Tarek Ziadé; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8688">bpo-8688</a>.)</p></li>
-<li><p>The <a class="reference internal" href="../library/doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> module's <code class="xref py py-const docutils literal notranslate"><span class="pre">IGNORE_EXCEPTION_DETAIL</span></code> flag
+<li><p>The <a class="reference internal" href="../library/doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> module's <a class="reference internal" href="../library/doctest.html#doctest.IGNORE_EXCEPTION_DETAIL" title="doctest.IGNORE_EXCEPTION_DETAIL"><code class="xref py py-const docutils literal notranslate"><span class="pre">IGNORE_EXCEPTION_DETAIL</span></code></a> flag
 will now ignore the name of the module containing the exception
 being tested.  (Patch by Lennart Regebro; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7490">bpo-7490</a>.)</p></li>
 <li><p>The <a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a> module's <a class="reference internal" href="../library/email.compat32-message.html#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a> class will
@@ -1295,7 +1296,7 @@ fractions and complex numbers now raise a <a class="reference internal" href="..
 This fixes an oversight, making the <a class="reference internal" href="../library/fractions.html#fractions.Fraction" title="fractions.Fraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Fraction</span></code></a>
 match the other numeric types.</p>
 </li>
-<li><p>New class: <code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code> in
+<li><p>New class: <a class="reference internal" href="../library/ftplib.html#ftplib.FTP_TLS" title="ftplib.FTP_TLS"><code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code></a> in
 the <a class="reference internal" href="../library/ftplib.html#module-ftplib" title="ftplib: FTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code></a> module provides secure FTP
 connections using TLS encapsulation of authentication as well as
 subsequent control and data transfers.
@@ -1305,8 +1306,8 @@ uploads thanks to an added <em>rest</em> parameter (patch by Pablo Mouzo;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6845">bpo-6845</a>.)</p>
 </li>
 <li><p>New class decorator: <a class="reference internal" href="../library/functools.html#functools.total_ordering" title="functools.total_ordering"><code class="xref py py-func docutils literal notranslate"><span class="pre">total_ordering()</span></code></a> in the <a class="reference internal" href="../library/functools.html#module-functools" title="functools: Higher-order functions and operations on callable objects."><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code></a>
-module takes a class that defines an <code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code> method and one of
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">__le__()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">__gt__()</span></code>, or <code class="xref py py-meth docutils literal notranslate"><span class="pre">__ge__()</span></code>,
+module takes a class that defines an <a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> method and one of
+<a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__le__" title="object.__le__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__le__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__gt__" title="object.__gt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__gt__()</span></code></a>, or <a class="reference internal" href="../reference/datamodel.html#object.__ge__" title="object.__ge__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ge__()</span></code></a>,
 and generates the missing comparison methods.  Since the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__cmp__()</span></code> method is being deprecated in Python 3.x,
 this decorator makes it easier to define ordered classes.
@@ -1339,10 +1340,10 @@ attribute containing a tuple naming the supported algorithms.
 In Python 2.7, <code class="docutils literal notranslate"><span class="pre">hashlib.algorithms</span></code> contains
 <code class="docutils literal notranslate"><span class="pre">('md5',</span> <span class="pre">'sha1',</span> <span class="pre">'sha224',</span> <span class="pre">'sha256',</span> <span class="pre">'sha384',</span> <span class="pre">'sha512')</span></code>.
 (Contributed by Carl Chenet; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7418">bpo-7418</a>.)</p></li>
-<li><p>The default <code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code> class used by the <code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code> module now
+<li><p>The default <a class="reference internal" href="../library/http.client.html#http.client.HTTPResponse" title="http.client.HTTPResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code></a> class used by the <a class="reference internal" href="../library/http.html#module-http" title="http: HTTP status codes and messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code></a> module now
 supports buffering, resulting in much faster reading of HTTP responses.
 (Contributed by Kristján Valur Jónsson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4879">bpo-4879</a>.)</p>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPConnection</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPSConnection</span></code> classes
+<p>The <a class="reference internal" href="../library/http.client.html#http.client.HTTPConnection" title="http.client.HTTPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a> and <a class="reference internal" href="../library/http.client.html#http.client.HTTPSConnection" title="http.client.HTTPSConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPSConnection</span></code></a> classes
 now support a <em>source_address</em> parameter, a <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code> 2-tuple
 giving the source address that will be used for the connection.
 (Contributed by Eldon Ziegler; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3972">bpo-3972</a>.)</p>
@@ -1379,7 +1380,7 @@ Python 3.1.  For 3.1, the I/O library was entirely rewritten in C
 and is 2 to 20 times faster depending on the task being performed.  The
 original Python version was renamed to the <code class="xref py py-mod docutils literal notranslate"><span class="pre">_pyio</span></code> module.</p>
 <p>One minor resulting change: the <a class="reference internal" href="../library/io.html#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.TextIOBase</span></code></a> class now
-has an <code class="xref py py-attr docutils literal notranslate"><span class="pre">errors</span></code> attribute giving the error setting
+has an <a class="reference internal" href="../library/io.html#io.TextIOBase.errors" title="io.TextIOBase.errors"><code class="xref py py-attr docutils literal notranslate"><span class="pre">errors</span></code></a> attribute giving the error setting
 used for encoding and decoding errors (one of <code class="docutils literal notranslate"><span class="pre">'strict'</span></code>, <code class="docutils literal notranslate"><span class="pre">'replace'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>).</p>
 <p>The <a class="reference internal" href="../library/io.html#io.FileIO" title="io.FileIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.FileIO</span></code></a> class now raises an <a class="reference internal" href="../library/exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> when passed
@@ -1442,7 +1443,7 @@ can now be passed a callable that will be called whenever
 a subprocess is started, along with a set of arguments that will be
 passed to the callable.
 (Contributed by lekma; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5585">bpo-5585</a>.)</p>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Pool</span></code> class, which controls a pool of worker processes,
+<p>The <a class="reference internal" href="../library/multiprocessing.html#multiprocessing.pool.Pool" title="multiprocessing.pool.Pool"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pool</span></code></a> class, which controls a pool of worker processes,
 now has an optional <em>maxtasksperchild</em> parameter.  Worker processes
 will perform the specified number of tasks and then exit, causing the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Pool</span></code> to start a new worker.  This is useful if tasks may leak
@@ -1509,7 +1510,7 @@ return various site- and user-specific paths.
 global site-packages directories,
 <a class="reference internal" href="../library/site.html#site.getusersitepackages" title="site.getusersitepackages"><code class="xref py py-func docutils literal notranslate"><span class="pre">getusersitepackages()</span></code></a> returns the path of the user's
 site-packages directory, and
-<a class="reference internal" href="../library/site.html#site.getuserbase" title="site.getuserbase"><code class="xref py py-func docutils literal notranslate"><span class="pre">getuserbase()</span></code></a> returns the value of the <span class="target" id="index-9"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">USER_BASE</span></code>
+<a class="reference internal" href="../library/site.html#site.getuserbase" title="site.getuserbase"><code class="xref py py-func docutils literal notranslate"><span class="pre">getuserbase()</span></code></a> returns the value of the <a class="reference internal" href="../library/site.html#site.USER_BASE" title="site.USER_BASE"><code class="xref py py-data docutils literal notranslate"><span class="pre">USER_BASE</span></code></a>
 environment variable, giving the path to a directory that can be used
 to store data.
 (Contributed by Tarek Ziadé; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6693">bpo-6693</a>.)</p>
@@ -1527,16 +1528,16 @@ methods will now write into objects that support the buffer API, most usefully
 the <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#memoryview" title="memoryview"><code class="xref py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> objects.  (Implemented by
 Antoine Pitrou; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8104">bpo-8104</a>.)</p>
 </li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">SocketServer</span></code> module's <code class="xref py py-class docutils literal notranslate"><span class="pre">TCPServer</span></code> class now
+<li><p>The <a class="reference internal" href="../library/socketserver.html#module-socketserver" title="socketserver: A framework for network servers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">SocketServer</span></code></a> module's <a class="reference internal" href="../library/socketserver.html#socketserver.TCPServer" title="socketserver.TCPServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TCPServer</span></code></a> class now
 supports socket timeouts and disabling the Nagle algorithm.
 The <code class="xref py py-attr docutils literal notranslate"><span class="pre">disable_nagle_algorithm</span></code> class attribute
 defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>; if overridden to be true,
 new request connections will have the TCP_NODELAY option set to
 prevent buffering many small sends into a single TCP packet.
-The <code class="xref py py-attr docutils literal notranslate"><span class="pre">timeout</span></code> class attribute can hold
+The <a class="reference internal" href="../library/socketserver.html#socketserver.BaseServer.timeout" title="socketserver.BaseServer.timeout"><code class="xref py py-attr docutils literal notranslate"><span class="pre">timeout</span></code></a> class attribute can hold
 a timeout in seconds that will be applied to the request socket; if
-no request is received within that time, <code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_timeout()</span></code>
-will be called and <code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_request()</span></code> will return.
+no request is received within that time, <a class="reference internal" href="../library/socketserver.html#socketserver.BaseServer.handle_timeout" title="socketserver.BaseServer.handle_timeout"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_timeout()</span></code></a>
+will be called and <a class="reference internal" href="../library/socketserver.html#socketserver.BaseServer.handle_request" title="socketserver.BaseServer.handle_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_request()</span></code></a> will return.
 (Contributed by Kristján Valur Jónsson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6192">bpo-6192</a> and <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6267">bpo-6267</a>.)</p></li>
 <li><p>Updated module: the <a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module has been updated to
 version 2.6.0 of the <a class="reference external" href="https://github.com/ghaering/pysqlite">pysqlite package</a>. Version 2.6.0 includes a number of bugfixes, and adds
@@ -1550,7 +1551,7 @@ buffer API, which fixed a test suite failure (fix by Antoine Pitrou;
 OpenSSL's <code class="xref c c-macro docutils literal notranslate"><span class="pre">SSL_MODE_AUTO_RETRY</span></code>, which will prevent an error
 code being returned from <code class="xref py py-meth docutils literal notranslate"><span class="pre">recv()</span></code> operations that trigger an SSL
 renegotiation (fix by Antoine Pitrou; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8222">bpo-8222</a>).</p>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.wrap_socket()</span></code> constructor function now takes a
+<p>The <a class="reference internal" href="../library/ssl.html#ssl.SSLContext.wrap_socket" title="ssl.SSLContext.wrap_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">wrap_socket()</span></code></a> constructor function now takes a
 <em>ciphers</em> argument that's a string listing the encryption algorithms
 to be allowed; the format of the string is described
 <a class="reference external" href="https://www.openssl.org/docs/man1.0.2/man1/ciphers.html">in the OpenSSL documentation</a>.
@@ -1571,8 +1572,8 @@ errors when a value is too large for a particular integer format
 code (one of <code class="docutils literal notranslate"><span class="pre">bBhHiIlLqQ</span></code>); it now always raises a
 <a class="reference internal" href="../library/struct.html#struct.error" title="struct.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">struct.error</span></code></a> exception.  (Changed by Mark Dickinson;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1523">bpo-1523</a>.)  The <a class="reference internal" href="../library/struct.html#struct.pack" title="struct.pack"><code class="xref py py-func docutils literal notranslate"><span class="pre">pack()</span></code></a> function will also
-attempt to use <code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code> to convert and pack non-integers
-before trying the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__int__()</span></code> method or reporting an error.
+attempt to use <a class="reference internal" href="../reference/datamodel.html#object.__index__" title="object.__index__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code></a> to convert and pack non-integers
+before trying the <a class="reference internal" href="../reference/datamodel.html#object.__int__" title="object.__int__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__int__()</span></code></a> method or reporting an error.
 (Changed by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8300">bpo-8300</a>.)</p></li>
 <li><p>New function: the <a class="reference internal" href="../library/subprocess.html#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module's
 <a class="reference internal" href="../library/subprocess.html#subprocess.check_output" title="subprocess.check_output"><code class="xref py py-func docutils literal notranslate"><span class="pre">check_output()</span></code></a> runs a command with a specified set of arguments
@@ -1589,7 +1590,7 @@ error, or raises a <a class="reference internal" href="../library/subprocess.htm
 </div>
 <p>（由 Gregory P. Smith 所貢獻。）</p>
 <p>The <a class="reference internal" href="../library/subprocess.html#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module will now retry its internal system calls
-on receiving an <code class="xref py py-const docutils literal notranslate"><span class="pre">EINTR</span></code> signal.  (Reported by several people; final
+on receiving an <a class="reference internal" href="../library/errno.html#errno.EINTR" title="errno.EINTR"><code class="xref py py-const docutils literal notranslate"><span class="pre">EINTR</span></code></a> signal.  (Reported by several people; final
 patch by Gregory P. Smith in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1068268">bpo-1068268</a>.)</p>
 </li>
 <li><p>New function: <a class="reference internal" href="../library/symtable.html#symtable.Symbol.is_declared_global" title="symtable.Symbol.is_declared_global"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_declared_global()</span></code></a> in the <a class="reference internal" href="../library/symtable.html#module-symtable" title="symtable: Interface to the compiler's internal symbol tables."><code class="xref py py-mod docutils literal notranslate"><span class="pre">symtable</span></code></a> module
@@ -1599,13 +1600,13 @@ false for ones that are implicitly global.
 <li><p>The <a class="reference internal" href="../library/syslog.html#module-syslog" title="syslog: An interface to the Unix syslog library routines. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">syslog</span></code></a> module will now use the value of <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> as the
 identifier instead of the previous default value of <code class="docutils literal notranslate"><span class="pre">'python'</span></code>.
 (Changed by Sean Reifschneider; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8451">bpo-8451</a>.)</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">sys.version_info</span></code> value is now a named tuple, with attributes
+<li><p>The <a class="reference internal" href="../library/sys.html#sys.version_info" title="sys.version_info"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.version_info</span></code></a> value is now a named tuple, with attributes
 named <code class="xref py py-attr docutils literal notranslate"><span class="pre">major</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">minor</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">micro</span></code>,
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">releaselevel</span></code>, and <code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code>.  (Contributed by Ross
 Light; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4285">bpo-4285</a>.)</p>
 <p><a class="reference internal" href="../library/sys.html#sys.getwindowsversion" title="sys.getwindowsversion"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getwindowsversion()</span></code></a> also returns a named tuple,
 with attributes named <code class="xref py py-attr docutils literal notranslate"><span class="pre">major</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">minor</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">build</span></code>,
-<a class="reference internal" href="../library/platform.html#module-platform" title="platform: Retrieves as much platform identifying data as possible."><code class="xref py py-attr docutils literal notranslate"><span class="pre">platform</span></code></a>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">service_pack</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">service_pack_major</span></code>,
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">platform</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">service_pack</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">service_pack_major</span></code>,
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">service_pack_minor</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">suite_mask</span></code>, and
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">product_type</span></code>.  (Contributed by Brian Curtin; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7766">bpo-7766</a>.)</p>
 </li>
@@ -1641,8 +1642,8 @@ includes information from the <code class="file docutils literal notranslate"><s
 by Anders Chrigström and Amaury Forgeot d'Arc; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1571184">bpo-1571184</a>)
 and has been updated to version 5.2.0 (updated by
 Florent Xicluna; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8024">bpo-8024</a>).</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module's <code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code> now handles
-unknown URL schemes in a fashion compliant with <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
+<li><p>The <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code></a> module's <a class="reference internal" href="../library/urllib.parse.html#urllib.parse.urlsplit" title="urllib.parse.urlsplit"><code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code></a> now handles
+unknown URL schemes in a fashion compliant with <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
 URL is of the form <code class="docutils literal notranslate"><span class="pre">&quot;&lt;something&gt;://...&quot;</span></code>, the text before the
 <code class="docutils literal notranslate"><span class="pre">://</span></code> is treated as the scheme, even if it's a made-up scheme that
 the module doesn't know about.  This change may break code that
@@ -1661,8 +1662,8 @@ will return the following:</p>
 </div>
 <p>(Python 2.7 actually produces slightly different output, since it
 returns a named tuple instead of a standard tuple.)</p>
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module also supports IPv6 literal addresses as defined by
-<span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2732.html"><strong>RFC 2732</strong></a> (contributed by Senthil Kumaran; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2987">bpo-2987</a>).</p>
+<p>The <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code></a> module also supports IPv6 literal addresses as defined by
+<span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2732.html"><strong>RFC 2732</strong></a> (contributed by Senthil Kumaran; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2987">bpo-2987</a>).</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">urlparse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s1">&#39;http://[1080::8:800:200C:417A]/foo&#39;</span><span class="p">)</span>
 <span class="go">ParseResult(scheme=&#39;http&#39;, netloc=&#39;[1080::8:800:200C:417A]&#39;,</span>
 <span class="go">            path=&#39;/foo&#39;, params=&#39;&#39;, query=&#39;&#39;, fragment=&#39;&#39;)</span>
@@ -1674,17 +1675,17 @@ module is a set that only holds weak references to its elements; elements
 will be removed once there are no references pointing to them.
 (Originally implemented in Python 3.x by Raymond Hettinger, and backported
 to 2.7 by Michael Foord.)</p></li>
-<li><p>The ElementTree library, <code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree</span></code>, no longer escapes
+<li><p>The <a class="reference internal" href="../library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="xml.etree.ElementTree: Implementation of the ElementTree API."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code></a> library, no longer escapes
 ampersands and angle brackets when outputting an XML processing
 instruction (which looks like <code class="docutils literal notranslate"><span class="pre">&lt;?xml-stylesheet</span> <span class="pre">href=&quot;#style1&quot;?&gt;</span></code>)
 or comment (which looks like <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code>).
 (Patch by Neil Muller; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2746">bpo-2746</a>.)</p></li>
-<li><p>The XML-RPC client and server, provided by the <code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code> and
-<code class="xref py py-mod docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code> modules, have improved performance by
+<li><p>The XML-RPC client and server, provided by the <a class="reference internal" href="../library/xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code></a> and
+<a class="reference internal" href="../library/xmlrpc.server.html#module-xmlrpc.server" title="xmlrpc.server: Basic XML-RPC server implementations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code></a> modules, have improved performance by
 supporting HTTP/1.1 keep-alive and by optionally using gzip encoding
 to compress the XML being exchanged.  The gzip compression is
 controlled by the <code class="xref py py-attr docutils literal notranslate"><span class="pre">encode_threshold</span></code> attribute of
-<code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler</span></code>, which contains a size in bytes;
+<a class="reference internal" href="../library/xmlrpc.server.html#xmlrpc.server.SimpleXMLRPCRequestHandler" title="xmlrpc.server.SimpleXMLRPCRequestHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleXMLRPCRequestHandler</span></code></a>, which contains a size in bytes;
 responses larger than this will be compressed.
 (Contributed by Kristján Valur Jónsson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=6267">bpo-6267</a>.)</p></li>
 <li><p>The <a class="reference internal" href="../library/zipfile.html#module-zipfile" title="zipfile: Read and write ZIP-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code></a> module's <a class="reference internal" href="../library/zipfile.html#zipfile.ZipFile" title="zipfile.ZipFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZipFile</span></code></a> now supports the context
@@ -1693,7 +1694,8 @@ management protocol, so you can write <code class="docutils literal notranslate"
 <p><a class="reference internal" href="../library/zipfile.html#module-zipfile" title="zipfile: Read and write ZIP-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code></a> now also supports archiving empty directories and
 extracts them correctly.  (Fixed by Kuba Wieczorek; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4710">bpo-4710</a>.)
 Reading files out of an archive is faster, and interleaving
-<a class="reference internal" href="../library/zipfile.html#zipfile.ZipFile.read" title="zipfile.ZipFile.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code> now works correctly.
+<a class="reference internal" href="../library/io.html#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> and
+<a class="reference internal" href="../library/io.html#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> now works correctly.
 (Contributed by Nir Aides; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7610">bpo-7610</a>.)</p>
 <p>The <a class="reference internal" href="../library/zipfile.html#zipfile.is_zipfile" title="zipfile.is_zipfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_zipfile()</span></code></a> function now
 accepts a file object, in addition to the path names accepted in earlier
@@ -1769,13 +1771,13 @@ widgets but have a more customizable appearance and can therefore more
 closely resemble the native platform's widgets.  This widget
 set was originally called Tile, but was renamed to Ttk (for &quot;themed Tk&quot;)
 on being added to Tcl/Tck release 8.5.</p>
-<p>To learn more, read the <code class="xref py py-mod docutils literal notranslate"><span class="pre">ttk</span></code> module documentation.  You may also
+<p>To learn more, read the <a class="reference internal" href="../library/tkinter.ttk.html#module-tkinter.ttk" title="tkinter.ttk: Tk themed widget set"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ttk</span></code></a> module documentation.  You may also
 wish to read the Tcl/Tk manual page describing the
 Ttk theme engine, available at
-<a class="reference external" href="https://www.tcl.tk/man/tcl8.5/TkCmd/ttk_intro.htm">https://www.tcl.tk/man/tcl8.5/TkCmd/ttk_intro.htm</a>. Some
+<a class="reference external" href="https://www.tcl.tk/man/tcl8.5/TkCmd/ttk_intro.html">https://www.tcl.tk/man/tcl8.5/TkCmd/ttk_intro.html</a>. Some
 screenshots of the Python/Ttk code in use are at
 <a class="reference external" href="https://code.google.com/archive/p/python-ttk/wikis/Screenshots.wiki">https://code.google.com/archive/p/python-ttk/wikis/Screenshots.wiki</a>.</p>
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">ttk</span></code> module was written by Guilherme Polo and added in
+<p>The <a class="reference internal" href="../library/tkinter.ttk.html#module-tkinter.ttk" title="tkinter.ttk: Tk themed widget set"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.ttk</span></code></a> module was written by Guilherme Polo and added in
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2983">bpo-2983</a>.  An alternate version called <code class="docutils literal notranslate"><span class="pre">Tile.py</span></code>, written by
 Martin Franklin and maintained by Kevin Walzer, was proposed for
 inclusion in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2618">bpo-2618</a>, but the authors argued that Guilherme
@@ -1878,16 +1880,17 @@ two quantities.</p></li>
 not equal, displays a helpful comparison that highlights the
 differences in the two strings.  This comparison is now used by
 default when Unicode strings are compared with <a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertEqual" title="unittest.TestCase.assertEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertEqual()</span></code></a>.</p></li>
-<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertRegexpMatches()</span></code> and
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">assertNotRegexpMatches()</span></code> checks whether the
+<li><p><a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertRegex" title="unittest.TestCase.assertRegex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertRegexpMatches()</span></code></a> and
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertNotRegex" title="unittest.TestCase.assertNotRegex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertNotRegexpMatches()</span></code></a> checks whether the
 first argument is a string matching or not matching the regular
 expression provided as the second argument (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8038">bpo-8038</a>).</p></li>
-<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertRaisesRegexp()</span></code> checks whether a particular exception
+<li><p><a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertRaisesRegex" title="unittest.TestCase.assertRaisesRegex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertRaisesRegexp()</span></code></a> checks
+whether a particular exception
 is raised, and then also checks that the string representation of
 the exception matches the provided regular expression.</p></li>
 <li><p><a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertIn" title="unittest.TestCase.assertIn"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertIn()</span></code></a> and <a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertNotIn" title="unittest.TestCase.assertNotIn"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertNotIn()</span></code></a>
 tests whether <em>first</em> is or is not in  <em>second</em>.</p></li>
-<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertItemsEqual()</span></code> tests whether two provided sequences
+<li><p><a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertCountEqual" title="unittest.TestCase.assertCountEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertItemsEqual()</span></code></a> tests whether two provided sequences
 contain the same elements.</p></li>
 <li><p><a class="reference internal" href="../library/unittest.html#unittest.TestCase.assertSetEqual" title="unittest.TestCase.assertSetEqual"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assertSetEqual()</span></code></a> compares whether two sets are equal, and
 only reports the differences between the sets in case of error.</p></li>
@@ -1951,7 +1954,7 @@ be used.  This makes it possible to override the file's internal encoding:</p>
 <span class="n">t</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;root/&gt;&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Errors in parsing XML now raise a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ParseError</span></code> exception, whose
+<p>Errors in parsing XML now raise a <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.ParseError" title="xml.etree.ElementTree.ParseError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ParseError</span></code></a> exception, whose
 instances have a <code class="xref py py-attr docutils literal notranslate"><span class="pre">position</span></code> attribute
 containing a (<em>line</em>, <em>column</em>) tuple giving the location of the problem.</p>
 </li>
@@ -1962,7 +1965,8 @@ and <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 &quot;xml&quot; (the default), &quot;html&quot;, or &quot;text&quot;.  HTML mode will output empty
 elements as <code class="docutils literal notranslate"><span class="pre">&lt;empty&gt;&lt;/empty&gt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&lt;empty/&gt;</span></code>, and text
 mode will skip over elements and only output the text chunks.  If
-you set the <code class="xref py py-attr docutils literal notranslate"><span class="pre">tag</span></code> attribute of an element to <code class="docutils literal notranslate"><span class="pre">None</span></code> but
+you set the <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element.tag" title="xml.etree.ElementTree.Element.tag"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tag</span></code></a> attribute of an
+element to <code class="docutils literal notranslate"><span class="pre">None</span></code> but
 leave its children in place, the element will be omitted when the
 tree is written out, so you don't need to do more extensive rearrangement
 to remove a single element.</p>
@@ -1992,13 +1996,13 @@ another:</p>
 </pre></div>
 </div>
 </li>
-<li><p>New <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> method:
+<li><p>New <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element" title="xml.etree.ElementTree.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> method:
 <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element.iter" title="xml.etree.ElementTree.Element.iter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iter()</span></code></a> yields the children of the
 element as a generator.  It's also possible to write <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">child</span> <span class="pre">in</span>
 <span class="pre">elem:</span></code> to loop over an element's children.  The existing method
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">getiterator()</span></code> is now deprecated, as is <code class="xref py py-meth docutils literal notranslate"><span class="pre">getchildren()</span></code>
 which constructs and returns a list of children.</p></li>
-<li><p>New <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> method:
+<li><p>New <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element" title="xml.etree.ElementTree.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> method:
 <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element.itertext" title="xml.etree.ElementTree.Element.itertext"><code class="xref py py-meth docutils literal notranslate"><span class="pre">itertext()</span></code></a> yields all chunks of
 text that are descendants of the element.  For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;list&gt;</span>
@@ -2144,7 +2148,7 @@ of a type, Python will no longer let you try to delete or set a
 with <code class="docutils literal notranslate"><span class="pre">Py</span></code>, or with <code class="docutils literal notranslate"><span class="pre">_ctypes</span></code>.  (Implemented by Thomas
 Heller; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3102">bpo-3102</a>.)</p></li>
 <li><p>New configure option: the <code class="xref std std-option docutils literal notranslate"><span class="pre">--with-system-expat</span></code> switch allows
-building the <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyexpat</span></code> module to use the system Expat library.
+building the <a class="reference internal" href="../library/pyexpat.html#module-xml.parsers.expat" title="xml.parsers.expat: An interface to the Expat non-validating XML parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyexpat</span></code></a> module to use the system Expat library.
 (Contributed by Arfrever Frehtes Taifersar Arahesis; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7609">bpo-7609</a>.)</p></li>
 <li><p>New configure option: the
 <code class="xref std std-option docutils literal notranslate"><span class="pre">--with-valgrind</span></code> option will now disable the pymalloc
@@ -2161,7 +2165,7 @@ on certain 32-bit Intel chips and defines a <code class="xref c c-macro docutils
 preprocessor definition.  No code currently uses this definition,
 but it's available if anyone wishes to use it.
 (Added by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2937">bpo-2937</a>.)</p>
-<p><strong class="program">configure</strong> also now sets a <span class="target" id="index-12"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LDCXXSHARED</span></code> Makefile
+<p><strong class="program">configure</strong> also now sets a <span class="target" id="index-11"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LDCXXSHARED</span></code> Makefile
 variable for supporting C++ linking.  (Contributed by Arfrever
 Frehtes Taifersar Arahesis; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1222585">bpo-1222585</a>.)</p>
 </li>
@@ -2214,29 +2218,29 @@ discussed in <a class="reference external" href="https://bugs.python.org/issue?&
 <ul class="simple">
 <li><p>The <a class="reference internal" href="../library/msvcrt.html#module-msvcrt" title="msvcrt: Miscellaneous useful routines from the MS VC++ runtime. (Windows)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code></a> module now contains some constants from
 the <code class="file docutils literal notranslate"><span class="pre">crtassem.h</span></code> header file:
-<code class="xref py py-data docutils literal notranslate"><span class="pre">CRT_ASSEMBLY_VERSION</span></code>,
-<code class="xref py py-data docutils literal notranslate"><span class="pre">VC_ASSEMBLY_PUBLICKEYTOKEN</span></code>,
-and <code class="xref py py-data docutils literal notranslate"><span class="pre">LIBRARIES_ASSEMBLY_NAME_PREFIX</span></code>.
+<a class="reference internal" href="../library/msvcrt.html#msvcrt.CRT_ASSEMBLY_VERSION" title="msvcrt.CRT_ASSEMBLY_VERSION"><code class="xref py py-data docutils literal notranslate"><span class="pre">CRT_ASSEMBLY_VERSION</span></code></a>,
+<a class="reference internal" href="../library/msvcrt.html#msvcrt.VC_ASSEMBLY_PUBLICKEYTOKEN" title="msvcrt.VC_ASSEMBLY_PUBLICKEYTOKEN"><code class="xref py py-data docutils literal notranslate"><span class="pre">VC_ASSEMBLY_PUBLICKEYTOKEN</span></code></a>,
+and <a class="reference internal" href="../library/msvcrt.html#msvcrt.LIBRARIES_ASSEMBLY_NAME_PREFIX" title="msvcrt.LIBRARIES_ASSEMBLY_NAME_PREFIX"><code class="xref py py-data docutils literal notranslate"><span class="pre">LIBRARIES_ASSEMBLY_NAME_PREFIX</span></code></a>.
 (Contributed by David Cournapeau; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4365">bpo-4365</a>.)</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">_winreg</span></code> module for accessing the registry now implements
-the <code class="xref py py-func docutils literal notranslate"><span class="pre">CreateKeyEx()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">DeleteKeyEx()</span></code>
+<li><p>The <a class="reference internal" href="../library/winreg.html#module-winreg" title="winreg: Routines and objects for manipulating the Windows registry. (Windows)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_winreg</span></code></a> module for accessing the registry now implements
+the <a class="reference internal" href="../library/winreg.html#winreg.CreateKeyEx" title="winreg.CreateKeyEx"><code class="xref py py-func docutils literal notranslate"><span class="pre">CreateKeyEx()</span></code></a> and <a class="reference internal" href="../library/winreg.html#winreg.DeleteKeyEx" title="winreg.DeleteKeyEx"><code class="xref py py-func docutils literal notranslate"><span class="pre">DeleteKeyEx()</span></code></a>
 functions, extended versions of previously supported functions that
-take several extra arguments.  The <code class="xref py py-func docutils literal notranslate"><span class="pre">DisableReflectionKey()</span></code>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">EnableReflectionKey()</span></code>, and <code class="xref py py-func docutils literal notranslate"><span class="pre">QueryReflectionKey()</span></code>
+take several extra arguments.  The <a class="reference internal" href="../library/winreg.html#winreg.DisableReflectionKey" title="winreg.DisableReflectionKey"><code class="xref py py-func docutils literal notranslate"><span class="pre">DisableReflectionKey()</span></code></a>,
+<a class="reference internal" href="../library/winreg.html#winreg.EnableReflectionKey" title="winreg.EnableReflectionKey"><code class="xref py py-func docutils literal notranslate"><span class="pre">EnableReflectionKey()</span></code></a>, and <a class="reference internal" href="../library/winreg.html#winreg.QueryReflectionKey" title="winreg.QueryReflectionKey"><code class="xref py py-func docutils literal notranslate"><span class="pre">QueryReflectionKey()</span></code></a>
 were also tested and documented.
 (Implemented by Brian Curtin: <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7347">bpo-7347</a>.)</p></li>
 <li><p>The new <code class="xref c c-func docutils literal notranslate"><span class="pre">_beginthreadex()</span></code> API is used to start threads, and
 the native thread-local storage functions are now used.
 (Contributed by Kristján Valur Jónsson; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3582">bpo-3582</a>.)</p></li>
 <li><p>The <a class="reference internal" href="../library/os.html#os.kill" title="os.kill"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.kill()</span></code></a> function now works on Windows.  The signal value
-can be the constants <code class="xref py py-const docutils literal notranslate"><span class="pre">CTRL_C_EVENT</span></code>,
-<code class="xref py py-const docutils literal notranslate"><span class="pre">CTRL_BREAK_EVENT</span></code>, or any integer.  The first two constants
+can be the constants <a class="reference internal" href="../library/signal.html#signal.CTRL_C_EVENT" title="signal.CTRL_C_EVENT"><code class="xref py py-const docutils literal notranslate"><span class="pre">CTRL_C_EVENT</span></code></a>,
+<a class="reference internal" href="../library/signal.html#signal.CTRL_BREAK_EVENT" title="signal.CTRL_BREAK_EVENT"><code class="xref py py-const docutils literal notranslate"><span class="pre">CTRL_BREAK_EVENT</span></code></a>, or any integer.  The first two constants
 will send <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">Break</kbd></kbd> keystroke events to
 subprocesses; any other value will use the <code class="xref c c-func docutils literal notranslate"><span class="pre">TerminateProcess()</span></code>
 API.  (Contributed by Miki Tebeka; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1220212">bpo-1220212</a>.)</p></li>
 <li><p>The <a class="reference internal" href="../library/os.html#os.listdir" title="os.listdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.listdir()</span></code></a> function now correctly fails
 for an empty path.  (Fixed by Hirokazu Yamamoto; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5913">bpo-5913</a>.)</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">mimelib</span></code> module will now read the MIME database from
+<li><p>The <a class="reference internal" href="../library/mimetypes.html#module-mimetypes" title="mimetypes: Mapping of filename extensions to MIME types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code></a> module will now read the MIME database from
 the Windows registry when initializing.
 (Patch by Gabriel Genellina; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4969">bpo-4969</a>.)</p></li>
 </ul>
@@ -2286,7 +2290,7 @@ performing several tasks using a varying number of threads.</p></li>
 forms in <code class="file docutils literal notranslate"><span class="pre">.po</span></code> files.  (Fixed by Martin von Löwis;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5464">bpo-5464</a>.)</p></li>
 <li><p>When importing a module from a <code class="file docutils literal notranslate"><span class="pre">.pyc</span></code> or <code class="file docutils literal notranslate"><span class="pre">.pyo</span></code> file
-with an existing <code class="file docutils literal notranslate"><span class="pre">.py</span></code> counterpart, the <code class="xref py py-attr docutils literal notranslate"><span class="pre">co_filename</span></code>
+with an existing <code class="file docutils literal notranslate"><span class="pre">.py</span></code> counterpart, the <a class="reference internal" href="../reference/datamodel.html#codeobject.co_filename" title="codeobject.co_filename"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_filename</span></code></a>
 attributes of the resulting code objects are overwritten when the
 original filename is obsolete.  This can happen if the file has been
 renamed, moved, or is accessed through different paths.  (Patch by
@@ -2316,7 +2320,7 @@ Ożarowski; <a class="reference external" href="https://bugs.python.org/issue?&#
 that may require changes to your code:</p>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> function processes its arguments more
-consistently; it will now call <code class="xref py py-meth docutils literal notranslate"><span class="pre">__int__()</span></code> on non-float,
+consistently; it will now call <a class="reference internal" href="../reference/datamodel.html#object.__int__" title="object.__int__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__int__()</span></code></a> on non-float,
 non-integer arguments that are supplied to it.  (Fixed by Alexander
 Belopolsky; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1533">bpo-1533</a>.)</p></li>
 <li><p>The string <a class="reference internal" href="../library/functions.html#format" title="format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">format()</span></code></a> method changed the default precision used
@@ -2355,12 +2359,12 @@ false value depending on the comparison operator.  Quiet NaN values
 (or <code class="docutils literal notranslate"><span class="pre">NaN</span></code>) are now hashable.  (Fixed by Mark Dickinson;
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7279">bpo-7279</a>.)</p>
 </li>
-<li><p>The ElementTree library, <code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree</span></code>, no longer escapes
+<li><p>The <a class="reference internal" href="../library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="xml.etree.ElementTree: Implementation of the ElementTree API."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code></a> library no longer escapes
 ampersands and angle brackets when outputting an XML processing
 instruction (which looks like <code class="docutils literal notranslate"><span class="pre">&lt;?xml-stylesheet</span> <span class="pre">href=&quot;#style1&quot;?&gt;</span></code>)
 or comment (which looks like <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">comment</span> <span class="pre">--&gt;</span></code>).
 (Patch by Neil Muller; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2746">bpo-2746</a>.)</p></li>
-<li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code> method of <code class="xref py py-class docutils literal notranslate"><span class="pre">StringIO</span></code> objects now does
+<li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code> method of <a class="reference internal" href="../library/io.html#io.StringIO" title="io.StringIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringIO</span></code></a> objects now does
 nothing when a negative length is requested, as other file-like
 objects do.  (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7348">bpo-7348</a>).</p></li>
 <li><p>The <a class="reference internal" href="../library/syslog.html#module-syslog" title="syslog: An interface to the Unix syslog library routines. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">syslog</span></code></a> module will now use the value of <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> as the
@@ -2373,8 +2377,8 @@ debug log, but because the debug log is not activated by default,
 these errors go unnoticed.  The default error level is now 1,
 which raises an exception if there's an error.
 (Changed by Lars Gustäbel; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7357">bpo-7357</a>.)</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module's <code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code> now handles
-unknown URL schemes in a fashion compliant with <span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
+<li><p>The <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code></a> module's <a class="reference internal" href="../library/urllib.parse.html#urllib.parse.urlsplit" title="urllib.parse.urlsplit"><code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code></a> now handles
+unknown URL schemes in a fashion compliant with <span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
 URL is of the form <code class="docutils literal notranslate"><span class="pre">&quot;&lt;something&gt;://...&quot;</span></code>, the text before the
 <code class="docutils literal notranslate"><span class="pre">://</span></code> is treated as the scheme, even if it's a made-up scheme that
 the module doesn't know about.  This change may break code that
@@ -2427,10 +2431,10 @@ maintenance release.</p>
 <section id="two-new-environment-variables-for-debug-mode">
 <h3>Two new environment variables for debug mode<a class="headerlink" href="#two-new-environment-variables-for-debug-mode" title="Link to this heading">¶</a></h3>
 <p>In debug mode, the <code class="docutils literal notranslate"><span class="pre">[xxx</span> <span class="pre">refs]</span></code> statistic is not written by default, the
-<span class="target" id="index-14"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONSHOWREFCOUNT</span></code> environment variable now must also be set.
+<code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONSHOWREFCOUNT</span></code> environment variable now must also be set.
 (Contributed by Victor Stinner; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=31733">bpo-31733</a>.)</p>
 <p>When Python is compiled with <code class="docutils literal notranslate"><span class="pre">COUNT_ALLOC</span></code> defined, allocation counts are no
-longer dumped by default anymore: the <span class="target" id="index-15"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONSHOWALLOCCOUNT</span></code> environment
+longer dumped by default anymore: the <code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONSHOWALLOCCOUNT</span></code> environment
 variable must now also be set. Moreover, allocation counts are now dumped into
 stderr, rather than stdout. (Contributed by Victor Stinner; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=31692">bpo-31692</a>.)</p>
 <div class="versionadded">
@@ -2439,7 +2443,7 @@ stderr, rather than stdout. (Contributed by Victor Stinner; <a class="reference 
 </section>
 <section id="pep-434-idle-enhancement-exception-for-all-branches">
 <h3>PEP 434: IDLE Enhancement Exception for All Branches<a class="headerlink" href="#pep-434-idle-enhancement-exception-for-all-branches" title="Link to this heading">¶</a></h3>
-<p><span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-0434/"><strong>PEP 434</strong></a> describes a general exemption for changes made to the IDLE
+<p><span class="target" id="index-13"></span><a class="pep reference external" href="https://peps.python.org/pep-0434/"><strong>PEP 434</strong></a> describes a general exemption for changes made to the IDLE
 development environment shipped along with Python. This exemption makes it
 possible for the IDLE developers to provide a more consistent user
 experience across all supported versions of Python 2 and 3.</p>
@@ -2448,10 +2452,10 @@ release.</p>
 </section>
 <section id="pep-466-network-security-enhancements-for-python-2-7">
 <h3>PEP 466: Network Security Enhancements for Python 2.7<a class="headerlink" href="#pep-466-network-security-enhancements-for-python-2-7" title="Link to this heading">¶</a></h3>
-<p><span class="target" id="index-17"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> describes a number of network security enhancement proposals
+<p><span class="target" id="index-14"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> describes a number of network security enhancement proposals
 that have been approved for inclusion in Python 2.7 maintenance releases,
 with the first of those changes appearing in the Python 2.7.7 release.</p>
-<p><span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.7:</p>
+<p><span class="target" id="index-15"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.7:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/hmac.html#hmac.compare_digest" title="hmac.compare_digest"><code class="xref py py-func docutils literal notranslate"><span class="pre">hmac.compare_digest()</span></code></a> was backported from Python 3 to make a timing
 attack resistant comparison operation available to Python 2 applications.
@@ -2459,7 +2463,7 @@ attack resistant comparison operation available to Python 2 applications.
 <li><p>OpenSSL 1.0.1g was upgraded in the official Windows installers published on
 python.org. (Contributed by Zachary Ware; <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=21462">bpo-21462</a>.)</p></li>
 </ul>
-<p><span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.8:</p>
+<p><span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.8:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/hashlib.html#hashlib.pbkdf2_hmac" title="hashlib.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.pbkdf2_hmac()</span></code></a> was backported from Python 3 to make a hashing
 algorithm suitable for secure password storage broadly available to Python
@@ -2467,7 +2471,7 @@ algorithm suitable for secure password storage broadly available to Python
 <li><p>OpenSSL 1.0.1h was upgraded for the official Windows installers published on
 python.org. (contributed by Zachary Ware in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=21671">bpo-21671</a> for CVE-2014-0224)</p></li>
 </ul>
-<p><span class="target" id="index-20"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.9:</p>
+<p><span class="target" id="index-17"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a> related features added in Python 2.7.9:</p>
 <ul>
 <li><p>Most of Python 3.4's <a class="reference internal" href="../library/ssl.html#module-ssl" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a> module was backported. This means <a class="reference internal" href="../library/ssl.html#module-ssl" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a>
 now supports Server Name Indication, TLS1.x settings, access to the platform
@@ -2487,12 +2491,12 @@ algorithm. (Contributed by Alex Gaynor in <a class="reference external" href="ht
 </section>
 <section id="pep-477-backport-ensurepip-pep-453-to-python-2-7">
 <h3>PEP 477: Backport ensurepip (PEP 453) to Python 2.7<a class="headerlink" href="#pep-477-backport-ensurepip-pep-453-to-python-2-7" title="Link to this heading">¶</a></h3>
-<p><span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0477/"><strong>PEP 477</strong></a> approves the inclusion of the <span class="target" id="index-22"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a> ensurepip module and the
+<p><span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0477/"><strong>PEP 477</strong></a> approves the inclusion of the <span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a> ensurepip module and the
 improved documentation that was enabled by it in the Python 2.7 maintenance
 releases, appearing first in the Python 2.7.9 release.</p>
 <section id="bootstrapping-pip-by-default">
 <h4>Bootstrapping pip By Default<a class="headerlink" href="#bootstrapping-pip-by-default" title="Link to this heading">¶</a></h4>
-<p>The new <a class="reference internal" href="../library/ensurepip.html#module-ensurepip" title="ensurepip: Bootstrapping the &quot;pip&quot; installer into an existing Python installation or virtual environment."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code></a> module (defined in <span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a>) provides a standard
+<p>The new <a class="reference internal" href="../library/ensurepip.html#module-ensurepip" title="ensurepip: Bootstrapping the &quot;pip&quot; installer into an existing Python installation or virtual environment."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code></a> module (defined in <span class="target" id="index-20"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a>) provides a standard
 cross-platform mechanism to bootstrap the pip installer into Python
 installations. The version of <code class="docutils literal notranslate"><span class="pre">pip</span></code> included with Python 2.7.9 is <code class="docutils literal notranslate"><span class="pre">pip</span></code>
 1.5.6, and future 2.7.x maintenance releases will update the bundled version to
@@ -2530,7 +2534,7 @@ and <a class="reference internal" href="../extending/building.html#setuptools-in
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-24"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a> -- Explicit bootstrapping of pip in Python installations</dt><dd><p>PEP written by Donald Stufft and Nick Coghlan, implemented by
+<dt><span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0453/"><strong>PEP 453</strong></a> -- Explicit bootstrapping of pip in Python installations</dt><dd><p>PEP written by Donald Stufft and Nick Coghlan, implemented by
 Donald Stufft, Nick Coghlan, Martin von Löwis and Ned Deily.</p>
 </dd>
 </dl>
@@ -2539,8 +2543,9 @@ Donald Stufft, Nick Coghlan, Martin von Löwis and Ned Deily.</p>
 </section>
 <section id="pep-476-enabling-certificate-verification-by-default-for-stdlib-http-clients">
 <h3>PEP 476: Enabling certificate verification by default for stdlib http clients<a class="headerlink" href="#pep-476-enabling-certificate-verification-by-default-for-stdlib-http-clients" title="Link to this heading">¶</a></h3>
-<p><span class="target" id="index-25"></span><a class="pep reference external" href="https://peps.python.org/pep-0476/"><strong>PEP 476</strong></a> updated <code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code> and modules which use it, such as
-<code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib2</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code>, to now verify that the server
+<p><span class="target" id="index-22"></span><a class="pep reference external" href="https://peps.python.org/pep-0476/"><strong>PEP 476</strong></a> updated <a class="reference internal" href="../library/http.html#module-http" title="http: HTTP status codes and messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code></a> and modules which use it, such as
+<a class="reference internal" href="../library/urllib.request.html#module-urllib.request" title="urllib.request: Extensible library for opening URLs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib2</span></code></a> and <a class="reference internal" href="../library/xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code></a>, to now
+verify that the server
 presents a certificate which is signed by a Certificate Authority in the
 platform trust store and whose hostname matches the hostname being requested
 by default, significantly improving security for many applications. This
@@ -2563,7 +2568,7 @@ alternate context:</p>
 </section>
 <section id="pep-493-https-verification-migration-tools-for-python-2-7">
 <h3>PEP 493: HTTPS verification migration tools for Python 2.7<a class="headerlink" href="#pep-493-https-verification-migration-tools-for-python-2-7" title="Link to this heading">¶</a></h3>
-<p><span class="target" id="index-26"></span><a class="pep reference external" href="https://peps.python.org/pep-0493/"><strong>PEP 493</strong></a> provides additional migration tools to support a more incremental
+<p><span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0493/"><strong>PEP 493</strong></a> provides additional migration tools to support a more incremental
 infrastructure upgrade process for environments containing applications and
 services relying on the historically permissive processing of server
 certificates when establishing client HTTPS connections.  These additions were
@@ -2723,7 +2728,7 @@ Hugh Secker-Walker.</p>
           <a href="3.0.html" title="Python 3.0 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2733,7 +2738,7 @@ Hugh Secker-Walker.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -2762,13 +2767,14 @@ Hugh Secker-Walker.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2776,7 +2782,7 @@ Hugh Secker-Walker.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>zipapp --- Manage executable Python zip archives &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zipapp — 管理可執行的 Python zip 封存檔案 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -85,14 +85,10 @@
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> — 管理可執行的 Python zip 封存檔案</a><ul>
 <li><a class="reference internal" href="#basic-example">基本範例</a></li>
 <li><a class="reference internal" href="#command-line-interface">命令執行列介面</a></li>
-<li><a class="reference internal" href="#python-api">Python API</a><ul>
-<li><a class="reference internal" href="#zipapp.create_archive"><code class="docutils literal notranslate"><span class="pre">create_archive()</span></code></a></li>
-<li><a class="reference internal" href="#zipapp.get_interpreter"><code class="docutils literal notranslate"><span class="pre">get_interpreter()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#python-api">Python API</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 <li><a class="reference internal" href="#specifying-the-interpreter">Specifying the Interpreter</a></li>
 <li><a class="reference internal" href="#creating-standalone-applications-with-zipapp">Creating Standalone Applications with zipapp</a><ul>
@@ -147,7 +143,7 @@
           <a href="venv.html" title="venv --- Creation of virtual environments"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -157,12 +153,12 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="distribution.html" accesskey="U">軟體封裝與發布</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> — 管理可執行的 Python zip 封存檔案</a></li>
                 <li class="right">
                     
 
@@ -193,7 +189,7 @@
           <div class="body" role="main">
             
   <section id="module-zipapp">
-<span id="zipapp-manage-executable-python-zip-archives"></span><h1><a class="reference internal" href="#module-zipapp" title="zipapp: Manage executable Python zip archives"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code></a> --- Manage executable Python zip archives<a class="headerlink" href="#module-zipapp" title="Link to this heading">¶</a></h1>
+<span id="zipapp-manage-executable-python-zip-archives"></span><h1><a class="reference internal" href="#module-zipapp" title="zipapp: Manage executable Python zip archives"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code></a> — 管理可執行的 Python zip 封存檔案<a class="headerlink" href="#module-zipapp" title="Link to this heading">¶</a></h1>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.5 版新加入.</span></p>
 </div>
@@ -342,8 +338,8 @@ caller's responsibility to close it after calling create_archive.</p>
 archive from a directory, if the target is a file object it will be
 passed to the <code class="docutils literal notranslate"><span class="pre">zipfile.ZipFile</span></code> class, and must supply the methods
 needed by that class.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入: </span>新增 <em>filter</em> 與 <em>compressed</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>新增 <em>filter</em> 與 <em>compressed</em> 參數。</p>
 </div>
 </dd></dl>
 
@@ -508,14 +504,10 @@ format created by any means are acceptable to Python.</p>
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> — 管理可執行的 Python zip 封存檔案</a><ul>
 <li><a class="reference internal" href="#basic-example">基本範例</a></li>
 <li><a class="reference internal" href="#command-line-interface">命令執行列介面</a></li>
-<li><a class="reference internal" href="#python-api">Python API</a><ul>
-<li><a class="reference internal" href="#zipapp.create_archive"><code class="docutils literal notranslate"><span class="pre">create_archive()</span></code></a></li>
-<li><a class="reference internal" href="#zipapp.get_interpreter"><code class="docutils literal notranslate"><span class="pre">get_interpreter()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#python-api">Python API</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 <li><a class="reference internal" href="#specifying-the-interpreter">Specifying the Interpreter</a></li>
 <li><a class="reference internal" href="#creating-standalone-applications-with-zipapp">Creating Standalone Applications with zipapp</a><ul>
@@ -573,7 +565,7 @@ format created by any means are acceptable to Python.</p>
           <a href="venv.html" title="venv --- Creation of virtual environments"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -583,12 +575,12 @@ format created by any means are acceptable to Python.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="distribution.html" >軟體封裝與發布</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> — 管理可執行的 Python zip 封存檔案</a></li>
                 <li class="right">
                     
 
@@ -613,13 +605,14 @@ format created by any means are acceptable to Python.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -627,7 +620,7 @@ format created by any means are acceptable to Python.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

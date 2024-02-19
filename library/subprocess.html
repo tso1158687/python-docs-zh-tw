@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>subprocess --- Subprocess management &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subprocess --- 子行程管理 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -85,100 +85,20 @@
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- Subprocess management</a><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- 子行程管理</a><ul>
 <li><a class="reference internal" href="#using-the-subprocess-module">Using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> Module</a><ul>
-<li><a class="reference internal" href="#subprocess.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess"><code class="docutils literal notranslate"><span class="pre">CompletedProcess</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.args"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.args</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.returncode"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.returncode</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.stdout"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.stderr"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.stderr</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.check_returncode"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.check_returncode()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#subprocess.DEVNULL"><code class="docutils literal notranslate"><span class="pre">DEVNULL</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.PIPE"><code class="docutils literal notranslate"><span class="pre">PIPE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STDOUT"><code class="docutils literal notranslate"><span class="pre">STDOUT</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.SubprocessError"><code class="docutils literal notranslate"><span class="pre">SubprocessError</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.cmd"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.cmd</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.timeout"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.timeout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.output"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.output</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.stdout"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.stderr"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.stderr</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError"><code class="docutils literal notranslate"><span class="pre">CalledProcessError</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.returncode"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.returncode</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.cmd"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.cmd</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.output"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.output</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.stdout"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.stderr"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.stderr</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#frequently-used-arguments">Frequently Used Arguments</a></li>
-<li><a class="reference internal" href="#popen-constructor">Popen Constructor</a><ul>
-<li><a class="reference internal" href="#subprocess.Popen"><code class="docutils literal notranslate"><span class="pre">Popen</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#popen-constructor">Popen Constructor</a></li>
 <li><a class="reference internal" href="#exceptions">例外</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#security-considerations">Security Considerations</a></li>
-<li><a class="reference internal" href="#popen-objects">Popen Objects</a><ul>
-<li><a class="reference internal" href="#subprocess.Popen.poll"><code class="docutils literal notranslate"><span class="pre">Popen.poll()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.wait"><code class="docutils literal notranslate"><span class="pre">Popen.wait()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.communicate"><code class="docutils literal notranslate"><span class="pre">Popen.communicate()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.send_signal"><code class="docutils literal notranslate"><span class="pre">Popen.send_signal()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.terminate"><code class="docutils literal notranslate"><span class="pre">Popen.terminate()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.kill"><code class="docutils literal notranslate"><span class="pre">Popen.kill()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.args"><code class="docutils literal notranslate"><span class="pre">Popen.args</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stdin"><code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stdout"><code class="docutils literal notranslate"><span class="pre">Popen.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stderr"><code class="docutils literal notranslate"><span class="pre">Popen.stderr</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.pid"><code class="docutils literal notranslate"><span class="pre">Popen.pid</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.returncode"><code class="docutils literal notranslate"><span class="pre">Popen.returncode</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#popen-objects">Popen Objects</a></li>
 <li><a class="reference internal" href="#windows-popen-helpers">Windows Popen Helpers</a><ul>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.dwFlags"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.dwFlags</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdInput"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdInput</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdOutput"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdOutput</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdError"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdError</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.wShowWindow"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.wShowWindow</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.lpAttributeList"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.lpAttributeList</span></code></a></li>
+<li><a class="reference internal" href="#windows-constants">Windows Constants</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#windows-constants">Windows Constants</a><ul>
-<li><a class="reference internal" href="#subprocess.STD_INPUT_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_INPUT_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STD_OUTPUT_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_OUTPUT_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STD_ERROR_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_ERROR_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.SW_HIDE"><code class="docutils literal notranslate"><span class="pre">SW_HIDE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTF_USESTDHANDLES"><code class="docutils literal notranslate"><span class="pre">STARTF_USESTDHANDLES</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTF_USESHOWWINDOW"><code class="docutils literal notranslate"><span class="pre">STARTF_USESHOWWINDOW</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NEW_CONSOLE"><code class="docutils literal notranslate"><span class="pre">CREATE_NEW_CONSOLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NEW_PROCESS_GROUP"><code class="docutils literal notranslate"><span class="pre">CREATE_NEW_PROCESS_GROUP</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.ABOVE_NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">ABOVE_NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.BELOW_NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">BELOW_NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.HIGH_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">HIGH_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.IDLE_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">IDLE_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.REALTIME_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">REALTIME_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NO_WINDOW"><code class="docutils literal notranslate"><span class="pre">CREATE_NO_WINDOW</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.DETACHED_PROCESS"><code class="docutils literal notranslate"><span class="pre">DETACHED_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_DEFAULT_ERROR_MODE"><code class="docutils literal notranslate"><span class="pre">CREATE_DEFAULT_ERROR_MODE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_BREAKAWAY_FROM_JOB"><code class="docutils literal notranslate"><span class="pre">CREATE_BREAKAWAY_FROM_JOB</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#older-high-level-api">Older high-level API</a><ul>
-<li><a class="reference internal" href="#subprocess.call"><code class="docutils literal notranslate"><span class="pre">call()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.check_call"><code class="docutils literal notranslate"><span class="pre">check_call()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.check_output"><code class="docutils literal notranslate"><span class="pre">check_output()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#older-high-level-api">Older high-level API</a></li>
 <li><a class="reference internal" href="#replacing-older-functions-with-the-subprocess-module">Replacing Older Functions with the <code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> Module</a><ul>
 <li><a class="reference internal" href="#replacing-bin-sh-shell-command-substitution">Replacing <strong class="program">/bin/sh</strong> shell command substitution</a></li>
 <li><a class="reference internal" href="#replacing-shell-pipeline">Replacing shell pipeline</a></li>
@@ -188,11 +108,7 @@
 <li><a class="reference internal" href="#replacing-functions-from-the-popen2-module">Replacing functions from the <code class="xref py py-mod docutils literal notranslate"><span class="pre">popen2</span></code> module</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#legacy-shell-invocation-functions">Legacy Shell Invocation Functions</a><ul>
-<li><a class="reference internal" href="#subprocess.getstatusoutput"><code class="docutils literal notranslate"><span class="pre">getstatusoutput()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.getoutput"><code class="docutils literal notranslate"><span class="pre">getoutput()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#legacy-shell-invocation-functions">Legacy Shell Invocation Functions</a></li>
 <li><a class="reference internal" href="#notes">註解</a><ul>
 <li><a class="reference internal" href="#converting-an-argument-sequence-to-a-string-on-windows">Converting an argument sequence to a string on Windows</a></li>
 <li><a class="reference internal" href="#disabling-use-of-vfork-or-posix-spawn">Disabling use of <code class="docutils literal notranslate"><span class="pre">vfork()</span></code> or <code class="docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a></li>
@@ -245,7 +161,7 @@
           <a href="concurrent.futures.html" title="concurrent.futures -- 啟動平行任務"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -255,12 +171,12 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" accesskey="U">並行執行 (Concurrent Execution)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- Subprocess management</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- 子行程管理</a></li>
                 <li class="right">
                     
 
@@ -291,7 +207,7 @@
           <div class="body" role="main">
             
   <section id="module-subprocess">
-<span id="subprocess-subprocess-management"></span><h1><a class="reference internal" href="#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> --- Subprocess management<a class="headerlink" href="#module-subprocess" title="Link to this heading">¶</a></h1>
+<span id="subprocess-subprocess-management"></span><h1><a class="reference internal" href="#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> --- 子行程管理<a class="headerlink" href="#module-subprocess" title="Link to this heading">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.12/Lib/subprocess.py">Lib/subprocess.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module allows you to spawn new processes, connect to their
@@ -608,11 +524,11 @@ information see the documentation of the <a class="reference internal" href="io.
 when the <em>newline</em> argument to its constructor is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>If text mode is not used, <em>stdin</em>, <em>stdout</em> and <em>stderr</em> will be opened as
 binary streams. No encoding or line ending conversion is performed.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.6 版新加入: </span>新增 <em>encoding</em> 與 <em>errors</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.6 版的變更: </span>新增 <em>encoding</em> 與 <em>errors</em> 參數。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入: </span>Added the <em>text</em> parameter as an alias for <em>universal_newlines</em>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>Added the <em>text</em> parameter as an alias for <em>universal_newlines</em>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -942,8 +858,8 @@ for backwards compatibility. By default, file objects are opened in binary mode.
 <p><span class="versionmodified added">在 3.7 版新加入: </span><em>text</em> was added as a more readable alias for <em>universal_newlines</em>.</p>
 </div>
 <p>If given, <em>startupinfo</em> will be a <a class="reference internal" href="#subprocess.STARTUPINFO" title="subprocess.STARTUPINFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">STARTUPINFO</span></code></a> object, which is
-passed to the underlying <code class="docutils literal notranslate"><span class="pre">CreateProcess</span></code> function.
-<em>creationflags</em>, if given, can be one or more of the following flags:</p>
+passed to the underlying <code class="docutils literal notranslate"><span class="pre">CreateProcess</span></code> function.</p>
+<p>If given, <em>creationflags</em>, can be one or more of the following flags:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#subprocess.CREATE_NEW_CONSOLE" title="subprocess.CREATE_NEW_CONSOLE"><code class="xref py py-data docutils literal notranslate"><span class="pre">CREATE_NEW_CONSOLE</span></code></a></p></li>
 <li><p><a class="reference internal" href="#subprocess.CREATE_NEW_PROCESS_GROUP" title="subprocess.CREATE_NEW_PROCESS_GROUP"><code class="xref py py-data docutils literal notranslate"><span class="pre">CREATE_NEW_PROCESS_GROUP</span></code></a></p></li>
@@ -962,8 +878,8 @@ passed to the underlying <code class="docutils literal notranslate"><span class=
 <a class="reference internal" href="#subprocess.PIPE" title="subprocess.PIPE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PIPE</span></code></a> is used for <em>stdin</em>, <em>stdout</em> or <em>stderr</em>. The size of the pipe
 is only changed on platforms that support this (only Linux at this time of
 writing). Other platforms will ignore this parameter.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.10 版新加入: </span>新增 <code class="docutils literal notranslate"><span class="pre">pipesize</span></code> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版的變更: </span>新增 <code class="docutils literal notranslate"><span class="pre">pipesize</span></code> 參數。</p>
 </div>
 <p>Popen objects are supported as context managers via the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement:
 on exit, standard file descriptors are closed, and the process is waited for.</p>
@@ -1052,9 +968,10 @@ Use <a class="reference internal" href="#subprocess.Popen.communicate" title="su
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>The function is implemented using a busy loop (non-blocking call and
-short sleeps). Use the <a class="reference internal" href="asyncio.html#module-asyncio" title="asyncio: Asynchronous I/O."><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncio</span></code></a> module for an asynchronous wait:
-see <a class="reference internal" href="asyncio-subprocess.html#asyncio.create_subprocess_exec" title="asyncio.create_subprocess_exec"><code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.create_subprocess_exec</span></code></a>.</p>
+<p>When the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> parameter is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, then (on POSIX) the
+function is implemented using a busy loop (non-blocking call and short
+sleeps). Use the <a class="reference internal" href="asyncio.html#module-asyncio" title="asyncio: Asynchronous I/O."><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncio</span></code></a> module for an asynchronous wait: see
+<a class="reference internal" href="asyncio-subprocess.html#asyncio.create_subprocess_exec" title="asyncio.create_subprocess_exec"><code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.create_subprocess_exec</span></code></a>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>timeout</em>。</p>
@@ -1117,7 +1034,7 @@ parameter which includes <code class="docutils literal notranslate"><span class=
 <dl class="py method">
 <dt class="sig sig-object py" id="subprocess.Popen.terminate">
 <span class="sig-prename descclassname"><span class="pre">Popen.</span></span><span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#subprocess.Popen.terminate" title="Link to this definition">¶</a></dt>
-<dd><p>Stop the child. On POSIX OSs the method sends SIGTERM to the
+<dd><p>Stop the child. On POSIX OSs the method sends <a class="reference internal" href="signal.html#signal.SIGTERM" title="signal.SIGTERM"><code class="xref py py-const docutils literal notranslate"><span class="pre">SIGTERM</span></code></a> to the
 child. On Windows the Win32 API function <code class="xref c c-func docutils literal notranslate"><span class="pre">TerminateProcess()</span></code> is called
 to stop the child.</p>
 </dd></dl>
@@ -1551,7 +1468,7 @@ longer works.</p>
 <a class="reference internal" href="#subprocess.CalledProcessError" title="subprocess.CalledProcessError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CalledProcessError</span></code></a> object will have the return code in the
 <a class="reference internal" href="#subprocess.CalledProcessError.returncode" title="subprocess.CalledProcessError.returncode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">returncode</span></code></a> attribute and any output in the
 <a class="reference internal" href="#subprocess.CalledProcessError.output" title="subprocess.CalledProcessError.output"><code class="xref py py-attr docutils literal notranslate"><span class="pre">output</span></code></a> attribute.</p>
-<p>This is equivalent to:</p>
+<p>這等同於：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span>
 </pre></div>
 </div>
@@ -1811,13 +1728,13 @@ of subprocess.  Example:</p>
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix 和 Windows。</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.3.4 版的變更: </span>Windows support was added.</p>
+<p><span class="versionmodified changed">在 3.3.4 版的變更: </span>新增對 Windows 的支援。</p>
 <p>The function now returns (exitcode, output) instead of (status, output)
 as it did in Python 3.3.3 and earlier.  exitcode has the same value as
 <a class="reference internal" href="#subprocess.Popen.returncode" title="subprocess.Popen.returncode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">returncode</span></code></a>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.11 版新加入: </span>新增 <em>encoding</em> 與 <em>errors</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.11 版的變更: </span>新增 <em>encoding</em> 與 <em>errors</em> 參數。</p>
 </div>
 </dd></dl>
 
@@ -1835,10 +1752,10 @@ value is a string containing the command's output.  Example:</p>
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix 和 Windows。</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.3.4 版的變更: </span>Windows support added</p>
+<p><span class="versionmodified changed">在 3.3.4 版的變更: </span>新增對 Windows 的支援</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.11 版新加入: </span>新增 <em>encoding</em> 與 <em>errors</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.11 版的變更: </span>新增 <em>encoding</em> 與 <em>errors</em> 參數。</p>
 </div>
 </dd></dl>
 
@@ -1920,100 +1837,20 @@ code.</p>
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- Subprocess management</a><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- 子行程管理</a><ul>
 <li><a class="reference internal" href="#using-the-subprocess-module">Using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> Module</a><ul>
-<li><a class="reference internal" href="#subprocess.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess"><code class="docutils literal notranslate"><span class="pre">CompletedProcess</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.args"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.args</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.returncode"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.returncode</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.stdout"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.stderr"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.stderr</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CompletedProcess.check_returncode"><code class="docutils literal notranslate"><span class="pre">CompletedProcess.check_returncode()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#subprocess.DEVNULL"><code class="docutils literal notranslate"><span class="pre">DEVNULL</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.PIPE"><code class="docutils literal notranslate"><span class="pre">PIPE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STDOUT"><code class="docutils literal notranslate"><span class="pre">STDOUT</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.SubprocessError"><code class="docutils literal notranslate"><span class="pre">SubprocessError</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.cmd"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.cmd</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.timeout"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.timeout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.output"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.output</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.stdout"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.TimeoutExpired.stderr"><code class="docutils literal notranslate"><span class="pre">TimeoutExpired.stderr</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError"><code class="docutils literal notranslate"><span class="pre">CalledProcessError</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.returncode"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.returncode</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.cmd"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.cmd</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.output"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.output</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.stdout"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CalledProcessError.stderr"><code class="docutils literal notranslate"><span class="pre">CalledProcessError.stderr</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#frequently-used-arguments">Frequently Used Arguments</a></li>
-<li><a class="reference internal" href="#popen-constructor">Popen Constructor</a><ul>
-<li><a class="reference internal" href="#subprocess.Popen"><code class="docutils literal notranslate"><span class="pre">Popen</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#popen-constructor">Popen Constructor</a></li>
 <li><a class="reference internal" href="#exceptions">例外</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#security-considerations">Security Considerations</a></li>
-<li><a class="reference internal" href="#popen-objects">Popen Objects</a><ul>
-<li><a class="reference internal" href="#subprocess.Popen.poll"><code class="docutils literal notranslate"><span class="pre">Popen.poll()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.wait"><code class="docutils literal notranslate"><span class="pre">Popen.wait()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.communicate"><code class="docutils literal notranslate"><span class="pre">Popen.communicate()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.send_signal"><code class="docutils literal notranslate"><span class="pre">Popen.send_signal()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.terminate"><code class="docutils literal notranslate"><span class="pre">Popen.terminate()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.kill"><code class="docutils literal notranslate"><span class="pre">Popen.kill()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.args"><code class="docutils literal notranslate"><span class="pre">Popen.args</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stdin"><code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stdout"><code class="docutils literal notranslate"><span class="pre">Popen.stdout</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.stderr"><code class="docutils literal notranslate"><span class="pre">Popen.stderr</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.pid"><code class="docutils literal notranslate"><span class="pre">Popen.pid</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.Popen.returncode"><code class="docutils literal notranslate"><span class="pre">Popen.returncode</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#popen-objects">Popen Objects</a></li>
 <li><a class="reference internal" href="#windows-popen-helpers">Windows Popen Helpers</a><ul>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO</span></code></a><ul>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.dwFlags"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.dwFlags</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdInput"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdInput</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdOutput"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdOutput</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.hStdError"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.hStdError</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.wShowWindow"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.wShowWindow</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTUPINFO.lpAttributeList"><code class="docutils literal notranslate"><span class="pre">STARTUPINFO.lpAttributeList</span></code></a></li>
+<li><a class="reference internal" href="#windows-constants">Windows Constants</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#windows-constants">Windows Constants</a><ul>
-<li><a class="reference internal" href="#subprocess.STD_INPUT_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_INPUT_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STD_OUTPUT_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_OUTPUT_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STD_ERROR_HANDLE"><code class="docutils literal notranslate"><span class="pre">STD_ERROR_HANDLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.SW_HIDE"><code class="docutils literal notranslate"><span class="pre">SW_HIDE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTF_USESTDHANDLES"><code class="docutils literal notranslate"><span class="pre">STARTF_USESTDHANDLES</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.STARTF_USESHOWWINDOW"><code class="docutils literal notranslate"><span class="pre">STARTF_USESHOWWINDOW</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NEW_CONSOLE"><code class="docutils literal notranslate"><span class="pre">CREATE_NEW_CONSOLE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NEW_PROCESS_GROUP"><code class="docutils literal notranslate"><span class="pre">CREATE_NEW_PROCESS_GROUP</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.ABOVE_NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">ABOVE_NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.BELOW_NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">BELOW_NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.HIGH_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">HIGH_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.IDLE_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">IDLE_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.NORMAL_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">NORMAL_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.REALTIME_PRIORITY_CLASS"><code class="docutils literal notranslate"><span class="pre">REALTIME_PRIORITY_CLASS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_NO_WINDOW"><code class="docutils literal notranslate"><span class="pre">CREATE_NO_WINDOW</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.DETACHED_PROCESS"><code class="docutils literal notranslate"><span class="pre">DETACHED_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_DEFAULT_ERROR_MODE"><code class="docutils literal notranslate"><span class="pre">CREATE_DEFAULT_ERROR_MODE</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.CREATE_BREAKAWAY_FROM_JOB"><code class="docutils literal notranslate"><span class="pre">CREATE_BREAKAWAY_FROM_JOB</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#older-high-level-api">Older high-level API</a><ul>
-<li><a class="reference internal" href="#subprocess.call"><code class="docutils literal notranslate"><span class="pre">call()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.check_call"><code class="docutils literal notranslate"><span class="pre">check_call()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.check_output"><code class="docutils literal notranslate"><span class="pre">check_output()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#older-high-level-api">Older high-level API</a></li>
 <li><a class="reference internal" href="#replacing-older-functions-with-the-subprocess-module">Replacing Older Functions with the <code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> Module</a><ul>
 <li><a class="reference internal" href="#replacing-bin-sh-shell-command-substitution">Replacing <strong class="program">/bin/sh</strong> shell command substitution</a></li>
 <li><a class="reference internal" href="#replacing-shell-pipeline">Replacing shell pipeline</a></li>
@@ -2023,11 +1860,7 @@ code.</p>
 <li><a class="reference internal" href="#replacing-functions-from-the-popen2-module">Replacing functions from the <code class="xref py py-mod docutils literal notranslate"><span class="pre">popen2</span></code> module</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#legacy-shell-invocation-functions">Legacy Shell Invocation Functions</a><ul>
-<li><a class="reference internal" href="#subprocess.getstatusoutput"><code class="docutils literal notranslate"><span class="pre">getstatusoutput()</span></code></a></li>
-<li><a class="reference internal" href="#subprocess.getoutput"><code class="docutils literal notranslate"><span class="pre">getoutput()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#legacy-shell-invocation-functions">Legacy Shell Invocation Functions</a></li>
 <li><a class="reference internal" href="#notes">註解</a><ul>
 <li><a class="reference internal" href="#converting-an-argument-sequence-to-a-string-on-windows">Converting an argument sequence to a string on Windows</a></li>
 <li><a class="reference internal" href="#disabling-use-of-vfork-or-posix-spawn">Disabling use of <code class="docutils literal notranslate"><span class="pre">vfork()</span></code> or <code class="docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a></li>
@@ -2083,7 +1916,7 @@ code.</p>
           <a href="concurrent.futures.html" title="concurrent.futures -- 啟動平行任務"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2093,12 +1926,12 @@ code.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" >並行執行 (Concurrent Execution)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- Subprocess management</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code> --- 子行程管理</a></li>
                 <li class="right">
                     
 
@@ -2123,13 +1956,14 @@ code.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2137,7 +1971,7 @@ code.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

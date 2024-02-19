@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 3.10 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3.10 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -203,6 +203,12 @@
 <li><a class="reference internal" href="#id4">已刪除</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-10-7">Notable security feature in 3.10.7</a></li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-10-8">Notable security feature in 3.10.8</a></li>
+<li><a class="reference internal" href="#notable-changes-in-3-10-12">Notable changes in 3.10.12</a><ul>
+<li><a class="reference internal" href="#tarfile">tarfile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -250,7 +256,7 @@
           <a href="3.11.html" title="Python 3.11 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -260,7 +266,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -569,9 +575,8 @@
 <section id="pep-626-precise-line-numbers-for-debugging-and-other-tools">
 <h3>PEP 626：用於除錯和其他工具的精確列號<a class="headerlink" href="#pep-626-precise-line-numbers-for-debugging-and-other-tools" title="Link to this heading">¶</a></h3>
 <p>PEP 626 為除錯、分析 (profiling) 和覆蓋 (coverage) 工具帶來了更精確、更可靠的列號 (line numbers)。為所有已執行的程式碼列且僅針對已執行的程式碼行產生具有正確列號的追蹤事件。</p>
-<p>The <a class="reference internal" href="../reference/datamodel.html#frame.f_lineno" title="frame.f_lineno"><code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lineno</span></code></a> attribute of frame objects will always contain the
-expected line number.</p>
-<p>程式碼物件的 <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code> 屬性已棄用，並將在 3.12 中刪除。需要從偏移量轉換為列號的程式碼應使用新的 <code class="docutils literal notranslate"><span class="pre">co_lines()</span></code> 方法。</p>
+<p>影格 (frame) 物件的 <a class="reference internal" href="../reference/datamodel.html#frame.f_lineno" title="frame.f_lineno"><code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lineno</span></code></a> 屬性總會包含預期的列號。</p>
+<p><a class="reference internal" href="../reference/datamodel.html#code-objects"><span class="std std-ref">程式碼物件</span></a>的 <a class="reference internal" href="../reference/datamodel.html#codeobject.co_lnotab" title="codeobject.co_lnotab"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_lnotab</span></code></a> 屬性已棄用，並將在 3.12 中刪除。需要從偏移量轉換為列號的程式碼應使用新的 <a class="reference internal" href="../reference/datamodel.html#codeobject.co_lines" title="codeobject.co_lines"><code class="xref py py-meth docutils literal notranslate"><span class="pre">co_lines()</span></code></a> 方法。</p>
 </section>
 <section id="pep-634-structural-pattern-matching">
 <h3>PEP 634：結構模式匹配<a class="headerlink" href="#pep-634-structural-pattern-matching" title="Link to this heading">¶</a></h3>
@@ -1064,7 +1069,7 @@ expected line number.</p>
 </section>
 <section id="pyclbr">
 <h3>pyclbr<a class="headerlink" href="#pyclbr" title="Link to this heading">¶</a></h3>
-<p>將 <code class="docutils literal notranslate"><span class="pre">end_lineno</span></code> 屬性新增到 <code class="xref py py-func docutils literal notranslate"><span class="pre">pyclbr.readline()</span></code> 和 <code class="xref py py-func docutils literal notranslate"><span class="pre">pyclbr.readline_ex()</span></code> 回傳的樹中的 <code class="docutils literal notranslate"><span class="pre">Function</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Class</span></code> 物件。它與現有的（開始） <code class="docutils literal notranslate"><span class="pre">lineno</span></code> 匹配。（由 Aviral Srivastava 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=38307">bpo-38307</a> 中貢獻。）</p>
+<p>將 <code class="docutils literal notranslate"><span class="pre">end_lineno</span></code> 屬性新增到 <a class="reference internal" href="../library/pyclbr.html#pyclbr.readmodule" title="pyclbr.readmodule"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyclbr.readmodule()</span></code></a> 和 <a class="reference internal" href="../library/pyclbr.html#pyclbr.readmodule_ex" title="pyclbr.readmodule_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyclbr.readmodule_ex()</span></code></a> 回傳的樹中的 <code class="docutils literal notranslate"><span class="pre">Function</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Class</span></code> 物件。它與現有的（開始） <code class="docutils literal notranslate"><span class="pre">lineno</span></code> 匹配。（由 Aviral Srivastava 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=38307">bpo-38307</a> 中貢獻。）</p>
 </section>
 <section id="shelve">
 <h3>shelve<a class="headerlink" href="#shelve" title="Link to this heading">¶</a></h3>
@@ -1152,6 +1157,12 @@ expected line number.</p>
 <section id="urllib-parse">
 <h3>urllib.parse<a class="headerlink" href="#urllib-parse" title="Link to this heading">¶</a></h3>
 <p>Python 3.10 之前的 Python 版本允許在 <a class="reference internal" href="../library/urllib.parse.html#urllib.parse.parse_qs" title="urllib.parse.parse_qs"><code class="xref py py-func docutils literal notranslate"><span class="pre">urllib.parse.parse_qs()</span></code></a> 和 <a class="reference internal" href="../library/urllib.parse.html#urllib.parse.parse_qsl" title="urllib.parse.parse_qsl"><code class="xref py py-func docutils literal notranslate"><span class="pre">urllib.parse.parse_qsl()</span></code></a> 中使用 <code class="docutils literal notranslate"><span class="pre">;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> 作為查詢參數 (query parameter) 的分隔符號。出於安全考慮，並且為了符合更新的 W3C 建議，已將其更改為僅允許單個分隔符號鍵，預設為 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>。此更改還會影響 <a class="reference internal" href="../library/cgi.html#cgi.parse" title="cgi.parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">cgi.parse()</span></code></a> 和 <a class="reference internal" href="../library/cgi.html#cgi.parse_multipart" title="cgi.parse_multipart"><code class="xref py py-func docutils literal notranslate"><span class="pre">cgi.parse_multipart()</span></code></a>，因為它們在內部使用受影響的函式。有關更多詳細資訊，請參閱各自的文件。（由 Adam Goldschmidt、Senthil Kumaran 和 Ken Jin 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42967">bpo-42967</a> 中貢獻。）</p>
+<p>The presence of newline or tab characters in parts of a URL allows for some
+forms of attacks. Following the WHATWG specification that updates <span class="target" id="index-32"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>,
+ASCII newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\r</span></code> and tab <code class="docutils literal notranslate"><span class="pre">\t</span></code> characters are stripped from the
+URL by the parser in <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.parse</span></code></a> preventing such attacks. The removal
+characters are controlled by a new module level variable
+<code class="docutils literal notranslate"><span class="pre">urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE</span></code>. (See <a class="reference external" href="https://github.com/python/cpython/issues/88048">gh-88048</a>)</p>
 </section>
 <section id="xml">
 <h3>xml<a class="headerlink" href="#xml" title="Link to this heading">¶</a></h3>
@@ -1188,7 +1199,7 @@ expected line number.</p>
 <li><p><a class="reference internal" href="../library/importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a> 的各種 <code class="docutils literal notranslate"><span class="pre">load_module()</span></code> 方法自 Python 3.6 起已被記錄為已棄用，但現在也會觸發 <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>。請改用 <a class="reference internal" href="../library/importlib.html#importlib.abc.Loader.exec_module" title="importlib.abc.Loader.exec_module"><code class="xref py py-meth docutils literal notranslate"><span class="pre">exec_module()</span></code></a>。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=26131">bpo-26131</a> 中貢獻。）</p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">zimport.zipimporter.load_module()</span></code> 已被棄用，請用 <a class="reference internal" href="../library/zipimport.html#zipimport.zipimporter.exec_module" title="zipimport.zipimporter.exec_module"><code class="xref py py-meth docutils literal notranslate"><span class="pre">exec_module()</span></code></a>。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=26131">bpo-26131</a> 中貢獻。）</p></li>
 <li><p>引入系統使用 <a class="reference internal" href="../library/importlib.html#importlib.abc.Loader.load_module" title="importlib.abc.Loader.load_module"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_module()</span></code></a> 現在會觸發 <a class="reference internal" href="../library/exceptions.html#ImportWarning" title="ImportWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportWarning</span></code></a>，因為 <a class="reference internal" href="../library/importlib.html#importlib.abc.Loader.exec_module" title="importlib.abc.Loader.exec_module"><code class="xref py py-meth docutils literal notranslate"><span class="pre">exec_module()</span></code></a> 是當前首選。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=26131">bpo-26131</a> 中貢獻。）</p></li>
-<li><p>引入系統使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_module()</span></code> 和 :!meth:<cite>importlib.abc.PathEntryFinder.find_module</cite> 現在會觸發 <a class="reference internal" href="../library/exceptions.html#ImportWarning" title="ImportWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportWarning</span></code></a>，因為 <a class="reference internal" href="../library/importlib.html#importlib.abc.MetaPathFinder.find_spec" title="importlib.abc.MetaPathFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_spec()</span></code></a> 和 <a class="reference internal" href="../library/importlib.html#importlib.abc.PathEntryFinder.find_spec" title="importlib.abc.PathEntryFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_spec()</span></code></a> 分別是替代方案的首選。你可以使用 <a class="reference internal" href="../library/importlib.html#importlib.util.spec_from_loader" title="importlib.util.spec_from_loader"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.spec_from_loader()</span></code></a> 來幫助移植。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42134">bpo-42134</a> 中貢獻。）</p></li>
+<li><p>引入系統使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_module()</span></code> 和 <code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_module()</span></code> 現在會觸發 <a class="reference internal" href="../library/exceptions.html#ImportWarning" title="ImportWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportWarning</span></code></a>，因為 <a class="reference internal" href="../library/importlib.html#importlib.abc.MetaPathFinder.find_spec" title="importlib.abc.MetaPathFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_spec()</span></code></a> 和 <a class="reference internal" href="../library/importlib.html#importlib.abc.PathEntryFinder.find_spec" title="importlib.abc.PathEntryFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_spec()</span></code></a> 分別是替代方案的首選。你可以使用 <a class="reference internal" href="../library/importlib.html#importlib.util.spec_from_loader" title="importlib.util.spec_from_loader"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.spec_from_loader()</span></code></a> 來幫助移植。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42134">bpo-42134</a> 中貢獻。）</p></li>
 <li><p>引入系統使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_loader()</span></code> 現在會觸發 <a class="reference internal" href="../library/exceptions.html#ImportWarning" title="ImportWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportWarning</span></code></a>，因為 <a class="reference internal" href="../library/importlib.html#importlib.abc.PathEntryFinder.find_spec" title="importlib.abc.PathEntryFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_spec()</span></code></a> 是首選。你可以使用 <a class="reference internal" href="../library/importlib.html#importlib.util.spec_from_loader" title="importlib.util.spec_from_loader"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.spec_from_loader()</span></code></a> 來幫助移植。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43672">bpo-43672</a> 中貢獻。）</p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_module()</span></code> 的各種實作（<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.BuiltinImporter.find_module()</span></code>、<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.FrozenImporter.find_module()</span></code>、<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.WindowsRegistryFinder.find_module()</span></code>、<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.PathFinder.find_module()</span></code>、<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder.find_module()</span></code> )、<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_module()</span></code> (<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.FileFinder.find_module()</span></code> ) 和 <code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder.find_loader()</span></code> (<code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.machinery.FileFinder.find_loader()</span></code> ) 現在引發 <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> 並計劃在 Python 3.12 中刪除（之前它們已在 Python 3.4 中被記錄為已棄用）。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42135">bpo-42135</a> 中貢獻。）</p></li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.Finder</span></code> 已被棄用（包括其唯一方法 <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code>）。<a class="reference internal" href="../library/importlib.html#importlib.abc.MetaPathFinder" title="importlib.abc.MetaPathFinder"><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder</span></code></a> 和 <a class="reference internal" href="../library/importlib.html#importlib.abc.PathEntryFinder" title="importlib.abc.PathEntryFinder"><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.PathEntryFinder</span></code></a> 都不再從該類別繼承。使用者應該根據需求來選擇其一以繼承。（由 Brett Cannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42135">bpo-42135</a> 中貢獻。）</p></li>
@@ -1223,7 +1234,7 @@ expected line number.</p>
 <li><p>NPN 功能如 <a class="reference internal" href="../library/ssl.html#ssl.SSLSocket.selected_npn_protocol" title="ssl.SSLSocket.selected_npn_protocol"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssl.SSLSocket.selected_npn_protocol()</span></code></a> 和 <a class="reference internal" href="../library/ssl.html#ssl.SSLContext.set_npn_protocols" title="ssl.SSLContext.set_npn_protocols"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssl.SSLContext.set_npn_protocols()</span></code></a> 已被 ALPN 取代。</p></li>
 </ul>
 </li>
-<li><p>執行緒除錯（<span class="target" id="index-114"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONTHREADDEBUG</span></code> 環境變數）在 Python 3.10 中已棄用，並將在 Python 3.12 中刪除。此功能需要一個 <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">Python 的除錯用建置版本</span></a>。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=44584">bpo-44584</a> 中貢獻。）</p></li>
+<li><p>執行緒除錯（<code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONTHREADDEBUG</span></code> 環境變數）在 Python 3.10 中已棄用，並將在 Python 3.12 中刪除。此功能需要一個 <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">Python 的除錯用建置版本</span></a>。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=44584">bpo-44584</a> 中貢獻。）</p></li>
 <li><p>從 <code class="docutils literal notranslate"><span class="pre">typing.io</span></code> 和 <code class="docutils literal notranslate"><span class="pre">typing.re</span></code> 子模組引入現在將發出 <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>。這些子模組將在 Python 的未來版本中刪除。屬於這些子模組的任何內容都應該直接從 <a class="reference internal" href="../library/typing.html#module-typing" title="typing: Support for type hints (see :pep:`484`)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code></a> 引入。（由 Sebastian Rittau 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=38291">bpo-38291</a> 中貢獻。）</p></li>
 </ul>
 </section>
@@ -1301,12 +1312,7 @@ expected line number.</p>
 </pre></div>
 </div>
 </li>
-<li><p>For <code class="docutils literal notranslate"><span class="pre">FrameObject</span></code> objects, the <a class="reference internal" href="../reference/datamodel.html#frame.f_lasti" title="frame.f_lasti"><code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lasti</span></code></a> member now represents a wordcode
-offset instead of a simple offset into the bytecode string. This means that this
-number needs to be multiplied by 2 to be used with APIs that expect a byte offset
-instead (like <a class="reference internal" href="../c-api/code.html#c.PyCode_Addr2Line" title="PyCode_Addr2Line"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyCode_Addr2Line()</span></code></a> for example). Notice as well that the
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lasti</span></code> member of <code class="docutils literal notranslate"><span class="pre">FrameObject</span></code> objects is not considered stable: please
-use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNumber" title="PyFrame_GetLineNumber"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyFrame_GetLineNumber()</span></code></a> instead.</p></li>
+<li><p>對於 <code class="docutils literal notranslate"><span class="pre">FrameObject</span></code> 物件，<a class="reference internal" href="../reference/datamodel.html#frame.f_lasti" title="frame.f_lasti"><code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lasti</span></code></a> 成員現在表示了字碼偏移量 (wordcode offset)，而不是位元組碼字串的簡單偏移量。這意味著這個數字需要乘以 2 才能與需要位元組偏移量的 API 一起使用（例如 <a class="reference internal" href="../c-api/code.html#c.PyCode_Addr2Line" title="PyCode_Addr2Line"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyCode_Addr2Line()</span></code></a>）。還要注意，<code class="docutils literal notranslate"><span class="pre">FrameObject</span></code> 物件的 <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_lasti</span></code> 成員不被認為是穩定的：請改用 <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNumber" title="PyFrame_GetLineNumber"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyFrame_GetLineNumber()</span></code></a>。</p></li>
 </ul>
 </li>
 </ul>
@@ -1321,7 +1327,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <section id="build-changes">
 <h2>建置變更<a class="headerlink" href="#build-changes" title="Link to this heading">¶</a></h2>
 <ul>
-<li><p><span class="target" id="index-115"></span><a class="pep reference external" href="https://peps.python.org/pep-0644/"><strong>PEP 644</strong></a>：Python 現在需要 OpenSSL 1.1.1 或更高版本。不再支援 OpenSSL 1.0.2。（由 Christian Heimes 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43669">bpo-43669</a> 中貢獻。）</p></li>
+<li><p><span class="target" id="index-114"></span><a class="pep reference external" href="https://peps.python.org/pep-0644/"><strong>PEP 644</strong></a>：Python 現在需要 OpenSSL 1.1.1 或更高版本。不再支援 OpenSSL 1.0.2。（由 Christian Heimes 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43669">bpo-43669</a> 中貢獻。）</p></li>
 <li><p>現在需要 C99 函式 <code class="xref c c-func docutils literal notranslate"><span class="pre">snprintf()</span></code> 和 <code class="xref c c-func docutils literal notranslate"><span class="pre">vsnprintf()</span></code> 來建置 Python。 （由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=36020">bpo-36020</a> 中貢獻。）</p></li>
 <li><p><a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> 需要 SQLite 3.7.15 或更新版本。（由 Sergey Fedoseev 和 Erlend E. Aasland 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=40744">bpo-40744</a> 和 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=40810">bpo-40810</a> 中貢獻。）</p></li>
 <li><p><a class="reference internal" href="../library/atexit.html#module-atexit" title="atexit: Register and execute cleanup functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">atexit</span></code></a> 模組現在必須都被建置為內建模組。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42639">bpo-42639</a> 中貢獻。）</p></li>
@@ -1342,7 +1348,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <section id="pep-652-maintaining-the-stable-abi">
 <h3>PEP 652：維護穩定 ABI<a class="headerlink" href="#pep-652-maintaining-the-stable-abi" title="Link to this heading">¶</a></h3>
 <p>用於擴充模組或嵌入 Python 的穩定 ABI（應用程式二進位介面）現已明確定義。 <a class="reference internal" href="../c-api/stable.html#stable"><span class="std std-ref">C API 穩定性</span></a> 描述了 C API 和 ABI 穩定性保證以及使用穩定 ABI 的最佳實踐。</p>
-<p>（由 Petr Viktorin 在 <span class="target" id="index-116"></span><a class="pep reference external" href="https://peps.python.org/pep-0652/"><strong>PEP 652</strong></a> 和 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43795">bpo-43795</a> 中貢獻。）</p>
+<p>（由 Petr Viktorin 在 <span class="target" id="index-115"></span><a class="pep reference external" href="https://peps.python.org/pep-0652/"><strong>PEP 652</strong></a> 和 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43795">bpo-43795</a> 中貢獻。）</p>
 </section>
 <section id="id1">
 <h3>新功能<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
@@ -1372,7 +1378,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <section id="id2">
 <h3>移植到 Python 3.10<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
 <ul>
-<li><p>現在必須定義 <code class="docutils literal notranslate"><span class="pre">PY_SSIZE_T_CLEAN</span></code> 巨集以使用 <a class="reference internal" href="../c-api/arg.html#c.PyArg_ParseTuple" title="PyArg_ParseTuple"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_ParseTuple()</span></code></a> 和 <a class="reference internal" href="../c-api/arg.html#c.Py_BuildValue" title="Py_BuildValue"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_BuildValue()</span></code></a> 格式，這些格式使用 <code class="docutils literal notranslate"><span class="pre">#</span></code>: <code class="docutils literal notranslate"><span class="pre">es#</span></code>, <code class="docutils literal notranslate"><span class="pre">et#</span></code>、<code class="docutils literal notranslate"><span class="pre">s#</span></code>、<code class="docutils literal notranslate"><span class="pre">u#</span></code>、<code class="docutils literal notranslate"><span class="pre">y#</span></code>、<code class="docutils literal notranslate"><span class="pre">z#</span></code>、<code class="docutils literal notranslate"><span class="pre">U#</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Z#</span></code>。請參閱 <a class="reference internal" href="../c-api/arg.html#arg-parsing"><span class="std std-ref">剖析引數與建置數值</span></a> 和 <span class="target" id="index-117"></span><a class="pep reference external" href="https://peps.python.org/pep-0353/"><strong>PEP 353</strong></a>。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=40943">bpo-40943</a> 中貢獻。）</p></li>
+<li><p>現在必須定義 <code class="docutils literal notranslate"><span class="pre">PY_SSIZE_T_CLEAN</span></code> 巨集以使用 <a class="reference internal" href="../c-api/arg.html#c.PyArg_ParseTuple" title="PyArg_ParseTuple"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_ParseTuple()</span></code></a> 和 <a class="reference internal" href="../c-api/arg.html#c.Py_BuildValue" title="Py_BuildValue"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_BuildValue()</span></code></a> 格式，這些格式使用 <code class="docutils literal notranslate"><span class="pre">#</span></code>: <code class="docutils literal notranslate"><span class="pre">es#</span></code>, <code class="docutils literal notranslate"><span class="pre">et#</span></code>、<code class="docutils literal notranslate"><span class="pre">s#</span></code>、<code class="docutils literal notranslate"><span class="pre">u#</span></code>、<code class="docutils literal notranslate"><span class="pre">y#</span></code>、<code class="docutils literal notranslate"><span class="pre">z#</span></code>、<code class="docutils literal notranslate"><span class="pre">U#</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Z#</span></code>。請參閱 <a class="reference internal" href="../c-api/arg.html#arg-parsing"><span class="std std-ref">剖析引數與建置數值</span></a> 和 <span class="target" id="index-116"></span><a class="pep reference external" href="https://peps.python.org/pep-0353/"><strong>PEP 353</strong></a>。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=40943">bpo-40943</a> 中貢獻。）</p></li>
 <li><p>由於 <a class="reference internal" href="../c-api/refcounting.html#c.Py_REFCNT" title="Py_REFCNT"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_REFCNT()</span></code></a> 更改為行內靜態函式 (inline static function)，因此 <code class="docutils literal notranslate"><span class="pre">Py_REFCNT(obj)</span> <span class="pre">=</span> <span class="pre">new_refcnt</span></code> 必須替換為 <code class="docutils literal notranslate"><span class="pre">Py_SET_REFCNT(obj,</span> <span class="pre">new_refcnt)</span></code> ：參見 <a class="reference internal" href="../c-api/refcounting.html#c.Py_SET_REFCNT" title="Py_SET_REFCNT"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SET_REFCNT()</span></code></a> （自 Python 3.9 起可用）。為了向後相容，可以使用該巨集：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#if PY_VERSION_HEX &lt; 0x030900A4</span>
 <span class="c1">#  define Py_SET_REFCNT(obj, refcnt) ((Py_REFCNT(obj) = (refcnt)), (void)0)</span>
@@ -1410,13 +1416,13 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <li><p><code class="docutils literal notranslate"><span class="pre">Py_UNICODE_strchr</span></code>、<code class="docutils literal notranslate"><span class="pre">Py_UNICODE_strrchr</span></code>：使用 <a class="reference internal" href="../c-api/unicode.html#c.PyUnicode_FindChar" title="PyUnicode_FindChar"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnicode_FindChar()</span></code></a></p></li>
 </ul>
 </li>
-<li><p>刪除了 <code class="docutils literal notranslate"><span class="pre">PyUnicode_GetMax()</span></code>。請改用新的 (<span class="target" id="index-118"></span><a class="pep reference external" href="https://peps.python.org/pep-0393/"><strong>PEP 393</strong></a>) API。（由 Inada Naoki 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41103">bpo-41103</a> 中貢獻。）</p></li>
+<li><p>刪除了 <code class="docutils literal notranslate"><span class="pre">PyUnicode_GetMax()</span></code>。請改用新的 (<span class="target" id="index-117"></span><a class="pep reference external" href="https://peps.python.org/pep-0393/"><strong>PEP 393</strong></a>) API。（由 Inada Naoki 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41103">bpo-41103</a> 中貢獻。）</p></li>
 <li><p>刪除了 <code class="docutils literal notranslate"><span class="pre">PyLong_FromUnicode()</span></code>。請改用 <a class="reference internal" href="../c-api/long.html#c.PyLong_FromUnicodeObject" title="PyLong_FromUnicodeObject"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyLong_FromUnicodeObject()</span></code></a>。（由 Inada Naoki 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41103">bpo-41103</a> 中貢獻。）</p></li>
 <li><p>刪除了 <code class="docutils literal notranslate"><span class="pre">PyUnicode_AsUnicodeCopy()</span></code>。請改用 <a class="reference internal" href="../c-api/unicode.html#c.PyUnicode_AsUCS4Copy" title="PyUnicode_AsUCS4Copy"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnicode_AsUCS4Copy()</span></code></a> 或 <a class="reference internal" href="../c-api/unicode.html#c.PyUnicode_AsWideCharString" title="PyUnicode_AsWideCharString"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnicode_AsWideCharString()</span></code></a> （由 Inada Naoki 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41103">bpo-41103</a> 中貢獻。）</p></li>
 <li><p>刪除了 <code class="docutils literal notranslate"><span class="pre">_Py_CheckRecursionLimit</span></code> 變數：它已被 <a class="reference internal" href="../c-api/init.html#c.PyInterpreterState" title="PyInterpreterState"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyInterpreterState</span></code></a> 結構的 <code class="docutils literal notranslate"><span class="pre">ceval.recursion_limit</span></code> 取代。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41834">bpo-41834</a> 中貢獻。）</p></li>
 <li><p>刪除了未被說明文件記錄的巨集 <code class="docutils literal notranslate"><span class="pre">Py_ALLOW_RECURSION</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Py_END_ALLOW_RECURSION</span></code> 以及 <a class="reference internal" href="../c-api/init.html#c.PyInterpreterState" title="PyInterpreterState"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyInterpreterState</span></code></a> 結構的 <code class="docutils literal notranslate"><span class="pre">recursion_ritic</span></code> 欄位。（由 Serhiy Storchaka 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41936">bpo-41936</a> 中貢獻。）</p></li>
 <li><p>刪除了未被說明文件記錄的 <code class="docutils literal notranslate"><span class="pre">PyOS_InitInterrupts()</span></code> 函式。初始化 Python 已經隱式安裝信號處理程式：請參閱 <a class="reference internal" href="../c-api/init_config.html#c.PyConfig.install_signal_handlers" title="PyConfig.install_signal_handlers"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyConfig.install_signal_handlers</span></code></a>。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=41713">bpo-41713</a> 中貢獻。）</p></li>
-<li><p>刪除 <code class="docutils literal notranslate"><span class="pre">PyAST_Validate()</span></code> 函式。不再可能使用公開 C API 來建置 AST 物件（<code class="docutils literal notranslate"><span class="pre">mod_ty</span></code> 類型）。該函式已被排除在受限 C API 之外 (<span class="target" id="index-119"></span><a class="pep reference external" href="https://peps.python.org/pep-0384/"><strong>PEP 384</strong></a>)。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43244">bpo-43244</a> 中貢獻。）</p></li>
+<li><p>刪除 <code class="docutils literal notranslate"><span class="pre">PyAST_Validate()</span></code> 函式。不再可能使用公開 C API 來建置 AST 物件（<code class="docutils literal notranslate"><span class="pre">mod_ty</span></code> 類型）。該函式已被排除在受限 C API 之外 (<span class="target" id="index-118"></span><a class="pep reference external" href="https://peps.python.org/pep-0384/"><strong>PEP 384</strong></a>)。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43244">bpo-43244</a> 中貢獻。）</p></li>
 <li><p>刪除 <code class="docutils literal notranslate"><span class="pre">symtable.h</span></code> 標頭檔和未被說明文件記錄的函式：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PyST_GetScope()</span></code></p></li>
@@ -1456,6 +1462,43 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <p>這些函式沒有文件記錄、被排除在受限 C API 之外，並僅被編譯器於內部使用。（由 Victor Stinner 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43244">bpo-43244</a> 中貢獻。）</p>
 </li>
 <li><p>為了 Python 最佳化，已刪除 <code class="docutils literal notranslate"><span class="pre">PyThreadState.use_tracing</span></code> 成員。（由 Mark Shannon 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=43760">bpo-43760</a> 中貢獻。）</p></li>
+</ul>
+</section>
+</section>
+<section id="notable-security-feature-in-3-10-7">
+<h2>Notable security feature in 3.10.7<a class="headerlink" href="#notable-security-feature-in-3-10-7" title="Link to this heading">¶</a></h2>
+<p>Converting between <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> in bases other than 2
+(binary), 4, 8 (octal), 16 (hexadecimal), or 32 such as base 10 (decimal)
+now raises a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the number of digits in string form is
+above a limit to avoid potential denial of service attacks due to the
+algorithmic complexity. This is a mitigation for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10735">CVE-2020-10735</a>.
+This limit can be configured or disabled by environment variable, command
+line flag, or <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> APIs. See the <a class="reference internal" href="../library/stdtypes.html#int-max-str-digits"><span class="std std-ref">integer string conversion
+length limitation</span></a> documentation.  The default limit
+is 4300 digits in string form.</p>
+</section>
+<section id="notable-security-feature-in-3-10-8">
+<h2>Notable security feature in 3.10.8<a class="headerlink" href="#notable-security-feature-in-3-10-8" title="Link to this heading">¶</a></h2>
+<p>The deprecated <code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> module now refuses to inject unsafe text
+(filenames, MIME types, parameters) into shell commands. Instead of using such
+text, it will warn and act as if a match was not found (or for test commands,
+as if the test failed).
+(Contributed by Petr Viktorin in <a class="reference external" href="https://github.com/python/cpython/issues/98966">gh-98966</a>.)</p>
+</section>
+<section id="notable-changes-in-3-10-12">
+<h2>Notable changes in 3.10.12<a class="headerlink" href="#notable-changes-in-3-10-12" title="Link to this heading">¶</a></h2>
+<section id="tarfile">
+<h3>tarfile<a class="headerlink" href="#tarfile" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The extraction methods in <a class="reference internal" href="../library/tarfile.html#module-tarfile" title="tarfile: Read and write tar-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tarfile</span></code></a>, and <a class="reference internal" href="../library/shutil.html#shutil.unpack_archive" title="shutil.unpack_archive"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.unpack_archive()</span></code></a>,
+have a new a <em>filter</em> argument that allows limiting tar features than may be
+surprising or dangerous, such as creating files outside the destination
+directory.
+See <a class="reference internal" href="../library/tarfile.html#tarfile-extraction-filter"><span class="std std-ref">Extraction filters</span></a> for details.
+In Python 3.12, use without the <em>filter</em> argument will show a
+<a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.
+In Python 3.14, the default will switch to <code class="docutils literal notranslate"><span class="pre">'data'</span></code>.
+(Contributed by Petr Viktorin in <span class="target" id="index-40"></span><a class="pep reference external" href="https://peps.python.org/pep-0706/"><strong>PEP 706</strong></a>.)</p></li>
 </ul>
 </section>
 </section>
@@ -1589,6 +1632,12 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <li><a class="reference internal" href="#id4">已刪除</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-10-7">Notable security feature in 3.10.7</a></li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-10-8">Notable security feature in 3.10.8</a></li>
+<li><a class="reference internal" href="#notable-changes-in-3-10-12">Notable changes in 3.10.12</a><ul>
+<li><a class="reference internal" href="#tarfile">tarfile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1639,7 +1688,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
           <a href="3.11.html" title="Python 3.11 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1649,7 +1698,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -1678,13 +1727,14 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1692,7 +1742,7 @@ use <a class="reference internal" href="../c-api/frame.html#c.PyFrame_GetLineNum
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

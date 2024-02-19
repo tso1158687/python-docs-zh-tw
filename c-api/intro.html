@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>簡介 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡介 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -147,7 +147,7 @@
           <a href="index.html" title="Python/C API 參考手冊"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -157,7 +157,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API 參考手冊</a> &#187;</li>
@@ -265,7 +265,8 @@ item defined in the module file. Example:</p>
 <dd><p>要求編譯器總是嵌入靜態行內函式 (static inline function)，編譯器可以忽略它並決定不嵌入該函式。</p>
 <p>在禁用函式嵌入的除錯模式下建置 Python 時，它可用於嵌入有性能要求的靜態行內函式。例如，MSC 在除錯模式下建置時禁用函式嵌入。</p>
 <p>盲目地使用 Py_ALWAYS_INLINE 標記靜態行內函式可能會導致更差的性能（例如程式碼大小增加）。在成本/收益分析方面，編譯器通常比開發人員更聰明。</p>
-<p>如果 Python 是<a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">在除錯模式下建置</span></a>（如果 <code class="docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> 巨集有被定義），<a class="reference internal" href="#c.Py_ALWAYS_INLINE" title="Py_ALWAYS_INLINE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_ALWAYS_INLINE</span></code></a> 巨集就什麼都不會做。</p>
+<p>If Python is <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">built in debug mode</span></a> (if the <a class="reference internal" href="#c.Py_DEBUG" title="Py_DEBUG"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code></a>
+macro is defined), the <a class="reference internal" href="#c.Py_ALWAYS_INLINE" title="Py_ALWAYS_INLINE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_ALWAYS_INLINE</span></code></a> macro does nothing.</p>
 <p>它必須在函式回傳型別之前被指定。用法：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">Py_ALWAYS_INLINE</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
@@ -523,7 +524,7 @@ item defined in the module file. Example:</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.Py_ssize_t">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_ssize_t</span></span></span><a class="headerlink" href="#c.Py_ssize_t" title="Link to this definition">¶</a><br /></dt>
-<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>一個帶符號的整數型別，使得 <code class="docutils literal notranslate"><span class="pre">sizeof(Py_ssize_t)</span> <span class="pre">==</span> <span class="pre">sizeof(size_t)</span></code>。 C99 沒有直接定義這樣的東西（size_t 是無符號整數型別）。有關詳細資訊，請參閱 <span class="target" id="index-40"></span><a class="pep reference external" href="https://peps.python.org/pep-0353/"><strong>PEP 353</strong></a>。 <code class="docutils literal notranslate"><span class="pre">PY_SSIZE_T_MAX</span></code> 是 <a class="reference internal" href="#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a> 型別的最大正值。</p>
+<dd><em class="stableabi"> 為 <a class="reference internal" href="stable.html#stable"><span class="std std-ref">穩定 ABI 的一部分</span></a>.</em><p>一個帶符號的整數型別，使得 <code class="docutils literal notranslate"><span class="pre">sizeof(Py_ssize_t)</span> <span class="pre">==</span> <span class="pre">sizeof(size_t)</span></code>。 C99 沒有直接定義這樣的東西（size_t 是無符號整數型別）。有關詳細資訊，請參閱 <span class="target" id="index-40"></span><a class="pep reference external" href="https://peps.python.org/pep-0353/"><strong>PEP 353</strong></a>。 <code class="docutils literal notranslate"><span class="pre">PY_SSIZE_T_MAX</span></code> 是 <a class="reference internal" href="#c.Py_ssize_t" title="Py_ssize_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_ssize_t</span></code></a> 型別的最大正值。</p>
 </dd></dl>
 
 </section>
@@ -606,7 +607,18 @@ item defined in the module file. Example:</p>
 <span id="api-debugging"></span><h2>除錯建置<a class="headerlink" href="#debugging-builds" title="Link to this heading">¶</a></h2>
 <p>Python 可以在建置時使用多個巨集來啟用對直譯器和擴充模組的額外檢查，這些檢查往往會在執行環境 (runtime) 增加大量開銷 (overhead)，因此預設情況下不啟用它們。</p>
 <p>Python 原始碼發佈版本中的 <code class="file docutils literal notranslate"><span class="pre">Misc/SpecialBuilds.txt</span></code> 檔案有一份包含多種除錯構置的完整列表，為支援追蹤參照計數、為記憶體分配器除錯或對主直譯器迴圈進行低階分析的建置。本節的其餘部分將僅描述最常用的建置。</p>
-<p>使用定義的 <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> 巨集編譯直譯器會生成 <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">Python 的除錯建置</span></a>。 <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> 在 Unix 建置中要透過在 <code class="file docutils literal notranslate"><span class="pre">./configure</span></code> 命令中加入 <a class="reference internal" href="../using/configure.html#cmdoption-with-pydebug"><code class="xref std std-option docutils literal notranslate"><span class="pre">--with-pydebug</span></code></a> 來啟用。非 Python 限定的 <code class="xref c c-macro docutils literal notranslate"><span class="pre">_DEBUG</span></code> 巨集的存在也暗示了這一點。當 <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> 在 Unix 建置中啟用時，編譯器最佳化會被禁用。</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.Py_DEBUG">
+<span class="sig-name descname"><span class="n"><span class="pre">Py_DEBUG</span></span></span><a class="headerlink" href="#c.Py_DEBUG" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Compiling the interpreter with the <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> macro defined produces
+what is generally meant by <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">a debug build of Python</span></a>.
+<code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> is enabled in the Unix build by adding
+<a class="reference internal" href="../using/configure.html#cmdoption-with-pydebug"><code class="xref std std-option docutils literal notranslate"><span class="pre">--with-pydebug</span></code></a> to the <code class="file docutils literal notranslate"><span class="pre">./configure</span></code> command.
+It is also implied by the presence of the
+not-Python-specific <code class="xref c c-macro docutils literal notranslate"><span class="pre">_DEBUG</span></code> macro.  When <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> is enabled
+in the Unix build, compiler optimization is disabled.</p>
 <p>除了下面描述的參照計數除錯之外，還會執行額外的檢查，請參閱 <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">Python 除錯建置</span></a>。</p>
 <p>定義 <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_TRACE_REFS</span></code> 來啟用參照追蹤（參見<a class="reference internal" href="../using/configure.html#cmdoption-with-trace-refs"><code class="xref std std-option docutils literal notranslate"><span class="pre">調用</span> <span class="pre">--with-trace-refs</span> <span class="pre">選項</span></code></a>）。當有定義時，透過向每個 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyObject</span></code></a> 新增兩個額外欄位來維護有效物件的循環雙向鍊表 (circular doubly linked list)。全體分配也有被追蹤。退出時將印出所有現行參照。（在交互模式下，這發生在直譯器運行的每個陳述句之後。）</p>
 <p>有關更多詳細資訊，請參閱 Python 原始碼發布版中的 <code class="file docutils literal notranslate"><span class="pre">Misc/SpecialBuilds.txt</span></code>。</p>
@@ -688,7 +700,7 @@ item defined in the module file. Example:</p>
           <a href="index.html" title="Python/C API 參考手冊"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -698,7 +710,7 @@ item defined in the module file. Example:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -727,13 +739,14 @@ item defined in the module file. Example:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -741,7 +754,7 @@ item defined in the module file. Example:</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

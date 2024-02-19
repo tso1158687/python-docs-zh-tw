@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>os --- 各種作業系統介面 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os --- 各種作業系統介面 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,487 +86,23 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- 各種作業系統介面</a><ul>
-<li><a class="reference internal" href="#os.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
-<li><a class="reference internal" href="#os.name"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
 <li><a class="reference internal" href="#file-names-command-line-arguments-and-environment-variables">File Names, Command Line Arguments, and Environment Variables</a></li>
 <li><a class="reference internal" href="#python-utf-8-mode">Python UTF-8 Mode</a></li>
-<li><a class="reference internal" href="#process-parameters">Process Parameters</a><ul>
-<li><a class="reference internal" href="#os.ctermid"><code class="docutils literal notranslate"><span class="pre">ctermid()</span></code></a></li>
-<li><a class="reference internal" href="#os.environ"><code class="docutils literal notranslate"><span class="pre">environ</span></code></a></li>
-<li><a class="reference internal" href="#os.environb"><code class="docutils literal notranslate"><span class="pre">environb</span></code></a></li>
-<li><a class="reference internal" href="#os.fsencode"><code class="docutils literal notranslate"><span class="pre">fsencode()</span></code></a></li>
-<li><a class="reference internal" href="#os.fsdecode"><code class="docutils literal notranslate"><span class="pre">fsdecode()</span></code></a></li>
-<li><a class="reference internal" href="#os.fspath"><code class="docutils literal notranslate"><span class="pre">fspath()</span></code></a></li>
-<li><a class="reference internal" href="#os.PathLike"><code class="docutils literal notranslate"><span class="pre">PathLike</span></code></a><ul>
-<li><a class="reference internal" href="#os.PathLike.__fspath__"><code class="docutils literal notranslate"><span class="pre">PathLike.__fspath__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.getenv"><code class="docutils literal notranslate"><span class="pre">getenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.getenvb"><code class="docutils literal notranslate"><span class="pre">getenvb()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_exec_path"><code class="docutils literal notranslate"><span class="pre">get_exec_path()</span></code></a></li>
-<li><a class="reference internal" href="#os.getegid"><code class="docutils literal notranslate"><span class="pre">getegid()</span></code></a></li>
-<li><a class="reference internal" href="#os.geteuid"><code class="docutils literal notranslate"><span class="pre">geteuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgid"><code class="docutils literal notranslate"><span class="pre">getgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgrouplist"><code class="docutils literal notranslate"><span class="pre">getgrouplist()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgroups"><code class="docutils literal notranslate"><span class="pre">getgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.getlogin"><code class="docutils literal notranslate"><span class="pre">getlogin()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpgid"><code class="docutils literal notranslate"><span class="pre">getpgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpgrp"><code class="docutils literal notranslate"><span class="pre">getpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpid"><code class="docutils literal notranslate"><span class="pre">getpid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getppid"><code class="docutils literal notranslate"><span class="pre">getppid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpriority"><code class="docutils literal notranslate"><span class="pre">getpriority()</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_PROCESS"><code class="docutils literal notranslate"><span class="pre">PRIO_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_PGRP"><code class="docutils literal notranslate"><span class="pre">PRIO_PGRP</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_USER"><code class="docutils literal notranslate"><span class="pre">PRIO_USER</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_THREAD"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_THREAD</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_PROCESS"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_BG"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_BG</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_NONUI"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_NONUI</span></code></a></li>
-<li><a class="reference internal" href="#os.getresuid"><code class="docutils literal notranslate"><span class="pre">getresuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getresgid"><code class="docutils literal notranslate"><span class="pre">getresgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getuid"><code class="docutils literal notranslate"><span class="pre">getuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.initgroups"><code class="docutils literal notranslate"><span class="pre">initgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.putenv"><code class="docutils literal notranslate"><span class="pre">putenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.setegid"><code class="docutils literal notranslate"><span class="pre">setegid()</span></code></a></li>
-<li><a class="reference internal" href="#os.seteuid"><code class="docutils literal notranslate"><span class="pre">seteuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setgid"><code class="docutils literal notranslate"><span class="pre">setgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setgroups"><code class="docutils literal notranslate"><span class="pre">setgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.setns"><code class="docutils literal notranslate"><span class="pre">setns()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpgrp"><code class="docutils literal notranslate"><span class="pre">setpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpgid"><code class="docutils literal notranslate"><span class="pre">setpgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpriority"><code class="docutils literal notranslate"><span class="pre">setpriority()</span></code></a></li>
-<li><a class="reference internal" href="#os.setregid"><code class="docutils literal notranslate"><span class="pre">setregid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setresgid"><code class="docutils literal notranslate"><span class="pre">setresgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setresuid"><code class="docutils literal notranslate"><span class="pre">setresuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setreuid"><code class="docutils literal notranslate"><span class="pre">setreuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getsid"><code class="docutils literal notranslate"><span class="pre">getsid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setsid"><code class="docutils literal notranslate"><span class="pre">setsid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setuid"><code class="docutils literal notranslate"><span class="pre">setuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.strerror"><code class="docutils literal notranslate"><span class="pre">strerror()</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_bytes_environ"><code class="docutils literal notranslate"><span class="pre">supports_bytes_environ</span></code></a></li>
-<li><a class="reference internal" href="#os.umask"><code class="docutils literal notranslate"><span class="pre">umask()</span></code></a></li>
-<li><a class="reference internal" href="#os.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
-<li><a class="reference internal" href="#os.unsetenv"><code class="docutils literal notranslate"><span class="pre">unsetenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.unshare"><code class="docutils literal notranslate"><span class="pre">unshare()</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_FILES"><code class="docutils literal notranslate"><span class="pre">CLONE_FILES</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_FS"><code class="docutils literal notranslate"><span class="pre">CLONE_FS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWCGROUP"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWCGROUP</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWIPC"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWIPC</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWNET"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWNET</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWNS"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWNS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWPID"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWPID</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWTIME"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWTIME</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWUSER"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWUSER</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWUTS"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWUTS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_SIGHAND"><code class="docutils literal notranslate"><span class="pre">CLONE_SIGHAND</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_SYSVSEM"><code class="docutils literal notranslate"><span class="pre">CLONE_SYSVSEM</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_THREAD"><code class="docutils literal notranslate"><span class="pre">CLONE_THREAD</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_VM"><code class="docutils literal notranslate"><span class="pre">CLONE_VM</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#file-object-creation">File Object Creation</a><ul>
-<li><a class="reference internal" href="#os.fdopen"><code class="docutils literal notranslate"><span class="pre">fdopen()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#process-parameters">Process Parameters</a></li>
+<li><a class="reference internal" href="#file-object-creation">File Object Creation</a></li>
 <li><a class="reference internal" href="#file-descriptor-operations">File Descriptor Operations</a><ul>
-<li><a class="reference internal" href="#os.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
-<li><a class="reference internal" href="#os.closerange"><code class="docutils literal notranslate"><span class="pre">closerange()</span></code></a></li>
-<li><a class="reference internal" href="#os.copy_file_range"><code class="docutils literal notranslate"><span class="pre">copy_file_range()</span></code></a></li>
-<li><a class="reference internal" href="#os.device_encoding"><code class="docutils literal notranslate"><span class="pre">device_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#os.dup"><code class="docutils literal notranslate"><span class="pre">dup()</span></code></a></li>
-<li><a class="reference internal" href="#os.dup2"><code class="docutils literal notranslate"><span class="pre">dup2()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchmod"><code class="docutils literal notranslate"><span class="pre">fchmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchown"><code class="docutils literal notranslate"><span class="pre">fchown()</span></code></a></li>
-<li><a class="reference internal" href="#os.fdatasync"><code class="docutils literal notranslate"><span class="pre">fdatasync()</span></code></a></li>
-<li><a class="reference internal" href="#os.fpathconf"><code class="docutils literal notranslate"><span class="pre">fpathconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.fstat"><code class="docutils literal notranslate"><span class="pre">fstat()</span></code></a></li>
-<li><a class="reference internal" href="#os.fstatvfs"><code class="docutils literal notranslate"><span class="pre">fstatvfs()</span></code></a></li>
-<li><a class="reference internal" href="#os.fsync"><code class="docutils literal notranslate"><span class="pre">fsync()</span></code></a></li>
-<li><a class="reference internal" href="#os.ftruncate"><code class="docutils literal notranslate"><span class="pre">ftruncate()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_blocking"><code class="docutils literal notranslate"><span class="pre">get_blocking()</span></code></a></li>
-<li><a class="reference internal" href="#os.isatty"><code class="docutils literal notranslate"><span class="pre">isatty()</span></code></a></li>
-<li><a class="reference internal" href="#os.lockf"><code class="docutils literal notranslate"><span class="pre">lockf()</span></code></a></li>
-<li><a class="reference internal" href="#os.F_LOCK"><code class="docutils literal notranslate"><span class="pre">F_LOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_TLOCK"><code class="docutils literal notranslate"><span class="pre">F_TLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_ULOCK"><code class="docutils literal notranslate"><span class="pre">F_ULOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_TEST"><code class="docutils literal notranslate"><span class="pre">F_TEST</span></code></a></li>
-<li><a class="reference internal" href="#os.login_tty"><code class="docutils literal notranslate"><span class="pre">login_tty()</span></code></a></li>
-<li><a class="reference internal" href="#os.lseek"><code class="docutils literal notranslate"><span class="pre">lseek()</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_SET"><code class="docutils literal notranslate"><span class="pre">SEEK_SET</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_CUR"><code class="docutils literal notranslate"><span class="pre">SEEK_CUR</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_END"><code class="docutils literal notranslate"><span class="pre">SEEK_END</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_HOLE"><code class="docutils literal notranslate"><span class="pre">SEEK_HOLE</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_DATA"><code class="docutils literal notranslate"><span class="pre">SEEK_DATA</span></code></a></li>
-<li><a class="reference internal" href="#os.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RDONLY"><code class="docutils literal notranslate"><span class="pre">O_RDONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_WRONLY"><code class="docutils literal notranslate"><span class="pre">O_WRONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RDWR"><code class="docutils literal notranslate"><span class="pre">O_RDWR</span></code></a></li>
-<li><a class="reference internal" href="#os.O_APPEND"><code class="docutils literal notranslate"><span class="pre">O_APPEND</span></code></a></li>
-<li><a class="reference internal" href="#os.O_CREAT"><code class="docutils literal notranslate"><span class="pre">O_CREAT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EXCL"><code class="docutils literal notranslate"><span class="pre">O_EXCL</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TRUNC"><code class="docutils literal notranslate"><span class="pre">O_TRUNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DSYNC"><code class="docutils literal notranslate"><span class="pre">O_DSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RSYNC"><code class="docutils literal notranslate"><span class="pre">O_RSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SYNC"><code class="docutils literal notranslate"><span class="pre">O_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NDELAY"><code class="docutils literal notranslate"><span class="pre">O_NDELAY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">O_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOCTTY"><code class="docutils literal notranslate"><span class="pre">O_NOCTTY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">O_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_BINARY"><code class="docutils literal notranslate"><span class="pre">O_BINARY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOINHERIT"><code class="docutils literal notranslate"><span class="pre">O_NOINHERIT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SHORT_LIVED"><code class="docutils literal notranslate"><span class="pre">O_SHORT_LIVED</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TEMPORARY"><code class="docutils literal notranslate"><span class="pre">O_TEMPORARY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RANDOM"><code class="docutils literal notranslate"><span class="pre">O_RANDOM</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">O_SEQUENTIAL</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TEXT"><code class="docutils literal notranslate"><span class="pre">O_TEXT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EVTONLY"><code class="docutils literal notranslate"><span class="pre">O_EVTONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_FSYNC"><code class="docutils literal notranslate"><span class="pre">O_FSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SYMLINK"><code class="docutils literal notranslate"><span class="pre">O_SYMLINK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOFOLLOW_ANY"><code class="docutils literal notranslate"><span class="pre">O_NOFOLLOW_ANY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_ASYNC"><code class="docutils literal notranslate"><span class="pre">O_ASYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DIRECT"><code class="docutils literal notranslate"><span class="pre">O_DIRECT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">O_DIRECTORY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOFOLLOW"><code class="docutils literal notranslate"><span class="pre">O_NOFOLLOW</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOATIME"><code class="docutils literal notranslate"><span class="pre">O_NOATIME</span></code></a></li>
-<li><a class="reference internal" href="#os.O_PATH"><code class="docutils literal notranslate"><span class="pre">O_PATH</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TMPFILE"><code class="docutils literal notranslate"><span class="pre">O_TMPFILE</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SHLOCK"><code class="docutils literal notranslate"><span class="pre">O_SHLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EXLOCK"><code class="docutils literal notranslate"><span class="pre">O_EXLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.openpty"><code class="docutils literal notranslate"><span class="pre">openpty()</span></code></a></li>
-<li><a class="reference internal" href="#os.pipe"><code class="docutils literal notranslate"><span class="pre">pipe()</span></code></a></li>
-<li><a class="reference internal" href="#os.pipe2"><code class="docutils literal notranslate"><span class="pre">pipe2()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_fallocate"><code class="docutils literal notranslate"><span class="pre">posix_fallocate()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_fadvise"><code class="docutils literal notranslate"><span class="pre">posix_fadvise()</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_NORMAL"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_SEQUENTIAL</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_RANDOM"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_RANDOM</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_NOREUSE"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_NOREUSE</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_WILLNEED"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_WILLNEED</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_DONTNEED"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_DONTNEED</span></code></a></li>
-<li><a class="reference internal" href="#os.pread"><code class="docutils literal notranslate"><span class="pre">pread()</span></code></a></li>
-<li><a class="reference internal" href="#os.preadv"><code class="docutils literal notranslate"><span class="pre">preadv()</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_NOWAIT"><code class="docutils literal notranslate"><span class="pre">RWF_NOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_HIPRI"><code class="docutils literal notranslate"><span class="pre">RWF_HIPRI</span></code></a></li>
-<li><a class="reference internal" href="#os.pwrite"><code class="docutils literal notranslate"><span class="pre">pwrite()</span></code></a></li>
-<li><a class="reference internal" href="#os.pwritev"><code class="docutils literal notranslate"><span class="pre">pwritev()</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_DSYNC"><code class="docutils literal notranslate"><span class="pre">RWF_DSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_SYNC"><code class="docutils literal notranslate"><span class="pre">RWF_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_APPEND"><code class="docutils literal notranslate"><span class="pre">RWF_APPEND</span></code></a></li>
-<li><a class="reference internal" href="#os.read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
-<li><a class="reference internal" href="#os.sendfile"><code class="docutils literal notranslate"><span class="pre">sendfile()</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_NODISKIO"><code class="docutils literal notranslate"><span class="pre">SF_NODISKIO</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_MNOWAIT"><code class="docutils literal notranslate"><span class="pre">SF_MNOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_SYNC"><code class="docutils literal notranslate"><span class="pre">SF_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_NOCACHE"><code class="docutils literal notranslate"><span class="pre">SF_NOCACHE</span></code></a></li>
-<li><a class="reference internal" href="#os.set_blocking"><code class="docutils literal notranslate"><span class="pre">set_blocking()</span></code></a></li>
-<li><a class="reference internal" href="#os.splice"><code class="docutils literal notranslate"><span class="pre">splice()</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_MOVE"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_MOVE</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_MORE"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_MORE</span></code></a></li>
-<li><a class="reference internal" href="#os.readv"><code class="docutils literal notranslate"><span class="pre">readv()</span></code></a></li>
-<li><a class="reference internal" href="#os.tcgetpgrp"><code class="docutils literal notranslate"><span class="pre">tcgetpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.tcsetpgrp"><code class="docutils literal notranslate"><span class="pre">tcsetpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.ttyname"><code class="docutils literal notranslate"><span class="pre">ttyname()</span></code></a></li>
-<li><a class="reference internal" href="#os.write"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
-<li><a class="reference internal" href="#os.writev"><code class="docutils literal notranslate"><span class="pre">writev()</span></code></a></li>
-<li><a class="reference internal" href="#querying-the-size-of-a-terminal">Querying the size of a terminal</a><ul>
-<li><a class="reference internal" href="#os.get_terminal_size"><code class="docutils literal notranslate"><span class="pre">get_terminal_size()</span></code></a></li>
-<li><a class="reference internal" href="#os.terminal_size"><code class="docutils literal notranslate"><span class="pre">terminal_size</span></code></a><ul>
-<li><a class="reference internal" href="#os.terminal_size.columns"><code class="docutils literal notranslate"><span class="pre">terminal_size.columns</span></code></a></li>
-<li><a class="reference internal" href="#os.terminal_size.lines"><code class="docutils literal notranslate"><span class="pre">terminal_size.lines</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#inheritance-of-file-descriptors">Inheritance of File Descriptors</a><ul>
-<li><a class="reference internal" href="#os.get_inheritable"><code class="docutils literal notranslate"><span class="pre">get_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.set_inheritable"><code class="docutils literal notranslate"><span class="pre">set_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_handle_inheritable"><code class="docutils literal notranslate"><span class="pre">get_handle_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.set_handle_inheritable"><code class="docutils literal notranslate"><span class="pre">set_handle_inheritable()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#querying-the-size-of-a-terminal">Querying the size of a terminal</a></li>
+<li><a class="reference internal" href="#inheritance-of-file-descriptors">Inheritance of File Descriptors</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#files-and-directories">Files and Directories</a><ul>
-<li><a class="reference internal" href="#os.access"><code class="docutils literal notranslate"><span class="pre">access()</span></code></a></li>
-<li><a class="reference internal" href="#os.F_OK"><code class="docutils literal notranslate"><span class="pre">F_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.R_OK"><code class="docutils literal notranslate"><span class="pre">R_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.W_OK"><code class="docutils literal notranslate"><span class="pre">W_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.X_OK"><code class="docutils literal notranslate"><span class="pre">X_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.chdir"><code class="docutils literal notranslate"><span class="pre">chdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.chflags"><code class="docutils literal notranslate"><span class="pre">chflags()</span></code></a></li>
-<li><a class="reference internal" href="#os.chmod"><code class="docutils literal notranslate"><span class="pre">chmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.chown"><code class="docutils literal notranslate"><span class="pre">chown()</span></code></a></li>
-<li><a class="reference internal" href="#os.chroot"><code class="docutils literal notranslate"><span class="pre">chroot()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchdir"><code class="docutils literal notranslate"><span class="pre">fchdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.getcwd"><code class="docutils literal notranslate"><span class="pre">getcwd()</span></code></a></li>
-<li><a class="reference internal" href="#os.getcwdb"><code class="docutils literal notranslate"><span class="pre">getcwdb()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchflags"><code class="docutils literal notranslate"><span class="pre">lchflags()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchmod"><code class="docutils literal notranslate"><span class="pre">lchmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchown"><code class="docutils literal notranslate"><span class="pre">lchown()</span></code></a></li>
-<li><a class="reference internal" href="#os.link"><code class="docutils literal notranslate"><span class="pre">link()</span></code></a></li>
-<li><a class="reference internal" href="#os.listdir"><code class="docutils literal notranslate"><span class="pre">listdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.listdrives"><code class="docutils literal notranslate"><span class="pre">listdrives()</span></code></a></li>
-<li><a class="reference internal" href="#os.listmounts"><code class="docutils literal notranslate"><span class="pre">listmounts()</span></code></a></li>
-<li><a class="reference internal" href="#os.listvolumes"><code class="docutils literal notranslate"><span class="pre">listvolumes()</span></code></a></li>
-<li><a class="reference internal" href="#os.lstat"><code class="docutils literal notranslate"><span class="pre">lstat()</span></code></a></li>
-<li><a class="reference internal" href="#os.mkdir"><code class="docutils literal notranslate"><span class="pre">mkdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.makedirs"><code class="docutils literal notranslate"><span class="pre">makedirs()</span></code></a></li>
-<li><a class="reference internal" href="#os.mkfifo"><code class="docutils literal notranslate"><span class="pre">mkfifo()</span></code></a></li>
-<li><a class="reference internal" href="#os.mknod"><code class="docutils literal notranslate"><span class="pre">mknod()</span></code></a></li>
-<li><a class="reference internal" href="#os.major"><code class="docutils literal notranslate"><span class="pre">major()</span></code></a></li>
-<li><a class="reference internal" href="#os.minor"><code class="docutils literal notranslate"><span class="pre">minor()</span></code></a></li>
-<li><a class="reference internal" href="#os.makedev"><code class="docutils literal notranslate"><span class="pre">makedev()</span></code></a></li>
-<li><a class="reference internal" href="#os.pathconf"><code class="docutils literal notranslate"><span class="pre">pathconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.pathconf_names"><code class="docutils literal notranslate"><span class="pre">pathconf_names</span></code></a></li>
-<li><a class="reference internal" href="#os.readlink"><code class="docutils literal notranslate"><span class="pre">readlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
-<li><a class="reference internal" href="#os.removedirs"><code class="docutils literal notranslate"><span class="pre">removedirs()</span></code></a></li>
-<li><a class="reference internal" href="#os.rename"><code class="docutils literal notranslate"><span class="pre">rename()</span></code></a></li>
-<li><a class="reference internal" href="#os.renames"><code class="docutils literal notranslate"><span class="pre">renames()</span></code></a></li>
-<li><a class="reference internal" href="#os.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
-<li><a class="reference internal" href="#os.rmdir"><code class="docutils literal notranslate"><span class="pre">rmdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.scandir"><code class="docutils literal notranslate"><span class="pre">scandir()</span></code></a><ul>
-<li><a class="reference internal" href="#os.scandir.close"><code class="docutils literal notranslate"><span class="pre">scandir.close()</span></code></a></li>
+<li><a class="reference internal" href="#linux-extended-attributes">Linux extended attributes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#os.DirEntry"><code class="docutils literal notranslate"><span class="pre">DirEntry</span></code></a><ul>
-<li><a class="reference internal" href="#os.DirEntry.name"><code class="docutils literal notranslate"><span class="pre">DirEntry.name</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.path"><code class="docutils literal notranslate"><span class="pre">DirEntry.path</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.inode"><code class="docutils literal notranslate"><span class="pre">DirEntry.inode()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_dir"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_file"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_file()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_symlink"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_symlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_junction"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_junction()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.stat"><code class="docutils literal notranslate"><span class="pre">DirEntry.stat()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.stat"><code class="docutils literal notranslate"><span class="pre">stat()</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result"><code class="docutils literal notranslate"><span class="pre">stat_result</span></code></a><ul>
-<li><a class="reference internal" href="#os.stat_result.st_mode"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mode</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ino"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ino</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_dev"><code class="docutils literal notranslate"><span class="pre">stat_result.st_dev</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_nlink"><code class="docutils literal notranslate"><span class="pre">stat_result.st_nlink</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_uid"><code class="docutils literal notranslate"><span class="pre">stat_result.st_uid</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_gid"><code class="docutils literal notranslate"><span class="pre">stat_result.st_gid</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_size"><code class="docutils literal notranslate"><span class="pre">stat_result.st_size</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_atime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_atime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_mtime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mtime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ctime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ctime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_atime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_atime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_mtime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mtime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ctime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ctime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_birthtime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_birthtime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_birthtime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_birthtime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_blocks"><code class="docutils literal notranslate"><span class="pre">stat_result.st_blocks</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_blksize"><code class="docutils literal notranslate"><span class="pre">stat_result.st_blksize</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_rdev"><code class="docutils literal notranslate"><span class="pre">stat_result.st_rdev</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_flags"><code class="docutils literal notranslate"><span class="pre">stat_result.st_flags</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_gen"><code class="docutils literal notranslate"><span class="pre">stat_result.st_gen</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_fstype"><code class="docutils literal notranslate"><span class="pre">stat_result.st_fstype</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_rsize"><code class="docutils literal notranslate"><span class="pre">stat_result.st_rsize</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_creator"><code class="docutils literal notranslate"><span class="pre">stat_result.st_creator</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_type"><code class="docutils literal notranslate"><span class="pre">stat_result.st_type</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_file_attributes"><code class="docutils literal notranslate"><span class="pre">stat_result.st_file_attributes</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_reparse_tag"><code class="docutils literal notranslate"><span class="pre">stat_result.st_reparse_tag</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.statvfs"><code class="docutils literal notranslate"><span class="pre">statvfs()</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_dir_fd"><code class="docutils literal notranslate"><span class="pre">supports_dir_fd</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_effective_ids"><code class="docutils literal notranslate"><span class="pre">supports_effective_ids</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_fd"><code class="docutils literal notranslate"><span class="pre">supports_fd</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_follow_symlinks"><code class="docutils literal notranslate"><span class="pre">supports_follow_symlinks</span></code></a></li>
-<li><a class="reference internal" href="#os.symlink"><code class="docutils literal notranslate"><span class="pre">symlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.sync"><code class="docutils literal notranslate"><span class="pre">sync()</span></code></a></li>
-<li><a class="reference internal" href="#os.truncate"><code class="docutils literal notranslate"><span class="pre">truncate()</span></code></a></li>
-<li><a class="reference internal" href="#os.unlink"><code class="docutils literal notranslate"><span class="pre">unlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.utime"><code class="docutils literal notranslate"><span class="pre">utime()</span></code></a></li>
-<li><a class="reference internal" href="#os.walk"><code class="docutils literal notranslate"><span class="pre">walk()</span></code></a></li>
-<li><a class="reference internal" href="#os.fwalk"><code class="docutils literal notranslate"><span class="pre">fwalk()</span></code></a></li>
-<li><a class="reference internal" href="#os.memfd_create"><code class="docutils literal notranslate"><span class="pre">memfd_create()</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">MFD_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_ALLOW_SEALING"><code class="docutils literal notranslate"><span class="pre">MFD_ALLOW_SEALING</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGETLB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGETLB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_SHIFT"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_SHIFT</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_MASK"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_MASK</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_64KB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_64KB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_512KB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_512KB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_1MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_1MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_2MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_2MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_8MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_8MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_16MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_16MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_32MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_32MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_256MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_256MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_512MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_512MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_1GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_1GB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_2GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_2GB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_16GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_16GB</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd"><code class="docutils literal notranslate"><span class="pre">eventfd()</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd_read"><code class="docutils literal notranslate"><span class="pre">eventfd_read()</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd_write"><code class="docutils literal notranslate"><span class="pre">eventfd_write()</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">EFD_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">EFD_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_SEMAPHORE"><code class="docutils literal notranslate"><span class="pre">EFD_SEMAPHORE</span></code></a></li>
-<li><a class="reference internal" href="#linux-extended-attributes">Linux extended attributes</a><ul>
-<li><a class="reference internal" href="#os.getxattr"><code class="docutils literal notranslate"><span class="pre">getxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.listxattr"><code class="docutils literal notranslate"><span class="pre">listxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.removexattr"><code class="docutils literal notranslate"><span class="pre">removexattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.setxattr"><code class="docutils literal notranslate"><span class="pre">setxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_SIZE_MAX"><code class="docutils literal notranslate"><span class="pre">XATTR_SIZE_MAX</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_CREATE"><code class="docutils literal notranslate"><span class="pre">XATTR_CREATE</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_REPLACE"><code class="docutils literal notranslate"><span class="pre">XATTR_REPLACE</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#process-management">Process Management</a><ul>
-<li><a class="reference internal" href="#os.abort"><code class="docutils literal notranslate"><span class="pre">abort()</span></code></a></li>
-<li><a class="reference internal" href="#os.add_dll_directory"><code class="docutils literal notranslate"><span class="pre">add_dll_directory()</span></code></a></li>
-<li><a class="reference internal" href="#os.execl"><code class="docutils literal notranslate"><span class="pre">execl()</span></code></a></li>
-<li><a class="reference internal" href="#os.execle"><code class="docutils literal notranslate"><span class="pre">execle()</span></code></a></li>
-<li><a class="reference internal" href="#os.execlp"><code class="docutils literal notranslate"><span class="pre">execlp()</span></code></a></li>
-<li><a class="reference internal" href="#os.execlpe"><code class="docutils literal notranslate"><span class="pre">execlpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.execv"><code class="docutils literal notranslate"><span class="pre">execv()</span></code></a></li>
-<li><a class="reference internal" href="#os.execve"><code class="docutils literal notranslate"><span class="pre">execve()</span></code></a></li>
-<li><a class="reference internal" href="#os.execvp"><code class="docutils literal notranslate"><span class="pre">execvp()</span></code></a></li>
-<li><a class="reference internal" href="#os.execvpe"><code class="docutils literal notranslate"><span class="pre">execvpe()</span></code></a></li>
-<li><a class="reference internal" href="#os._exit"><code class="docutils literal notranslate"><span class="pre">_exit()</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OK"><code class="docutils literal notranslate"><span class="pre">EX_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_USAGE"><code class="docutils literal notranslate"><span class="pre">EX_USAGE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_DATAERR"><code class="docutils literal notranslate"><span class="pre">EX_DATAERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOINPUT"><code class="docutils literal notranslate"><span class="pre">EX_NOINPUT</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOUSER"><code class="docutils literal notranslate"><span class="pre">EX_NOUSER</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOHOST"><code class="docutils literal notranslate"><span class="pre">EX_NOHOST</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_UNAVAILABLE"><code class="docutils literal notranslate"><span class="pre">EX_UNAVAILABLE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_SOFTWARE"><code class="docutils literal notranslate"><span class="pre">EX_SOFTWARE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OSERR"><code class="docutils literal notranslate"><span class="pre">EX_OSERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OSFILE"><code class="docutils literal notranslate"><span class="pre">EX_OSFILE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_CANTCREAT"><code class="docutils literal notranslate"><span class="pre">EX_CANTCREAT</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_IOERR"><code class="docutils literal notranslate"><span class="pre">EX_IOERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_TEMPFAIL"><code class="docutils literal notranslate"><span class="pre">EX_TEMPFAIL</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_PROTOCOL"><code class="docutils literal notranslate"><span class="pre">EX_PROTOCOL</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOPERM"><code class="docutils literal notranslate"><span class="pre">EX_NOPERM</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_CONFIG"><code class="docutils literal notranslate"><span class="pre">EX_CONFIG</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOTFOUND"><code class="docutils literal notranslate"><span class="pre">EX_NOTFOUND</span></code></a></li>
-<li><a class="reference internal" href="#os.fork"><code class="docutils literal notranslate"><span class="pre">fork()</span></code></a></li>
-<li><a class="reference internal" href="#os.forkpty"><code class="docutils literal notranslate"><span class="pre">forkpty()</span></code></a></li>
-<li><a class="reference internal" href="#os.kill"><code class="docutils literal notranslate"><span class="pre">kill()</span></code></a></li>
-<li><a class="reference internal" href="#os.killpg"><code class="docutils literal notranslate"><span class="pre">killpg()</span></code></a></li>
-<li><a class="reference internal" href="#os.nice"><code class="docutils literal notranslate"><span class="pre">nice()</span></code></a></li>
-<li><a class="reference internal" href="#os.pidfd_open"><code class="docutils literal notranslate"><span class="pre">pidfd_open()</span></code></a></li>
-<li><a class="reference internal" href="#os.PIDFD_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">PIDFD_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.plock"><code class="docutils literal notranslate"><span class="pre">plock()</span></code></a></li>
-<li><a class="reference internal" href="#os.popen"><code class="docutils literal notranslate"><span class="pre">popen()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_spawn"><code class="docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_OPEN"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_OPEN</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_CLOSE"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_CLOSE</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_DUP2"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_DUP2</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_spawnp"><code class="docutils literal notranslate"><span class="pre">posix_spawnp()</span></code></a></li>
-<li><a class="reference internal" href="#os.register_at_fork"><code class="docutils literal notranslate"><span class="pre">register_at_fork()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnl"><code class="docutils literal notranslate"><span class="pre">spawnl()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnle"><code class="docutils literal notranslate"><span class="pre">spawnle()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnlp"><code class="docutils literal notranslate"><span class="pre">spawnlp()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnlpe"><code class="docutils literal notranslate"><span class="pre">spawnlpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnv"><code class="docutils literal notranslate"><span class="pre">spawnv()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnve"><code class="docutils literal notranslate"><span class="pre">spawnve()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnvp"><code class="docutils literal notranslate"><span class="pre">spawnvp()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnvpe"><code class="docutils literal notranslate"><span class="pre">spawnvpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.P_NOWAIT"><code class="docutils literal notranslate"><span class="pre">P_NOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.P_NOWAITO"><code class="docutils literal notranslate"><span class="pre">P_NOWAITO</span></code></a></li>
-<li><a class="reference internal" href="#os.P_WAIT"><code class="docutils literal notranslate"><span class="pre">P_WAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.P_DETACH"><code class="docutils literal notranslate"><span class="pre">P_DETACH</span></code></a></li>
-<li><a class="reference internal" href="#os.P_OVERLAY"><code class="docutils literal notranslate"><span class="pre">P_OVERLAY</span></code></a></li>
-<li><a class="reference internal" href="#os.startfile"><code class="docutils literal notranslate"><span class="pre">startfile()</span></code></a></li>
-<li><a class="reference internal" href="#os.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
-<li><a class="reference internal" href="#os.times"><code class="docutils literal notranslate"><span class="pre">times()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait"><code class="docutils literal notranslate"><span class="pre">wait()</span></code></a></li>
-<li><a class="reference internal" href="#os.waitid"><code class="docutils literal notranslate"><span class="pre">waitid()</span></code></a></li>
-<li><a class="reference internal" href="#os.waitpid"><code class="docutils literal notranslate"><span class="pre">waitpid()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait3"><code class="docutils literal notranslate"><span class="pre">wait3()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait4"><code class="docutils literal notranslate"><span class="pre">wait4()</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PID"><code class="docutils literal notranslate"><span class="pre">P_PID</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PGID"><code class="docutils literal notranslate"><span class="pre">P_PGID</span></code></a></li>
-<li><a class="reference internal" href="#os.P_ALL"><code class="docutils literal notranslate"><span class="pre">P_ALL</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PIDFD"><code class="docutils literal notranslate"><span class="pre">P_PIDFD</span></code></a></li>
-<li><a class="reference internal" href="#os.WCONTINUED"><code class="docutils literal notranslate"><span class="pre">WCONTINUED</span></code></a></li>
-<li><a class="reference internal" href="#os.WEXITED"><code class="docutils literal notranslate"><span class="pre">WEXITED</span></code></a></li>
-<li><a class="reference internal" href="#os.WSTOPPED"><code class="docutils literal notranslate"><span class="pre">WSTOPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.WUNTRACED"><code class="docutils literal notranslate"><span class="pre">WUNTRACED</span></code></a></li>
-<li><a class="reference internal" href="#os.WNOHANG"><code class="docutils literal notranslate"><span class="pre">WNOHANG</span></code></a></li>
-<li><a class="reference internal" href="#os.WNOWAIT"><code class="docutils literal notranslate"><span class="pre">WNOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_EXITED"><code class="docutils literal notranslate"><span class="pre">CLD_EXITED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_KILLED"><code class="docutils literal notranslate"><span class="pre">CLD_KILLED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_DUMPED"><code class="docutils literal notranslate"><span class="pre">CLD_DUMPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_TRAPPED"><code class="docutils literal notranslate"><span class="pre">CLD_TRAPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_STOPPED"><code class="docutils literal notranslate"><span class="pre">CLD_STOPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_CONTINUED"><code class="docutils literal notranslate"><span class="pre">CLD_CONTINUED</span></code></a></li>
-<li><a class="reference internal" href="#os.waitstatus_to_exitcode"><code class="docutils literal notranslate"><span class="pre">waitstatus_to_exitcode()</span></code></a></li>
-<li><a class="reference internal" href="#os.WCOREDUMP"><code class="docutils literal notranslate"><span class="pre">WCOREDUMP()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFCONTINUED"><code class="docutils literal notranslate"><span class="pre">WIFCONTINUED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFSTOPPED"><code class="docutils literal notranslate"><span class="pre">WIFSTOPPED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFSIGNALED"><code class="docutils literal notranslate"><span class="pre">WIFSIGNALED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFEXITED"><code class="docutils literal notranslate"><span class="pre">WIFEXITED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WEXITSTATUS"><code class="docutils literal notranslate"><span class="pre">WEXITSTATUS()</span></code></a></li>
-<li><a class="reference internal" href="#os.WSTOPSIG"><code class="docutils literal notranslate"><span class="pre">WSTOPSIG()</span></code></a></li>
-<li><a class="reference internal" href="#os.WTERMSIG"><code class="docutils literal notranslate"><span class="pre">WTERMSIG()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interface-to-the-scheduler">Interface to the scheduler</a><ul>
-<li><a class="reference internal" href="#os.SCHED_OTHER"><code class="docutils literal notranslate"><span class="pre">SCHED_OTHER</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_BATCH"><code class="docutils literal notranslate"><span class="pre">SCHED_BATCH</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_IDLE"><code class="docutils literal notranslate"><span class="pre">SCHED_IDLE</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_SPORADIC"><code class="docutils literal notranslate"><span class="pre">SCHED_SPORADIC</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_FIFO"><code class="docutils literal notranslate"><span class="pre">SCHED_FIFO</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_RR"><code class="docutils literal notranslate"><span class="pre">SCHED_RR</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_RESET_ON_FORK"><code class="docutils literal notranslate"><span class="pre">SCHED_RESET_ON_FORK</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_param"><code class="docutils literal notranslate"><span class="pre">sched_param</span></code></a><ul>
-<li><a class="reference internal" href="#os.sched_param.sched_priority"><code class="docutils literal notranslate"><span class="pre">sched_param.sched_priority</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.sched_get_priority_min"><code class="docutils literal notranslate"><span class="pre">sched_get_priority_min()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_get_priority_max"><code class="docutils literal notranslate"><span class="pre">sched_get_priority_max()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setscheduler"><code class="docutils literal notranslate"><span class="pre">sched_setscheduler()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getscheduler"><code class="docutils literal notranslate"><span class="pre">sched_getscheduler()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setparam"><code class="docutils literal notranslate"><span class="pre">sched_setparam()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getparam"><code class="docutils literal notranslate"><span class="pre">sched_getparam()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_rr_get_interval"><code class="docutils literal notranslate"><span class="pre">sched_rr_get_interval()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_yield"><code class="docutils literal notranslate"><span class="pre">sched_yield()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setaffinity"><code class="docutils literal notranslate"><span class="pre">sched_setaffinity()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getaffinity"><code class="docutils literal notranslate"><span class="pre">sched_getaffinity()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#miscellaneous-system-information">Miscellaneous System Information</a><ul>
-<li><a class="reference internal" href="#os.confstr"><code class="docutils literal notranslate"><span class="pre">confstr()</span></code></a></li>
-<li><a class="reference internal" href="#os.confstr_names"><code class="docutils literal notranslate"><span class="pre">confstr_names</span></code></a></li>
-<li><a class="reference internal" href="#os.cpu_count"><code class="docutils literal notranslate"><span class="pre">cpu_count()</span></code></a></li>
-<li><a class="reference internal" href="#os.getloadavg"><code class="docutils literal notranslate"><span class="pre">getloadavg()</span></code></a></li>
-<li><a class="reference internal" href="#os.sysconf"><code class="docutils literal notranslate"><span class="pre">sysconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.sysconf_names"><code class="docutils literal notranslate"><span class="pre">sysconf_names</span></code></a></li>
-<li><a class="reference internal" href="#os.curdir"><code class="docutils literal notranslate"><span class="pre">curdir</span></code></a></li>
-<li><a class="reference internal" href="#os.pardir"><code class="docutils literal notranslate"><span class="pre">pardir</span></code></a></li>
-<li><a class="reference internal" href="#os.sep"><code class="docutils literal notranslate"><span class="pre">sep</span></code></a></li>
-<li><a class="reference internal" href="#os.altsep"><code class="docutils literal notranslate"><span class="pre">altsep</span></code></a></li>
-<li><a class="reference internal" href="#os.extsep"><code class="docutils literal notranslate"><span class="pre">extsep</span></code></a></li>
-<li><a class="reference internal" href="#os.pathsep"><code class="docutils literal notranslate"><span class="pre">pathsep</span></code></a></li>
-<li><a class="reference internal" href="#os.defpath"><code class="docutils literal notranslate"><span class="pre">defpath</span></code></a></li>
-<li><a class="reference internal" href="#os.linesep"><code class="docutils literal notranslate"><span class="pre">linesep</span></code></a></li>
-<li><a class="reference internal" href="#os.devnull"><code class="docutils literal notranslate"><span class="pre">devnull</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_LAZY"><code class="docutils literal notranslate"><span class="pre">RTLD_LAZY</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NOW"><code class="docutils literal notranslate"><span class="pre">RTLD_NOW</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_GLOBAL"><code class="docutils literal notranslate"><span class="pre">RTLD_GLOBAL</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_LOCAL"><code class="docutils literal notranslate"><span class="pre">RTLD_LOCAL</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NODELETE"><code class="docutils literal notranslate"><span class="pre">RTLD_NODELETE</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NOLOAD"><code class="docutils literal notranslate"><span class="pre">RTLD_NOLOAD</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_DEEPBIND"><code class="docutils literal notranslate"><span class="pre">RTLD_DEEPBIND</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#random-numbers">Random numbers</a><ul>
-<li><a class="reference internal" href="#os.getrandom"><code class="docutils literal notranslate"><span class="pre">getrandom()</span></code></a></li>
-<li><a class="reference internal" href="#os.urandom"><code class="docutils literal notranslate"><span class="pre">urandom()</span></code></a></li>
-<li><a class="reference internal" href="#os.GRND_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">GRND_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.GRND_RANDOM"><code class="docutils literal notranslate"><span class="pre">GRND_RANDOM</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#process-management">行程管理</a></li>
+<li><a class="reference internal" href="#interface-to-the-scheduler">Interface to the scheduler</a></li>
+<li><a class="reference internal" href="#miscellaneous-system-information">Miscellaneous System Information</a></li>
+<li><a class="reference internal" href="#random-numbers">Random numbers</a></li>
 </ul>
 </li>
 </ul>
@@ -614,7 +150,7 @@
           <a href="allos.html" title="通用作業系統服務"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -624,7 +160,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1971,8 +1507,8 @@ built-in function <a class="reference internal" href="functions.html#open" title
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> methods (and many more).  To
 wrap a file descriptor in a file object, use <a class="reference internal" href="#os.fdopen" title="os.fdopen"><code class="xref py py-func docutils literal notranslate"><span class="pre">fdopen()</span></code></a>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版的變更: </span>If the system call is interrupted and the signal handler does not raise an
@@ -2799,8 +2335,8 @@ descriptor must refer to an opened directory, not an open file.</p>
 <p>This function can raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> and subclasses such as
 <a class="reference internal" href="exceptions.html#FileNotFoundError" title="FileNotFoundError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></a>, <a class="reference internal" href="exceptions.html#PermissionError" title="PermissionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PermissionError</span></code></a>, and <a class="reference internal" href="exceptions.html#NotADirectoryError" title="NotADirectoryError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotADirectoryError</span></code></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.chdir</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added support for specifying <em>path</em> as a file descriptor
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Added support for specifying <em>path</em> as a file descriptor
 on some platforms.</p>
 </div>
 <div class="versionchanged">
@@ -2832,8 +2368,8 @@ on some platforms.</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Emscripten、非 WASI。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>follow_symlinks</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>follow_symlinks</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -2976,9 +2512,11 @@ not follow symbolic links.  As of Python 3.3, this is equivalent to
 affects the symlink rather than the target.  See the docs for <a class="reference internal" href="#os.chmod" title="os.chmod"><code class="xref py py-func docutils literal notranslate"><span class="pre">chmod()</span></code></a>
 for possible values of <em>mode</em>.  As of Python 3.3, this is equivalent to
 <code class="docutils literal notranslate"><span class="pre">os.chmod(path,</span> <span class="pre">mode,</span> <span class="pre">follow_symlinks=False)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">lchmod()</span></code> is not part of POSIX, but Unix implementations may have it if
+changing the mode of symbolic links is supported.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">mode</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.chmod</span></code>。</p>
 <div class="availability docutils container">
-<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix。</p>
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Linux、FreeBSD 1.3 以上、NetBSD 1.3 以上、非 OpenBSD。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3014,8 +2552,8 @@ following symlinks</span></a>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版的變更: </span>新支援 Windows。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>增加 <em>src_dir_fd</em>、<em>dst_dir_fd</em> 與 <em>follow_symlinks</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>src_dir_fd</em>、<em>dst_dir_fd</em> 與 <em>follow_symlinks</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> for <em>src</em> and <em>dst</em>.</p>
@@ -3166,8 +2704,8 @@ platform-dependent.  On some platforms, they are ignored and you should call
 <p>It is also possible to create temporary directories; see the
 <a class="reference internal" href="tempfile.html#module-tempfile" title="tempfile: Generate temporary files and directories."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tempfile</span></code></a> module's <a class="reference internal" href="tempfile.html#tempfile.mkdtemp" title="tempfile.mkdtemp"><code class="xref py py-func docutils literal notranslate"><span class="pre">tempfile.mkdtemp()</span></code></a> function.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">mode</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.mkdir</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3193,8 +2731,8 @@ include <a class="reference internal" href="#os.pardir" title="os.pardir"><code 
 </div>
 <p>This function handles UNC paths correctly.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">mode</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.mkdir</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span><em>exist_ok</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>新增 <em>exist_ok</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.4.1 版的變更: </span>Before Python 3.4.1, if <em>exist_ok</em> was <code class="docutils literal notranslate"><span class="pre">True</span></code> and the directory existed,
@@ -3225,8 +2763,8 @@ doesn't open the FIFO --- it just creates the rendezvous point.</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Emscripten、非 WASI。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3247,8 +2785,8 @@ available in <a class="reference internal" href="stat.html#module-stat" title="s
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Emscripten、非 WASI。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3330,8 +2868,8 @@ differences.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版的變更: </span>Added support for Windows 6.0 (Vista) symbolic links.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> on Unix.</p>
@@ -3358,8 +2896,8 @@ be raised; on Unix, the directory entry is removed but the storage allocated
 to the file is not made available until the original file is no longer in use.</p>
 <p>This function is semantically identical to <a class="reference internal" href="#os.unlink" title="os.unlink"><code class="xref py py-func docutils literal notranslate"><span class="pre">unlink()</span></code></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.remove</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3403,8 +2941,8 @@ atomic operation (this is a POSIX requirement).</p>
 supply <a class="reference internal" href="#dir-fd"><span class="std std-ref">paths relative to directory descriptors</span></a>.</p>
 <p>If you want cross-platform overwriting of the destination, use <a class="reference internal" href="#os.replace" title="os.replace"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace()</span></code></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">src</span></code>、<code class="docutils literal notranslate"><span class="pre">dst</span></code>、<code class="docutils literal notranslate"><span class="pre">src_dir_fd</span></code>、<code class="docutils literal notranslate"><span class="pre">dst_dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.rename</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>src_dir_fd</em> 與 <em>dst_dir_fd</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>src_dir_fd</em> 與 <em>dst_dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> for <em>src</em> and <em>dst</em>.</p>
@@ -3457,8 +2995,8 @@ respectively.  In order to remove whole directory trees,
 <a class="reference internal" href="shutil.html#shutil.rmtree" title="shutil.rmtree"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></a> can be used.</p>
 <p>This function can support <a class="reference internal" href="#dir-fd"><span class="std std-ref">paths relative to directory descriptors</span></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.rmdir</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3530,8 +3068,8 @@ functions.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.5 版新加入.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.6 版新加入: </span>Added support for the <a class="reference internal" href="../glossary.html#term-context-manager"><span class="xref std std-term">context manager</span></a> protocol and the
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.6 版的變更: </span>Added support for the <a class="reference internal" href="../glossary.html#term-context-manager"><span class="xref std std-term">context manager</span></a> protocol and the
 <a class="reference internal" href="#os.scandir.close" title="os.scandir.close"><code class="xref py py-func docutils literal notranslate"><span class="pre">close()</span></code></a> method.  If a <a class="reference internal" href="#os.scandir" title="os.scandir"><code class="xref py py-func docutils literal notranslate"><span class="pre">scandir()</span></code></a> iterator is neither
 exhausted nor explicitly closed a <a class="reference internal" href="exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a> will be emitted
 in its destructor.</p>
@@ -3735,9 +3273,8 @@ dangling symlinks or junction points, which will raise the usual exceptions.</p>
 <p class="admonition-title">也參考</p>
 <p><a class="reference internal" href="#os.fstat" title="os.fstat"><code class="xref py py-func docutils literal notranslate"><span class="pre">fstat()</span></code></a> 和 <a class="reference internal" href="#os.lstat" title="os.lstat"><code class="xref py py-func docutils literal notranslate"><span class="pre">lstat()</span></code></a> 函式。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added the <em>dir_fd</em> and <em>follow_symlinks</em> arguments, specifying a file
-descriptor instead of a path.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 與 <em>follow_symlinks</em> 參數，指定一個檔案描述器而非路徑。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -3970,6 +3507,9 @@ contains the file.</p>
 <code class="xref c c-func docutils literal notranslate"><span class="pre">GetFileInformationByHandle()</span></code>.
 See the <code class="xref py py-const docutils literal notranslate"><span class="pre">FILE_ATTRIBUTE_*</span> <span class="pre">&lt;stat.FILE_ATTRIBUTE_ARCHIVE&gt;</span></code>
 constants in the <a class="reference internal" href="stat.html#module-stat" title="stat: Utilities for interpreting the results of os.stat(), os.lstat() and os.fstat()."><code class="xref py py-mod docutils literal notranslate"><span class="pre">stat</span></code></a> module.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.5 版新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
@@ -3992,13 +3532,6 @@ portable) members of the <code class="xref c c-struct docutils literal notransla
 <a class="reference internal" href="#os.stat_result.st_mtime" title="os.stat_result.st_mtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_mtime</span></code></a>, <a class="reference internal" href="#os.stat_result.st_ctime" title="os.stat_result.st_ctime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_ctime</span></code></a>. More items may be added at the end by
 some implementations. For compatibility with older Python versions,
 accessing <a class="reference internal" href="#os.stat_result" title="os.stat_result"><code class="xref py py-class docutils literal notranslate"><span class="pre">stat_result</span></code></a> as a tuple always returns integers.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added the <a class="reference internal" href="#os.stat_result.st_atime_ns" title="os.stat_result.st_atime_ns"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_atime_ns</span></code></a>, <a class="reference internal" href="#os.stat_result.st_mtime_ns" title="os.stat_result.st_mtime_ns"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_mtime_ns</span></code></a>, and
-<a class="reference internal" href="#os.stat_result.st_ctime_ns" title="os.stat_result.st_ctime_ns"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_ctime_ns</span></code></a> members.</p>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.5 版新加入: </span>在 Windows 上新增 <a class="reference internal" href="#os.stat_result.st_file_attributes" title="os.stat_result.st_file_attributes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_file_attributes</span></code></a> 成員。</p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.5 版的變更: </span>Windows now returns the file index as <a class="reference internal" href="#os.stat_result.st_ino" title="os.stat_result.st_ino"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_ino</span></code></a> when
 available.</p>
@@ -4030,7 +3563,7 @@ larger file identifiers would be arbitrarily packed.</p>
 it would contain the same as <a class="reference internal" href="#os.stat_result.st_dev" title="os.stat_result.st_dev"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_dev</span></code></a>, which was incorrect.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.12 版新加入: </span>Added the <a class="reference internal" href="#os.stat_result.st_birthtime" title="os.stat_result.st_birthtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_birthtime</span></code></a> member on Windows.</p>
+<p><span class="versionmodified added">在 3.12 版新加入: </span>在 Windows 上新增 <a class="reference internal" href="#os.stat_result.st_birthtime" title="os.stat_result.st_birthtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">st_birthtime</span></code></a> 成員。</p>
 </div>
 </dd></dl>
 
@@ -4062,8 +3595,8 @@ times), <code class="xref py py-const docutils literal notranslate"><span class=
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版的變更: </span>新增 <code class="xref py py-const docutils literal notranslate"><span class="pre">ST_RDONLY</span></code> 與 <code class="xref py py-const docutils literal notranslate"><span class="pre">ST_NOSUID</span></code> 常數。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added support for specifying <em>path</em> as an open file descriptor.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Added support for specifying <em>path</em> as an open file descriptor.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.4 版的變更: </span>The <code class="xref py py-const docutils literal notranslate"><span class="pre">ST_NODEV</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">ST_NOEXEC</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">ST_SYNCHRONOUS</span></code>,
@@ -4074,8 +3607,8 @@ and <code class="xref py py-const docutils literal notranslate"><span class="pre
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入: </span>新增 <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_fsid</span></code>。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>新增 <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_fsid</span></code> 屬性。</p>
 </div>
 </dd></dl>
 
@@ -4200,8 +3733,8 @@ user.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.2 版的變更: </span>Added support for Windows 6.0 (Vista) symbolic links.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added the <em>dir_fd</em> argument, and now allow <em>target_is_directory</em>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Added the <em>dir_fd</em> parameter, and now allow <em>target_is_directory</em>
 on non-Windows platforms.</p>
 </div>
 <div class="versionchanged">
@@ -4253,8 +3786,8 @@ identical to <a class="reference internal" href="#os.remove" title="os.remove"><
 traditional Unix name.  Please see the documentation for
 <a class="reference internal" href="#os.remove" title="os.remove"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove()</span></code></a> for further information.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.remove</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span><em>dir_fd</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>dir_fd</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -4289,8 +3822,8 @@ fields from the <a class="reference internal" href="#os.stat" title="os.stat"><c
 <a class="reference internal" href="#dir-fd"><span class="std std-ref">paths relative to directory descriptors</span></a> and <a class="reference internal" href="#follow-symlinks"><span class="std std-ref">not
 following symlinks</span></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">path</span></code>、<code class="docutils literal notranslate"><span class="pre">times</span></code>、<code class="docutils literal notranslate"><span class="pre">ns</span></code>、<code class="docutils literal notranslate"><span class="pre">dir_fd</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.utime</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added support for specifying <em>path</em> as an open file descriptor,
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Added support for specifying <em>path</em> as an open file descriptor,
 and the <em>dir_fd</em>, <em>follow_symlinks</em>, and <em>ns</em> parameters.</p>
 </div>
 <div class="versionchanged">
@@ -4443,7 +3976,7 @@ empty:</p>
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.7 版的變更: </span>Added support for <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> paths.</p>
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>新增對 <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 路徑的支援。</p>
 </div>
 </dd></dl>
 
@@ -4503,10 +4036,10 @@ without any side effects.</p>
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">MFD_HUGE_2GB</span></span><a class="headerlink" href="#os.MFD_HUGE_2GB" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="os.MFD_HUGE_16GB">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">MFD_HUGE_16GB</span></span><a class="headerlink" href="#os.MFD_HUGE_16GB" title="Link to this definition">¶</a></dt>
-<dd><p>These flags can be passed to <a class="reference internal" href="#os.memfd_create" title="os.memfd_create"><code class="xref py py-func docutils literal notranslate"><span class="pre">memfd_create()</span></code></a>.</p>
+<dd><p>這些旗標可以傳給 <a class="reference internal" href="#os.memfd_create" title="os.memfd_create"><code class="xref py py-func docutils literal notranslate"><span class="pre">memfd_create()</span></code></a>。</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Linux 3.17 以上且具有 glibc 2.27 以上</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">MFD_HUGE*</span></code> flags are only available since Linux 4.14.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MFD_HUGE*</span></code> 旗標僅在 Linux 4.14 以上可用。</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.8 版新加入.</span></p>
@@ -4603,8 +4136,7 @@ unsigned int. The function does not verify that <em>fd</em> is an <a class="refe
 <dl class="py data">
 <dt class="sig sig-object py" id="os.EFD_NONBLOCK">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">EFD_NONBLOCK</span></span><a class="headerlink" href="#os.EFD_NONBLOCK" title="Link to this definition">¶</a></dt>
-<dd><p>Set <a class="reference internal" href="#os.O_NONBLOCK" title="os.O_NONBLOCK"><code class="xref py py-const docutils literal notranslate"><span class="pre">O_NONBLOCK</span></code></a> status flag for new <a class="reference internal" href="#os.eventfd" title="os.eventfd"><code class="xref py py-func docutils literal notranslate"><span class="pre">eventfd()</span></code></a> file
-descriptor.</p>
+<dd><p>設定新的 <a class="reference internal" href="#os.eventfd" title="os.eventfd"><code class="xref py py-func docutils literal notranslate"><span class="pre">eventfd()</span></code></a> 檔案描述器的 <a class="reference internal" href="#os.O_NONBLOCK" title="os.O_NONBLOCK"><code class="xref py py-const docutils literal notranslate"><span class="pre">O_NONBLOCK</span></code></a> 狀態旗標。</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Linux 2.6.27 以上</p>
 </div>
@@ -4725,7 +4257,7 @@ indicates the operation must replace an existing attribute.</p>
 </section>
 </section>
 <section id="process-management">
-<span id="os-process"></span><h2>Process Management<a class="headerlink" href="#process-management" title="Link to this heading">¶</a></h2>
+<span id="os-process"></span><h2>行程管理<a class="headerlink" href="#process-management" title="Link to this heading">¶</a></h2>
 <p>These functions may be used to create and manage processes.</p>
 <p>The various <a class="reference internal" href="#os.execl" title="os.execl"><code class="xref py py-func docutils literal notranslate"><span class="pre">exec*</span></code></a> functions take a list of arguments for the new
 program loaded into the process.  In each case, the first of these arguments is
@@ -4830,8 +4362,8 @@ If it is unavailable, using it will raise a <a class="reference internal" href="
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、Windows、非 Emscripten、非 WASI。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Added support for specifying <em>path</em> as an open file descriptor
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Added support for specifying <em>path</em> as an open file descriptor
 for <a class="reference internal" href="#os.execve" title="os.execve"><code class="xref py py-func docutils literal notranslate"><span class="pre">execve()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
@@ -5034,6 +4566,11 @@ known issues when using <code class="docutils literal notranslate"><span class="
 <p>If you use TLS sockets in an application calling <code class="docutils literal notranslate"><span class="pre">fork()</span></code>, see
 the warning in the <a class="reference internal" href="ssl.html#module-ssl" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a> documentation.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>On macOS the use of this function is unsafe when mixed with using
+higher-level system APIs, and that includes using <a class="reference internal" href="urllib.request.html#module-urllib.request" title="urllib.request: Extensible library for opening URLs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.request</span></code></a>.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>Calling <code class="docutils literal notranslate"><span class="pre">fork()</span></code> in a subinterpreter is no longer supported
 (<a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a> is raised).</p>
@@ -5070,6 +4607,11 @@ new child's process id in the parent, and <em>fd</em> is the file descriptor of 
 master end of the pseudo-terminal.  For a more portable approach, use the
 <a class="reference internal" href="pty.html#module-pty" title="pty: Pseudo-Terminal Handling for Unix. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pty</span></code></a> module.  If an error occurs <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised.</p>
 <p class="audit-hook">引發一個不附帶引數的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">os.forkpty</span></code>。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>On macOS the use of this function is unsafe when mixed with using
+higher-level system APIs, and that includes using <a class="reference internal" href="urllib.request.html#module-urllib.request" title="urllib.request: Extensible library for opening URLs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.request</span></code></a>.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.12 版的變更: </span>If Python is able to detect that your process has multiple
 threads, this now raises a <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>. See the
@@ -5101,8 +4643,8 @@ process handles to be killed.</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、Windows、非 Emscripten、非 WASI。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span>Windows support.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>新支援 Windows。</p>
 </div>
 </dd></dl>
 
@@ -5296,7 +4838,7 @@ for the <em>executable</em> file in the list of directories specified by the
 </div>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：POSIX、非 Emscripten、非 WASI。</p>
-<p>See <a class="reference internal" href="#os.posix_spawn" title="os.posix_spawn"><code class="xref py py-func docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a> documentation.</p>
+<p>見 <a class="reference internal" href="#os.posix_spawn" title="os.posix_spawn"><code class="xref py py-func docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a> 文件。</p>
 </div>
 </dd></dl>
 
@@ -5414,7 +4956,7 @@ and <a class="reference internal" href="#os.spawnvpe" title="os.spawnvpe"><code 
 <dt class="sig sig-object py" id="os.P_NOWAITO">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">P_NOWAITO</span></span><a class="headerlink" href="#os.P_NOWAITO" title="Link to this definition">¶</a></dt>
 <dd><p>Possible values for the <em>mode</em> parameter to the <a class="reference internal" href="#os.spawnl" title="os.spawnl"><code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*</span></code></a> family of
-functions.  If either of these values is given, the <code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*()</span></code> functions
+functions.  If either of these values is given, the <a class="reference internal" href="#os.spawnl" title="os.spawnl"><code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*</span></code></a> functions
 will return as soon as the new process has been created, with the process id as
 the return value.</p>
 <div class="availability docutils container">
@@ -5426,7 +4968,7 @@ the return value.</p>
 <dt class="sig sig-object py" id="os.P_WAIT">
 <span class="sig-prename descclassname"><span class="pre">os.</span></span><span class="sig-name descname"><span class="pre">P_WAIT</span></span><a class="headerlink" href="#os.P_WAIT" title="Link to this definition">¶</a></dt>
 <dd><p>Possible value for the <em>mode</em> parameter to the <a class="reference internal" href="#os.spawnl" title="os.spawnl"><code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*</span></code></a> family of
-functions.  If this is given as <em>mode</em>, the <code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*()</span></code> functions will not
+functions.  If this is given as <em>mode</em>, the <a class="reference internal" href="#os.spawnl" title="os.spawnl"><code class="xref py py-func docutils literal notranslate"><span class="pre">spawn*</span></code></a> functions will not
 return until the new process has run to completion and will return the exit code
 of the process the run is successful, or <code class="docutils literal notranslate"><span class="pre">-signal</span></code> if a signal kills the
 process.</p>
@@ -5528,10 +5070,10 @@ code.</p>
 <dd><p>Returns the current global process times.
 The return value is an object with five attributes:</p>
 <ul class="simple">
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code> - user time</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code> - 使用者時間</p></li>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">system</span></code> - 系統時間</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">children_user</span></code> - user time of all child processes</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">children_system</span></code> - system time of all child processes</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">children_user</span></code> - 所有子行程的使用者時間</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">children_system</span></code> - 所有子行程的系統時間</p></li>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">elapsed</span></code> - elapsed real time since a fixed point in the past</p></li>
 </ul>
 <p>For backwards compatibility, this object also behaves like a five-tuple
@@ -5596,6 +5138,10 @@ Otherwise, if there are no matching children
 that could be waited for, <a class="reference internal" href="exceptions.html#ChildProcessError" title="ChildProcessError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ChildProcessError</span></code></a> is raised.</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Emscripten、非 WASI。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>This function is not available on macOS.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.3 版新加入.</span></p>
@@ -6363,487 +5909,23 @@ block in these cases, but instead immediately raises <a class="reference interna
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- 各種作業系統介面</a><ul>
-<li><a class="reference internal" href="#os.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
-<li><a class="reference internal" href="#os.name"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
 <li><a class="reference internal" href="#file-names-command-line-arguments-and-environment-variables">File Names, Command Line Arguments, and Environment Variables</a></li>
 <li><a class="reference internal" href="#python-utf-8-mode">Python UTF-8 Mode</a></li>
-<li><a class="reference internal" href="#process-parameters">Process Parameters</a><ul>
-<li><a class="reference internal" href="#os.ctermid"><code class="docutils literal notranslate"><span class="pre">ctermid()</span></code></a></li>
-<li><a class="reference internal" href="#os.environ"><code class="docutils literal notranslate"><span class="pre">environ</span></code></a></li>
-<li><a class="reference internal" href="#os.environb"><code class="docutils literal notranslate"><span class="pre">environb</span></code></a></li>
-<li><a class="reference internal" href="#os.fsencode"><code class="docutils literal notranslate"><span class="pre">fsencode()</span></code></a></li>
-<li><a class="reference internal" href="#os.fsdecode"><code class="docutils literal notranslate"><span class="pre">fsdecode()</span></code></a></li>
-<li><a class="reference internal" href="#os.fspath"><code class="docutils literal notranslate"><span class="pre">fspath()</span></code></a></li>
-<li><a class="reference internal" href="#os.PathLike"><code class="docutils literal notranslate"><span class="pre">PathLike</span></code></a><ul>
-<li><a class="reference internal" href="#os.PathLike.__fspath__"><code class="docutils literal notranslate"><span class="pre">PathLike.__fspath__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.getenv"><code class="docutils literal notranslate"><span class="pre">getenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.getenvb"><code class="docutils literal notranslate"><span class="pre">getenvb()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_exec_path"><code class="docutils literal notranslate"><span class="pre">get_exec_path()</span></code></a></li>
-<li><a class="reference internal" href="#os.getegid"><code class="docutils literal notranslate"><span class="pre">getegid()</span></code></a></li>
-<li><a class="reference internal" href="#os.geteuid"><code class="docutils literal notranslate"><span class="pre">geteuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgid"><code class="docutils literal notranslate"><span class="pre">getgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgrouplist"><code class="docutils literal notranslate"><span class="pre">getgrouplist()</span></code></a></li>
-<li><a class="reference internal" href="#os.getgroups"><code class="docutils literal notranslate"><span class="pre">getgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.getlogin"><code class="docutils literal notranslate"><span class="pre">getlogin()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpgid"><code class="docutils literal notranslate"><span class="pre">getpgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpgrp"><code class="docutils literal notranslate"><span class="pre">getpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpid"><code class="docutils literal notranslate"><span class="pre">getpid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getppid"><code class="docutils literal notranslate"><span class="pre">getppid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getpriority"><code class="docutils literal notranslate"><span class="pre">getpriority()</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_PROCESS"><code class="docutils literal notranslate"><span class="pre">PRIO_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_PGRP"><code class="docutils literal notranslate"><span class="pre">PRIO_PGRP</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_USER"><code class="docutils literal notranslate"><span class="pre">PRIO_USER</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_THREAD"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_THREAD</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_PROCESS"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_PROCESS</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_BG"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_BG</span></code></a></li>
-<li><a class="reference internal" href="#os.PRIO_DARWIN_NONUI"><code class="docutils literal notranslate"><span class="pre">PRIO_DARWIN_NONUI</span></code></a></li>
-<li><a class="reference internal" href="#os.getresuid"><code class="docutils literal notranslate"><span class="pre">getresuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getresgid"><code class="docutils literal notranslate"><span class="pre">getresgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getuid"><code class="docutils literal notranslate"><span class="pre">getuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.initgroups"><code class="docutils literal notranslate"><span class="pre">initgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.putenv"><code class="docutils literal notranslate"><span class="pre">putenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.setegid"><code class="docutils literal notranslate"><span class="pre">setegid()</span></code></a></li>
-<li><a class="reference internal" href="#os.seteuid"><code class="docutils literal notranslate"><span class="pre">seteuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setgid"><code class="docutils literal notranslate"><span class="pre">setgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setgroups"><code class="docutils literal notranslate"><span class="pre">setgroups()</span></code></a></li>
-<li><a class="reference internal" href="#os.setns"><code class="docutils literal notranslate"><span class="pre">setns()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpgrp"><code class="docutils literal notranslate"><span class="pre">setpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpgid"><code class="docutils literal notranslate"><span class="pre">setpgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setpriority"><code class="docutils literal notranslate"><span class="pre">setpriority()</span></code></a></li>
-<li><a class="reference internal" href="#os.setregid"><code class="docutils literal notranslate"><span class="pre">setregid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setresgid"><code class="docutils literal notranslate"><span class="pre">setresgid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setresuid"><code class="docutils literal notranslate"><span class="pre">setresuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setreuid"><code class="docutils literal notranslate"><span class="pre">setreuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.getsid"><code class="docutils literal notranslate"><span class="pre">getsid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setsid"><code class="docutils literal notranslate"><span class="pre">setsid()</span></code></a></li>
-<li><a class="reference internal" href="#os.setuid"><code class="docutils literal notranslate"><span class="pre">setuid()</span></code></a></li>
-<li><a class="reference internal" href="#os.strerror"><code class="docutils literal notranslate"><span class="pre">strerror()</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_bytes_environ"><code class="docutils literal notranslate"><span class="pre">supports_bytes_environ</span></code></a></li>
-<li><a class="reference internal" href="#os.umask"><code class="docutils literal notranslate"><span class="pre">umask()</span></code></a></li>
-<li><a class="reference internal" href="#os.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
-<li><a class="reference internal" href="#os.unsetenv"><code class="docutils literal notranslate"><span class="pre">unsetenv()</span></code></a></li>
-<li><a class="reference internal" href="#os.unshare"><code class="docutils literal notranslate"><span class="pre">unshare()</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_FILES"><code class="docutils literal notranslate"><span class="pre">CLONE_FILES</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_FS"><code class="docutils literal notranslate"><span class="pre">CLONE_FS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWCGROUP"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWCGROUP</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWIPC"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWIPC</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWNET"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWNET</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWNS"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWNS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWPID"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWPID</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWTIME"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWTIME</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWUSER"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWUSER</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_NEWUTS"><code class="docutils literal notranslate"><span class="pre">CLONE_NEWUTS</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_SIGHAND"><code class="docutils literal notranslate"><span class="pre">CLONE_SIGHAND</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_SYSVSEM"><code class="docutils literal notranslate"><span class="pre">CLONE_SYSVSEM</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_THREAD"><code class="docutils literal notranslate"><span class="pre">CLONE_THREAD</span></code></a></li>
-<li><a class="reference internal" href="#os.CLONE_VM"><code class="docutils literal notranslate"><span class="pre">CLONE_VM</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#file-object-creation">File Object Creation</a><ul>
-<li><a class="reference internal" href="#os.fdopen"><code class="docutils literal notranslate"><span class="pre">fdopen()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#process-parameters">Process Parameters</a></li>
+<li><a class="reference internal" href="#file-object-creation">File Object Creation</a></li>
 <li><a class="reference internal" href="#file-descriptor-operations">File Descriptor Operations</a><ul>
-<li><a class="reference internal" href="#os.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
-<li><a class="reference internal" href="#os.closerange"><code class="docutils literal notranslate"><span class="pre">closerange()</span></code></a></li>
-<li><a class="reference internal" href="#os.copy_file_range"><code class="docutils literal notranslate"><span class="pre">copy_file_range()</span></code></a></li>
-<li><a class="reference internal" href="#os.device_encoding"><code class="docutils literal notranslate"><span class="pre">device_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#os.dup"><code class="docutils literal notranslate"><span class="pre">dup()</span></code></a></li>
-<li><a class="reference internal" href="#os.dup2"><code class="docutils literal notranslate"><span class="pre">dup2()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchmod"><code class="docutils literal notranslate"><span class="pre">fchmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchown"><code class="docutils literal notranslate"><span class="pre">fchown()</span></code></a></li>
-<li><a class="reference internal" href="#os.fdatasync"><code class="docutils literal notranslate"><span class="pre">fdatasync()</span></code></a></li>
-<li><a class="reference internal" href="#os.fpathconf"><code class="docutils literal notranslate"><span class="pre">fpathconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.fstat"><code class="docutils literal notranslate"><span class="pre">fstat()</span></code></a></li>
-<li><a class="reference internal" href="#os.fstatvfs"><code class="docutils literal notranslate"><span class="pre">fstatvfs()</span></code></a></li>
-<li><a class="reference internal" href="#os.fsync"><code class="docutils literal notranslate"><span class="pre">fsync()</span></code></a></li>
-<li><a class="reference internal" href="#os.ftruncate"><code class="docutils literal notranslate"><span class="pre">ftruncate()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_blocking"><code class="docutils literal notranslate"><span class="pre">get_blocking()</span></code></a></li>
-<li><a class="reference internal" href="#os.isatty"><code class="docutils literal notranslate"><span class="pre">isatty()</span></code></a></li>
-<li><a class="reference internal" href="#os.lockf"><code class="docutils literal notranslate"><span class="pre">lockf()</span></code></a></li>
-<li><a class="reference internal" href="#os.F_LOCK"><code class="docutils literal notranslate"><span class="pre">F_LOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_TLOCK"><code class="docutils literal notranslate"><span class="pre">F_TLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_ULOCK"><code class="docutils literal notranslate"><span class="pre">F_ULOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.F_TEST"><code class="docutils literal notranslate"><span class="pre">F_TEST</span></code></a></li>
-<li><a class="reference internal" href="#os.login_tty"><code class="docutils literal notranslate"><span class="pre">login_tty()</span></code></a></li>
-<li><a class="reference internal" href="#os.lseek"><code class="docutils literal notranslate"><span class="pre">lseek()</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_SET"><code class="docutils literal notranslate"><span class="pre">SEEK_SET</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_CUR"><code class="docutils literal notranslate"><span class="pre">SEEK_CUR</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_END"><code class="docutils literal notranslate"><span class="pre">SEEK_END</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_HOLE"><code class="docutils literal notranslate"><span class="pre">SEEK_HOLE</span></code></a></li>
-<li><a class="reference internal" href="#os.SEEK_DATA"><code class="docutils literal notranslate"><span class="pre">SEEK_DATA</span></code></a></li>
-<li><a class="reference internal" href="#os.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RDONLY"><code class="docutils literal notranslate"><span class="pre">O_RDONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_WRONLY"><code class="docutils literal notranslate"><span class="pre">O_WRONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RDWR"><code class="docutils literal notranslate"><span class="pre">O_RDWR</span></code></a></li>
-<li><a class="reference internal" href="#os.O_APPEND"><code class="docutils literal notranslate"><span class="pre">O_APPEND</span></code></a></li>
-<li><a class="reference internal" href="#os.O_CREAT"><code class="docutils literal notranslate"><span class="pre">O_CREAT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EXCL"><code class="docutils literal notranslate"><span class="pre">O_EXCL</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TRUNC"><code class="docutils literal notranslate"><span class="pre">O_TRUNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DSYNC"><code class="docutils literal notranslate"><span class="pre">O_DSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RSYNC"><code class="docutils literal notranslate"><span class="pre">O_RSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SYNC"><code class="docutils literal notranslate"><span class="pre">O_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NDELAY"><code class="docutils literal notranslate"><span class="pre">O_NDELAY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">O_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOCTTY"><code class="docutils literal notranslate"><span class="pre">O_NOCTTY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">O_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_BINARY"><code class="docutils literal notranslate"><span class="pre">O_BINARY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOINHERIT"><code class="docutils literal notranslate"><span class="pre">O_NOINHERIT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SHORT_LIVED"><code class="docutils literal notranslate"><span class="pre">O_SHORT_LIVED</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TEMPORARY"><code class="docutils literal notranslate"><span class="pre">O_TEMPORARY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_RANDOM"><code class="docutils literal notranslate"><span class="pre">O_RANDOM</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">O_SEQUENTIAL</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TEXT"><code class="docutils literal notranslate"><span class="pre">O_TEXT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EVTONLY"><code class="docutils literal notranslate"><span class="pre">O_EVTONLY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_FSYNC"><code class="docutils literal notranslate"><span class="pre">O_FSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SYMLINK"><code class="docutils literal notranslate"><span class="pre">O_SYMLINK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOFOLLOW_ANY"><code class="docutils literal notranslate"><span class="pre">O_NOFOLLOW_ANY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_ASYNC"><code class="docutils literal notranslate"><span class="pre">O_ASYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DIRECT"><code class="docutils literal notranslate"><span class="pre">O_DIRECT</span></code></a></li>
-<li><a class="reference internal" href="#os.O_DIRECTORY"><code class="docutils literal notranslate"><span class="pre">O_DIRECTORY</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOFOLLOW"><code class="docutils literal notranslate"><span class="pre">O_NOFOLLOW</span></code></a></li>
-<li><a class="reference internal" href="#os.O_NOATIME"><code class="docutils literal notranslate"><span class="pre">O_NOATIME</span></code></a></li>
-<li><a class="reference internal" href="#os.O_PATH"><code class="docutils literal notranslate"><span class="pre">O_PATH</span></code></a></li>
-<li><a class="reference internal" href="#os.O_TMPFILE"><code class="docutils literal notranslate"><span class="pre">O_TMPFILE</span></code></a></li>
-<li><a class="reference internal" href="#os.O_SHLOCK"><code class="docutils literal notranslate"><span class="pre">O_SHLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.O_EXLOCK"><code class="docutils literal notranslate"><span class="pre">O_EXLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.openpty"><code class="docutils literal notranslate"><span class="pre">openpty()</span></code></a></li>
-<li><a class="reference internal" href="#os.pipe"><code class="docutils literal notranslate"><span class="pre">pipe()</span></code></a></li>
-<li><a class="reference internal" href="#os.pipe2"><code class="docutils literal notranslate"><span class="pre">pipe2()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_fallocate"><code class="docutils literal notranslate"><span class="pre">posix_fallocate()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_fadvise"><code class="docutils literal notranslate"><span class="pre">posix_fadvise()</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_NORMAL"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_SEQUENTIAL</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_RANDOM"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_RANDOM</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_NOREUSE"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_NOREUSE</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_WILLNEED"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_WILLNEED</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_FADV_DONTNEED"><code class="docutils literal notranslate"><span class="pre">POSIX_FADV_DONTNEED</span></code></a></li>
-<li><a class="reference internal" href="#os.pread"><code class="docutils literal notranslate"><span class="pre">pread()</span></code></a></li>
-<li><a class="reference internal" href="#os.preadv"><code class="docutils literal notranslate"><span class="pre">preadv()</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_NOWAIT"><code class="docutils literal notranslate"><span class="pre">RWF_NOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_HIPRI"><code class="docutils literal notranslate"><span class="pre">RWF_HIPRI</span></code></a></li>
-<li><a class="reference internal" href="#os.pwrite"><code class="docutils literal notranslate"><span class="pre">pwrite()</span></code></a></li>
-<li><a class="reference internal" href="#os.pwritev"><code class="docutils literal notranslate"><span class="pre">pwritev()</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_DSYNC"><code class="docutils literal notranslate"><span class="pre">RWF_DSYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_SYNC"><code class="docutils literal notranslate"><span class="pre">RWF_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.RWF_APPEND"><code class="docutils literal notranslate"><span class="pre">RWF_APPEND</span></code></a></li>
-<li><a class="reference internal" href="#os.read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
-<li><a class="reference internal" href="#os.sendfile"><code class="docutils literal notranslate"><span class="pre">sendfile()</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_NODISKIO"><code class="docutils literal notranslate"><span class="pre">SF_NODISKIO</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_MNOWAIT"><code class="docutils literal notranslate"><span class="pre">SF_MNOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_SYNC"><code class="docutils literal notranslate"><span class="pre">SF_SYNC</span></code></a></li>
-<li><a class="reference internal" href="#os.SF_NOCACHE"><code class="docutils literal notranslate"><span class="pre">SF_NOCACHE</span></code></a></li>
-<li><a class="reference internal" href="#os.set_blocking"><code class="docutils literal notranslate"><span class="pre">set_blocking()</span></code></a></li>
-<li><a class="reference internal" href="#os.splice"><code class="docutils literal notranslate"><span class="pre">splice()</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_MOVE"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_MOVE</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.SPLICE_F_MORE"><code class="docutils literal notranslate"><span class="pre">SPLICE_F_MORE</span></code></a></li>
-<li><a class="reference internal" href="#os.readv"><code class="docutils literal notranslate"><span class="pre">readv()</span></code></a></li>
-<li><a class="reference internal" href="#os.tcgetpgrp"><code class="docutils literal notranslate"><span class="pre">tcgetpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.tcsetpgrp"><code class="docutils literal notranslate"><span class="pre">tcsetpgrp()</span></code></a></li>
-<li><a class="reference internal" href="#os.ttyname"><code class="docutils literal notranslate"><span class="pre">ttyname()</span></code></a></li>
-<li><a class="reference internal" href="#os.write"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
-<li><a class="reference internal" href="#os.writev"><code class="docutils literal notranslate"><span class="pre">writev()</span></code></a></li>
-<li><a class="reference internal" href="#querying-the-size-of-a-terminal">Querying the size of a terminal</a><ul>
-<li><a class="reference internal" href="#os.get_terminal_size"><code class="docutils literal notranslate"><span class="pre">get_terminal_size()</span></code></a></li>
-<li><a class="reference internal" href="#os.terminal_size"><code class="docutils literal notranslate"><span class="pre">terminal_size</span></code></a><ul>
-<li><a class="reference internal" href="#os.terminal_size.columns"><code class="docutils literal notranslate"><span class="pre">terminal_size.columns</span></code></a></li>
-<li><a class="reference internal" href="#os.terminal_size.lines"><code class="docutils literal notranslate"><span class="pre">terminal_size.lines</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#inheritance-of-file-descriptors">Inheritance of File Descriptors</a><ul>
-<li><a class="reference internal" href="#os.get_inheritable"><code class="docutils literal notranslate"><span class="pre">get_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.set_inheritable"><code class="docutils literal notranslate"><span class="pre">set_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.get_handle_inheritable"><code class="docutils literal notranslate"><span class="pre">get_handle_inheritable()</span></code></a></li>
-<li><a class="reference internal" href="#os.set_handle_inheritable"><code class="docutils literal notranslate"><span class="pre">set_handle_inheritable()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#querying-the-size-of-a-terminal">Querying the size of a terminal</a></li>
+<li><a class="reference internal" href="#inheritance-of-file-descriptors">Inheritance of File Descriptors</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#files-and-directories">Files and Directories</a><ul>
-<li><a class="reference internal" href="#os.access"><code class="docutils literal notranslate"><span class="pre">access()</span></code></a></li>
-<li><a class="reference internal" href="#os.F_OK"><code class="docutils literal notranslate"><span class="pre">F_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.R_OK"><code class="docutils literal notranslate"><span class="pre">R_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.W_OK"><code class="docutils literal notranslate"><span class="pre">W_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.X_OK"><code class="docutils literal notranslate"><span class="pre">X_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.chdir"><code class="docutils literal notranslate"><span class="pre">chdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.chflags"><code class="docutils literal notranslate"><span class="pre">chflags()</span></code></a></li>
-<li><a class="reference internal" href="#os.chmod"><code class="docutils literal notranslate"><span class="pre">chmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.chown"><code class="docutils literal notranslate"><span class="pre">chown()</span></code></a></li>
-<li><a class="reference internal" href="#os.chroot"><code class="docutils literal notranslate"><span class="pre">chroot()</span></code></a></li>
-<li><a class="reference internal" href="#os.fchdir"><code class="docutils literal notranslate"><span class="pre">fchdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.getcwd"><code class="docutils literal notranslate"><span class="pre">getcwd()</span></code></a></li>
-<li><a class="reference internal" href="#os.getcwdb"><code class="docutils literal notranslate"><span class="pre">getcwdb()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchflags"><code class="docutils literal notranslate"><span class="pre">lchflags()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchmod"><code class="docutils literal notranslate"><span class="pre">lchmod()</span></code></a></li>
-<li><a class="reference internal" href="#os.lchown"><code class="docutils literal notranslate"><span class="pre">lchown()</span></code></a></li>
-<li><a class="reference internal" href="#os.link"><code class="docutils literal notranslate"><span class="pre">link()</span></code></a></li>
-<li><a class="reference internal" href="#os.listdir"><code class="docutils literal notranslate"><span class="pre">listdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.listdrives"><code class="docutils literal notranslate"><span class="pre">listdrives()</span></code></a></li>
-<li><a class="reference internal" href="#os.listmounts"><code class="docutils literal notranslate"><span class="pre">listmounts()</span></code></a></li>
-<li><a class="reference internal" href="#os.listvolumes"><code class="docutils literal notranslate"><span class="pre">listvolumes()</span></code></a></li>
-<li><a class="reference internal" href="#os.lstat"><code class="docutils literal notranslate"><span class="pre">lstat()</span></code></a></li>
-<li><a class="reference internal" href="#os.mkdir"><code class="docutils literal notranslate"><span class="pre">mkdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.makedirs"><code class="docutils literal notranslate"><span class="pre">makedirs()</span></code></a></li>
-<li><a class="reference internal" href="#os.mkfifo"><code class="docutils literal notranslate"><span class="pre">mkfifo()</span></code></a></li>
-<li><a class="reference internal" href="#os.mknod"><code class="docutils literal notranslate"><span class="pre">mknod()</span></code></a></li>
-<li><a class="reference internal" href="#os.major"><code class="docutils literal notranslate"><span class="pre">major()</span></code></a></li>
-<li><a class="reference internal" href="#os.minor"><code class="docutils literal notranslate"><span class="pre">minor()</span></code></a></li>
-<li><a class="reference internal" href="#os.makedev"><code class="docutils literal notranslate"><span class="pre">makedev()</span></code></a></li>
-<li><a class="reference internal" href="#os.pathconf"><code class="docutils literal notranslate"><span class="pre">pathconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.pathconf_names"><code class="docutils literal notranslate"><span class="pre">pathconf_names</span></code></a></li>
-<li><a class="reference internal" href="#os.readlink"><code class="docutils literal notranslate"><span class="pre">readlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
-<li><a class="reference internal" href="#os.removedirs"><code class="docutils literal notranslate"><span class="pre">removedirs()</span></code></a></li>
-<li><a class="reference internal" href="#os.rename"><code class="docutils literal notranslate"><span class="pre">rename()</span></code></a></li>
-<li><a class="reference internal" href="#os.renames"><code class="docutils literal notranslate"><span class="pre">renames()</span></code></a></li>
-<li><a class="reference internal" href="#os.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
-<li><a class="reference internal" href="#os.rmdir"><code class="docutils literal notranslate"><span class="pre">rmdir()</span></code></a></li>
-<li><a class="reference internal" href="#os.scandir"><code class="docutils literal notranslate"><span class="pre">scandir()</span></code></a><ul>
-<li><a class="reference internal" href="#os.scandir.close"><code class="docutils literal notranslate"><span class="pre">scandir.close()</span></code></a></li>
+<li><a class="reference internal" href="#linux-extended-attributes">Linux extended attributes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#os.DirEntry"><code class="docutils literal notranslate"><span class="pre">DirEntry</span></code></a><ul>
-<li><a class="reference internal" href="#os.DirEntry.name"><code class="docutils literal notranslate"><span class="pre">DirEntry.name</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.path"><code class="docutils literal notranslate"><span class="pre">DirEntry.path</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.inode"><code class="docutils literal notranslate"><span class="pre">DirEntry.inode()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_dir"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_file"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_file()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_symlink"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_symlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.is_junction"><code class="docutils literal notranslate"><span class="pre">DirEntry.is_junction()</span></code></a></li>
-<li><a class="reference internal" href="#os.DirEntry.stat"><code class="docutils literal notranslate"><span class="pre">DirEntry.stat()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.stat"><code class="docutils literal notranslate"><span class="pre">stat()</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result"><code class="docutils literal notranslate"><span class="pre">stat_result</span></code></a><ul>
-<li><a class="reference internal" href="#os.stat_result.st_mode"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mode</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ino"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ino</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_dev"><code class="docutils literal notranslate"><span class="pre">stat_result.st_dev</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_nlink"><code class="docutils literal notranslate"><span class="pre">stat_result.st_nlink</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_uid"><code class="docutils literal notranslate"><span class="pre">stat_result.st_uid</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_gid"><code class="docutils literal notranslate"><span class="pre">stat_result.st_gid</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_size"><code class="docutils literal notranslate"><span class="pre">stat_result.st_size</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_atime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_atime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_mtime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mtime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ctime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ctime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_atime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_atime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_mtime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_mtime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_ctime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_ctime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_birthtime"><code class="docutils literal notranslate"><span class="pre">stat_result.st_birthtime</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_birthtime_ns"><code class="docutils literal notranslate"><span class="pre">stat_result.st_birthtime_ns</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_blocks"><code class="docutils literal notranslate"><span class="pre">stat_result.st_blocks</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_blksize"><code class="docutils literal notranslate"><span class="pre">stat_result.st_blksize</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_rdev"><code class="docutils literal notranslate"><span class="pre">stat_result.st_rdev</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_flags"><code class="docutils literal notranslate"><span class="pre">stat_result.st_flags</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_gen"><code class="docutils literal notranslate"><span class="pre">stat_result.st_gen</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_fstype"><code class="docutils literal notranslate"><span class="pre">stat_result.st_fstype</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_rsize"><code class="docutils literal notranslate"><span class="pre">stat_result.st_rsize</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_creator"><code class="docutils literal notranslate"><span class="pre">stat_result.st_creator</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_type"><code class="docutils literal notranslate"><span class="pre">stat_result.st_type</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_file_attributes"><code class="docutils literal notranslate"><span class="pre">stat_result.st_file_attributes</span></code></a></li>
-<li><a class="reference internal" href="#os.stat_result.st_reparse_tag"><code class="docutils literal notranslate"><span class="pre">stat_result.st_reparse_tag</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.statvfs"><code class="docutils literal notranslate"><span class="pre">statvfs()</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_dir_fd"><code class="docutils literal notranslate"><span class="pre">supports_dir_fd</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_effective_ids"><code class="docutils literal notranslate"><span class="pre">supports_effective_ids</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_fd"><code class="docutils literal notranslate"><span class="pre">supports_fd</span></code></a></li>
-<li><a class="reference internal" href="#os.supports_follow_symlinks"><code class="docutils literal notranslate"><span class="pre">supports_follow_symlinks</span></code></a></li>
-<li><a class="reference internal" href="#os.symlink"><code class="docutils literal notranslate"><span class="pre">symlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.sync"><code class="docutils literal notranslate"><span class="pre">sync()</span></code></a></li>
-<li><a class="reference internal" href="#os.truncate"><code class="docutils literal notranslate"><span class="pre">truncate()</span></code></a></li>
-<li><a class="reference internal" href="#os.unlink"><code class="docutils literal notranslate"><span class="pre">unlink()</span></code></a></li>
-<li><a class="reference internal" href="#os.utime"><code class="docutils literal notranslate"><span class="pre">utime()</span></code></a></li>
-<li><a class="reference internal" href="#os.walk"><code class="docutils literal notranslate"><span class="pre">walk()</span></code></a></li>
-<li><a class="reference internal" href="#os.fwalk"><code class="docutils literal notranslate"><span class="pre">fwalk()</span></code></a></li>
-<li><a class="reference internal" href="#os.memfd_create"><code class="docutils literal notranslate"><span class="pre">memfd_create()</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">MFD_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_ALLOW_SEALING"><code class="docutils literal notranslate"><span class="pre">MFD_ALLOW_SEALING</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGETLB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGETLB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_SHIFT"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_SHIFT</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_MASK"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_MASK</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_64KB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_64KB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_512KB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_512KB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_1MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_1MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_2MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_2MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_8MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_8MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_16MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_16MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_32MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_32MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_256MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_256MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_512MB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_512MB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_1GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_1GB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_2GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_2GB</span></code></a></li>
-<li><a class="reference internal" href="#os.MFD_HUGE_16GB"><code class="docutils literal notranslate"><span class="pre">MFD_HUGE_16GB</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd"><code class="docutils literal notranslate"><span class="pre">eventfd()</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd_read"><code class="docutils literal notranslate"><span class="pre">eventfd_read()</span></code></a></li>
-<li><a class="reference internal" href="#os.eventfd_write"><code class="docutils literal notranslate"><span class="pre">eventfd_write()</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">EFD_CLOEXEC</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">EFD_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.EFD_SEMAPHORE"><code class="docutils literal notranslate"><span class="pre">EFD_SEMAPHORE</span></code></a></li>
-<li><a class="reference internal" href="#linux-extended-attributes">Linux extended attributes</a><ul>
-<li><a class="reference internal" href="#os.getxattr"><code class="docutils literal notranslate"><span class="pre">getxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.listxattr"><code class="docutils literal notranslate"><span class="pre">listxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.removexattr"><code class="docutils literal notranslate"><span class="pre">removexattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.setxattr"><code class="docutils literal notranslate"><span class="pre">setxattr()</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_SIZE_MAX"><code class="docutils literal notranslate"><span class="pre">XATTR_SIZE_MAX</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_CREATE"><code class="docutils literal notranslate"><span class="pre">XATTR_CREATE</span></code></a></li>
-<li><a class="reference internal" href="#os.XATTR_REPLACE"><code class="docutils literal notranslate"><span class="pre">XATTR_REPLACE</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#process-management">Process Management</a><ul>
-<li><a class="reference internal" href="#os.abort"><code class="docutils literal notranslate"><span class="pre">abort()</span></code></a></li>
-<li><a class="reference internal" href="#os.add_dll_directory"><code class="docutils literal notranslate"><span class="pre">add_dll_directory()</span></code></a></li>
-<li><a class="reference internal" href="#os.execl"><code class="docutils literal notranslate"><span class="pre">execl()</span></code></a></li>
-<li><a class="reference internal" href="#os.execle"><code class="docutils literal notranslate"><span class="pre">execle()</span></code></a></li>
-<li><a class="reference internal" href="#os.execlp"><code class="docutils literal notranslate"><span class="pre">execlp()</span></code></a></li>
-<li><a class="reference internal" href="#os.execlpe"><code class="docutils literal notranslate"><span class="pre">execlpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.execv"><code class="docutils literal notranslate"><span class="pre">execv()</span></code></a></li>
-<li><a class="reference internal" href="#os.execve"><code class="docutils literal notranslate"><span class="pre">execve()</span></code></a></li>
-<li><a class="reference internal" href="#os.execvp"><code class="docutils literal notranslate"><span class="pre">execvp()</span></code></a></li>
-<li><a class="reference internal" href="#os.execvpe"><code class="docutils literal notranslate"><span class="pre">execvpe()</span></code></a></li>
-<li><a class="reference internal" href="#os._exit"><code class="docutils literal notranslate"><span class="pre">_exit()</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OK"><code class="docutils literal notranslate"><span class="pre">EX_OK</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_USAGE"><code class="docutils literal notranslate"><span class="pre">EX_USAGE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_DATAERR"><code class="docutils literal notranslate"><span class="pre">EX_DATAERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOINPUT"><code class="docutils literal notranslate"><span class="pre">EX_NOINPUT</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOUSER"><code class="docutils literal notranslate"><span class="pre">EX_NOUSER</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOHOST"><code class="docutils literal notranslate"><span class="pre">EX_NOHOST</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_UNAVAILABLE"><code class="docutils literal notranslate"><span class="pre">EX_UNAVAILABLE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_SOFTWARE"><code class="docutils literal notranslate"><span class="pre">EX_SOFTWARE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OSERR"><code class="docutils literal notranslate"><span class="pre">EX_OSERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_OSFILE"><code class="docutils literal notranslate"><span class="pre">EX_OSFILE</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_CANTCREAT"><code class="docutils literal notranslate"><span class="pre">EX_CANTCREAT</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_IOERR"><code class="docutils literal notranslate"><span class="pre">EX_IOERR</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_TEMPFAIL"><code class="docutils literal notranslate"><span class="pre">EX_TEMPFAIL</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_PROTOCOL"><code class="docutils literal notranslate"><span class="pre">EX_PROTOCOL</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOPERM"><code class="docutils literal notranslate"><span class="pre">EX_NOPERM</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_CONFIG"><code class="docutils literal notranslate"><span class="pre">EX_CONFIG</span></code></a></li>
-<li><a class="reference internal" href="#os.EX_NOTFOUND"><code class="docutils literal notranslate"><span class="pre">EX_NOTFOUND</span></code></a></li>
-<li><a class="reference internal" href="#os.fork"><code class="docutils literal notranslate"><span class="pre">fork()</span></code></a></li>
-<li><a class="reference internal" href="#os.forkpty"><code class="docutils literal notranslate"><span class="pre">forkpty()</span></code></a></li>
-<li><a class="reference internal" href="#os.kill"><code class="docutils literal notranslate"><span class="pre">kill()</span></code></a></li>
-<li><a class="reference internal" href="#os.killpg"><code class="docutils literal notranslate"><span class="pre">killpg()</span></code></a></li>
-<li><a class="reference internal" href="#os.nice"><code class="docutils literal notranslate"><span class="pre">nice()</span></code></a></li>
-<li><a class="reference internal" href="#os.pidfd_open"><code class="docutils literal notranslate"><span class="pre">pidfd_open()</span></code></a></li>
-<li><a class="reference internal" href="#os.PIDFD_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">PIDFD_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.plock"><code class="docutils literal notranslate"><span class="pre">plock()</span></code></a></li>
-<li><a class="reference internal" href="#os.popen"><code class="docutils literal notranslate"><span class="pre">popen()</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_spawn"><code class="docutils literal notranslate"><span class="pre">posix_spawn()</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_OPEN"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_OPEN</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_CLOSE"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_CLOSE</span></code></a></li>
-<li><a class="reference internal" href="#os.POSIX_SPAWN_DUP2"><code class="docutils literal notranslate"><span class="pre">POSIX_SPAWN_DUP2</span></code></a></li>
-<li><a class="reference internal" href="#os.posix_spawnp"><code class="docutils literal notranslate"><span class="pre">posix_spawnp()</span></code></a></li>
-<li><a class="reference internal" href="#os.register_at_fork"><code class="docutils literal notranslate"><span class="pre">register_at_fork()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnl"><code class="docutils literal notranslate"><span class="pre">spawnl()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnle"><code class="docutils literal notranslate"><span class="pre">spawnle()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnlp"><code class="docutils literal notranslate"><span class="pre">spawnlp()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnlpe"><code class="docutils literal notranslate"><span class="pre">spawnlpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnv"><code class="docutils literal notranslate"><span class="pre">spawnv()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnve"><code class="docutils literal notranslate"><span class="pre">spawnve()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnvp"><code class="docutils literal notranslate"><span class="pre">spawnvp()</span></code></a></li>
-<li><a class="reference internal" href="#os.spawnvpe"><code class="docutils literal notranslate"><span class="pre">spawnvpe()</span></code></a></li>
-<li><a class="reference internal" href="#os.P_NOWAIT"><code class="docutils literal notranslate"><span class="pre">P_NOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.P_NOWAITO"><code class="docutils literal notranslate"><span class="pre">P_NOWAITO</span></code></a></li>
-<li><a class="reference internal" href="#os.P_WAIT"><code class="docutils literal notranslate"><span class="pre">P_WAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.P_DETACH"><code class="docutils literal notranslate"><span class="pre">P_DETACH</span></code></a></li>
-<li><a class="reference internal" href="#os.P_OVERLAY"><code class="docutils literal notranslate"><span class="pre">P_OVERLAY</span></code></a></li>
-<li><a class="reference internal" href="#os.startfile"><code class="docutils literal notranslate"><span class="pre">startfile()</span></code></a></li>
-<li><a class="reference internal" href="#os.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
-<li><a class="reference internal" href="#os.times"><code class="docutils literal notranslate"><span class="pre">times()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait"><code class="docutils literal notranslate"><span class="pre">wait()</span></code></a></li>
-<li><a class="reference internal" href="#os.waitid"><code class="docutils literal notranslate"><span class="pre">waitid()</span></code></a></li>
-<li><a class="reference internal" href="#os.waitpid"><code class="docutils literal notranslate"><span class="pre">waitpid()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait3"><code class="docutils literal notranslate"><span class="pre">wait3()</span></code></a></li>
-<li><a class="reference internal" href="#os.wait4"><code class="docutils literal notranslate"><span class="pre">wait4()</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PID"><code class="docutils literal notranslate"><span class="pre">P_PID</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PGID"><code class="docutils literal notranslate"><span class="pre">P_PGID</span></code></a></li>
-<li><a class="reference internal" href="#os.P_ALL"><code class="docutils literal notranslate"><span class="pre">P_ALL</span></code></a></li>
-<li><a class="reference internal" href="#os.P_PIDFD"><code class="docutils literal notranslate"><span class="pre">P_PIDFD</span></code></a></li>
-<li><a class="reference internal" href="#os.WCONTINUED"><code class="docutils literal notranslate"><span class="pre">WCONTINUED</span></code></a></li>
-<li><a class="reference internal" href="#os.WEXITED"><code class="docutils literal notranslate"><span class="pre">WEXITED</span></code></a></li>
-<li><a class="reference internal" href="#os.WSTOPPED"><code class="docutils literal notranslate"><span class="pre">WSTOPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.WUNTRACED"><code class="docutils literal notranslate"><span class="pre">WUNTRACED</span></code></a></li>
-<li><a class="reference internal" href="#os.WNOHANG"><code class="docutils literal notranslate"><span class="pre">WNOHANG</span></code></a></li>
-<li><a class="reference internal" href="#os.WNOWAIT"><code class="docutils literal notranslate"><span class="pre">WNOWAIT</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_EXITED"><code class="docutils literal notranslate"><span class="pre">CLD_EXITED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_KILLED"><code class="docutils literal notranslate"><span class="pre">CLD_KILLED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_DUMPED"><code class="docutils literal notranslate"><span class="pre">CLD_DUMPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_TRAPPED"><code class="docutils literal notranslate"><span class="pre">CLD_TRAPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_STOPPED"><code class="docutils literal notranslate"><span class="pre">CLD_STOPPED</span></code></a></li>
-<li><a class="reference internal" href="#os.CLD_CONTINUED"><code class="docutils literal notranslate"><span class="pre">CLD_CONTINUED</span></code></a></li>
-<li><a class="reference internal" href="#os.waitstatus_to_exitcode"><code class="docutils literal notranslate"><span class="pre">waitstatus_to_exitcode()</span></code></a></li>
-<li><a class="reference internal" href="#os.WCOREDUMP"><code class="docutils literal notranslate"><span class="pre">WCOREDUMP()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFCONTINUED"><code class="docutils literal notranslate"><span class="pre">WIFCONTINUED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFSTOPPED"><code class="docutils literal notranslate"><span class="pre">WIFSTOPPED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFSIGNALED"><code class="docutils literal notranslate"><span class="pre">WIFSIGNALED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WIFEXITED"><code class="docutils literal notranslate"><span class="pre">WIFEXITED()</span></code></a></li>
-<li><a class="reference internal" href="#os.WEXITSTATUS"><code class="docutils literal notranslate"><span class="pre">WEXITSTATUS()</span></code></a></li>
-<li><a class="reference internal" href="#os.WSTOPSIG"><code class="docutils literal notranslate"><span class="pre">WSTOPSIG()</span></code></a></li>
-<li><a class="reference internal" href="#os.WTERMSIG"><code class="docutils literal notranslate"><span class="pre">WTERMSIG()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interface-to-the-scheduler">Interface to the scheduler</a><ul>
-<li><a class="reference internal" href="#os.SCHED_OTHER"><code class="docutils literal notranslate"><span class="pre">SCHED_OTHER</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_BATCH"><code class="docutils literal notranslate"><span class="pre">SCHED_BATCH</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_IDLE"><code class="docutils literal notranslate"><span class="pre">SCHED_IDLE</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_SPORADIC"><code class="docutils literal notranslate"><span class="pre">SCHED_SPORADIC</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_FIFO"><code class="docutils literal notranslate"><span class="pre">SCHED_FIFO</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_RR"><code class="docutils literal notranslate"><span class="pre">SCHED_RR</span></code></a></li>
-<li><a class="reference internal" href="#os.SCHED_RESET_ON_FORK"><code class="docutils literal notranslate"><span class="pre">SCHED_RESET_ON_FORK</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_param"><code class="docutils literal notranslate"><span class="pre">sched_param</span></code></a><ul>
-<li><a class="reference internal" href="#os.sched_param.sched_priority"><code class="docutils literal notranslate"><span class="pre">sched_param.sched_priority</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#os.sched_get_priority_min"><code class="docutils literal notranslate"><span class="pre">sched_get_priority_min()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_get_priority_max"><code class="docutils literal notranslate"><span class="pre">sched_get_priority_max()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setscheduler"><code class="docutils literal notranslate"><span class="pre">sched_setscheduler()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getscheduler"><code class="docutils literal notranslate"><span class="pre">sched_getscheduler()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setparam"><code class="docutils literal notranslate"><span class="pre">sched_setparam()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getparam"><code class="docutils literal notranslate"><span class="pre">sched_getparam()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_rr_get_interval"><code class="docutils literal notranslate"><span class="pre">sched_rr_get_interval()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_yield"><code class="docutils literal notranslate"><span class="pre">sched_yield()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_setaffinity"><code class="docutils literal notranslate"><span class="pre">sched_setaffinity()</span></code></a></li>
-<li><a class="reference internal" href="#os.sched_getaffinity"><code class="docutils literal notranslate"><span class="pre">sched_getaffinity()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#miscellaneous-system-information">Miscellaneous System Information</a><ul>
-<li><a class="reference internal" href="#os.confstr"><code class="docutils literal notranslate"><span class="pre">confstr()</span></code></a></li>
-<li><a class="reference internal" href="#os.confstr_names"><code class="docutils literal notranslate"><span class="pre">confstr_names</span></code></a></li>
-<li><a class="reference internal" href="#os.cpu_count"><code class="docutils literal notranslate"><span class="pre">cpu_count()</span></code></a></li>
-<li><a class="reference internal" href="#os.getloadavg"><code class="docutils literal notranslate"><span class="pre">getloadavg()</span></code></a></li>
-<li><a class="reference internal" href="#os.sysconf"><code class="docutils literal notranslate"><span class="pre">sysconf()</span></code></a></li>
-<li><a class="reference internal" href="#os.sysconf_names"><code class="docutils literal notranslate"><span class="pre">sysconf_names</span></code></a></li>
-<li><a class="reference internal" href="#os.curdir"><code class="docutils literal notranslate"><span class="pre">curdir</span></code></a></li>
-<li><a class="reference internal" href="#os.pardir"><code class="docutils literal notranslate"><span class="pre">pardir</span></code></a></li>
-<li><a class="reference internal" href="#os.sep"><code class="docutils literal notranslate"><span class="pre">sep</span></code></a></li>
-<li><a class="reference internal" href="#os.altsep"><code class="docutils literal notranslate"><span class="pre">altsep</span></code></a></li>
-<li><a class="reference internal" href="#os.extsep"><code class="docutils literal notranslate"><span class="pre">extsep</span></code></a></li>
-<li><a class="reference internal" href="#os.pathsep"><code class="docutils literal notranslate"><span class="pre">pathsep</span></code></a></li>
-<li><a class="reference internal" href="#os.defpath"><code class="docutils literal notranslate"><span class="pre">defpath</span></code></a></li>
-<li><a class="reference internal" href="#os.linesep"><code class="docutils literal notranslate"><span class="pre">linesep</span></code></a></li>
-<li><a class="reference internal" href="#os.devnull"><code class="docutils literal notranslate"><span class="pre">devnull</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_LAZY"><code class="docutils literal notranslate"><span class="pre">RTLD_LAZY</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NOW"><code class="docutils literal notranslate"><span class="pre">RTLD_NOW</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_GLOBAL"><code class="docutils literal notranslate"><span class="pre">RTLD_GLOBAL</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_LOCAL"><code class="docutils literal notranslate"><span class="pre">RTLD_LOCAL</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NODELETE"><code class="docutils literal notranslate"><span class="pre">RTLD_NODELETE</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_NOLOAD"><code class="docutils literal notranslate"><span class="pre">RTLD_NOLOAD</span></code></a></li>
-<li><a class="reference internal" href="#os.RTLD_DEEPBIND"><code class="docutils literal notranslate"><span class="pre">RTLD_DEEPBIND</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#random-numbers">Random numbers</a><ul>
-<li><a class="reference internal" href="#os.getrandom"><code class="docutils literal notranslate"><span class="pre">getrandom()</span></code></a></li>
-<li><a class="reference internal" href="#os.urandom"><code class="docutils literal notranslate"><span class="pre">urandom()</span></code></a></li>
-<li><a class="reference internal" href="#os.GRND_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">GRND_NONBLOCK</span></code></a></li>
-<li><a class="reference internal" href="#os.GRND_RANDOM"><code class="docutils literal notranslate"><span class="pre">GRND_RANDOM</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#process-management">行程管理</a></li>
+<li><a class="reference internal" href="#interface-to-the-scheduler">Interface to the scheduler</a></li>
+<li><a class="reference internal" href="#miscellaneous-system-information">Miscellaneous System Information</a></li>
+<li><a class="reference internal" href="#random-numbers">Random numbers</a></li>
 </ul>
 </li>
 </ul>
@@ -6894,7 +5976,7 @@ block in these cases, but instead immediately raises <a class="reference interna
           <a href="allos.html" title="通用作業系統服務"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -6904,7 +5986,7 @@ block in these cases, but instead immediately raises <a class="reference interna
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -6934,13 +6016,14 @@ block in these cases, but instead immediately raises <a class="reference interna
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -6948,7 +6031,7 @@ block in these cases, but instead immediately raises <a class="reference interna
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

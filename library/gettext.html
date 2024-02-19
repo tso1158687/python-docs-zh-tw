@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>gettext --- Multilingual internationalization services &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gettext --- Multilingual internationalization services &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,13 +19,13 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="locale --- Internationalization services" href="locale.html" />
+    <link rel="next" title="locale — 國際化服務" href="locale.html" />
     <link rel="prev" title="國際化" href="i18n.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/gettext.html" />
     
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,48 +86,10 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gettext</span></code> --- Multilingual internationalization services</a><ul>
-<li><a class="reference internal" href="#gnu-gettext-api">GNU <strong class="program">gettext</strong> API</a><ul>
-<li><a class="reference internal" href="#gettext.bindtextdomain"><code class="docutils literal notranslate"><span class="pre">bindtextdomain()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.textdomain"><code class="docutils literal notranslate"><span class="pre">textdomain()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.gettext"><code class="docutils literal notranslate"><span class="pre">gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dgettext"><code class="docutils literal notranslate"><span class="pre">dgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.ngettext"><code class="docutils literal notranslate"><span class="pre">ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dngettext"><code class="docutils literal notranslate"><span class="pre">dngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.pgettext"><code class="docutils literal notranslate"><span class="pre">pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dpgettext"><code class="docutils literal notranslate"><span class="pre">dpgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.npgettext"><code class="docutils literal notranslate"><span class="pre">npgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dnpgettext"><code class="docutils literal notranslate"><span class="pre">dnpgettext()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#gnu-gettext-api">GNU <strong class="program">gettext</strong> API</a></li>
 <li><a class="reference internal" href="#class-based-api">Class-based API</a><ul>
-<li><a class="reference internal" href="#gettext.find"><code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.translation"><code class="docutils literal notranslate"><span class="pre">translation()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.install"><code class="docutils literal notranslate"><span class="pre">install()</span></code></a></li>
-<li><a class="reference internal" href="#the-nulltranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">NullTranslations</span></code> class</a><ul>
-<li><a class="reference internal" href="#gettext.NullTranslations"><code class="docutils literal notranslate"><span class="pre">NullTranslations</span></code></a><ul>
-<li><a class="reference internal" href="#gettext.NullTranslations._parse"><code class="docutils literal notranslate"><span class="pre">NullTranslations._parse()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.add_fallback"><code class="docutils literal notranslate"><span class="pre">NullTranslations.add_fallback()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.gettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.ngettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.pgettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.npgettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.npgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.info"><code class="docutils literal notranslate"><span class="pre">NullTranslations.info()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.charset"><code class="docutils literal notranslate"><span class="pre">NullTranslations.charset()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.install"><code class="docutils literal notranslate"><span class="pre">NullTranslations.install()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-gnutranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">GNUTranslations</span></code> class</a><ul>
-<li><a class="reference internal" href="#gettext.GNUTranslations"><code class="docutils literal notranslate"><span class="pre">GNUTranslations</span></code></a><ul>
-<li><a class="reference internal" href="#gettext.GNUTranslations.gettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.ngettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.pgettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.npgettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.npgettext()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#the-nulltranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">NullTranslations</span></code> class</a></li>
+<li><a class="reference internal" href="#the-gnutranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">GNUTranslations</span></code> class</a></li>
 <li><a class="reference internal" href="#solaris-message-catalog-support">Solaris message catalog support</a></li>
 <li><a class="reference internal" href="#the-catalog-constructor">The Catalog constructor</a></li>
 </ul>
@@ -153,7 +115,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="locale.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code> --- Internationalization services</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code> — 國際化服務</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -181,13 +143,13 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="locale.html" title="locale --- Internationalization services"
+          <a href="locale.html" title="locale — 國際化服務"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="i18n.html" title="國際化"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -197,7 +159,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -869,48 +831,10 @@ application.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gettext</span></code> --- Multilingual internationalization services</a><ul>
-<li><a class="reference internal" href="#gnu-gettext-api">GNU <strong class="program">gettext</strong> API</a><ul>
-<li><a class="reference internal" href="#gettext.bindtextdomain"><code class="docutils literal notranslate"><span class="pre">bindtextdomain()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.textdomain"><code class="docutils literal notranslate"><span class="pre">textdomain()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.gettext"><code class="docutils literal notranslate"><span class="pre">gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dgettext"><code class="docutils literal notranslate"><span class="pre">dgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.ngettext"><code class="docutils literal notranslate"><span class="pre">ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dngettext"><code class="docutils literal notranslate"><span class="pre">dngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.pgettext"><code class="docutils literal notranslate"><span class="pre">pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dpgettext"><code class="docutils literal notranslate"><span class="pre">dpgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.npgettext"><code class="docutils literal notranslate"><span class="pre">npgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.dnpgettext"><code class="docutils literal notranslate"><span class="pre">dnpgettext()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#gnu-gettext-api">GNU <strong class="program">gettext</strong> API</a></li>
 <li><a class="reference internal" href="#class-based-api">Class-based API</a><ul>
-<li><a class="reference internal" href="#gettext.find"><code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.translation"><code class="docutils literal notranslate"><span class="pre">translation()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.install"><code class="docutils literal notranslate"><span class="pre">install()</span></code></a></li>
-<li><a class="reference internal" href="#the-nulltranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">NullTranslations</span></code> class</a><ul>
-<li><a class="reference internal" href="#gettext.NullTranslations"><code class="docutils literal notranslate"><span class="pre">NullTranslations</span></code></a><ul>
-<li><a class="reference internal" href="#gettext.NullTranslations._parse"><code class="docutils literal notranslate"><span class="pre">NullTranslations._parse()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.add_fallback"><code class="docutils literal notranslate"><span class="pre">NullTranslations.add_fallback()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.gettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.ngettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.pgettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.npgettext"><code class="docutils literal notranslate"><span class="pre">NullTranslations.npgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.info"><code class="docutils literal notranslate"><span class="pre">NullTranslations.info()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.charset"><code class="docutils literal notranslate"><span class="pre">NullTranslations.charset()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.NullTranslations.install"><code class="docutils literal notranslate"><span class="pre">NullTranslations.install()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-gnutranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">GNUTranslations</span></code> class</a><ul>
-<li><a class="reference internal" href="#gettext.GNUTranslations"><code class="docutils literal notranslate"><span class="pre">GNUTranslations</span></code></a><ul>
-<li><a class="reference internal" href="#gettext.GNUTranslations.gettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.gettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.ngettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.ngettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.pgettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.pgettext()</span></code></a></li>
-<li><a class="reference internal" href="#gettext.GNUTranslations.npgettext"><code class="docutils literal notranslate"><span class="pre">GNUTranslations.npgettext()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#the-nulltranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">NullTranslations</span></code> class</a></li>
+<li><a class="reference internal" href="#the-gnutranslations-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">GNUTranslations</span></code> class</a></li>
 <li><a class="reference internal" href="#solaris-message-catalog-support">Solaris message catalog support</a></li>
 <li><a class="reference internal" href="#the-catalog-constructor">The Catalog constructor</a></li>
 </ul>
@@ -936,7 +860,7 @@ application.</p>
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="locale.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code> --- Internationalization services</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code> — 國際化服務</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -967,13 +891,13 @@ application.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="locale.html" title="locale --- Internationalization services"
+          <a href="locale.html" title="locale — 國際化服務"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="i18n.html" title="國際化"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -983,7 +907,7 @@ application.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1013,13 +937,14 @@ application.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1027,7 +952,7 @@ application.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

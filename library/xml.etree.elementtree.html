@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xml.etree.ElementTree --- The ElementTree XML API &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.etree.ElementTree --- The ElementTree XML API &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -102,25 +102,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#reference">Reference</a><ul>
-<li><a class="reference internal" href="#functions">函式</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.canonicalize"><code class="docutils literal notranslate"><span class="pre">canonicalize()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Comment"><code class="docutils literal notranslate"><span class="pre">Comment()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.dump"><code class="docutils literal notranslate"><span class="pre">dump()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.fromstring"><code class="docutils literal notranslate"><span class="pre">fromstring()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.fromstringlist"><code class="docutils literal notranslate"><span class="pre">fromstringlist()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.indent"><code class="docutils literal notranslate"><span class="pre">indent()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.iselement"><code class="docutils literal notranslate"><span class="pre">iselement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.iterparse"><code class="docutils literal notranslate"><span class="pre">iterparse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ProcessingInstruction"><code class="docutils literal notranslate"><span class="pre">ProcessingInstruction()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.register_namespace"><code class="docutils literal notranslate"><span class="pre">register_namespace()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.SubElement"><code class="docutils literal notranslate"><span class="pre">SubElement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.tostring"><code class="docutils literal notranslate"><span class="pre">tostring()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.tostringlist"><code class="docutils literal notranslate"><span class="pre">tostringlist()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XML"><code class="docutils literal notranslate"><span class="pre">XML()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLID"><code class="docutils literal notranslate"><span class="pre">XMLID()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#functions">函式</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xinclude-support">XInclude support</a><ul>
@@ -128,97 +110,14 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id4">Reference</a><ul>
-<li><a class="reference internal" href="#elementinclude-functions">函式</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementInclude.default_loader"><code class="docutils literal notranslate"><span class="pre">xml.etree.ElementInclude.default_loader()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementInclude.include"><code class="docutils literal notranslate"><span class="pre">xml.etree.ElementInclude.include()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#element-objects">Element Objects</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.tag"><code class="docutils literal notranslate"><span class="pre">Element.tag</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.text"><code class="docutils literal notranslate"><span class="pre">Element.text</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.tail"><code class="docutils literal notranslate"><span class="pre">Element.tail</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.attrib"><code class="docutils literal notranslate"><span class="pre">Element.attrib</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.clear"><code class="docutils literal notranslate"><span class="pre">Element.clear()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.get"><code class="docutils literal notranslate"><span class="pre">Element.get()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.items"><code class="docutils literal notranslate"><span class="pre">Element.items()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.keys"><code class="docutils literal notranslate"><span class="pre">Element.keys()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.set"><code class="docutils literal notranslate"><span class="pre">Element.set()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.append"><code class="docutils literal notranslate"><span class="pre">Element.append()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.extend"><code class="docutils literal notranslate"><span class="pre">Element.extend()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.find"><code class="docutils literal notranslate"><span class="pre">Element.find()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.findall"><code class="docutils literal notranslate"><span class="pre">Element.findall()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.findtext"><code class="docutils literal notranslate"><span class="pre">Element.findtext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.insert"><code class="docutils literal notranslate"><span class="pre">Element.insert()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.iter"><code class="docutils literal notranslate"><span class="pre">Element.iter()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.iterfind"><code class="docutils literal notranslate"><span class="pre">Element.iterfind()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.itertext"><code class="docutils literal notranslate"><span class="pre">Element.itertext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.makeelement"><code class="docutils literal notranslate"><span class="pre">Element.makeelement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.remove"><code class="docutils literal notranslate"><span class="pre">Element.remove()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#elementtree-objects">ElementTree 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree"><code class="docutils literal notranslate"><span class="pre">ElementTree</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree._setroot"><code class="docutils literal notranslate"><span class="pre">ElementTree._setroot()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.find"><code class="docutils literal notranslate"><span class="pre">ElementTree.find()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.findall"><code class="docutils literal notranslate"><span class="pre">ElementTree.findall()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.findtext"><code class="docutils literal notranslate"><span class="pre">ElementTree.findtext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.getroot"><code class="docutils literal notranslate"><span class="pre">ElementTree.getroot()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.iter"><code class="docutils literal notranslate"><span class="pre">ElementTree.iter()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.iterfind"><code class="docutils literal notranslate"><span class="pre">ElementTree.iterfind()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.parse"><code class="docutils literal notranslate"><span class="pre">ElementTree.parse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.write"><code class="docutils literal notranslate"><span class="pre">ElementTree.write()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#qname-objects">QName 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.QName"><code class="docutils literal notranslate"><span class="pre">QName</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#treebuilder-objects">TreeBuilder 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder"><code class="docutils literal notranslate"><span class="pre">TreeBuilder</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.close"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.data"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.data()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.end"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.end()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.start"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.start()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.comment"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.comment()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.pi"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.pi()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.doctype"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.doctype()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.start_ns"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.start_ns()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.end_ns"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.end_ns()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.C14NWriterTarget"><code class="docutils literal notranslate"><span class="pre">C14NWriterTarget</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xmlparser-objects">XMLParser 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser"><code class="docutils literal notranslate"><span class="pre">XMLParser</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser.close"><code class="docutils literal notranslate"><span class="pre">XMLParser.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser.feed"><code class="docutils literal notranslate"><span class="pre">XMLParser.feed()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xmlpullparser-objects">XMLPullParser 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser"><code class="docutils literal notranslate"><span class="pre">XMLPullParser</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.feed"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.feed()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.close"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.read_events"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.read_events()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#exceptions">例外</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError"><code class="docutils literal notranslate"><span class="pre">ParseError</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError.code"><code class="docutils literal notranslate"><span class="pre">ParseError.code</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError.position"><code class="docutils literal notranslate"><span class="pre">ParseError.position</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#elementinclude-functions">函式</a></li>
+<li><a class="reference internal" href="#element-objects">Element 物件</a></li>
+<li><a class="reference internal" href="#elementtree-objects">ElementTree 物件</a></li>
+<li><a class="reference internal" href="#qname-objects">QName 物件</a></li>
+<li><a class="reference internal" href="#treebuilder-objects">TreeBuilder 物件</a></li>
+<li><a class="reference internal" href="#xmlparser-objects">XMLParser 物件</a></li>
+<li><a class="reference internal" href="#xmlpullparser-objects">XMLPullParser 物件</a></li>
+<li><a class="reference internal" href="#exceptions">例外</a></li>
 </ul>
 </li>
 </ul>
@@ -268,7 +167,7 @@
           <a href="xml.html" title="XML 處理模組"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -278,7 +177,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -975,7 +874,7 @@ will be serialized as an XML processing instruction.  <em>target</em> is a strin
 containing the PI target.  <em>text</em> is a string containing the PI contents, if
 given.  Returns an element instance, representing a processing instruction.</p>
 <p>Note that <a class="reference internal" href="#xml.etree.ElementTree.XMLParser" title="xml.etree.ElementTree.XMLParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLParser</span></code></a> skips over processing instructions
-in the input instead of creating comment objects for them. An
+in the input instead of creating PI objects for them. An
 <a class="reference internal" href="#xml.etree.ElementTree.ElementTree" title="xml.etree.ElementTree.ElementTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElementTree</span></code></a> will only contain processing instruction nodes if
 they have been inserted into to the tree using one of the
 <a class="reference internal" href="#xml.etree.ElementTree.Element" title="xml.etree.ElementTree.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> methods.</p>
@@ -1017,11 +916,11 @@ is either <code class="docutils literal notranslate"><span class="pre">&quot;xml
 <em>xml_declaration</em>, <em>default_namespace</em> and <em>short_empty_elements</em> has the same
 meaning as in <a class="reference internal" href="#xml.etree.ElementTree.ElementTree.write" title="xml.etree.ElementTree.ElementTree.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ElementTree.write()</span></code></a>. Returns an (optionally) encoded string
 containing the XML data.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>short_empty_elements</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>新增 <em>short_empty_elements</em> 參數。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.8 版新加入: </span>The <em>xml_declaration</em> and <em>default_namespace</em> parameters.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.8 版的變更: </span>新增 <em>xml_declaration</em> 與 <em>default_namespace</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>The <a class="reference internal" href="#xml.etree.ElementTree.tostring" title="xml.etree.ElementTree.tostring"><code class="xref py py-func docutils literal notranslate"><span class="pre">tostring()</span></code></a> function now preserves the attribute order
@@ -1044,11 +943,11 @@ except that <code class="docutils literal notranslate"><span class="pre">b&quot;
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>short_empty_elements</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>新增 <em>short_empty_elements</em> 參數。</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.8 版新加入: </span>The <em>xml_declaration</em> and <em>default_namespace</em> parameters.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.8 版的變更: </span>新增 <em>xml_declaration</em> 與 <em>default_namespace</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>The <a class="reference internal" href="#xml.etree.ElementTree.tostringlist" title="xml.etree.ElementTree.tostringlist"><code class="xref py py-func docutils literal notranslate"><span class="pre">tostringlist()</span></code></a> function now preserves the attribute order
@@ -1151,14 +1050,14 @@ negative value to disable the limitation.</p>
 <code class="docutils literal notranslate"><span class="pre">&quot;xml&quot;</span></code>, this is an ElementTree instance.  If the parse mode is &quot;text&quot;,
 this is a Unicode string.  If the loader fails, it can return None or
 raise an exception.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.9 版新加入: </span>The <em>base_url</em> and <em>max_depth</em> parameters.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.9 版的變更: </span>新增 <em>base_url</em> 與 <em>max_depth</em> 參數。</p>
 </div>
 </dd></dl>
 
 </section>
 <section id="element-objects">
-<span id="elementtree-element-objects"></span><h3>Element Objects<a class="headerlink" href="#element-objects" title="Link to this heading">¶</a></h3>
+<span id="elementtree-element-objects"></span><h3>Element 物件<a class="headerlink" href="#element-objects" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="xml.etree.ElementTree.Element">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.etree.ElementTree.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">extra</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.etree.ElementTree.Element" title="Link to this definition">¶</a></dt>
@@ -1491,8 +1390,8 @@ This is controlled by the <em>encoding</em> argument.  If <em>encoding</em> is
 this may conflict with the type of <em>file</em> if it's an open
 <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a>; make sure you do not try to write a string to a
 binary stream and vice versa.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>short_empty_elements</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>新增 <em>short_empty_elements</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>The <a class="reference internal" href="#xml.etree.ElementTree.ElementTree.write" title="xml.etree.ElementTree.ElementTree.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> method now preserves the attribute order specified
@@ -1605,8 +1504,8 @@ this will also add it to the tree.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.etree.ElementTree.TreeBuilder.pi">
 <span class="sig-name descname"><span class="pre">pi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.etree.ElementTree.TreeBuilder.pi" title="Link to this definition">¶</a></dt>
-<dd><p>Creates a comment with the given <em>target</em> name and <em>text</em>.  If
-<code class="docutils literal notranslate"><span class="pre">insert_pis</span></code> is true, this will also add it to the tree.</p>
+<dd><p>Creates a process instruction with the given <em>target</em> name and <em>text</em>.
+If <code class="docutils literal notranslate"><span class="pre">insert_pis</span></code> is true, this will also add it to the tree.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.8 版新加入.</span></p>
 </div>
@@ -1870,25 +1769,7 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
 </ul>
 </li>
 <li><a class="reference internal" href="#reference">Reference</a><ul>
-<li><a class="reference internal" href="#functions">函式</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.canonicalize"><code class="docutils literal notranslate"><span class="pre">canonicalize()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Comment"><code class="docutils literal notranslate"><span class="pre">Comment()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.dump"><code class="docutils literal notranslate"><span class="pre">dump()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.fromstring"><code class="docutils literal notranslate"><span class="pre">fromstring()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.fromstringlist"><code class="docutils literal notranslate"><span class="pre">fromstringlist()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.indent"><code class="docutils literal notranslate"><span class="pre">indent()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.iselement"><code class="docutils literal notranslate"><span class="pre">iselement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.iterparse"><code class="docutils literal notranslate"><span class="pre">iterparse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ProcessingInstruction"><code class="docutils literal notranslate"><span class="pre">ProcessingInstruction()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.register_namespace"><code class="docutils literal notranslate"><span class="pre">register_namespace()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.SubElement"><code class="docutils literal notranslate"><span class="pre">SubElement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.tostring"><code class="docutils literal notranslate"><span class="pre">tostring()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.tostringlist"><code class="docutils literal notranslate"><span class="pre">tostringlist()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XML"><code class="docutils literal notranslate"><span class="pre">XML()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLID"><code class="docutils literal notranslate"><span class="pre">XMLID()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#functions">函式</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xinclude-support">XInclude support</a><ul>
@@ -1896,97 +1777,14 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
 </ul>
 </li>
 <li><a class="reference internal" href="#id4">Reference</a><ul>
-<li><a class="reference internal" href="#elementinclude-functions">函式</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementInclude.default_loader"><code class="docutils literal notranslate"><span class="pre">xml.etree.ElementInclude.default_loader()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementInclude.include"><code class="docutils literal notranslate"><span class="pre">xml.etree.ElementInclude.include()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#element-objects">Element Objects</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.tag"><code class="docutils literal notranslate"><span class="pre">Element.tag</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.text"><code class="docutils literal notranslate"><span class="pre">Element.text</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.tail"><code class="docutils literal notranslate"><span class="pre">Element.tail</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.attrib"><code class="docutils literal notranslate"><span class="pre">Element.attrib</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.clear"><code class="docutils literal notranslate"><span class="pre">Element.clear()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.get"><code class="docutils literal notranslate"><span class="pre">Element.get()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.items"><code class="docutils literal notranslate"><span class="pre">Element.items()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.keys"><code class="docutils literal notranslate"><span class="pre">Element.keys()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.set"><code class="docutils literal notranslate"><span class="pre">Element.set()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.append"><code class="docutils literal notranslate"><span class="pre">Element.append()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.extend"><code class="docutils literal notranslate"><span class="pre">Element.extend()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.find"><code class="docutils literal notranslate"><span class="pre">Element.find()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.findall"><code class="docutils literal notranslate"><span class="pre">Element.findall()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.findtext"><code class="docutils literal notranslate"><span class="pre">Element.findtext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.insert"><code class="docutils literal notranslate"><span class="pre">Element.insert()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.iter"><code class="docutils literal notranslate"><span class="pre">Element.iter()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.iterfind"><code class="docutils literal notranslate"><span class="pre">Element.iterfind()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.itertext"><code class="docutils literal notranslate"><span class="pre">Element.itertext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.makeelement"><code class="docutils literal notranslate"><span class="pre">Element.makeelement()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.Element.remove"><code class="docutils literal notranslate"><span class="pre">Element.remove()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#elementtree-objects">ElementTree 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree"><code class="docutils literal notranslate"><span class="pre">ElementTree</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree._setroot"><code class="docutils literal notranslate"><span class="pre">ElementTree._setroot()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.find"><code class="docutils literal notranslate"><span class="pre">ElementTree.find()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.findall"><code class="docutils literal notranslate"><span class="pre">ElementTree.findall()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.findtext"><code class="docutils literal notranslate"><span class="pre">ElementTree.findtext()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.getroot"><code class="docutils literal notranslate"><span class="pre">ElementTree.getroot()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.iter"><code class="docutils literal notranslate"><span class="pre">ElementTree.iter()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.iterfind"><code class="docutils literal notranslate"><span class="pre">ElementTree.iterfind()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.parse"><code class="docutils literal notranslate"><span class="pre">ElementTree.parse()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ElementTree.write"><code class="docutils literal notranslate"><span class="pre">ElementTree.write()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#qname-objects">QName 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.QName"><code class="docutils literal notranslate"><span class="pre">QName</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#treebuilder-objects">TreeBuilder 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder"><code class="docutils literal notranslate"><span class="pre">TreeBuilder</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.close"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.data"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.data()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.end"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.end()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.start"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.start()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.comment"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.comment()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.pi"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.pi()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.doctype"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.doctype()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.start_ns"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.start_ns()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.TreeBuilder.end_ns"><code class="docutils literal notranslate"><span class="pre">TreeBuilder.end_ns()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.C14NWriterTarget"><code class="docutils literal notranslate"><span class="pre">C14NWriterTarget</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xmlparser-objects">XMLParser 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser"><code class="docutils literal notranslate"><span class="pre">XMLParser</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser.close"><code class="docutils literal notranslate"><span class="pre">XMLParser.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLParser.feed"><code class="docutils literal notranslate"><span class="pre">XMLParser.feed()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#xmlpullparser-objects">XMLPullParser 物件</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser"><code class="docutils literal notranslate"><span class="pre">XMLPullParser</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.feed"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.feed()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.close"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.close()</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.XMLPullParser.read_events"><code class="docutils literal notranslate"><span class="pre">XMLPullParser.read_events()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#exceptions">例外</a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError"><code class="docutils literal notranslate"><span class="pre">ParseError</span></code></a><ul>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError.code"><code class="docutils literal notranslate"><span class="pre">ParseError.code</span></code></a></li>
-<li><a class="reference internal" href="#xml.etree.ElementTree.ParseError.position"><code class="docutils literal notranslate"><span class="pre">ParseError.position</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#elementinclude-functions">函式</a></li>
+<li><a class="reference internal" href="#element-objects">Element 物件</a></li>
+<li><a class="reference internal" href="#elementtree-objects">ElementTree 物件</a></li>
+<li><a class="reference internal" href="#qname-objects">QName 物件</a></li>
+<li><a class="reference internal" href="#treebuilder-objects">TreeBuilder 物件</a></li>
+<li><a class="reference internal" href="#xmlparser-objects">XMLParser 物件</a></li>
+<li><a class="reference internal" href="#xmlpullparser-objects">XMLPullParser 物件</a></li>
+<li><a class="reference internal" href="#exceptions">例外</a></li>
 </ul>
 </li>
 </ul>
@@ -2039,7 +1837,7 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
           <a href="xml.html" title="XML 處理模組"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2049,7 +1847,7 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -2079,13 +1877,14 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2093,7 +1892,7 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

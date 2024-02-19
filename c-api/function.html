@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>函式物件 (Function Objects) &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函式物件 (Function Objects) &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,14 +19,14 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="實例方法物件 (Instance Method Objects)" href="method.html" />
-    <link rel="prev" title="Set Objects" href="set.html" />
+    <link rel="prev" title="集合物件" href="set.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/function.html" />
     
       
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -85,7 +85,7 @@
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="set.html"
-                          title="上一章">Set Objects</a></p>
+                          title="上一章">集合物件</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -121,10 +121,10 @@
           <a href="method.html" title="實例方法物件 (Instance Method Objects)"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="set.html" title="Set Objects"
+          <a href="set.html" title="集合物件"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -134,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -194,13 +194,13 @@
 <dt class="sig sig-object c" id="c.PyFunction_New">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_New</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">globals</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_New" title="Link to this definition">¶</a><br /></dt>
 <dd><em class="refcount">回傳值：新的參照。</em><p>回傳一個與程式碼物件 <em>code</em> 相關聯的函式物件。<em>globals</em> 必須是一個帶有函式能夠存取的全域變數的字典。</p>
-<p>函式的文件字串 (docstring) 和名稱是從程式碼物件所取得，<em>__module__</em> 是自 <em>globals</em> 所取得。引數預設值、標註 (annotation) 和閉包 (closure) 被設為 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>，<em>__qualname__</em> 被設為和程式碼物件 <code class="docutils literal notranslate"><span class="pre">co_qualname</span></code> 欄位相同的值。</p>
+<p>函式的文件字串 (docstring) 和名稱是從程式碼物件所取得，<a class="reference internal" href="../reference/datamodel.html#function.__module__" title="function.__module__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__module__</span></code></a> 是自 <em>globals</em> 所取得。引數預設值、標註 (annotation) 和閉包 (closure) 被設為 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>，<a class="reference internal" href="../reference/datamodel.html#function.__qualname__" title="function.__qualname__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__qualname__</span></code></a> 被設為和程式碼物件 <a class="reference internal" href="../reference/datamodel.html#codeobject.co_qualname" title="codeobject.co_qualname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_qualname</span></code></a> 欄位相同的值。</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFunction_NewWithQualName">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_NewWithQualName</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">globals</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">qualname</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_NewWithQualName" title="Link to this definition">¶</a><br /></dt>
-<dd><em class="refcount">回傳值：新的參照。</em><p>和 <a class="reference internal" href="#c.PyFunction_New" title="PyFunction_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyFunction_New()</span></code></a> 相似，但也允許函式物件 <code class="docutils literal notranslate"><span class="pre">__qualname__</span></code> 屬性的設定，<em>qualname</em> 應為一個 unicode 物件或是 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>；如為 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>，<code class="docutils literal notranslate"><span class="pre">__qualname__</span></code> 屬性會被設為與程式碼物件 <code class="docutils literal notranslate"><span class="pre">co_qualname</span></code> 欄位相同的值。</p>
+<dd><em class="refcount">回傳值：新的參照。</em><p>和 <a class="reference internal" href="#c.PyFunction_New" title="PyFunction_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyFunction_New()</span></code></a> 相似，但也允許函式物件 <a class="reference internal" href="../reference/datamodel.html#function.__qualname__" title="function.__qualname__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__qualname__</span></code></a> 屬性的設定，<em>qualname</em> 應為一個 unicode 物件或是 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>；如為 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>，<code class="xref py py-attr docutils literal notranslate"><span class="pre">__qualname__</span></code> 屬性會被設為與程式碼物件 <a class="reference internal" href="../reference/datamodel.html#codeobject.co_qualname" title="codeobject.co_qualname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_qualname</span></code></a> 欄位相同的值。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.3 版新加入.</span></p>
 </div>
@@ -221,8 +221,8 @@
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFunction_GetModule">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_GetModule</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_GetModule" title="Link to this definition">¶</a><br /></dt>
-<dd><em class="refcount">回傳值：借用參照。</em><p>回傳一個函式物件 <em>op</em> 之 <em>__module__</em> 屬性的 <a class="reference internal" href="../glossary.html#term-borrowed-reference"><span class="xref std std-term">borrowed reference</span></a>，它可以是 <em>NULL</em>。</p>
-<p>這通常是個包含模組名稱的字串，但可以被 Python 程式設為任何其他物件。</p>
+<dd><em class="refcount">回傳值：借用參照。</em><p>回傳一個<a class="reference internal" href="../reference/datamodel.html#user-defined-funcs"><span class="std std-ref">函式物件</span></a> <em>op</em> 之 <a class="reference internal" href="../reference/datamodel.html#function.__module__" title="function.__module__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__module__</span></code></a> 屬性的 <a class="reference internal" href="../glossary.html#term-borrowed-reference"><span class="xref std std-term">borrowed reference</span></a>，它可以是 <em>NULL</em>。</p>
+<p>這通常是個包含模組名稱的<a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">字串</span></code></a>，但可以被 Python 程式設為任何其他物件。</p>
 </dd></dl>
 
 <dl class="c function">
@@ -360,7 +360,7 @@ it before returning.</p>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="set.html"
-                          title="上一章">Set Objects</a></p>
+                          title="上一章">集合物件</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -399,10 +399,10 @@ it before returning.</p>
           <a href="method.html" title="實例方法物件 (Instance Method Objects)"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="set.html" title="Set Objects"
+          <a href="set.html" title="集合物件"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -412,7 +412,7 @@ it before returning.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -442,13 +442,14 @@ it before returning.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -456,7 +457,7 @@ it before returning.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

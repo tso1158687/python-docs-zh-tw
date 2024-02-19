@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>code --- Interpreter base classes &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code --- Interpreter base classes &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,25 +86,8 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a><ul>
-<li><a class="reference internal" href="#code.InteractiveInterpreter"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole</span></code></a></li>
-<li><a class="reference internal" href="#code.interact"><code class="docutils literal notranslate"><span class="pre">interact()</span></code></a></li>
-<li><a class="reference internal" href="#code.compile_command"><code class="docutils literal notranslate"><span class="pre">compile_command()</span></code></a></li>
-<li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a><ul>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.runsource"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.runsource()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.runcode"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.runcode()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.showsyntaxerror"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.showsyntaxerror()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.showtraceback"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.showtraceback()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.write"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a><ul>
-<li><a class="reference internal" href="#code.InteractiveConsole.interact"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.interact()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.push"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.push()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.resetbuffer"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.resetbuffer()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.raw_input"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.raw_input()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a></li>
+<li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +135,7 @@
           <a href="custominterp.html" title="Custom Python Interpreters"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -162,7 +145,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -389,25 +372,8 @@ with a different implementation.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a><ul>
-<li><a class="reference internal" href="#code.InteractiveInterpreter"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole</span></code></a></li>
-<li><a class="reference internal" href="#code.interact"><code class="docutils literal notranslate"><span class="pre">interact()</span></code></a></li>
-<li><a class="reference internal" href="#code.compile_command"><code class="docutils literal notranslate"><span class="pre">compile_command()</span></code></a></li>
-<li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a><ul>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.runsource"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.runsource()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.runcode"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.runcode()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.showsyntaxerror"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.showsyntaxerror()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.showtraceback"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.showtraceback()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveInterpreter.write"><code class="docutils literal notranslate"><span class="pre">InteractiveInterpreter.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a><ul>
-<li><a class="reference internal" href="#code.InteractiveConsole.interact"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.interact()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.push"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.push()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.resetbuffer"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.resetbuffer()</span></code></a></li>
-<li><a class="reference internal" href="#code.InteractiveConsole.raw_input"><code class="docutils literal notranslate"><span class="pre">InteractiveConsole.raw_input()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a></li>
+<li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -458,7 +424,7 @@ with a different implementation.</p>
           <a href="custominterp.html" title="Custom Python Interpreters"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -468,7 +434,7 @@ with a different implementation.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -498,13 +464,14 @@ with a different implementation.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -512,7 +479,7 @@ with a different implementation.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

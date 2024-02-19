@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 3.12 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3.12 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -136,7 +136,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#optimizations">最佳化</a></li>
-<li><a class="reference internal" href="#cpython-bytecode-changes">CPython bytecode changes</a></li>
+<li><a class="reference internal" href="#cpython-bytecode-changes">CPython 位元組碼變更</a></li>
 <li><a class="reference internal" href="#demos-and-tools">Demos and Tools</a></li>
 <li><a class="reference internal" href="#deprecated">已棄用</a><ul>
 <li><a class="reference internal" href="#pending-removal-in-python-3-13">Python 3.13 中待決議的移除項目</a></li>
@@ -232,7 +232,7 @@
           <a href="index.html" title="Python 有什麼新功能？"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -242,7 +242,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -546,16 +546,16 @@ cores. This is currently only available through the C-API,
 though a Python API is <span class="target" id="index-10"></span><a class="pep reference external" href="https://peps.python.org/pep-0554/"><strong>anticipated for 3.13</strong></a>.</p>
 <p>Use the new <a class="reference internal" href="../c-api/init.html#c.Py_NewInterpreterFromConfig" title="Py_NewInterpreterFromConfig"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_NewInterpreterFromConfig()</span></code></a> function to
 create an interpreter with its own GIL:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">PyInterpreterConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="o">.</span><span class="n">check_multi_interp_extensions</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="o">.</span><span class="n">gil</span> <span class="o">=</span> <span class="n">PyInterpreterConfig_OWN_GIL</span><span class="p">,</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PyInterpreterConfig</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">check_multi_interp_extensions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">gil</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyInterpreterConfig_OWN_GIL</span><span class="p">,</span>
 <span class="p">};</span>
-<span class="n">PyThreadState</span> <span class="o">*</span><span class="n">tstate</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
-<span class="n">PyStatus</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Py_NewInterpreterFromConfig</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tstate</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">PyStatus_Exception</span><span class="p">(</span><span class="n">status</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">PyThreadState</span><span class="w"> </span><span class="o">*</span><span class="n">tstate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="n">PyStatus</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Py_NewInterpreterFromConfig</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tstate</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">PyStatus_Exception</span><span class="p">(</span><span class="n">status</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">/*</span> <span class="n">The</span> <span class="n">new</span> <span class="n">interpreter</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">active</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">thread</span><span class="o">.</span> <span class="o">*/</span>
+<span class="cm">/* The new interpreter is now active in the current thread. */</span>
 </pre></div>
 </div>
 <p>For further examples how to use the C-API for sub-interpreters with a
@@ -1229,7 +1229,7 @@ Vladimir Matveev in <a class="reference external" href="https://github.com/pytho
 </ul>
 </section>
 <section id="cpython-bytecode-changes">
-<h2>CPython bytecode changes<a class="headerlink" href="#cpython-bytecode-changes" title="Link to this heading">¶</a></h2>
+<h2>CPython 位元組碼變更<a class="headerlink" href="#cpython-bytecode-changes" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Remove the <code class="xref std std-opcode docutils literal notranslate"><span class="pre">LOAD_METHOD</span></code> instruction. It has been merged into
 <a class="reference internal" href="../library/dis.html#opcode-LOAD_ATTR"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">LOAD_ATTR</span></code></a>. <a class="reference internal" href="../library/dis.html#opcode-LOAD_ATTR"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">LOAD_ATTR</span></code></a> will now behave like the old
@@ -1326,10 +1326,8 @@ datetimes in UTC: respectively, call <a class="reference internal" href="../libr
 <a class="reference internal" href="../library/datetime.html#datetime.datetime.fromtimestamp" title="datetime.datetime.fromtimestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromtimestamp()</span></code></a>  with the <em>tz</em> parameter set to
 <a class="reference internal" href="../library/datetime.html#datetime.UTC" title="datetime.UTC"><code class="xref py py-const docutils literal notranslate"><span class="pre">datetime.UTC</span></code></a>.
 (Contributed by Paul Ganssle in <a class="reference external" href="https://github.com/python/cpython/issues/103857">gh-103857</a>.)</p></li>
-<li><p><a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>: Deprecate the <em>isdst</em> parameter in <a class="reference internal" href="../library/email.utils.html#email.utils.localtime" title="email.utils.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">email.utils.localtime()</span></code></a>.
-(Contributed by Alan Williams in <a class="reference external" href="https://github.com/python/cpython/issues/72346">gh-72346</a>.)</p></li>
-<li><p><a class="reference internal" href="../library/importlib.html#module-importlib.abc" title="importlib.abc: Abstract base classes related to import"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.abc</span></code></a>: Deprecated the following classes, scheduled for removal in
-Python 3.14:</p>
+<li><p><a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>：棄用 <a class="reference internal" href="../library/email.utils.html#email.utils.localtime" title="email.utils.localtime"><code class="xref py py-func docutils literal notranslate"><span class="pre">email.utils.localtime()</span></code></a> 中的 <em>isdst</em> 參數。（由 Alan Williams 於 <a class="reference external" href="https://github.com/python/cpython/issues/72346">gh-72346</a> 中貢獻。）</p></li>
+<li><p><a class="reference internal" href="../library/importlib.html#module-importlib.abc" title="importlib.abc: Abstract base classes related to import"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.abc</span></code></a>：棄用下列類別，預定於 Python 3.14 中移除：</p>
 <ul class="simple">
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.ResourceReader</span></code></p></li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.Traversable</span></code></p></li>
@@ -1383,8 +1381,7 @@ longstanding platform compatibility problem to developers.</p></li>
 <a class="reference internal" href="../library/concurrent.futures.html#module-concurrent.futures" title="concurrent.futures: Execute computations concurrently using threads or processes."><code class="xref py py-mod docutils literal notranslate"><span class="pre">concurrent.futures</span></code></a> the fix is to use a different
 <a class="reference internal" href="../library/multiprocessing.html#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a> start method such as <code class="docutils literal notranslate"><span class="pre">&quot;spawn&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;forkserver&quot;</span></code>.</p>
 </li>
-<li><p><a class="reference internal" href="../library/shutil.html#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a>: The <em>onerror</em> argument of <a class="reference internal" href="../library/shutil.html#shutil.rmtree" title="shutil.rmtree"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></a> is deprecated;
-use <em>onexc</em> instead. (Contributed by Irit Katriel in <a class="reference external" href="https://github.com/python/cpython/issues/102828">gh-102828</a>.)</p></li>
+<li><p><a class="reference internal" href="../library/shutil.html#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a>：<a class="reference internal" href="../library/shutil.html#shutil.rmtree" title="shutil.rmtree"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></a> 的 <em>onerror</em> 引數已被棄用，請改用 <em>onexc</em>。（由 Irit Katriel 於 <a class="reference external" href="https://github.com/python/cpython/issues/102828">gh-102828</a> 中貢獻。）</p></li>
 <li><p><a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a>：</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/sqlite3.html#sqlite3-default-converters"><span class="std std-ref">default adapters and converters</span></a> are now deprecated.
@@ -1405,7 +1402,7 @@ fields are deprecated. Use <a class="reference internal" href="../library/sys.ht
 <li><p><a class="reference internal" href="../library/tarfile.html#module-tarfile" title="tarfile: Read and write tar-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tarfile</span></code></a>: Extracting tar archives without specifying <em>filter</em> is deprecated until
 Python 3.14, when <code class="docutils literal notranslate"><span class="pre">'data'</span></code> filter will become the default.
 See <a class="reference internal" href="../library/tarfile.html#tarfile-extraction-filter"><span class="std std-ref">Extraction filters</span></a> for details.</p></li>
-<li><p><a class="reference internal" href="../library/typing.html#module-typing" title="typing: Support for type hints (see :pep:`484`)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code></a>:</p>
+<li><p><a class="reference internal" href="../library/typing.html#module-typing" title="typing: Support for type hints (see :pep:`484`)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code></a>：</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/typing.html#typing.Hashable" title="typing.Hashable"><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Hashable</span></code></a> and <a class="reference internal" href="../library/typing.html#typing.Sized" title="typing.Sized"><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Sized</span></code></a>, aliases for
 <a class="reference internal" href="../library/collections.abc.html#collections.abc.Hashable" title="collections.abc.Hashable"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Hashable</span></code></a> and <a class="reference internal" href="../library/collections.abc.html#collections.abc.Sized" title="collections.abc.Sized"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sized</span></code></a> respectively, are
@@ -1436,7 +1433,8 @@ error in Python 3.14. Use <code class="docutils literal notranslate"><span class
 In the rare case that you really need the bitwise inversion of the underlying
 <code class="docutils literal notranslate"><span class="pre">int</span></code>, convert to int explicitly: <code class="docutils literal notranslate"><span class="pre">~int(x)</span></code>. (Contributed by Tim Hoffmann
 in <a class="reference external" href="https://github.com/python/cpython/issues/103487">gh-103487</a>.)</p></li>
-<li><p>Accessing <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code> on code objects was deprecated in Python 3.10 via <span class="target" id="index-30"></span><a class="pep reference external" href="https://peps.python.org/pep-0626/"><strong>PEP 626</strong></a>,
+<li><p>Accessing <a class="reference internal" href="../reference/datamodel.html#codeobject.co_lnotab" title="codeobject.co_lnotab"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_lnotab</span></code></a> on code objects was deprecated in
+Python 3.10 via <span class="target" id="index-30"></span><a class="pep reference external" href="https://peps.python.org/pep-0626/"><strong>PEP 626</strong></a>,
 but it only got a proper <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> in 3.12,
 therefore it will be removed in 3.14.
 (Contributed by Nikita Sobolev in <a class="reference external" href="https://github.com/python/cpython/issues/101866">gh-101866</a>.)</p></li>
@@ -1469,10 +1467,10 @@ and will be removed in Python 3.13.</p>
 </ul>
 <p>其他模組：</p>
 <ul class="simple">
-<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib2to3</span></code>, and the <strong class="program">2to3</strong> program (<a class="reference external" href="https://github.com/python/cpython/issues/84540">gh-84540</a>)</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib2to3</span></code> 以及 <strong class="program">2to3</strong> 程式 (<a class="reference external" href="https://github.com/python/cpython/issues/84540">gh-84540</a>)</p></li>
 </ul>
-<p>APIs:</p>
-<ul class="simple">
+<p>API：</p>
+<ul>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">configparser.LegacyInterpolation</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/90765">gh-90765</a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">locale.resetlocale()</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/90817">gh-90817</a>)</p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">turtle.RawTurtle.settiltangle()</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/50096">gh-50096</a>)</p></li>
@@ -1481,13 +1479,24 @@ and will be removed in Python 3.13.</p>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">unittest.makeSuite()</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/50096">gh-50096</a>)</p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">unittest.TestProgram.usageExit()</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/67048">gh-67048</a>)</p></li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">webbrowser.MacOSX</span></code> (<a class="reference external" href="https://github.com/python/cpython/issues/86421">gh-86421</a>)</p></li>
-<li><p><a class="reference internal" href="../library/functions.html#classmethod" title="classmethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">classmethod</span></code></a> descriptor chaining (<a class="reference external" href="https://github.com/python/cpython/issues/89519">gh-89519</a>)</p></li>
+<li><p><a class="reference internal" href="../library/functions.html#classmethod" title="classmethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">classmethod</span></code></a> 描述器鏈結 (<a class="reference external" href="https://github.com/python/cpython/issues/89519">gh-89519</a>)</p></li>
+<li><p><a class="reference internal" href="../library/importlib.resources.html#module-importlib.resources" title="importlib.resources: Package resource reading, opening, and access"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.resources</span></code></a> 中被棄用的方法：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">contents()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_resource()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_binary()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_text()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_binary()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_text()</span></code></p></li>
+</ul>
+<p>Use <a class="reference internal" href="../library/importlib.resources.html#importlib.resources.files" title="importlib.resources.files"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.resources.files()</span></code></a> instead.  Refer to <a class="reference external" href="https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy">importlib-resources: Migrating from Legacy</a> (<a class="reference external" href="https://github.com/python/cpython/issues/106531">gh-106531</a>)</p>
+</li>
 </ul>
 </section>
 <section id="pending-removal-in-python-3-14">
 <h3>Python 3.14 中待決議的移除項目<a class="headerlink" href="#pending-removal-in-python-3-14" title="Link to this heading">¶</a></h3>
-<p>The following APIs have been deprecated
-and will be removed in Python 3.14.</p>
+<p>以下 API 已被棄用並將在 Python 3.14 中移除。</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>: The <em>type</em>, <em>choices</em>, and <em>metavar</em> parameters
 of <code class="xref py py-class docutils literal notranslate"><span class="pre">argparse.BooleanOptionalAction</span></code></p></li>
@@ -1534,18 +1543,18 @@ of <code class="xref py py-class docutils literal notranslate"><span class="pre"
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pty.slave_open()</span></code></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="../library/shutil.html#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a>: The <em>onerror</em> argument of <a class="reference internal" href="../library/shutil.html#shutil.rmtree" title="shutil.rmtree"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../library/shutil.html#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a>：<a class="reference internal" href="../library/shutil.html#shutil.rmtree" title="shutil.rmtree"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.rmtree()</span></code></a> 的 <em>onerror</em> 引數</p></li>
 <li><p><a class="reference internal" href="../library/typing.html#module-typing" title="typing: Support for type hints (see :pep:`484`)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code></a>：<code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ByteString</span></code></p></li>
 <li><p><a class="reference internal" href="../library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="xml.etree.ElementTree: Implementation of the ElementTree API."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code></a>: Testing the truth value of an <a class="reference internal" href="../library/xml.etree.elementtree.html#xml.etree.ElementTree.Element" title="xml.etree.ElementTree.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">xml.etree.ElementTree.Element</span></code></a>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">__package__</span></code> and <code class="docutils literal notranslate"><span class="pre">__cached__</span></code> attributes on module objects.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code> attribute of code objects.</p></li>
+<li><p>The <a class="reference internal" href="../reference/datamodel.html#codeobject.co_lnotab" title="codeobject.co_lnotab"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_lnotab</span></code></a> attribute of code objects.</p></li>
 </ul>
 </section>
 <section id="pending-removal-in-python-3-15">
 <h3>Python 3.15 中待決議的移除項目<a class="headerlink" href="#pending-removal-in-python-3-15" title="Link to this heading">¶</a></h3>
 <p>The following APIs have been deprecated
 and will be removed in Python 3.15.</p>
-<p>APIs:</p>
+<p>API：</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../library/locale.html#locale.getdefaultlocale" title="locale.getdefaultlocale"><code class="xref py py-func docutils literal notranslate"><span class="pre">locale.getdefaultlocale()</span></code></a> (<a class="reference external" href="https://github.com/python/cpython/issues/90817">gh-90817</a>)</p></li>
 </ul>
@@ -1637,9 +1646,7 @@ enum attribute access.
 <section id="ftplib">
 <h3>ftplib<a class="headerlink" href="#ftplib" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Remove <a class="reference internal" href="../library/ftplib.html#module-ftplib" title="ftplib: FTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code></a>'s <code class="docutils literal notranslate"><span class="pre">FTP_TLS.ssl_version</span></code> class attribute: use the
-<em>context</em> parameter instead.
-(Contributed by Victor Stinner in <a class="reference external" href="https://github.com/python/cpython/issues/94172">gh-94172</a>.)</p></li>
+<li><p>移除 <a class="reference internal" href="../library/ftplib.html#module-ftplib" title="ftplib: FTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code></a> 的 <code class="docutils literal notranslate"><span class="pre">FTP_TLS.ssl_version</span></code> 類別屬性：請改用 <em>context</em> 參數。（由 Victor Stinner 於 <a class="reference external" href="https://github.com/python/cpython/issues/94172">gh-94172</a> 中貢獻。）</p></li>
 </ul>
 </section>
 <section id="gzip">
@@ -1759,9 +1766,7 @@ have been removed.  (Contributed by Barry Warsaw in <a class="reference external
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">imp.lock_held()</span></code>, <code class="docutils literal notranslate"><span class="pre">imp.acquire_lock()</span></code>, <code class="docutils literal notranslate"><span class="pre">imp.release_lock()</span></code>:
 the locking scheme has changed in Python 3.3 to per-module locks.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">imp.find_module()</span></code> constants: <code class="docutils literal notranslate"><span class="pre">SEARCH_ERROR</span></code>, <code class="docutils literal notranslate"><span class="pre">PY_SOURCE</span></code>,
-<code class="docutils literal notranslate"><span class="pre">PY_COMPILED</span></code>, <code class="docutils literal notranslate"><span class="pre">C_EXTENSION</span></code>, <code class="docutils literal notranslate"><span class="pre">PY_RESOURCE</span></code>, <code class="docutils literal notranslate"><span class="pre">PKG_DIRECTORY</span></code>,
-<code class="docutils literal notranslate"><span class="pre">C_BUILTIN</span></code>, <code class="docutils literal notranslate"><span class="pre">PY_FROZEN</span></code>, <code class="docutils literal notranslate"><span class="pre">PY_CODERESOURCE</span></code>, <code class="docutils literal notranslate"><span class="pre">IMP_HOOK</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imp.find_module()</span></code> 常數：<code class="docutils literal notranslate"><span class="pre">SEARCH_ERROR</span></code>、<code class="docutils literal notranslate"><span class="pre">PY_SOURCE</span></code>、<code class="docutils literal notranslate"><span class="pre">PY_COMPILED</span></code>、<code class="docutils literal notranslate"><span class="pre">C_EXTENSION</span></code>、<code class="docutils literal notranslate"><span class="pre">PY_RESOURCE</span></code>、<code class="docutils literal notranslate"><span class="pre">PKG_DIRECTORY</span></code>、<code class="docutils literal notranslate"><span class="pre">C_BUILTIN</span></code>、<code class="docutils literal notranslate"><span class="pre">PY_FROZEN</span></code>、<code class="docutils literal notranslate"><span class="pre">PY_CODERESOURCE</span></code>、<code class="docutils literal notranslate"><span class="pre">IMP_HOOK</span></code>。</p></li>
 </ul>
 </li>
 </ul>
@@ -1836,7 +1841,7 @@ Validation.
 <section id="id3">
 <h3>unittest<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
 <ul>
-<li><p>Remove many long-deprecated <a class="reference internal" href="../library/unittest.html#module-unittest" title="unittest: Unit testing framework for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code></a> features:</p>
+<li><p>移除許多 <a class="reference internal" href="../library/unittest.html#module-unittest" title="unittest: Unit testing framework for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code></a> 中被棄用已久的功能：</p>
 <ul id="unittest-testcase-removed-aliases">
 <li><p>A number of <a class="reference internal" href="../library/unittest.html#unittest.TestCase" title="unittest.TestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></a> method aliases:</p>
 <table class="docutils align-default">
@@ -2062,6 +2067,14 @@ returning arbitrary <code class="docutils literal notranslate"><span class="pre"
 <li><p>Mixing tabs and spaces as indentation in the same file is not supported anymore and will
 raise a <a class="reference internal" href="../library/exceptions.html#TabError" title="TabError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TabError</span></code></a>.</p></li>
 </ul>
+</li>
+<li><p>The <a class="reference internal" href="../library/threading.html#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> module now expects the <code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> module to have
+an <code class="docutils literal notranslate"><span class="pre">_is_main_interpreter</span></code> attribute.  It is a function with no
+arguments that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the current interpreter is the
+main interpreter.</p>
+<p>Any library or application that provides a custom <code class="docutils literal notranslate"><span class="pre">_thread</span></code> module
+should provide <code class="docutils literal notranslate"><span class="pre">_is_main_interpreter()</span></code>.
+(See <a class="reference external" href="https://github.com/python/cpython/issues/112826">gh-112826</a>.)</p>
 </li>
 </ul>
 </section>
@@ -2637,7 +2650,7 @@ internals.
 </ul>
 </li>
 <li><a class="reference internal" href="#optimizations">最佳化</a></li>
-<li><a class="reference internal" href="#cpython-bytecode-changes">CPython bytecode changes</a></li>
+<li><a class="reference internal" href="#cpython-bytecode-changes">CPython 位元組碼變更</a></li>
 <li><a class="reference internal" href="#demos-and-tools">Demos and Tools</a></li>
 <li><a class="reference internal" href="#deprecated">已棄用</a><ul>
 <li><a class="reference internal" href="#pending-removal-in-python-3-13">Python 3.13 中待決議的移除項目</a></li>
@@ -2736,7 +2749,7 @@ internals.
           <a href="index.html" title="Python 有什麼新功能？"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2746,7 +2759,7 @@ internals.
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -2775,13 +2788,14 @@ internals.
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2789,7 +2803,7 @@ internals.
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

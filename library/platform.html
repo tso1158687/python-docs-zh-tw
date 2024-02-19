@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>platform --- 獲取底層平臺的標識資料 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>platform --- 獲取底層平臺的標識資料 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,48 +86,12 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> ---  獲取底層平臺的標識資料</a><ul>
-<li><a class="reference internal" href="#cross-platform">跨平台</a><ul>
-<li><a class="reference internal" href="#platform.architecture"><code class="docutils literal notranslate"><span class="pre">architecture()</span></code></a></li>
-<li><a class="reference internal" href="#platform.machine"><code class="docutils literal notranslate"><span class="pre">machine()</span></code></a></li>
-<li><a class="reference internal" href="#platform.node"><code class="docutils literal notranslate"><span class="pre">node()</span></code></a></li>
-<li><a class="reference internal" href="#platform.platform"><code class="docutils literal notranslate"><span class="pre">platform()</span></code></a></li>
-<li><a class="reference internal" href="#platform.processor"><code class="docutils literal notranslate"><span class="pre">processor()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_build"><code class="docutils literal notranslate"><span class="pre">python_build()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_compiler"><code class="docutils literal notranslate"><span class="pre">python_compiler()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_branch"><code class="docutils literal notranslate"><span class="pre">python_branch()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_implementation"><code class="docutils literal notranslate"><span class="pre">python_implementation()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_revision"><code class="docutils literal notranslate"><span class="pre">python_revision()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_version"><code class="docutils literal notranslate"><span class="pre">python_version()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_version_tuple"><code class="docutils literal notranslate"><span class="pre">python_version_tuple()</span></code></a></li>
-<li><a class="reference internal" href="#platform.release"><code class="docutils literal notranslate"><span class="pre">release()</span></code></a></li>
-<li><a class="reference internal" href="#platform.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
-<li><a class="reference internal" href="#platform.system_alias"><code class="docutils literal notranslate"><span class="pre">system_alias()</span></code></a></li>
-<li><a class="reference internal" href="#platform.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
-<li><a class="reference internal" href="#platform.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#java-platform">Java 平台</a><ul>
-<li><a class="reference internal" href="#platform.java_ver"><code class="docutils literal notranslate"><span class="pre">java_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#windows-platform">Windows 平台</a><ul>
-<li><a class="reference internal" href="#platform.win32_ver"><code class="docutils literal notranslate"><span class="pre">win32_ver()</span></code></a></li>
-<li><a class="reference internal" href="#platform.win32_edition"><code class="docutils literal notranslate"><span class="pre">win32_edition()</span></code></a></li>
-<li><a class="reference internal" href="#platform.win32_is_iot"><code class="docutils literal notranslate"><span class="pre">win32_is_iot()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#macos-platform">macOS 平台</a><ul>
-<li><a class="reference internal" href="#platform.mac_ver"><code class="docutils literal notranslate"><span class="pre">mac_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#unix-platforms">Unix 平台</a><ul>
-<li><a class="reference internal" href="#platform.libc_ver"><code class="docutils literal notranslate"><span class="pre">libc_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#linux-platforms">Linux 平台</a><ul>
-<li><a class="reference internal" href="#platform.freedesktop_os_release"><code class="docutils literal notranslate"><span class="pre">freedesktop_os_release()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#cross-platform">跨平台</a></li>
+<li><a class="reference internal" href="#java-platform">Java 平台</a></li>
+<li><a class="reference internal" href="#windows-platform">Windows 平台</a></li>
+<li><a class="reference internal" href="#macos-platform">macOS 平台</a></li>
+<li><a class="reference internal" href="#unix-platforms">Unix 平台</a></li>
+<li><a class="reference internal" href="#linux-platforms">Linux 平台</a></li>
 </ul>
 </li>
 </ul>
@@ -175,7 +139,7 @@
           <a href="curses.panel.html" title="curses.panel --- A panel stack extension for curses"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -185,7 +149,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -350,16 +314,14 @@
 <dt class="sig sig-object py" id="platform.uname">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">uname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#platform.uname" title="Link to this definition">¶</a></dt>
 <dd><p>具有高可攜性 (portable) 的 uname 介面。回傳包含六個屬性的 <a class="reference internal" href="collections.html#collections.namedtuple" title="collections.namedtuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a>：<a class="reference internal" href="#platform.system" title="platform.system"><code class="xref py py-attr docutils literal notranslate"><span class="pre">system</span></code></a>、<a class="reference internal" href="#platform.node" title="platform.node"><code class="xref py py-attr docutils literal notranslate"><span class="pre">node</span></code></a>、<a class="reference internal" href="#platform.release" title="platform.release"><code class="xref py py-attr docutils literal notranslate"><span class="pre">release</span></code></a>、<a class="reference internal" href="#platform.version" title="platform.version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">version</span></code></a>、<a class="reference internal" href="#platform.machine" title="platform.machine"><code class="xref py py-attr docutils literal notranslate"><span class="pre">machine</span></code></a> 和 <a class="reference internal" href="#platform.processor" title="platform.processor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">processor</span></code></a>。</p>
-<p><a class="reference internal" href="#platform.processor" title="platform.processor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">processor</span></code></a> is resolved late, on demand.</p>
-<p>Note: the first two attribute names differ from the names presented by
-<a class="reference internal" href="os.html#os.uname" title="os.uname"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.uname()</span></code></a>, where they are named <code class="xref py py-attr docutils literal notranslate"><span class="pre">sysname</span></code> and
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">nodename</span></code>.</p>
+<p><a class="reference internal" href="#platform.processor" title="platform.processor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">processor</span></code></a> 會延遲解析，有需求時才會解析</p>
+<p>注意：前兩個屬性名稱與 <a class="reference internal" href="os.html#os.uname" title="os.uname"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.uname()</span></code></a> 提供的名稱不同，它們分別命名為 <code class="xref py py-attr docutils literal notranslate"><span class="pre">sysname</span></code> 和 <code class="xref py py-attr docutils literal notranslate"><span class="pre">nodename</span></code>。</p>
 <p>無法確定的條目會被設為 <code class="docutils literal notranslate"><span class="pre">''</span></code>。</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.3 版的變更: </span>將結果從 tuple 改為 <a class="reference internal" href="collections.html#collections.namedtuple" title="collections.namedtuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a>。</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版的變更: </span><a class="reference internal" href="#platform.processor" title="platform.processor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">processor</span></code></a> is resolved late instead of immediately.</p>
+<p><span class="versionmodified changed">在 3.9 版的變更: </span><a class="reference internal" href="#platform.processor" title="platform.processor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">processor</span></code></a> 會延遲解析，並非立即解析。</p>
 </div>
 </dd></dl>
 
@@ -461,48 +423,12 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> ---  獲取底層平臺的標識資料</a><ul>
-<li><a class="reference internal" href="#cross-platform">跨平台</a><ul>
-<li><a class="reference internal" href="#platform.architecture"><code class="docutils literal notranslate"><span class="pre">architecture()</span></code></a></li>
-<li><a class="reference internal" href="#platform.machine"><code class="docutils literal notranslate"><span class="pre">machine()</span></code></a></li>
-<li><a class="reference internal" href="#platform.node"><code class="docutils literal notranslate"><span class="pre">node()</span></code></a></li>
-<li><a class="reference internal" href="#platform.platform"><code class="docutils literal notranslate"><span class="pre">platform()</span></code></a></li>
-<li><a class="reference internal" href="#platform.processor"><code class="docutils literal notranslate"><span class="pre">processor()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_build"><code class="docutils literal notranslate"><span class="pre">python_build()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_compiler"><code class="docutils literal notranslate"><span class="pre">python_compiler()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_branch"><code class="docutils literal notranslate"><span class="pre">python_branch()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_implementation"><code class="docutils literal notranslate"><span class="pre">python_implementation()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_revision"><code class="docutils literal notranslate"><span class="pre">python_revision()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_version"><code class="docutils literal notranslate"><span class="pre">python_version()</span></code></a></li>
-<li><a class="reference internal" href="#platform.python_version_tuple"><code class="docutils literal notranslate"><span class="pre">python_version_tuple()</span></code></a></li>
-<li><a class="reference internal" href="#platform.release"><code class="docutils literal notranslate"><span class="pre">release()</span></code></a></li>
-<li><a class="reference internal" href="#platform.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
-<li><a class="reference internal" href="#platform.system_alias"><code class="docutils literal notranslate"><span class="pre">system_alias()</span></code></a></li>
-<li><a class="reference internal" href="#platform.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
-<li><a class="reference internal" href="#platform.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#java-platform">Java 平台</a><ul>
-<li><a class="reference internal" href="#platform.java_ver"><code class="docutils literal notranslate"><span class="pre">java_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#windows-platform">Windows 平台</a><ul>
-<li><a class="reference internal" href="#platform.win32_ver"><code class="docutils literal notranslate"><span class="pre">win32_ver()</span></code></a></li>
-<li><a class="reference internal" href="#platform.win32_edition"><code class="docutils literal notranslate"><span class="pre">win32_edition()</span></code></a></li>
-<li><a class="reference internal" href="#platform.win32_is_iot"><code class="docutils literal notranslate"><span class="pre">win32_is_iot()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#macos-platform">macOS 平台</a><ul>
-<li><a class="reference internal" href="#platform.mac_ver"><code class="docutils literal notranslate"><span class="pre">mac_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#unix-platforms">Unix 平台</a><ul>
-<li><a class="reference internal" href="#platform.libc_ver"><code class="docutils literal notranslate"><span class="pre">libc_ver()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#linux-platforms">Linux 平台</a><ul>
-<li><a class="reference internal" href="#platform.freedesktop_os_release"><code class="docutils literal notranslate"><span class="pre">freedesktop_os_release()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#cross-platform">跨平台</a></li>
+<li><a class="reference internal" href="#java-platform">Java 平台</a></li>
+<li><a class="reference internal" href="#windows-platform">Windows 平台</a></li>
+<li><a class="reference internal" href="#macos-platform">macOS 平台</a></li>
+<li><a class="reference internal" href="#unix-platforms">Unix 平台</a></li>
+<li><a class="reference internal" href="#linux-platforms">Linux 平台</a></li>
 </ul>
 </li>
 </ul>
@@ -553,7 +479,7 @@
           <a href="curses.panel.html" title="curses.panel --- A panel stack extension for curses"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -563,7 +489,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -593,13 +519,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -607,7 +534,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

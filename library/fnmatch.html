@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>fnmatch --- Unix filename pattern matching &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fnmatch --- Unix filename pattern matching &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -82,19 +82,6 @@
         <option value="dark">Dark</option>
     </select>
 </label>
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fnmatch</span></code> --- Unix filename pattern matching</a><ul>
-<li><a class="reference internal" href="#fnmatch.fnmatch"><code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.fnmatchcase"><code class="docutils literal notranslate"><span class="pre">fnmatchcase()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.translate"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="glob.html"
@@ -137,7 +124,7 @@
           <a href="glob.html" title="glob --- Unix 風格的路徑名稱模式擴展"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -147,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -222,9 +209,9 @@ cache the compiled regex patterns in the following functions: <a class="referenc
 <a class="reference internal" href="#fnmatch.fnmatchcase" title="fnmatch.fnmatchcase"><code class="xref py py-func docutils literal notranslate"><span class="pre">fnmatchcase()</span></code></a>, <a class="reference internal" href="#fnmatch.filter" title="fnmatch.filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">filter()</span></code></a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fnmatch.fnmatch">
-<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">fnmatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.fnmatch" title="Link to this definition">¶</a></dt>
-<dd><p>Test whether the <em>filename</em> string matches the <em>pattern</em> string, returning
-<a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> or <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a>.  Both parameters are case-normalized
+<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">fnmatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.fnmatch" title="Link to this definition">¶</a></dt>
+<dd><p>Test whether the filename string <em>name</em> matches the pattern string <em>pat</em>,
+returning <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.  Both parameters are case-normalized
 using <a class="reference internal" href="os.path.html#os.path.normcase" title="os.path.normcase"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.normcase()</span></code></a>. <a class="reference internal" href="#fnmatch.fnmatchcase" title="fnmatch.fnmatchcase"><code class="xref py py-func docutils literal notranslate"><span class="pre">fnmatchcase()</span></code></a> can be used to perform a
 case-sensitive comparison, regardless of whether that's standard for the
 operating system.</p>
@@ -242,23 +229,25 @@ extension <code class="docutils literal notranslate"><span class="pre">.txt</spa
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fnmatch.fnmatchcase">
-<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">fnmatchcase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.fnmatchcase" title="Link to this definition">¶</a></dt>
-<dd><p>Test whether <em>filename</em> matches <em>pattern</em>, returning <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> or
-<a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a>; the comparison is case-sensitive and does not apply
-<a class="reference internal" href="os.path.html#os.path.normcase" title="os.path.normcase"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.normcase()</span></code></a>.</p>
+<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">fnmatchcase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.fnmatchcase" title="Link to this definition">¶</a></dt>
+<dd><p>Test whether the filename string <em>name</em> matches the pattern string <em>pat</em>,
+returning <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>;
+the comparison is case-sensitive and does not apply <a class="reference internal" href="os.path.html#os.path.normcase" title="os.path.normcase"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.normcase()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fnmatch.filter">
-<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.filter" title="Link to this definition">¶</a></dt>
-<dd><p>Construct a list from those elements of the iterable <em>names</em> that match <em>pattern</em>. It is the same as
-<code class="docutils literal notranslate"><span class="pre">[n</span> <span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">names</span> <span class="pre">if</span> <span class="pre">fnmatch(n,</span> <span class="pre">pattern)]</span></code>, but implemented more efficiently.</p>
+<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.filter" title="Link to this definition">¶</a></dt>
+<dd><p>Construct a list from those elements of the <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> <em>names</em>
+that match pattern <em>pat</em>.
+It is the same as <code class="docutils literal notranslate"><span class="pre">[n</span> <span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">names</span> <span class="pre">if</span> <span class="pre">fnmatch(n,</span> <span class="pre">pat)]</span></code>,
+but implemented more efficiently.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fnmatch.translate">
-<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.translate" title="Link to this definition">¶</a></dt>
-<dd><p>Return the shell-style <em>pattern</em> converted to a regular expression for
+<span class="sig-prename descclassname"><span class="pre">fnmatch.</span></span><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fnmatch.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Return the shell-style pattern <em>pat</em> converted to a regular expression for
 using with <a class="reference internal" href="re.html#re.match" title="re.match"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.match()</span></code></a>.</p>
 <p>範例：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fnmatch</span><span class="o">,</span> <span class="nn">re</span>
@@ -289,19 +278,6 @@ using with <a class="reference internal" href="re.html#re.match" title="re.match
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fnmatch</span></code> --- Unix filename pattern matching</a><ul>
-<li><a class="reference internal" href="#fnmatch.fnmatch"><code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.fnmatchcase"><code class="docutils literal notranslate"><span class="pre">fnmatchcase()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
-<li><a class="reference internal" href="#fnmatch.translate"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="glob.html"
@@ -347,7 +323,7 @@ using with <a class="reference internal" href="re.html#re.match" title="re.match
           <a href="glob.html" title="glob --- Unix 風格的路徑名稱模式擴展"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -357,7 +333,7 @@ using with <a class="reference internal" href="re.html#re.match" title="re.match
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -387,13 +363,14 @@ using with <a class="reference internal" href="re.html#re.match" title="re.match
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -401,7 +378,7 @@ using with <a class="reference internal" href="re.html#re.match" title="re.match
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Lexical analysis &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Lexical analysis &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,13 +19,13 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="3. Data model" href="datamodel.html" />
+    <link rel="next" title="3. 資料模型" href="datamodel.html" />
     <link rel="prev" title="1. 簡介" href="introduction.html" />
     <link rel="canonical" href="https://docs.python.org/3/reference/lexical_analysis.html" />
     
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -111,7 +111,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#string-literal-concatenation">2.4.2. String literal concatenation</a></li>
-<li><a class="reference internal" href="#formatted-string-literals">2.4.3. Formatted string literals</a></li>
+<li><a class="reference internal" href="#formatted-string-literals">2.4.3. f-string（f 字串）</a></li>
 <li><a class="reference internal" href="#numeric-literals">2.4.4. Numeric literals</a></li>
 <li><a class="reference internal" href="#integer-literals">2.4.5. Integer literals</a></li>
 <li><a class="reference internal" href="#floating-point-literals">2.4.6. Floating point literals</a></li>
@@ -133,7 +133,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="datamodel.html"
-                          title="下一章"><span class="section-number">3. </span>Data model</a></p>
+                          title="下一章"><span class="section-number">3. </span>資料模型</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -161,13 +161,13 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="datamodel.html" title="3. Data model"
+          <a href="datamodel.html" title="3. 資料模型"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="1. 簡介"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -177,7 +177,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 語言參考手冊</a> &#187;</li>
@@ -579,7 +579,7 @@ to simplify the maintenance of dual Python 2.x and 3.x codebases.
 See <span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0414/"><strong>PEP 414</strong></a> for more information.</p>
 </div>
 <p id="index-22">A string literal with <code class="docutils literal notranslate"><span class="pre">'f'</span></code> or <code class="docutils literal notranslate"><span class="pre">'F'</span></code> in its prefix is a
-<em class="dfn">formatted string literal</em>; see <a class="reference internal" href="#f-strings"><span class="std std-ref">Formatted string literals</span></a>.  The <code class="docutils literal notranslate"><span class="pre">'f'</span></code> may be
+<em class="dfn">formatted string literal</em>; see <a class="reference internal" href="#f-strings"><span class="std std-ref">f-string（f 字串）</span></a>.  The <code class="docutils literal notranslate"><span class="pre">'f'</span></code> may be
 combined with <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, but not with <code class="docutils literal notranslate"><span class="pre">'b'</span></code> or <code class="docutils literal notranslate"><span class="pre">'u'</span></code>, therefore raw
 formatted strings are possible, but formatted bytes literals are not.</p>
 <p>In triple-quoted literals, unescaped newlines and quotes are allowed (and are
@@ -706,7 +706,7 @@ a <a class="reference internal" href="../library/exceptions.html#SyntaxError" ti
 given value. In a string literal, these escapes denote a Unicode character
 with the given value.</p></li>
 <li><div class="versionchanged">
-<p><span class="versionmodified changed">在 3.3 版的變更: </span>Support for name aliases <a class="footnote-reference brackets" href="#id15" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> has been added.</p>
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>Support for name aliases <a class="footnote-reference brackets" href="#id16" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> has been added.</p>
 </div>
 </li>
 <li><p>Exactly four hex digits are required.</p></li>
@@ -756,7 +756,7 @@ styles for each component (even mixing raw strings and triple quoted strings),
 and formatted string literals may be concatenated with plain string literals.</p>
 </section>
 <section id="formatted-string-literals">
-<span id="f-strings"></span><span id="index-25"></span><h3><span class="section-number">2.4.3. </span>Formatted string literals<a class="headerlink" href="#formatted-string-literals" title="Link to this heading">¶</a></h3>
+<span id="f-strings"></span><span id="index-25"></span><span id="id13"></span><h3><span class="section-number">2.4.3. </span>f-string（f 字串）<a class="headerlink" href="#formatted-string-literals" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.6 版新加入.</span></p>
 </div>
@@ -985,7 +985,7 @@ imaginary literals:</p>
 </section>
 </section>
 <section id="operators">
-<span id="id13"></span><h2><span class="section-number">2.5. </span>Operators<a class="headerlink" href="#operators" title="Link to this heading">¶</a></h2>
+<span id="id14"></span><h2><span class="section-number">2.5. </span>Operators<a class="headerlink" href="#operators" title="Link to this heading">¶</a></h2>
 <p id="index-31">The following tokens are operators:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+       -       *       **      /       //      %      @
 &lt;&lt;      &gt;&gt;      &amp;       |       ^       ~       :=
@@ -994,7 +994,7 @@ imaginary literals:</p>
 </div>
 </section>
 <section id="delimiters">
-<span id="id14"></span><h2><span class="section-number">2.6. </span>Delimiters<a class="headerlink" href="#delimiters" title="Link to this heading">¶</a></h2>
+<span id="id15"></span><h2><span class="section-number">2.6. </span>Delimiters<a class="headerlink" href="#delimiters" title="Link to this heading">¶</a></h2>
 <p id="index-32">The following tokens serve as delimiters in the grammar:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(       )       [       ]       {       }
 ,       :       .       ;       @       =       -&gt;
@@ -1018,7 +1018,7 @@ occurrence outside string literals and comments is an unconditional error:</p>
 </div>
 <p class="rubric">註解</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id15" role="doc-footnote">
+<aside class="footnote brackets" id="id16" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://www.unicode.org/Public/15.0.0/ucd/NameAliases.txt">https://www.unicode.org/Public/15.0.0/ucd/NameAliases.txt</a></p>
 </aside>
@@ -1062,7 +1062,7 @@ occurrence outside string literals and comments is an unconditional error:</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#string-literal-concatenation">2.4.2. String literal concatenation</a></li>
-<li><a class="reference internal" href="#formatted-string-literals">2.4.3. Formatted string literals</a></li>
+<li><a class="reference internal" href="#formatted-string-literals">2.4.3. f-string（f 字串）</a></li>
 <li><a class="reference internal" href="#numeric-literals">2.4.4. Numeric literals</a></li>
 <li><a class="reference internal" href="#integer-literals">2.4.5. Integer literals</a></li>
 <li><a class="reference internal" href="#floating-point-literals">2.4.6. Floating point literals</a></li>
@@ -1084,7 +1084,7 @@ occurrence outside string literals and comments is an unconditional error:</p>
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="datamodel.html"
-                          title="下一章"><span class="section-number">3. </span>Data model</a></p>
+                          title="下一章"><span class="section-number">3. </span>資料模型</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -1115,13 +1115,13 @@ occurrence outside string literals and comments is an unconditional error:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="datamodel.html" title="3. Data model"
+          <a href="datamodel.html" title="3. 資料模型"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="1. 簡介"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1131,7 +1131,7 @@ occurrence outside string literals and comments is an unconditional error:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 語言參考手冊</a> &#187;</li>
@@ -1160,13 +1160,14 @@ occurrence outside string literals and comments is an unconditional error:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1174,7 +1175,7 @@ occurrence outside string literals and comments is an unconditional error:</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

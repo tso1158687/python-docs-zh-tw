@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>zlib --- 相容於 gzip 的壓縮 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zlib --- 相容於 gzip 的壓縮 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -82,33 +82,6 @@
         <option value="dark">Dark</option>
     </select>
 </label>
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code> --- 相容於 <strong class="program">gzip</strong> 的壓縮</a><ul>
-<li><a class="reference internal" href="#zlib.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
-<li><a class="reference internal" href="#zlib.adler32"><code class="docutils literal notranslate"><span class="pre">adler32()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.compress"><code class="docutils literal notranslate"><span class="pre">compress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.compressobj"><code class="docutils literal notranslate"><span class="pre">compressobj()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.crc32"><code class="docutils literal notranslate"><span class="pre">crc32()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.decompressobj"><code class="docutils literal notranslate"><span class="pre">decompressobj()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.compress"><code class="docutils literal notranslate"><span class="pre">Compress.compress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.flush"><code class="docutils literal notranslate"><span class="pre">Compress.flush()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.copy"><code class="docutils literal notranslate"><span class="pre">Compress.copy()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.unused_data"><code class="docutils literal notranslate"><span class="pre">Decompress.unused_data</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.unconsumed_tail"><code class="docutils literal notranslate"><span class="pre">Decompress.unconsumed_tail</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.eof"><code class="docutils literal notranslate"><span class="pre">Decompress.eof</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.decompress"><code class="docutils literal notranslate"><span class="pre">Decompress.decompress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.flush"><code class="docutils literal notranslate"><span class="pre">Decompress.flush()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.copy"><code class="docutils literal notranslate"><span class="pre">Decompress.copy()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.ZLIB_VERSION"><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code></a></li>
-<li><a class="reference internal" href="#zlib.ZLIB_RUNTIME_VERSION"><code class="docutils literal notranslate"><span class="pre">ZLIB_RUNTIME_VERSION</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="archiving.html"
@@ -151,7 +124,7 @@
           <a href="archiving.html" title="資料壓縮與保存"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -161,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -403,33 +376,6 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code> --- 相容於 <strong class="program">gzip</strong> 的壓縮</a><ul>
-<li><a class="reference internal" href="#zlib.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
-<li><a class="reference internal" href="#zlib.adler32"><code class="docutils literal notranslate"><span class="pre">adler32()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.compress"><code class="docutils literal notranslate"><span class="pre">compress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.compressobj"><code class="docutils literal notranslate"><span class="pre">compressobj()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.crc32"><code class="docutils literal notranslate"><span class="pre">crc32()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.decompressobj"><code class="docutils literal notranslate"><span class="pre">decompressobj()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.compress"><code class="docutils literal notranslate"><span class="pre">Compress.compress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.flush"><code class="docutils literal notranslate"><span class="pre">Compress.flush()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Compress.copy"><code class="docutils literal notranslate"><span class="pre">Compress.copy()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.unused_data"><code class="docutils literal notranslate"><span class="pre">Decompress.unused_data</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.unconsumed_tail"><code class="docutils literal notranslate"><span class="pre">Decompress.unconsumed_tail</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.eof"><code class="docutils literal notranslate"><span class="pre">Decompress.eof</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.decompress"><code class="docutils literal notranslate"><span class="pre">Decompress.decompress()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.flush"><code class="docutils literal notranslate"><span class="pre">Decompress.flush()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.Decompress.copy"><code class="docutils literal notranslate"><span class="pre">Decompress.copy()</span></code></a></li>
-<li><a class="reference internal" href="#zlib.ZLIB_VERSION"><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code></a></li>
-<li><a class="reference internal" href="#zlib.ZLIB_RUNTIME_VERSION"><code class="docutils literal notranslate"><span class="pre">ZLIB_RUNTIME_VERSION</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-  <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="archiving.html"
                           title="上一章">資料壓縮與保存</a></p>
@@ -474,7 +420,7 @@
           <a href="archiving.html" title="資料壓縮與保存"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -484,7 +430,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -514,13 +460,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -528,7 +475,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

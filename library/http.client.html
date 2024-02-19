@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>http.client --- HTTP protocol client &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>http.client --- HTTP protocol client &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,61 +86,8 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPConnection"><code class="docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPSConnection"><code class="docutils literal notranslate"><span class="pre">HTTPSConnection</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse"><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></a></li>
-<li><a class="reference internal" href="#http.client.parse_headers"><code class="docutils literal notranslate"><span class="pre">parse_headers()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPException"><code class="docutils literal notranslate"><span class="pre">HTTPException</span></code></a></li>
-<li><a class="reference internal" href="#http.client.NotConnected"><code class="docutils literal notranslate"><span class="pre">NotConnected</span></code></a></li>
-<li><a class="reference internal" href="#http.client.InvalidURL"><code class="docutils literal notranslate"><span class="pre">InvalidURL</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnknownProtocol"><code class="docutils literal notranslate"><span class="pre">UnknownProtocol</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnknownTransferEncoding"><code class="docutils literal notranslate"><span class="pre">UnknownTransferEncoding</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnimplementedFileMode"><code class="docutils literal notranslate"><span class="pre">UnimplementedFileMode</span></code></a></li>
-<li><a class="reference internal" href="#http.client.IncompleteRead"><code class="docutils literal notranslate"><span class="pre">IncompleteRead</span></code></a></li>
-<li><a class="reference internal" href="#http.client.ImproperConnectionState"><code class="docutils literal notranslate"><span class="pre">ImproperConnectionState</span></code></a></li>
-<li><a class="reference internal" href="#http.client.CannotSendRequest"><code class="docutils literal notranslate"><span class="pre">CannotSendRequest</span></code></a></li>
-<li><a class="reference internal" href="#http.client.CannotSendHeader"><code class="docutils literal notranslate"><span class="pre">CannotSendHeader</span></code></a></li>
-<li><a class="reference internal" href="#http.client.ResponseNotReady"><code class="docutils literal notranslate"><span class="pre">ResponseNotReady</span></code></a></li>
-<li><a class="reference internal" href="#http.client.BadStatusLine"><code class="docutils literal notranslate"><span class="pre">BadStatusLine</span></code></a></li>
-<li><a class="reference internal" href="#http.client.LineTooLong"><code class="docutils literal notranslate"><span class="pre">LineTooLong</span></code></a></li>
-<li><a class="reference internal" href="#http.client.RemoteDisconnected"><code class="docutils literal notranslate"><span class="pre">RemoteDisconnected</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTP_PORT"><code class="docutils literal notranslate"><span class="pre">HTTP_PORT</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPS_PORT"><code class="docutils literal notranslate"><span class="pre">HTTPS_PORT</span></code></a></li>
-<li><a class="reference internal" href="#http.client.responses"><code class="docutils literal notranslate"><span class="pre">responses</span></code></a></li>
-<li><a class="reference internal" href="#httpconnection-objects">HTTPConnection 物件</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPConnection.request"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.request()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.getresponse"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.getresponse()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.set_debuglevel"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.set_debuglevel()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.set_tunnel"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.set_tunnel()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.get_proxy_response_headers"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.get_proxy_response_headers()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.connect"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.connect()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.close"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.close()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.blocksize"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.blocksize</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.putrequest"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.putrequest()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.putheader"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.putheader()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.endheaders"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.endheaders()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.send"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.send()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#httpresponse-objects">HTTPResponse 物件</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPResponse.read"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.read()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.readinto"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getheader"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getheader()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getheaders"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getheaders()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.fileno"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.msg"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.msg</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.version"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.version</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.url"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.url</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.headers"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.headers</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.status"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.status</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.reason"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.reason</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.debuglevel"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.debuglevel</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.closed"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.closed</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.geturl"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.geturl()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.info"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.info()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getcode"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getcode()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#httpconnection-objects">HTTPConnection 物件</a></li>
+<li><a class="reference internal" href="#httpresponse-objects">HTTPResponse 物件</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 <li><a class="reference internal" href="#httpmessage-objects">HTTPMessage 物件</a></li>
 </ul>
@@ -190,7 +137,7 @@
           <a href="http.html" title="http --- HTTP 模組"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -200,7 +147,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -324,7 +271,7 @@ when <em>cert_file</em> is passed with a custom <em>context</em>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.10 版的變更: </span>This class now sends an ALPN extension with protocol indicator
 <code class="docutils literal notranslate"><span class="pre">http/1.1</span></code> when no <em>context</em> is given. Custom <em>context</em> should set
-ALPN protocols with <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_alpn_protocol()</span></code>.</p>
+ALPN protocols with <a class="reference internal" href="ssl.html#ssl.SSLContext.set_alpn_protocols" title="ssl.SSLContext.set_alpn_protocols"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_alpn_protocols()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.12 版的變更: </span>The deprecated <em>key_file</em>, <em>cert_file</em> and <em>check_hostname</em> parameters
@@ -348,9 +295,9 @@ no longer supported.</p>
 <dt class="sig sig-object py" id="http.client.parse_headers">
 <span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">parse_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.parse_headers" title="Link to this definition">¶</a></dt>
 <dd><p>Parse the headers from a file pointer <em>fp</em> representing a HTTP
-request/response. The file has to be a <code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code> reader
+request/response. The file has to be a <a class="reference internal" href="io.html#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> reader
 (i.e. not text) and must provide a valid <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2822.html"><strong>RFC 2822</strong></a> style header.</p>
-<p>This function returns an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code>
+<p>This function returns an instance of <a class="reference internal" href="#http.client.HTTPMessage" title="http.client.HTTPMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code></a>
 that holds the header fields, but no payload
 (the same as <a class="reference internal" href="#http.client.HTTPResponse.msg" title="http.client.HTTPResponse.msg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">HTTPResponse.msg</span></code></a>
 and <a class="reference internal" href="http.server.html#http.server.BaseHTTPRequestHandler.headers" title="http.server.BaseHTTPRequestHandler.headers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">http.server.BaseHTTPRequestHandler.headers</span></code></a>).
@@ -541,8 +488,8 @@ the caller must either specify the Content-Length, or must pass a
 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or bytes-like object that is not also a file as the
 body representation.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span><em>body</em> can now be an iterable.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span><em>body</em> can now be an iterable.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>If neither Content-Length nor Transfer-Encoding are set in
@@ -653,7 +600,7 @@ already have a connection.</p>
 </div>
 </dd></dl>
 
-<p>As an alternative to using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">request()</span></code> method described above, you can
+<p>As an alternative to using the <a class="reference internal" href="#http.client.HTTPConnection.request" title="http.client.HTTPConnection.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">request()</span></code></a> method described above, you can
 also send your request step by step, by using the four functions below.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="http.client.HTTPConnection.putrequest">
@@ -697,9 +644,8 @@ yielded by an iterator body will be ignored by the chunk-encoder.
 This is to avoid premature termination of the read of the request by
 the target server due to malformed encoding.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.6 版新加入: </span>Chunked encoding support.  The <em>encode_chunked</em> parameter was
-added.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.6 版的變更: </span>Added chunked encoding support and the <em>encode_chunked</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -763,8 +709,8 @@ than a single string, its elements are similarly returned joined by commas.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="http.client.HTTPResponse.msg">
 <span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">msg</span></span><a class="headerlink" href="#http.client.HTTPResponse.msg" title="Link to this definition">¶</a></dt>
-<dd><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code> instance containing the response
-headers.  <code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code> is a subclass of
+<dd><p>A <a class="reference internal" href="#http.client.HTTPMessage" title="http.client.HTTPMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code></a> instance containing the response
+headers.  <a class="reference internal" href="#http.client.HTTPMessage" title="http.client.HTTPMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code></a> is a subclass of
 <a class="reference internal" href="email.compat32-message.html#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">email.message.Message</span></code></a>.</p>
 </dd></dl>
 
@@ -915,7 +861,12 @@ method attribute. Here is an example session that uses the <code class="docutils
 </section>
 <section id="httpmessage-objects">
 <span id="id3"></span><h2>HTTPMessage 物件<a class="headerlink" href="#httpmessage-objects" title="Link to this heading">¶</a></h2>
-<p>An <code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code> instance holds the headers from an HTTP
+<dl class="py class">
+<dt class="sig sig-object py" id="http.client.HTTPMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email.message.Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPMessage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>An <a class="reference internal" href="#http.client.HTTPMessage" title="http.client.HTTPMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code></a> instance holds the headers from an HTTP
 response.  It is implemented using the <a class="reference internal" href="email.compat32-message.html#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">email.message.Message</span></code></a> class.</p>
 </section>
 </section>
@@ -931,61 +882,8 @@ response.  It is implemented using the <a class="reference internal" href="email
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPConnection"><code class="docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPSConnection"><code class="docutils literal notranslate"><span class="pre">HTTPSConnection</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse"><code class="docutils literal notranslate"><span class="pre">HTTPResponse</span></code></a></li>
-<li><a class="reference internal" href="#http.client.parse_headers"><code class="docutils literal notranslate"><span class="pre">parse_headers()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPException"><code class="docutils literal notranslate"><span class="pre">HTTPException</span></code></a></li>
-<li><a class="reference internal" href="#http.client.NotConnected"><code class="docutils literal notranslate"><span class="pre">NotConnected</span></code></a></li>
-<li><a class="reference internal" href="#http.client.InvalidURL"><code class="docutils literal notranslate"><span class="pre">InvalidURL</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnknownProtocol"><code class="docutils literal notranslate"><span class="pre">UnknownProtocol</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnknownTransferEncoding"><code class="docutils literal notranslate"><span class="pre">UnknownTransferEncoding</span></code></a></li>
-<li><a class="reference internal" href="#http.client.UnimplementedFileMode"><code class="docutils literal notranslate"><span class="pre">UnimplementedFileMode</span></code></a></li>
-<li><a class="reference internal" href="#http.client.IncompleteRead"><code class="docutils literal notranslate"><span class="pre">IncompleteRead</span></code></a></li>
-<li><a class="reference internal" href="#http.client.ImproperConnectionState"><code class="docutils literal notranslate"><span class="pre">ImproperConnectionState</span></code></a></li>
-<li><a class="reference internal" href="#http.client.CannotSendRequest"><code class="docutils literal notranslate"><span class="pre">CannotSendRequest</span></code></a></li>
-<li><a class="reference internal" href="#http.client.CannotSendHeader"><code class="docutils literal notranslate"><span class="pre">CannotSendHeader</span></code></a></li>
-<li><a class="reference internal" href="#http.client.ResponseNotReady"><code class="docutils literal notranslate"><span class="pre">ResponseNotReady</span></code></a></li>
-<li><a class="reference internal" href="#http.client.BadStatusLine"><code class="docutils literal notranslate"><span class="pre">BadStatusLine</span></code></a></li>
-<li><a class="reference internal" href="#http.client.LineTooLong"><code class="docutils literal notranslate"><span class="pre">LineTooLong</span></code></a></li>
-<li><a class="reference internal" href="#http.client.RemoteDisconnected"><code class="docutils literal notranslate"><span class="pre">RemoteDisconnected</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTP_PORT"><code class="docutils literal notranslate"><span class="pre">HTTP_PORT</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPS_PORT"><code class="docutils literal notranslate"><span class="pre">HTTPS_PORT</span></code></a></li>
-<li><a class="reference internal" href="#http.client.responses"><code class="docutils literal notranslate"><span class="pre">responses</span></code></a></li>
-<li><a class="reference internal" href="#httpconnection-objects">HTTPConnection 物件</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPConnection.request"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.request()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.getresponse"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.getresponse()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.set_debuglevel"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.set_debuglevel()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.set_tunnel"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.set_tunnel()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.get_proxy_response_headers"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.get_proxy_response_headers()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.connect"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.connect()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.close"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.close()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.blocksize"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.blocksize</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.putrequest"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.putrequest()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.putheader"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.putheader()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.endheaders"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.endheaders()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPConnection.send"><code class="docutils literal notranslate"><span class="pre">HTTPConnection.send()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#httpresponse-objects">HTTPResponse 物件</a><ul>
-<li><a class="reference internal" href="#http.client.HTTPResponse.read"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.read()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.readinto"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getheader"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getheader()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getheaders"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getheaders()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.fileno"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.msg"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.msg</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.version"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.version</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.url"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.url</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.headers"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.headers</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.status"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.status</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.reason"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.reason</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.debuglevel"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.debuglevel</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.closed"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.closed</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.geturl"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.geturl()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.info"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.info()</span></code></a></li>
-<li><a class="reference internal" href="#http.client.HTTPResponse.getcode"><code class="docutils literal notranslate"><span class="pre">HTTPResponse.getcode()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#httpconnection-objects">HTTPConnection 物件</a></li>
+<li><a class="reference internal" href="#httpresponse-objects">HTTPResponse 物件</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 <li><a class="reference internal" href="#httpmessage-objects">HTTPMessage 物件</a></li>
 </ul>
@@ -1038,7 +936,7 @@ response.  It is implemented using the <a class="reference internal" href="email
           <a href="http.html" title="http --- HTTP 模組"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1048,7 +946,7 @@ response.  It is implemented using the <a class="reference internal" href="email
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1078,13 +976,14 @@ response.  It is implemented using the <a class="reference internal" href="email
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1092,7 +991,7 @@ response.  It is implemented using the <a class="reference internal" href="email
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

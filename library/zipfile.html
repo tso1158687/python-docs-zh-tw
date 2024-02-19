@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>zipfile --- Work with ZIP archives &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zipfile --- Work with ZIP archives &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,85 +86,10 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a><ul>
-<li><a class="reference internal" href="#zipfile.BadZipFile"><code class="docutils literal notranslate"><span class="pre">BadZipFile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.BadZipfile"><code class="docutils literal notranslate"><span class="pre">BadZipfile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.LargeZipFile"><code class="docutils literal notranslate"><span class="pre">LargeZipFile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo"><code class="docutils literal notranslate"><span class="pre">ZipInfo</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.is_zipfile"><code class="docutils literal notranslate"><span class="pre">is_zipfile()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_STORED"><code class="docutils literal notranslate"><span class="pre">ZIP_STORED</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_DEFLATED"><code class="docutils literal notranslate"><span class="pre">ZIP_DEFLATED</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_BZIP2"><code class="docutils literal notranslate"><span class="pre">ZIP_BZIP2</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_LZMA"><code class="docutils literal notranslate"><span class="pre">ZIP_LZMA</span></code></a></li>
-<li><a class="reference internal" href="#zipfile-objects">ZipFile 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.ZipFile"><code class="docutils literal notranslate"><span class="pre">ZipFile</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.ZipFile.close"><code class="docutils literal notranslate"><span class="pre">ZipFile.close()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.getinfo"><code class="docutils literal notranslate"><span class="pre">ZipFile.getinfo()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.infolist"><code class="docutils literal notranslate"><span class="pre">ZipFile.infolist()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.namelist"><code class="docutils literal notranslate"><span class="pre">ZipFile.namelist()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.open"><code class="docutils literal notranslate"><span class="pre">ZipFile.open()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.extract"><code class="docutils literal notranslate"><span class="pre">ZipFile.extract()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.extractall"><code class="docutils literal notranslate"><span class="pre">ZipFile.extractall()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.printdir"><code class="docutils literal notranslate"><span class="pre">ZipFile.printdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.setpassword"><code class="docutils literal notranslate"><span class="pre">ZipFile.setpassword()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.read"><code class="docutils literal notranslate"><span class="pre">ZipFile.read()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.testzip"><code class="docutils literal notranslate"><span class="pre">ZipFile.testzip()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.write"><code class="docutils literal notranslate"><span class="pre">ZipFile.write()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.writestr"><code class="docutils literal notranslate"><span class="pre">ZipFile.writestr()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.mkdir"><code class="docutils literal notranslate"><span class="pre">ZipFile.mkdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.filename"><code class="docutils literal notranslate"><span class="pre">ZipFile.filename</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.debug"><code class="docutils literal notranslate"><span class="pre">ZipFile.debug</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.comment"><code class="docutils literal notranslate"><span class="pre">ZipFile.comment</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#path-objects">Path Objects</a><ul>
-<li><a class="reference internal" href="#zipfile.Path"><code class="docutils literal notranslate"><span class="pre">Path</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.Path.name"><code class="docutils literal notranslate"><span class="pre">Path.name</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.open"><code class="docutils literal notranslate"><span class="pre">Path.open()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.iterdir"><code class="docutils literal notranslate"><span class="pre">Path.iterdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.is_dir"><code class="docutils literal notranslate"><span class="pre">Path.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.is_file"><code class="docutils literal notranslate"><span class="pre">Path.is_file()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.exists"><code class="docutils literal notranslate"><span class="pre">Path.exists()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.suffix"><code class="docutils literal notranslate"><span class="pre">Path.suffix</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.stem"><code class="docutils literal notranslate"><span class="pre">Path.stem</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.suffixes"><code class="docutils literal notranslate"><span class="pre">Path.suffixes</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.read_text"><code class="docutils literal notranslate"><span class="pre">Path.read_text()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.read_bytes"><code class="docutils literal notranslate"><span class="pre">Path.read_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.joinpath"><code class="docutils literal notranslate"><span class="pre">Path.joinpath()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pyzipfile-objects">PyZipFile 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.PyZipFile"><code class="docutils literal notranslate"><span class="pre">PyZipFile</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.PyZipFile.writepy"><code class="docutils literal notranslate"><span class="pre">PyZipFile.writepy()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#zipinfo-objects">ZipInfo 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.ZipInfo.from_file"><code class="docutils literal notranslate"><span class="pre">ZipInfo.from_file()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.is_dir"><code class="docutils literal notranslate"><span class="pre">ZipInfo.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.filename"><code class="docutils literal notranslate"><span class="pre">ZipInfo.filename</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.date_time"><code class="docutils literal notranslate"><span class="pre">ZipInfo.date_time</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.compress_type"><code class="docutils literal notranslate"><span class="pre">ZipInfo.compress_type</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.comment"><code class="docutils literal notranslate"><span class="pre">ZipInfo.comment</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.extra"><code class="docutils literal notranslate"><span class="pre">ZipInfo.extra</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.create_system"><code class="docutils literal notranslate"><span class="pre">ZipInfo.create_system</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.create_version"><code class="docutils literal notranslate"><span class="pre">ZipInfo.create_version</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.extract_version"><code class="docutils literal notranslate"><span class="pre">ZipInfo.extract_version</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.reserved"><code class="docutils literal notranslate"><span class="pre">ZipInfo.reserved</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.flag_bits"><code class="docutils literal notranslate"><span class="pre">ZipInfo.flag_bits</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.volume"><code class="docutils literal notranslate"><span class="pre">ZipInfo.volume</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.internal_attr"><code class="docutils literal notranslate"><span class="pre">ZipInfo.internal_attr</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.external_attr"><code class="docutils literal notranslate"><span class="pre">ZipInfo.external_attr</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.header_offset"><code class="docutils literal notranslate"><span class="pre">ZipInfo.header_offset</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.CRC"><code class="docutils literal notranslate"><span class="pre">ZipInfo.CRC</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.compress_size"><code class="docutils literal notranslate"><span class="pre">ZipInfo.compress_size</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.file_size"><code class="docutils literal notranslate"><span class="pre">ZipInfo.file_size</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#zipfile-objects">ZipFile 物件</a></li>
+<li><a class="reference internal" href="#path-objects">Path Objects</a></li>
+<li><a class="reference internal" href="#pyzipfile-objects">PyZipFile 物件</a></li>
+<li><a class="reference internal" href="#zipinfo-objects">ZipInfo 物件</a></li>
 <li><a class="reference internal" href="#command-line-interface">Command-Line Interface</a><ul>
 <li><a class="reference internal" href="#command-line-options">Command-line options</a></li>
 </ul>
@@ -224,7 +149,7 @@
           <a href="lzma.html" title="lzma --- Compression using the LZMA algorithm"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -234,7 +159,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -474,8 +399,8 @@ in the archive header.
 That flag takes precedence over <em>metadata_encoding</em>, which is
 a Python-specific extension.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span>新增 <a class="reference internal" href="#zipfile.ZipFile" title="zipfile.ZipFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZipFile</span></code></a> 作為情境管理器使用的能力。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>新增 <a class="reference internal" href="#zipfile.ZipFile" title="zipfile.ZipFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZipFile</span></code></a> 作為情境管理器使用的能力。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.3 版的變更: </span>新增對於 <a class="reference internal" href="bz2.html#module-bz2" title="bz2: Interfaces for bzip2 compression and decompression."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bzip2</span></code></a> 和 <a class="reference internal" href="lzma.html#module-lzma" title="lzma: A Python wrapper for the liblzma compression library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code></a> 壓縮的支援。</p>
@@ -497,8 +422,8 @@ compression values.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.7 版的變更: </span>Add the <em>compresslevel</em> parameter.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.8 版新加入: </span>The <em>strict_timestamps</em> keyword-only argument</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.8 版的變更: </span>The <em>strict_timestamps</em> keyword-only parameter.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.11 版的變更: </span>Added support for specifying member name encoding for reading
@@ -934,8 +859,8 @@ changes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="zipfile.PyZipFile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zipfile.</span></span><span class="sig-name descname"><span class="pre">PyZipFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ZIP_STORED</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowZip64</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zipfile.PyZipFile" title="Link to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span><em>optimize</em> 參數。</p>
+<dd><div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>新增 <em>optimize</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.4 版的變更: </span>ZIP64 extensions are enabled by default.</p>
@@ -985,8 +910,8 @@ this:</p>
 <span class="n">test</span><span class="o">/</span><span class="n">bogus</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">pyc</span>        <span class="c1"># Submodule test.bogus.myfile</span>
 </pre></div>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>filterfunc</em> 參數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>新增 <em>filterfunc</em> 參數。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6.2 版的變更: </span>The <em>pathname</em> parameter accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -1026,8 +951,8 @@ the timestamp is also set to the limit.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6.2 版的變更: </span>The <em>filename</em> parameter accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.8 版新加入: </span>The <em>strict_timestamps</em> keyword-only argument</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.8 版的變更: </span>新增 <em>strict_timestamps</em> 僅限關鍵字參數。</p>
 </div>
 </dd></dl>
 
@@ -1293,85 +1218,10 @@ it overwrites files without asking.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a><ul>
-<li><a class="reference internal" href="#zipfile.BadZipFile"><code class="docutils literal notranslate"><span class="pre">BadZipFile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.BadZipfile"><code class="docutils literal notranslate"><span class="pre">BadZipfile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.LargeZipFile"><code class="docutils literal notranslate"><span class="pre">LargeZipFile</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo"><code class="docutils literal notranslate"><span class="pre">ZipInfo</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.is_zipfile"><code class="docutils literal notranslate"><span class="pre">is_zipfile()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_STORED"><code class="docutils literal notranslate"><span class="pre">ZIP_STORED</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_DEFLATED"><code class="docutils literal notranslate"><span class="pre">ZIP_DEFLATED</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_BZIP2"><code class="docutils literal notranslate"><span class="pre">ZIP_BZIP2</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZIP_LZMA"><code class="docutils literal notranslate"><span class="pre">ZIP_LZMA</span></code></a></li>
-<li><a class="reference internal" href="#zipfile-objects">ZipFile 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.ZipFile"><code class="docutils literal notranslate"><span class="pre">ZipFile</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.ZipFile.close"><code class="docutils literal notranslate"><span class="pre">ZipFile.close()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.getinfo"><code class="docutils literal notranslate"><span class="pre">ZipFile.getinfo()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.infolist"><code class="docutils literal notranslate"><span class="pre">ZipFile.infolist()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.namelist"><code class="docutils literal notranslate"><span class="pre">ZipFile.namelist()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.open"><code class="docutils literal notranslate"><span class="pre">ZipFile.open()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.extract"><code class="docutils literal notranslate"><span class="pre">ZipFile.extract()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.extractall"><code class="docutils literal notranslate"><span class="pre">ZipFile.extractall()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.printdir"><code class="docutils literal notranslate"><span class="pre">ZipFile.printdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.setpassword"><code class="docutils literal notranslate"><span class="pre">ZipFile.setpassword()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.read"><code class="docutils literal notranslate"><span class="pre">ZipFile.read()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.testzip"><code class="docutils literal notranslate"><span class="pre">ZipFile.testzip()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.write"><code class="docutils literal notranslate"><span class="pre">ZipFile.write()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.writestr"><code class="docutils literal notranslate"><span class="pre">ZipFile.writestr()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.mkdir"><code class="docutils literal notranslate"><span class="pre">ZipFile.mkdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.filename"><code class="docutils literal notranslate"><span class="pre">ZipFile.filename</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.debug"><code class="docutils literal notranslate"><span class="pre">ZipFile.debug</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipFile.comment"><code class="docutils literal notranslate"><span class="pre">ZipFile.comment</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#path-objects">Path Objects</a><ul>
-<li><a class="reference internal" href="#zipfile.Path"><code class="docutils literal notranslate"><span class="pre">Path</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.Path.name"><code class="docutils literal notranslate"><span class="pre">Path.name</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.open"><code class="docutils literal notranslate"><span class="pre">Path.open()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.iterdir"><code class="docutils literal notranslate"><span class="pre">Path.iterdir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.is_dir"><code class="docutils literal notranslate"><span class="pre">Path.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.is_file"><code class="docutils literal notranslate"><span class="pre">Path.is_file()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.exists"><code class="docutils literal notranslate"><span class="pre">Path.exists()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.suffix"><code class="docutils literal notranslate"><span class="pre">Path.suffix</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.stem"><code class="docutils literal notranslate"><span class="pre">Path.stem</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.suffixes"><code class="docutils literal notranslate"><span class="pre">Path.suffixes</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.read_text"><code class="docutils literal notranslate"><span class="pre">Path.read_text()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.read_bytes"><code class="docutils literal notranslate"><span class="pre">Path.read_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.Path.joinpath"><code class="docutils literal notranslate"><span class="pre">Path.joinpath()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pyzipfile-objects">PyZipFile 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.PyZipFile"><code class="docutils literal notranslate"><span class="pre">PyZipFile</span></code></a><ul>
-<li><a class="reference internal" href="#zipfile.PyZipFile.writepy"><code class="docutils literal notranslate"><span class="pre">PyZipFile.writepy()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#zipinfo-objects">ZipInfo 物件</a><ul>
-<li><a class="reference internal" href="#zipfile.ZipInfo.from_file"><code class="docutils literal notranslate"><span class="pre">ZipInfo.from_file()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.is_dir"><code class="docutils literal notranslate"><span class="pre">ZipInfo.is_dir()</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.filename"><code class="docutils literal notranslate"><span class="pre">ZipInfo.filename</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.date_time"><code class="docutils literal notranslate"><span class="pre">ZipInfo.date_time</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.compress_type"><code class="docutils literal notranslate"><span class="pre">ZipInfo.compress_type</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.comment"><code class="docutils literal notranslate"><span class="pre">ZipInfo.comment</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.extra"><code class="docutils literal notranslate"><span class="pre">ZipInfo.extra</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.create_system"><code class="docutils literal notranslate"><span class="pre">ZipInfo.create_system</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.create_version"><code class="docutils literal notranslate"><span class="pre">ZipInfo.create_version</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.extract_version"><code class="docutils literal notranslate"><span class="pre">ZipInfo.extract_version</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.reserved"><code class="docutils literal notranslate"><span class="pre">ZipInfo.reserved</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.flag_bits"><code class="docutils literal notranslate"><span class="pre">ZipInfo.flag_bits</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.volume"><code class="docutils literal notranslate"><span class="pre">ZipInfo.volume</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.internal_attr"><code class="docutils literal notranslate"><span class="pre">ZipInfo.internal_attr</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.external_attr"><code class="docutils literal notranslate"><span class="pre">ZipInfo.external_attr</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.header_offset"><code class="docutils literal notranslate"><span class="pre">ZipInfo.header_offset</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.CRC"><code class="docutils literal notranslate"><span class="pre">ZipInfo.CRC</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.compress_size"><code class="docutils literal notranslate"><span class="pre">ZipInfo.compress_size</span></code></a></li>
-<li><a class="reference internal" href="#zipfile.ZipInfo.file_size"><code class="docutils literal notranslate"><span class="pre">ZipInfo.file_size</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#zipfile-objects">ZipFile 物件</a></li>
+<li><a class="reference internal" href="#path-objects">Path Objects</a></li>
+<li><a class="reference internal" href="#pyzipfile-objects">PyZipFile 物件</a></li>
+<li><a class="reference internal" href="#zipinfo-objects">ZipInfo 物件</a></li>
 <li><a class="reference internal" href="#command-line-interface">Command-Line Interface</a><ul>
 <li><a class="reference internal" href="#command-line-options">Command-line options</a></li>
 </ul>
@@ -1434,7 +1284,7 @@ it overwrites files without asking.</p>
           <a href="lzma.html" title="lzma --- Compression using the LZMA algorithm"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1444,7 +1294,7 @@ it overwrites files without asking.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1474,13 +1324,14 @@ it overwrites files without asking.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1488,7 +1339,7 @@ it overwrites files without asking.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

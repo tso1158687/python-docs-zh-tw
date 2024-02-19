@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>如何使用 Logging 模組 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何使用 Logging 模組 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -101,10 +101,7 @@
 <li><a class="reference internal" href="#logging-flow">Logging Flow</a></li>
 <li><a class="reference internal" href="#loggers">Loggers</a></li>
 <li><a class="reference internal" href="#handlers">Handlers</a></li>
-<li><a class="reference internal" href="#formatters">Formatters</a><ul>
-<li><a class="reference internal" href="#logging.logging.Formatter.__init__"><code class="docutils literal notranslate"><span class="pre">logging.Formatter.__init__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#formatters">Formatters</a></li>
 <li><a class="reference internal" href="#configuring-logging">Configuring Logging</a></li>
 <li><a class="reference internal" href="#what-happens-if-no-configuration-is-provided">What happens if no configuration is provided</a></li>
 <li><a class="reference internal" href="#configuring-logging-for-a-library">Configuring Logging for a Library</a></li>
@@ -166,7 +163,7 @@
           <a href="functional.html" title="函式編程 HOWTO"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -176,7 +173,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 如何達成任務</a> &#187;</li>
@@ -674,7 +671,7 @@ custom handlers) are the following configuration methods:</p>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="../library/logging.html#logging.Handler.setLevel" title="logging.Handler.setLevel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setLevel()</span></code></a> method, just as in logger objects, specifies the
 lowest severity that will be dispatched to the appropriate destination.  Why
-are there two <code class="xref py py-func docutils literal notranslate"><span class="pre">setLevel()</span></code> methods?  The level set in the logger
+are there two <a class="reference internal" href="../library/logging.html#logging.Handler.setLevel" title="logging.Handler.setLevel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setLevel()</span></code></a> methods?  The level set in the logger
 determines which severity of messages it will pass to its handlers.  The level
 set in each handler determines which messages that handler will send on.</p></li>
 <li><p><a class="reference internal" href="../library/logging.html#logging.Handler.setFormatter" title="logging.Handler.setFormatter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setFormatter()</span></code></a> selects a Formatter object for this handler to
@@ -904,27 +901,26 @@ the new dictionary-based approach:</p>
 <h3>What happens if no configuration is provided<a class="headerlink" href="#what-happens-if-no-configuration-is-provided" title="Link to this heading">¶</a></h3>
 <p>If no logging configuration is provided, it is possible to have a situation
 where a logging event needs to be output, but no handlers can be found to
-output the event. The behaviour of the logging package in these
-circumstances is dependent on the Python version.</p>
-<p>For versions of Python prior to 3.2, the behaviour is as follows:</p>
-<ul class="simple">
-<li><p>If <em>logging.raiseExceptions</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (production mode), the event is
-silently dropped.</p></li>
-<li><p>If <em>logging.raiseExceptions</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> (development mode), a message
-'No handlers could be found for logger X.Y.Z' is printed once.</p></li>
-</ul>
-<p>In Python 3.2 and later, the behaviour is as follows:</p>
-<ul class="simple">
-<li><p>The event is output using a 'handler of last resort', stored in
-<code class="docutils literal notranslate"><span class="pre">logging.lastResort</span></code>. This internal handler is not associated with any
+output the event.</p>
+<p>The event is output using a 'handler of last resort', stored in
+<a class="reference internal" href="../library/logging.html#logging.lastResort" title="logging.lastResort"><code class="xref py py-data docutils literal notranslate"><span class="pre">lastResort</span></code></a>. This internal handler is not associated with any
 logger, and acts like a <a class="reference internal" href="../library/logging.handlers.html#logging.StreamHandler" title="logging.StreamHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamHandler</span></code></a> which writes the
 event description message to the current value of <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code> (therefore
 respecting any redirections which may be in effect). No formatting is
 done on the message - just the bare event description message is printed.
 The handler's level is set to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, so all events at this and
-greater severities will be output.</p></li>
+greater severities will be output.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>For versions of Python prior to 3.2, the behaviour is as follows:</p>
+<ul class="simple">
+<li><p>If <a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code></a> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (production mode), the event is
+silently dropped.</p></li>
+<li><p>If <a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code></a> is <code class="docutils literal notranslate"><span class="pre">True</span></code> (development mode), a message
+'No handlers could be found for logger X.Y.Z' is printed once.</p></li>
 </ul>
-<p>To obtain the pre-3.2 behaviour, <code class="docutils literal notranslate"><span class="pre">logging.lastResort</span></code> can be set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>To obtain the pre-3.2 behaviour,
+<a class="reference internal" href="../library/logging.html#logging.lastResort" title="logging.lastResort"><code class="xref py py-data docutils literal notranslate"><span class="pre">lastResort</span></code></a> can be set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
 </section>
 <section id="configuring-logging-for-a-library">
 <span id="library-config"></span><h3>Configuring Logging for a Library<a class="headerlink" href="#configuring-logging-for-a-library" title="Link to this heading">¶</a></h3>
@@ -1109,7 +1105,7 @@ sub-module, <a class="reference internal" href="../library/logging.config.html#m
 <a class="reference internal" href="../library/logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> class. They are initialized with a format string suitable for
 use with the % operator and a dictionary.</p>
 <p>For formatting multiple messages in a batch, instances of
-<code class="xref py py-class docutils literal notranslate"><span class="pre">BufferingFormatter</span></code> can be used. In addition to the format
+<a class="reference internal" href="../library/logging.html#logging.BufferingFormatter" title="logging.BufferingFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferingFormatter</span></code></a> can be used. In addition to the format
 string (which is applied to each message in the batch), there is provision for
 header and trailer format strings.</p>
 <p>When filtering based on logger level and/or handler level is not enough,
@@ -1133,14 +1129,14 @@ swallowed. Other exceptions which occur during the <a class="reference internal"
 of a <a class="reference internal" href="../library/logging.html#logging.Handler" title="logging.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handler</span></code></a> subclass are passed to its <a class="reference internal" href="../library/logging.html#logging.Handler.handleError" title="logging.Handler.handleError"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handleError()</span></code></a>
 method.</p>
 <p>The default implementation of <a class="reference internal" href="../library/logging.html#logging.Handler.handleError" title="logging.Handler.handleError"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handleError()</span></code></a> in <a class="reference internal" href="../library/logging.html#logging.Handler" title="logging.Handler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handler</span></code></a>
-checks to see if a module-level variable, <code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code>, is set. If
+checks to see if a module-level variable, <a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code></a>, is set. If
 set, a traceback is printed to <a class="reference internal" href="../library/sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>. If not set, the exception is
 swallowed.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>The default value of <code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is
+<p>The default value of <a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code></a> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is
 because during development, you typically want to be notified of any
-exceptions that occur. It's advised that you set <code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code> to
+exceptions that occur. It's advised that you set <a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">raiseExceptions</span></code></a> to
 <code class="docutils literal notranslate"><span class="pre">False</span></code> for production usage.</p>
 </div>
 </section>
@@ -1170,7 +1166,7 @@ You can write code like this:</p>
 </pre></div>
 </div>
 <p>so that if the logger's threshold is set above <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, the calls to
-<code class="xref py py-func docutils literal notranslate"><span class="pre">expensive_func1()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">expensive_func2()</span></code> are never made.</p>
+<code class="docutils literal notranslate"><span class="pre">expensive_func1</span></code> and <code class="docutils literal notranslate"><span class="pre">expensive_func2</span></code> are never made.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>In some cases, <a class="reference internal" href="../library/logging.html#logging.Logger.isEnabledFor" title="logging.Logger.isEnabledFor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">isEnabledFor()</span></code></a> can itself be more
@@ -1263,10 +1259,7 @@ take up any memory.</p>
 <li><a class="reference internal" href="#logging-flow">Logging Flow</a></li>
 <li><a class="reference internal" href="#loggers">Loggers</a></li>
 <li><a class="reference internal" href="#handlers">Handlers</a></li>
-<li><a class="reference internal" href="#formatters">Formatters</a><ul>
-<li><a class="reference internal" href="#logging.logging.Formatter.__init__"><code class="docutils literal notranslate"><span class="pre">logging.Formatter.__init__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#formatters">Formatters</a></li>
 <li><a class="reference internal" href="#configuring-logging">Configuring Logging</a></li>
 <li><a class="reference internal" href="#what-happens-if-no-configuration-is-provided">What happens if no configuration is provided</a></li>
 <li><a class="reference internal" href="#configuring-logging-for-a-library">Configuring Logging for a Library</a></li>
@@ -1331,7 +1324,7 @@ take up any memory.</p>
           <a href="functional.html" title="函式編程 HOWTO"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1341,7 +1334,7 @@ take up any memory.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 如何達成任務</a> &#187;</li>
@@ -1370,13 +1363,14 @@ take up any memory.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1384,7 +1378,7 @@ take up any memory.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

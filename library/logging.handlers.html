@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>logging.handlers --- Logging handlers &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logging.handlers --- Logging handlers &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,166 +86,22 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a><ul>
-<li><a class="reference internal" href="#streamhandler">StreamHandler</a><ul>
-<li><a class="reference internal" href="#logging.StreamHandler"><code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.StreamHandler.emit"><code class="docutils literal notranslate"><span class="pre">StreamHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.flush"><code class="docutils literal notranslate"><span class="pre">StreamHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.setStream"><code class="docutils literal notranslate"><span class="pre">StreamHandler.setStream()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.terminator"><code class="docutils literal notranslate"><span class="pre">StreamHandler.terminator</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#filehandler">FileHandler</a><ul>
-<li><a class="reference internal" href="#logging.FileHandler"><code class="docutils literal notranslate"><span class="pre">FileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.FileHandler.close"><code class="docutils literal notranslate"><span class="pre">FileHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.FileHandler.emit"><code class="docutils literal notranslate"><span class="pre">FileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nullhandler">NullHandler</a><ul>
-<li><a class="reference internal" href="#logging.NullHandler"><code class="docutils literal notranslate"><span class="pre">NullHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.NullHandler.emit"><code class="docutils literal notranslate"><span class="pre">NullHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.NullHandler.handle"><code class="docutils literal notranslate"><span class="pre">NullHandler.handle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.NullHandler.createLock"><code class="docutils literal notranslate"><span class="pre">NullHandler.createLock()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#watchedfilehandler">WatchedFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler.reopenIfNeeded"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler.reopenIfNeeded()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#baserotatinghandler">BaseRotatingHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.namer"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.namer</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotator"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotator</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotation_filename"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotation_filename()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotate"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotate()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#rotatingfilehandler">RotatingFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler.doRollover"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler.doRollover()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#timedrotatingfilehandler">TimedRotatingFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.doRollover"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.doRollover()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.getFilesToDelete"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.getFilesToDelete()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sockethandler">SocketHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler"><code class="docutils literal notranslate"><span class="pre">SocketHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.close"><code class="docutils literal notranslate"><span class="pre">SocketHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.emit"><code class="docutils literal notranslate"><span class="pre">SocketHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.handleError"><code class="docutils literal notranslate"><span class="pre">SocketHandler.handleError()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.makeSocket"><code class="docutils literal notranslate"><span class="pre">SocketHandler.makeSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.makePickle"><code class="docutils literal notranslate"><span class="pre">SocketHandler.makePickle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.send"><code class="docutils literal notranslate"><span class="pre">SocketHandler.send()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.createSocket"><code class="docutils literal notranslate"><span class="pre">SocketHandler.createSocket()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#datagramhandler">DatagramHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler"><code class="docutils literal notranslate"><span class="pre">DatagramHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.emit"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.makeSocket"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.makeSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.send"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.send()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sysloghandler">SysLogHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler"><code class="docutils literal notranslate"><span class="pre">SysLogHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.close"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.createSocket"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.createSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.emit"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.encodePriority"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.encodePriority()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.mapPriority"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.mapPriority()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nteventloghandler">NTEventLogHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.close"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.emit"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getEventCategory"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getEventCategory()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getEventType"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getEventType()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getMessageID"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getMessageID()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#smtphandler">SMTPHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler"><code class="docutils literal notranslate"><span class="pre">SMTPHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler.emit"><code class="docutils literal notranslate"><span class="pre">SMTPHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler.getSubject"><code class="docutils literal notranslate"><span class="pre">SMTPHandler.getSubject()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#memoryhandler">MemoryHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler"><code class="docutils literal notranslate"><span class="pre">BufferingHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.emit"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.flush"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.shouldFlush"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.shouldFlush()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler"><code class="docutils literal notranslate"><span class="pre">MemoryHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.close"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.flush"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.setTarget"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.setTarget()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.shouldFlush"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.shouldFlush()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#httphandler">HTTPHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler"><code class="docutils literal notranslate"><span class="pre">HTTPHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler.mapLogRecord"><code class="docutils literal notranslate"><span class="pre">HTTPHandler.mapLogRecord()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler.emit"><code class="docutils literal notranslate"><span class="pre">HTTPHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#queuehandler">QueueHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler"><code class="docutils literal notranslate"><span class="pre">QueueHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.emit"><code class="docutils literal notranslate"><span class="pre">QueueHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.prepare"><code class="docutils literal notranslate"><span class="pre">QueueHandler.prepare()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.enqueue"><code class="docutils literal notranslate"><span class="pre">QueueHandler.enqueue()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.listener"><code class="docutils literal notranslate"><span class="pre">QueueHandler.listener</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#queuelistener">QueueListener</a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueListener"><code class="docutils literal notranslate"><span class="pre">QueueListener</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.dequeue"><code class="docutils literal notranslate"><span class="pre">QueueListener.dequeue()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.prepare"><code class="docutils literal notranslate"><span class="pre">QueueListener.prepare()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.handle"><code class="docutils literal notranslate"><span class="pre">QueueListener.handle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.start"><code class="docutils literal notranslate"><span class="pre">QueueListener.start()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.stop"><code class="docutils literal notranslate"><span class="pre">QueueListener.stop()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.enqueue_sentinel"><code class="docutils literal notranslate"><span class="pre">QueueListener.enqueue_sentinel()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#streamhandler">StreamHandler</a></li>
+<li><a class="reference internal" href="#filehandler">FileHandler</a></li>
+<li><a class="reference internal" href="#nullhandler">NullHandler</a></li>
+<li><a class="reference internal" href="#watchedfilehandler">WatchedFileHandler</a></li>
+<li><a class="reference internal" href="#baserotatinghandler">BaseRotatingHandler</a></li>
+<li><a class="reference internal" href="#rotatingfilehandler">RotatingFileHandler</a></li>
+<li><a class="reference internal" href="#timedrotatingfilehandler">TimedRotatingFileHandler</a></li>
+<li><a class="reference internal" href="#sockethandler">SocketHandler</a></li>
+<li><a class="reference internal" href="#datagramhandler">DatagramHandler</a></li>
+<li><a class="reference internal" href="#sysloghandler">SysLogHandler</a></li>
+<li><a class="reference internal" href="#nteventloghandler">NTEventLogHandler</a></li>
+<li><a class="reference internal" href="#smtphandler">SMTPHandler</a></li>
+<li><a class="reference internal" href="#memoryhandler">MemoryHandler</a></li>
+<li><a class="reference internal" href="#httphandler">HTTPHandler</a></li>
+<li><a class="reference internal" href="#queuehandler">QueueHandler</a></li>
+<li><a class="reference internal" href="#queuelistener">QueueListener</a></li>
 </ul>
 </li>
 </ul>
@@ -293,7 +149,7 @@
           <a href="logging.config.html" title="logging.config --- Logging configuration"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -303,7 +159,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1280,8 +1136,8 @@ and certificate file. (This tuple is passed to the
 <a class="reference internal" href="smtplib.html#smtplib.SMTP.starttls" title="smtplib.SMTP.starttls"><code class="xref py py-meth docutils literal notranslate"><span class="pre">smtplib.SMTP.starttls()</span></code></a> method.)</p>
 <p>A timeout can be specified for communication with the SMTP server using the
 <em>timeout</em> argument.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>新增 <em>timeout</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版的變更: </span>新增 <em>timeout</em> 參數。</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="logging.handlers.SMTPHandler.emit">
@@ -1470,8 +1326,8 @@ have the task tracking API, which means that you can use
 occur (e.g. because a bounded queue has filled up), the
 <a class="reference internal" href="logging.html#logging.Handler.handleError" title="logging.Handler.handleError"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handleError()</span></code></a> method is called to handle the
 error. This can result in the record silently being dropped (if
-<code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>) or a message printed to
-<code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code> (if <code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
+<a class="reference internal" href="logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code></a> is <code class="docutils literal notranslate"><span class="pre">False</span></code>) or a message printed to
+<code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code> (if <a class="reference internal" href="logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code></a> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1650,166 +1506,22 @@ implementations.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a><ul>
-<li><a class="reference internal" href="#streamhandler">StreamHandler</a><ul>
-<li><a class="reference internal" href="#logging.StreamHandler"><code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.StreamHandler.emit"><code class="docutils literal notranslate"><span class="pre">StreamHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.flush"><code class="docutils literal notranslate"><span class="pre">StreamHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.setStream"><code class="docutils literal notranslate"><span class="pre">StreamHandler.setStream()</span></code></a></li>
-<li><a class="reference internal" href="#logging.StreamHandler.terminator"><code class="docutils literal notranslate"><span class="pre">StreamHandler.terminator</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#filehandler">FileHandler</a><ul>
-<li><a class="reference internal" href="#logging.FileHandler"><code class="docutils literal notranslate"><span class="pre">FileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.FileHandler.close"><code class="docutils literal notranslate"><span class="pre">FileHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.FileHandler.emit"><code class="docutils literal notranslate"><span class="pre">FileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nullhandler">NullHandler</a><ul>
-<li><a class="reference internal" href="#logging.NullHandler"><code class="docutils literal notranslate"><span class="pre">NullHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.NullHandler.emit"><code class="docutils literal notranslate"><span class="pre">NullHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.NullHandler.handle"><code class="docutils literal notranslate"><span class="pre">NullHandler.handle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.NullHandler.createLock"><code class="docutils literal notranslate"><span class="pre">NullHandler.createLock()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#watchedfilehandler">WatchedFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler.reopenIfNeeded"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler.reopenIfNeeded()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.WatchedFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">WatchedFileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#baserotatinghandler">BaseRotatingHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.namer"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.namer</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotator"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotator</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotation_filename"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotation_filename()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BaseRotatingHandler.rotate"><code class="docutils literal notranslate"><span class="pre">BaseRotatingHandler.rotate()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#rotatingfilehandler">RotatingFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler.doRollover"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler.doRollover()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.RotatingFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">RotatingFileHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#timedrotatingfilehandler">TimedRotatingFileHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.doRollover"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.doRollover()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.emit"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.TimedRotatingFileHandler.getFilesToDelete"><code class="docutils literal notranslate"><span class="pre">TimedRotatingFileHandler.getFilesToDelete()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sockethandler">SocketHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler"><code class="docutils literal notranslate"><span class="pre">SocketHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.close"><code class="docutils literal notranslate"><span class="pre">SocketHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.emit"><code class="docutils literal notranslate"><span class="pre">SocketHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.handleError"><code class="docutils literal notranslate"><span class="pre">SocketHandler.handleError()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.makeSocket"><code class="docutils literal notranslate"><span class="pre">SocketHandler.makeSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.makePickle"><code class="docutils literal notranslate"><span class="pre">SocketHandler.makePickle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.send"><code class="docutils literal notranslate"><span class="pre">SocketHandler.send()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SocketHandler.createSocket"><code class="docutils literal notranslate"><span class="pre">SocketHandler.createSocket()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#datagramhandler">DatagramHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler"><code class="docutils literal notranslate"><span class="pre">DatagramHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.emit"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.makeSocket"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.makeSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.DatagramHandler.send"><code class="docutils literal notranslate"><span class="pre">DatagramHandler.send()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sysloghandler">SysLogHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler"><code class="docutils literal notranslate"><span class="pre">SysLogHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.close"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.createSocket"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.createSocket()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.emit"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.encodePriority"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.encodePriority()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SysLogHandler.mapPriority"><code class="docutils literal notranslate"><span class="pre">SysLogHandler.mapPriority()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nteventloghandler">NTEventLogHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.close"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.emit"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getEventCategory"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getEventCategory()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getEventType"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getEventType()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.NTEventLogHandler.getMessageID"><code class="docutils literal notranslate"><span class="pre">NTEventLogHandler.getMessageID()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#smtphandler">SMTPHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler"><code class="docutils literal notranslate"><span class="pre">SMTPHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler.emit"><code class="docutils literal notranslate"><span class="pre">SMTPHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.SMTPHandler.getSubject"><code class="docutils literal notranslate"><span class="pre">SMTPHandler.getSubject()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#memoryhandler">MemoryHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler"><code class="docutils literal notranslate"><span class="pre">BufferingHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.emit"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.flush"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.BufferingHandler.shouldFlush"><code class="docutils literal notranslate"><span class="pre">BufferingHandler.shouldFlush()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler"><code class="docutils literal notranslate"><span class="pre">MemoryHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.close"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.close()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.flush"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.flush()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.setTarget"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.setTarget()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.MemoryHandler.shouldFlush"><code class="docutils literal notranslate"><span class="pre">MemoryHandler.shouldFlush()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#httphandler">HTTPHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler"><code class="docutils literal notranslate"><span class="pre">HTTPHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler.mapLogRecord"><code class="docutils literal notranslate"><span class="pre">HTTPHandler.mapLogRecord()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.HTTPHandler.emit"><code class="docutils literal notranslate"><span class="pre">HTTPHandler.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#queuehandler">QueueHandler</a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler"><code class="docutils literal notranslate"><span class="pre">QueueHandler</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.emit"><code class="docutils literal notranslate"><span class="pre">QueueHandler.emit()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.prepare"><code class="docutils literal notranslate"><span class="pre">QueueHandler.prepare()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.enqueue"><code class="docutils literal notranslate"><span class="pre">QueueHandler.enqueue()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueHandler.listener"><code class="docutils literal notranslate"><span class="pre">QueueHandler.listener</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#queuelistener">QueueListener</a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueListener"><code class="docutils literal notranslate"><span class="pre">QueueListener</span></code></a><ul>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.dequeue"><code class="docutils literal notranslate"><span class="pre">QueueListener.dequeue()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.prepare"><code class="docutils literal notranslate"><span class="pre">QueueListener.prepare()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.handle"><code class="docutils literal notranslate"><span class="pre">QueueListener.handle()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.start"><code class="docutils literal notranslate"><span class="pre">QueueListener.start()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.stop"><code class="docutils literal notranslate"><span class="pre">QueueListener.stop()</span></code></a></li>
-<li><a class="reference internal" href="#logging.handlers.QueueListener.enqueue_sentinel"><code class="docutils literal notranslate"><span class="pre">QueueListener.enqueue_sentinel()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#streamhandler">StreamHandler</a></li>
+<li><a class="reference internal" href="#filehandler">FileHandler</a></li>
+<li><a class="reference internal" href="#nullhandler">NullHandler</a></li>
+<li><a class="reference internal" href="#watchedfilehandler">WatchedFileHandler</a></li>
+<li><a class="reference internal" href="#baserotatinghandler">BaseRotatingHandler</a></li>
+<li><a class="reference internal" href="#rotatingfilehandler">RotatingFileHandler</a></li>
+<li><a class="reference internal" href="#timedrotatingfilehandler">TimedRotatingFileHandler</a></li>
+<li><a class="reference internal" href="#sockethandler">SocketHandler</a></li>
+<li><a class="reference internal" href="#datagramhandler">DatagramHandler</a></li>
+<li><a class="reference internal" href="#sysloghandler">SysLogHandler</a></li>
+<li><a class="reference internal" href="#nteventloghandler">NTEventLogHandler</a></li>
+<li><a class="reference internal" href="#smtphandler">SMTPHandler</a></li>
+<li><a class="reference internal" href="#memoryhandler">MemoryHandler</a></li>
+<li><a class="reference internal" href="#httphandler">HTTPHandler</a></li>
+<li><a class="reference internal" href="#queuehandler">QueueHandler</a></li>
+<li><a class="reference internal" href="#queuelistener">QueueListener</a></li>
 </ul>
 </li>
 </ul>
@@ -1860,7 +1572,7 @@ implementations.</p>
           <a href="logging.config.html" title="logging.config --- Logging configuration"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1870,7 +1582,7 @@ implementations.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1900,13 +1612,14 @@ implementations.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1914,7 +1627,7 @@ implementations.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

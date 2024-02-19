@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>email.charset: 表示字元集合 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.charset: 表示字元集合 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -82,35 +82,6 @@
         <option value="dark">Dark</option>
     </select>
 </label>
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.charset</span></code>: 表示字元集合</a><ul>
-<li><a class="reference internal" href="#email.charset.Charset"><code class="docutils literal notranslate"><span class="pre">Charset</span></code></a><ul>
-<li><a class="reference internal" href="#email.charset.Charset.input_charset"><code class="docutils literal notranslate"><span class="pre">Charset.input_charset</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.header_encoding</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.body_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.body_encoding</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.output_charset"><code class="docutils literal notranslate"><span class="pre">Charset.output_charset</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.input_codec"><code class="docutils literal notranslate"><span class="pre">Charset.input_codec</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.output_codec"><code class="docutils literal notranslate"><span class="pre">Charset.output_codec</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.get_body_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.get_body_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.get_output_charset"><code class="docutils literal notranslate"><span class="pre">Charset.get_output_charset()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encode"><code class="docutils literal notranslate"><span class="pre">Charset.header_encode()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encode_lines"><code class="docutils literal notranslate"><span class="pre">Charset.header_encode_lines()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.body_encode"><code class="docutils literal notranslate"><span class="pre">Charset.body_encode()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__str__"><code class="docutils literal notranslate"><span class="pre">Charset.__str__()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__eq__"><code class="docutils literal notranslate"><span class="pre">Charset.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__ne__"><code class="docutils literal notranslate"><span class="pre">Charset.__ne__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#email.charset.add_charset"><code class="docutils literal notranslate"><span class="pre">add_charset()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.add_alias"><code class="docutils literal notranslate"><span class="pre">add_alias()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.add_codec"><code class="docutils literal notranslate"><span class="pre">add_codec()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="email.header.html"
@@ -153,7 +124,7 @@
           <a href="email.header.html" title="email.header: Internationalized headers"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -163,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -407,35 +378,6 @@ Python codec, as appropriate for the second argument to the <a class="reference 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.charset</span></code>: 表示字元集合</a><ul>
-<li><a class="reference internal" href="#email.charset.Charset"><code class="docutils literal notranslate"><span class="pre">Charset</span></code></a><ul>
-<li><a class="reference internal" href="#email.charset.Charset.input_charset"><code class="docutils literal notranslate"><span class="pre">Charset.input_charset</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.header_encoding</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.body_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.body_encoding</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.output_charset"><code class="docutils literal notranslate"><span class="pre">Charset.output_charset</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.input_codec"><code class="docutils literal notranslate"><span class="pre">Charset.input_codec</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.output_codec"><code class="docutils literal notranslate"><span class="pre">Charset.output_codec</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.get_body_encoding"><code class="docutils literal notranslate"><span class="pre">Charset.get_body_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.get_output_charset"><code class="docutils literal notranslate"><span class="pre">Charset.get_output_charset()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encode"><code class="docutils literal notranslate"><span class="pre">Charset.header_encode()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.header_encode_lines"><code class="docutils literal notranslate"><span class="pre">Charset.header_encode_lines()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.body_encode"><code class="docutils literal notranslate"><span class="pre">Charset.body_encode()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__str__"><code class="docutils literal notranslate"><span class="pre">Charset.__str__()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__eq__"><code class="docutils literal notranslate"><span class="pre">Charset.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.Charset.__ne__"><code class="docutils literal notranslate"><span class="pre">Charset.__ne__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#email.charset.add_charset"><code class="docutils literal notranslate"><span class="pre">add_charset()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.add_alias"><code class="docutils literal notranslate"><span class="pre">add_alias()</span></code></a></li>
-<li><a class="reference internal" href="#email.charset.add_codec"><code class="docutils literal notranslate"><span class="pre">add_codec()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-  <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="email.header.html"
                           title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.header</span></code>: Internationalized headers</a></p>
@@ -480,7 +422,7 @@ Python codec, as appropriate for the second argument to the <a class="reference 
           <a href="email.header.html" title="email.header: Internationalized headers"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -490,7 +432,7 @@ Python codec, as appropriate for the second argument to the <a class="reference 
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -521,13 +463,14 @@ Python codec, as appropriate for the second argument to the <a class="reference 
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -535,7 +478,7 @@ Python codec, as appropriate for the second argument to the <a class="reference 
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

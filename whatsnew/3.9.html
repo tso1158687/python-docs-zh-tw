@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 3.9 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3.9 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -167,6 +167,16 @@
 <li><a class="reference internal" href="#urllib-parse">urllib.parse</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#notable-changes-in-python-3-9-3">Notable changes in Python 3.9.3</a></li>
+<li><a class="reference internal" href="#notable-changes-in-python-3-9-5">Notable changes in Python 3.9.5</a><ul>
+<li><a class="reference internal" href="#id5">urllib.parse</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-9-14">Notable security feature in 3.9.14</a></li>
+<li><a class="reference internal" href="#notable-changes-in-3-9-17">Notable changes in 3.9.17</a><ul>
+<li><a class="reference internal" href="#tarfile">tarfile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -214,7 +224,7 @@
           <a href="3.10.html" title="Python 3.10 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -224,7 +234,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -594,7 +604,7 @@ and <code class="xref py py-const docutils literal notranslate"><span class="pre
 </section>
 <section id="ftplib">
 <h3>ftplib<a class="headerlink" href="#ftplib" title="Link to this heading">¶</a></h3>
-<p><a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">FTP</span></code></a> and <code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code> now raise a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a>
+<p><a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">FTP</span></code></a> and <a class="reference internal" href="../library/ftplib.html#ftplib.FTP_TLS" title="ftplib.FTP_TLS"><code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code></a> now raise a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a>
 if the given timeout for their constructor is zero to prevent the creation of
 a non-blocking socket. (Contributed by Donghee Na in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=39259">bpo-39259</a>.)</p>
 </section>
@@ -1145,7 +1155,7 @@ will return <code class="docutils literal notranslate"><span class="pre">Tuple(s
 environment variable when the <a class="reference internal" href="../using/cmdline.html#cmdoption-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> or <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> command line
 options are being used.</p></li>
 <li><p>The <em>encoding</em> parameter has been added to the classes <a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP</span></code></a> and
-<code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP_TLS</span></code> as a keyword-only parameter, and the default encoding
+<a class="reference internal" href="../library/ftplib.html#ftplib.FTP_TLS" title="ftplib.FTP_TLS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP_TLS</span></code></a> as a keyword-only parameter, and the default encoding
 is changed from Latin-1 to UTF-8 to follow <span class="target" id="index-22"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2640.html"><strong>RFC 2640</strong></a>.</p></li>
 <li><p><a class="reference internal" href="../library/asyncio-eventloop.html#asyncio.loop.shutdown_default_executor" title="asyncio.loop.shutdown_default_executor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">asyncio.loop.shutdown_default_executor()</span></code></a> has been added to
 <a class="reference internal" href="../library/asyncio-eventloop.html#asyncio.AbstractEventLoop" title="asyncio.AbstractEventLoop"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractEventLoop</span></code></a>, meaning alternative event loops that
@@ -1569,6 +1579,55 @@ documentation.
 (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=42967">bpo-42967</a>.)</p>
 </section>
 </section>
+<section id="notable-changes-in-python-3-9-3">
+<h2>Notable changes in Python 3.9.3<a class="headerlink" href="#notable-changes-in-python-3-9-3" title="Link to this heading">¶</a></h2>
+<p>A security fix alters the <a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP</span></code></a> behavior to not trust the
+IPv4 address sent from the remote server when setting up a passive data
+channel.  We reuse the ftp server IP address instead.  For unusual code
+requiring the old behavior, set a <code class="docutils literal notranslate"><span class="pre">trust_server_pasv_ipv4_address</span></code>
+attribute on your FTP instance to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  (See <a class="reference external" href="https://github.com/python/cpython/issues/87451">gh-87451</a>)</p>
+</section>
+<section id="notable-changes-in-python-3-9-5">
+<h2>Notable changes in Python 3.9.5<a class="headerlink" href="#notable-changes-in-python-3-9-5" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h3>urllib.parse<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>The presence of newline or tab characters in parts of a URL allows for some
+forms of attacks. Following the WHATWG specification that updates <span class="target" id="index-28"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>,
+ASCII newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\r</span></code> and tab <code class="docutils literal notranslate"><span class="pre">\t</span></code> characters are stripped from the
+URL by the parser in <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.parse</span></code></a> preventing such attacks. The removal
+characters are controlled by a new module level variable
+<code class="docutils literal notranslate"><span class="pre">urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE</span></code>. (See <a class="reference external" href="https://github.com/python/cpython/issues/88048">gh-88048</a>)</p>
+</section>
+</section>
+<section id="notable-security-feature-in-3-9-14">
+<h2>Notable security feature in 3.9.14<a class="headerlink" href="#notable-security-feature-in-3-9-14" title="Link to this heading">¶</a></h2>
+<p>Converting between <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> in bases other than 2
+(binary), 4, 8 (octal), 16 (hexadecimal), or 32 such as base 10 (decimal)
+now raises a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the number of digits in string form is
+above a limit to avoid potential denial of service attacks due to the
+algorithmic complexity. This is a mitigation for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10735">CVE-2020-10735</a>.
+This limit can be configured or disabled by environment variable, command
+line flag, or <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> APIs. See the <a class="reference internal" href="../library/stdtypes.html#int-max-str-digits"><span class="std std-ref">integer string conversion
+length limitation</span></a> documentation.  The default limit
+is 4300 digits in string form.</p>
+</section>
+<section id="notable-changes-in-3-9-17">
+<h2>Notable changes in 3.9.17<a class="headerlink" href="#notable-changes-in-3-9-17" title="Link to this heading">¶</a></h2>
+<section id="tarfile">
+<h3>tarfile<a class="headerlink" href="#tarfile" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The extraction methods in <a class="reference internal" href="../library/tarfile.html#module-tarfile" title="tarfile: Read and write tar-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tarfile</span></code></a>, and <a class="reference internal" href="../library/shutil.html#shutil.unpack_archive" title="shutil.unpack_archive"><code class="xref py py-func docutils literal notranslate"><span class="pre">shutil.unpack_archive()</span></code></a>,
+have a new a <em>filter</em> argument that allows limiting tar features than may be
+surprising or dangerous, such as creating files outside the destination
+directory.
+See <a class="reference internal" href="../library/tarfile.html#tarfile-extraction-filter"><span class="std std-ref">Extraction filters</span></a> for details.
+In Python 3.12, use without the <em>filter</em> argument will show a
+<a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.
+In Python 3.14, the default will switch to <code class="docutils literal notranslate"><span class="pre">'data'</span></code>.
+(Contributed by Petr Viktorin in <span class="target" id="index-29"></span><a class="pep reference external" href="https://peps.python.org/pep-0706/"><strong>PEP 706</strong></a>.)</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -1663,6 +1722,16 @@ documentation.
 <li><a class="reference internal" href="#urllib-parse">urllib.parse</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#notable-changes-in-python-3-9-3">Notable changes in Python 3.9.3</a></li>
+<li><a class="reference internal" href="#notable-changes-in-python-3-9-5">Notable changes in Python 3.9.5</a><ul>
+<li><a class="reference internal" href="#id5">urllib.parse</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notable-security-feature-in-3-9-14">Notable security feature in 3.9.14</a></li>
+<li><a class="reference internal" href="#notable-changes-in-3-9-17">Notable changes in 3.9.17</a><ul>
+<li><a class="reference internal" href="#tarfile">tarfile</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1713,7 +1782,7 @@ documentation.
           <a href="3.10.html" title="Python 3.10 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1723,7 +1792,7 @@ documentation.
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -1752,13 +1821,14 @@ documentation.
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1766,7 +1836,7 @@ documentation.
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bz2 --- Support for bzip2 compression &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bz2 --- Support for bzip2 compression &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,40 +86,9 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a><ul>
-<li><a class="reference internal" href="#de-compression-of-files">(De)compression of files</a><ul>
-<li><a class="reference internal" href="#bz2.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File"><code class="docutils literal notranslate"><span class="pre">BZ2File</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2File.peek"><code class="docutils literal notranslate"><span class="pre">BZ2File.peek()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.fileno"><code class="docutils literal notranslate"><span class="pre">BZ2File.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.readable"><code class="docutils literal notranslate"><span class="pre">BZ2File.readable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.seekable"><code class="docutils literal notranslate"><span class="pre">BZ2File.seekable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.writable"><code class="docutils literal notranslate"><span class="pre">BZ2File.writable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.read1"><code class="docutils literal notranslate"><span class="pre">BZ2File.read1()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.readinto"><code class="docutils literal notranslate"><span class="pre">BZ2File.readinto()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#incremental-de-compression">Incremental (de)compression</a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Compressor"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Compressor.compress"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor.compress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Compressor.flush"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor.flush()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.decompress"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.decompress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.eof"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.eof</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.unused_data"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.unused_data</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.needs_input"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.needs_input</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#one-shot-de-compression">One-shot (de)compression</a><ul>
-<li><a class="reference internal" href="#bz2.compress"><code class="docutils literal notranslate"><span class="pre">compress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#de-compression-of-files">(De)compression of files</a></li>
+<li><a class="reference internal" href="#incremental-de-compression">Incremental (de)compression</a></li>
+<li><a class="reference internal" href="#one-shot-de-compression">One-shot (de)compression</a></li>
 <li><a class="reference internal" href="#examples-of-usage">用法範例</a></li>
 </ul>
 </li>
@@ -168,7 +137,7 @@
           <a href="gzip.html" title="gzip --- gzip 檔案的支援"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -178,7 +147,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -595,40 +564,9 @@ while ordered, repetitive data usually yields a high compression ratio.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a><ul>
-<li><a class="reference internal" href="#de-compression-of-files">(De)compression of files</a><ul>
-<li><a class="reference internal" href="#bz2.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File"><code class="docutils literal notranslate"><span class="pre">BZ2File</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2File.peek"><code class="docutils literal notranslate"><span class="pre">BZ2File.peek()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.fileno"><code class="docutils literal notranslate"><span class="pre">BZ2File.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.readable"><code class="docutils literal notranslate"><span class="pre">BZ2File.readable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.seekable"><code class="docutils literal notranslate"><span class="pre">BZ2File.seekable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.writable"><code class="docutils literal notranslate"><span class="pre">BZ2File.writable()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.read1"><code class="docutils literal notranslate"><span class="pre">BZ2File.read1()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2File.readinto"><code class="docutils literal notranslate"><span class="pre">BZ2File.readinto()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#incremental-de-compression">Incremental (de)compression</a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Compressor"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Compressor.compress"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor.compress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Compressor.flush"><code class="docutils literal notranslate"><span class="pre">BZ2Compressor.flush()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor</span></code></a><ul>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.decompress"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.decompress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.eof"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.eof</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.unused_data"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.unused_data</span></code></a></li>
-<li><a class="reference internal" href="#bz2.BZ2Decompressor.needs_input"><code class="docutils literal notranslate"><span class="pre">BZ2Decompressor.needs_input</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#one-shot-de-compression">One-shot (de)compression</a><ul>
-<li><a class="reference internal" href="#bz2.compress"><code class="docutils literal notranslate"><span class="pre">compress()</span></code></a></li>
-<li><a class="reference internal" href="#bz2.decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#de-compression-of-files">(De)compression of files</a></li>
+<li><a class="reference internal" href="#incremental-de-compression">Incremental (de)compression</a></li>
+<li><a class="reference internal" href="#one-shot-de-compression">One-shot (de)compression</a></li>
 <li><a class="reference internal" href="#examples-of-usage">用法範例</a></li>
 </ul>
 </li>
@@ -680,7 +618,7 @@ while ordered, repetitive data usually yields a high compression ratio.</p>
           <a href="gzip.html" title="gzip --- gzip 檔案的支援"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -690,7 +628,7 @@ while ordered, repetitive data usually yields a high compression ratio.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -720,13 +658,14 @@ while ordered, repetitive data usually yields a high compression ratio.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -734,7 +673,7 @@ while ordered, repetitive data usually yields a high compression ratio.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

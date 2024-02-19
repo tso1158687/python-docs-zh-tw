@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 3.2 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3.2 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -202,7 +202,7 @@
           <a href="3.3.html" title="Python 3.3 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -212,7 +212,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -380,7 +380,7 @@ each with their own argument patterns and help displays:</p>
 <h2>PEP 391:  Dictionary Based Configuration for Logging<a class="headerlink" href="#pep-391-dictionary-based-configuration-for-logging" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../library/logging.html#module-logging" title="logging: Flexible event logging system for applications."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> module provided two kinds of configuration, one style with
 function calls for each option or another style driven by an external file saved
-in a <code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code> format.  Those options did not provide the flexibility
+in a <a class="reference internal" href="../library/configparser.html#module-configparser" title="configparser: Configuration file parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code></a> format.  Those options did not provide the flexibility
 to create configurations from JSON or YAML files, nor did they support
 incremental configuration, which is needed for specifying logger options from a
 command line.</p>
@@ -686,7 +686,7 @@ mode.  The option can be introspected using the <a class="reference internal" hr
 </li>
 <li><p>The <a class="reference internal" href="../library/functions.html#hasattr" title="hasattr"><code class="xref py py-func docutils literal notranslate"><span class="pre">hasattr()</span></code></a> function works by calling <a class="reference internal" href="../library/functions.html#getattr" title="getattr"><code class="xref py py-func docutils literal notranslate"><span class="pre">getattr()</span></code></a> and detecting
 whether an exception is raised.  This technique allows it to detect methods
-created dynamically by <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattribute__()</span></code> which
+created dynamically by <a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> or <a class="reference internal" href="../reference/datamodel.html#object.__getattribute__" title="object.__getattribute__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattribute__()</span></code></a> which
 would otherwise be absent from the class dictionary.  Formerly, <em>hasattr</em>
 would catch any exception, possibly masking genuine errors.  Now, <em>hasattr</em>
 has been tightened to only catch <a class="reference internal" href="../library/exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a> and let other
@@ -801,7 +801,7 @@ of enabling the warning from the command line:</p>
 </li>
 <li><p><a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-class docutils literal notranslate"><span class="pre">range</span></code></a> objects now support <em>index</em> and <em>count</em> methods. This is part
 of an effort to make more objects fully implement the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">collections.Sequence</span></code> <a class="reference internal" href="../glossary.html#term-abstract-base-class"><span class="xref std std-term">abstract base class</span></a>.  As a result, the
+<a class="reference internal" href="../library/collections.abc.html#collections.abc.Sequence" title="collections.abc.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.Sequence</span></code></a> <a class="reference internal" href="../glossary.html#term-abstract-base-class"><span class="xref std std-term">abstract base class</span></a>.  As a result, the
 language will have a more uniform API.  In addition, <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-class docutils literal notranslate"><span class="pre">range</span></code></a> objects
 now support slicing and negative indices, even with values larger than
 <a class="reference internal" href="../library/sys.html#sys.maxsize" title="sys.maxsize"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.maxsize</span></code></a>.  This makes <em>range</em> more interoperable with lists:</p>
@@ -955,8 +955,9 @@ Baker, Miki Tebeka, and Nick Coghlan; see <a class="reference external" href="ht
 </li>
 <li><p>The <a class="reference internal" href="../library/functools.html#functools.wraps" title="functools.wraps"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.wraps()</span></code></a> decorator now adds a <code class="xref py py-attr docutils literal notranslate"><span class="pre">__wrapped__</span></code> attribute
 pointing to the original callable function.  This allows wrapped functions to
-be introspected.  It also copies <code class="xref py py-attr docutils literal notranslate"><span class="pre">__annotations__</span></code> if defined.  And now
-it also gracefully skips over missing attributes such as <code class="xref py py-attr docutils literal notranslate"><span class="pre">__doc__</span></code> which
+be introspected.  It also copies <a class="reference internal" href="../reference/datamodel.html#function.__annotations__" title="function.__annotations__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__annotations__</span></code></a> if
+defined.  And now it also gracefully skips over missing attributes such as
+<a class="reference internal" href="../reference/datamodel.html#function.__doc__" title="function.__doc__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__doc__</span></code></a> which
 might not be defined for the wrapped callable.</p>
 <p>In the above example, the cache can be removed by recovering the original
 function:</p>
@@ -1285,12 +1286,12 @@ for slice notation are well-suited to in-place editing:</p>
 </section>
 <section id="reprlib">
 <h3>reprlib<a class="headerlink" href="#reprlib" title="Link to this heading">¶</a></h3>
-<p>When writing a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code> method for a custom container, it is easy to
+<p>When writing a <a class="reference internal" href="../reference/datamodel.html#object.__repr__" title="object.__repr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code></a> method for a custom container, it is easy to
 forget to handle the case where a member refers back to the container itself.
 Python's builtin objects such as <a class="reference internal" href="../library/stdtypes.html#list" title="list"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#set" title="set"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> handle
 self-reference by displaying &quot;...&quot; in the recursive part of the representation
 string.</p>
-<p>To help write such <code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code> methods, the <a class="reference internal" href="../library/reprlib.html#module-reprlib" title="reprlib: Alternate repr() implementation with size limits."><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code></a> module has a new
+<p>To help write such <a class="reference internal" href="../reference/datamodel.html#object.__repr__" title="object.__repr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code></a> methods, the <a class="reference internal" href="../library/reprlib.html#module-reprlib" title="reprlib: Alternate repr() implementation with size limits."><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code></a> module has a new
 decorator, <a class="reference internal" href="../library/reprlib.html#reprlib.recursive_repr" title="reprlib.recursive_repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">recursive_repr()</span></code></a>, for detecting recursive calls to
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code> and substituting a placeholder string instead:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
@@ -1329,7 +1330,7 @@ default configuration using a <a class="reference internal" href="../library/log
 <a class="reference internal" href="../library/sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a> for events of <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> level or higher.  Formerly, an
 event occurring before a configuration was set-up would either raise an
 exception or silently drop the event depending on the value of
-<code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code>.  The new default handler is stored in
+<a class="reference internal" href="../library/logging.html#logging.raiseExceptions" title="logging.raiseExceptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">logging.raiseExceptions</span></code></a>.  The new default handler is stored in
 <a class="reference internal" href="../library/logging.html#logging.lastResort" title="logging.lastResort"><code class="xref py py-data docutils literal notranslate"><span class="pre">logging.lastResort</span></code></a>.</p>
 <p>The use of filters has been simplified.  Instead of creating a
 <a class="reference internal" href="../library/logging.html#logging.Filter" title="logging.Filter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Filter</span></code></a> object, the predicate can be any Python callable that
@@ -1428,7 +1429,7 @@ used for the imaginary part of a number:</p>
 <span class="go">sys.hash_info(width=64, modulus=2305843009213693951, inf=314159, nan=0, imag=1000003)</span>
 </pre></div>
 </div>
-<p>An early decision to limit the inter-operability of various numeric types has
+<p>An early decision to limit the interoperability of various numeric types has
 been relaxed.  It is still unsupported (and ill-advised) to have implicit
 mixing in arithmetic expressions such as <code class="docutils literal notranslate"><span class="pre">Decimal('1.1')</span> <span class="pre">+</span> <span class="pre">float('1.1')</span></code>
 because the latter loses information in the process of constructing the binary
@@ -1485,7 +1486,7 @@ also grew auto-closing context managers:</p>
 </pre></div>
 </div>
 <p>（由 Tarek Ziadé 和 Giampaolo Rodolà 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=4972">bpo-4972</a> 中貢獻，由 Georg Brandl 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8046">bpo-8046</a> 和 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1286">bpo-1286</a> 中貢獻。）</p>
-<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code> class now accepts a <em>context</em> parameter, which is a
+<p>The <a class="reference internal" href="../library/ftplib.html#ftplib.FTP_TLS" title="ftplib.FTP_TLS"><code class="xref py py-class docutils literal notranslate"><span class="pre">FTP_TLS</span></code></a> class now accepts a <em>context</em> parameter, which is a
 <a class="reference internal" href="../library/ssl.html#ssl.SSLContext" title="ssl.SSLContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssl.SSLContext</span></code></a> object allowing bundling SSL configuration options,
 certificates and private keys into a single (potentially long-lived) structure.</p>
 <p>（由 Giampaolo Rodolà 貢獻；<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8806">bpo-8806</a>。）</p>
@@ -1532,8 +1533,8 @@ before compressing and decompressing:</p>
 <span class="go">&#39;Three shall be the number thou shalt count&#39;</span>
 </pre></div>
 </div>
-<p>（由 Anand B. Pillai 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3488">bpo-3488</a> 中貢獻；由 Antoine Pitrou、Nir Aides 和 Brian Curtin 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=9962">bpo-9962</a>、<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1675951">bpo-1675951</a>、<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7471">bpo-7471</a> 和 :issue: <cite>2846</cite> 中貢獻。）</p>
-<p>Also, the <code class="xref py py-class docutils literal notranslate"><span class="pre">zipfile.ZipExtFile</span></code> class was reworked internally to represent
+<p>（由 Anand B. Pillai 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3488">bpo-3488</a> 中貢獻；由 Antoine Pitrou、Nir Aides 和 Brian Curtin 在 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=9962">bpo-9962</a>、<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1675951">bpo-1675951</a>、<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7471">bpo-7471</a> 和 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2846">bpo-2846</a> 中貢獻。）</p>
+<p>Also, the <a class="reference internal" href="../library/zipfile.html#zipfile.ZipFile.open" title="zipfile.ZipFile.open"><code class="xref py py-class docutils literal notranslate"><span class="pre">zipfile.ZipExtFile</span></code></a> class was reworked internally to represent
 files stored inside an archive.  The new implementation is significantly faster
 and can be wrapped in an <a class="reference internal" href="../library/io.html#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.BufferedReader</span></code></a> object for more speedups.  It
 also solves an issue where interleaved calls to <em>read</em> and <em>readline</em> gave the
@@ -1729,7 +1730,7 @@ an SSL socket from an SSL context.</p></li>
 <li><p>A new function, <code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.match_hostname()</span></code>, supports server identity
 verification for higher-level protocols by implementing the rules of HTTPS
 (from <span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2818.html"><strong>RFC 2818</strong></a>) which are also suitable for other protocols.</p></li>
-<li><p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.wrap_socket()</span></code> constructor function now takes a <em>ciphers</em>
+<li><p>The <a class="reference internal" href="../library/ssl.html#ssl.SSLContext.wrap_socket" title="ssl.SSLContext.wrap_socket"><code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.wrap_socket()</span></code></a> constructor function now takes a <em>ciphers</em>
 argument.  The <em>ciphers</em> string lists the allowed encryption algorithms using
 the format described in the <a class="reference external" href="https://www.openssl.org/docs/man1.0.2/man1/ciphers.html#CIPHER-LIST-FORMAT">OpenSSL documentation</a>.</p></li>
 <li><p>When linked against recent versions of OpenSSL, the <a class="reference internal" href="../library/ssl.html#module-ssl" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a> module now
@@ -1819,7 +1820,7 @@ start discovery with <code class="docutils literal notranslate"><span class="pre
 <p>（由 Michael Foord 貢獻。）</p>
 </li>
 <li><p>Experimentation at the interactive prompt is now easier because the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code> class can now be instantiated without
+<a class="reference internal" href="../library/unittest.html#unittest.TestCase" title="unittest.TestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.TestCase</span></code></a> class can now be instantiated without
 arguments:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">TestCase</span><span class="p">()</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span>
@@ -2167,7 +2168,7 @@ variables.</p></li>
 <code class="file docutils literal notranslate"><span class="pre">.pdbrc</span></code> script file.</p></li>
 <li><p>A <code class="file docutils literal notranslate"><span class="pre">.pdbrc</span></code> script file can contain <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">next</span></code> commands
 that continue debugging.</p></li>
-<li><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Pdb</span></code> class constructor now accepts a <em>nosigint</em> argument.</p></li>
+<li><p>The <a class="reference internal" href="../library/pdb.html#pdb.Pdb" title="pdb.Pdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pdb</span></code></a> class constructor now accepts a <em>nosigint</em> argument.</p></li>
 <li><p>New commands: <code class="docutils literal notranslate"><span class="pre">l(list)</span></code>, <code class="docutils literal notranslate"><span class="pre">ll(long</span> <span class="pre">list)</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> for
 listing source code.</p></li>
 <li><p>New commands: <code class="docutils literal notranslate"><span class="pre">display</span></code> and <code class="docutils literal notranslate"><span class="pre">undisplay</span></code> for showing or hiding
@@ -2411,11 +2412,11 @@ from a C implementation which makes them as fast as regular locks, and between
 10x and 15x faster than their previous pure Python implementation.</p>
 <p>（由 Antoine Pitrou 貢獻；<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3001">bpo-3001</a>。）</p>
 </li>
-<li><p>The fast-search algorithm in stringlib is now used by the <code class="xref py py-meth docutils literal notranslate"><span class="pre">split()</span></code>,
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">rsplit()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">splitlines()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code> methods on
+<li><p>The fast-search algorithm in stringlib is now used by the <a class="reference internal" href="../library/stdtypes.html#str.split" title="str.split"><code class="xref py py-meth docutils literal notranslate"><span class="pre">split()</span></code></a>,
+<a class="reference internal" href="../library/stdtypes.html#str.rsplit" title="str.rsplit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rsplit()</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#str.splitlines" title="str.splitlines"><code class="xref py py-meth docutils literal notranslate"><span class="pre">splitlines()</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#str.replace" title="str.replace"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> methods on
 <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> objects. Likewise, the
-algorithm is also used by <code class="xref py py-meth docutils literal notranslate"><span class="pre">rfind()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">rindex()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">rsplit()</span></code> and
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">rpartition()</span></code>.</p>
+algorithm is also used by <a class="reference internal" href="../library/stdtypes.html#str.rfind" title="str.rfind"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rfind()</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#str.rindex" title="str.rindex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rindex()</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#str.rsplit" title="str.rsplit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rsplit()</span></code></a> and
+<a class="reference internal" href="../library/stdtypes.html#str.rpartition" title="str.rpartition"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rpartition()</span></code></a>.</p>
 <p>(Patch by Florent Xicluna in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7622">bpo-7622</a> and <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7462">bpo-7462</a>.)</p>
 </li>
 <li><p>Integer to string conversions now work two &quot;digits&quot; at a time, reducing the
@@ -2426,10 +2427,10 @@ number of division and modulo operations.</p>
 <p>There were several other minor optimizations. Set differencing now runs faster
 when one operand is much larger than the other (patch by Andress Bennetts in
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8685">bpo-8685</a>).  The <code class="xref py py-meth docutils literal notranslate"><span class="pre">array.repeat()</span></code> method has a faster implementation
-(<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1569291">bpo-1569291</a> by Alexander Belopolsky). The <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseHTTPRequestHandler</span></code>
+(<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=1569291">bpo-1569291</a> by Alexander Belopolsky). The <a class="reference internal" href="../library/http.server.html#http.server.BaseHTTPRequestHandler" title="http.server.BaseHTTPRequestHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseHTTPRequestHandler</span></code></a>
 has more efficient buffering (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=3709">bpo-3709</a> by Andrew Schaaf).  The
 <a class="reference internal" href="../library/operator.html#operator.attrgetter" title="operator.attrgetter"><code class="xref py py-func docutils literal notranslate"><span class="pre">operator.attrgetter()</span></code></a> function has been sped-up (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=10160">bpo-10160</a> by
-Christos Georgiou).  And <code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigParser</span></code> loads multi-line arguments a bit
+Christos Georgiou).  And <a class="reference internal" href="../library/configparser.html#configparser.ConfigParser" title="configparser.ConfigParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigParser</span></code></a> loads multi-line arguments a bit
 faster (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=7113">bpo-7113</a> by Łukasz Langa).</p>
 </section>
 <section id="unicode">
@@ -2540,7 +2541,7 @@ specifying <code class="docutils literal notranslate"><span class="pre">--withou
 database is now used for all functions.</p>
 <p>（由 Amaury Forgeot D'Arc 貢獻；<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=9210">bpo-9210</a>。）</p>
 </li>
-<li><p>Hash values are now values of a new type, <code class="xref c c-type docutils literal notranslate"><span class="pre">Py_hash_t</span></code>, which is
+<li><p>Hash values are now values of a new type, <a class="reference internal" href="../c-api/hash.html#c.Py_hash_t" title="Py_hash_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_hash_t</span></code></a>, which is
 defined to be the same size as a pointer.  Previously they were of type long,
 which on some 64-bit operating systems is still only 32 bits long.  As a
 result of this fix, <a class="reference internal" href="../library/stdtypes.html#set" title="set"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> can now hold more than
@@ -2551,7 +2552,7 @@ to that size but their performance degraded catastrophically).</p>
 <li><p>A new macro <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_VA_COPY</span></code> copies the state of the variable argument
 list.  It is equivalent to C99 <em>va_copy</em> but available on all Python platforms
 (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=2443">bpo-2443</a>).</p></li>
-<li><p>A new C API function <a class="reference internal" href="../c-api/init.html#c.PySys_SetArgvEx" title="PySys_SetArgvEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgvEx()</span></code></a> allows an embedded interpreter
+<li><p>A new C API function <code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgvEx()</span></code> allows an embedded interpreter
 to set <a class="reference internal" href="../library/sys.html#sys.argv" title="sys.argv"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.argv</span></code></a> without also modifying <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a>
 (<a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=5753">bpo-5753</a>).</p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_CallObject()</span></code> is now only available in macro form.  The
@@ -2622,7 +2623,8 @@ are often incompatible with the 3.1 APIs.</p></li>
 <li><p><a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> objects can no longer be used as filenames; instead,
 they should be converted to <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p></li>
 <li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">array.tostring()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">array.fromstring()</span></code> have been renamed to
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">array.tobytes()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">array.frombytes()</span></code> for clarity.  The old names
+<a class="reference internal" href="../library/array.html#array.array.tobytes" title="array.array.tobytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.tobytes()</span></code></a> and
+<a class="reference internal" href="../library/array.html#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.frombytes()</span></code></a> for clarity.  The old names
 have been deprecated. (See <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=8990">bpo-8990</a>.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PyArg_Parse*()</span></code> functions:</p>
 <ul class="simple">
@@ -2835,7 +2837,7 @@ cannot be called before <a class="reference internal" href="../c-api/init.html#c
           <a href="3.3.html" title="Python 3.3 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2845,7 +2847,7 @@ cannot be called before <a class="reference internal" href="../c-api/init.html#c
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -2874,13 +2876,14 @@ cannot be called before <a class="reference internal" href="../c-api/init.html#c
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2888,7 +2891,7 @@ cannot be called before <a class="reference internal" href="../c-api/init.html#c
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

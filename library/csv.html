@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>csv --- CSV 檔案讀取及寫入 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csv --- CSV 檔案讀取及寫入 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,13 +19,13 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="configparser --- Configuration file parser" href="configparser.html" />
+    <link rel="next" title="configparser --- 設定檔剖析器" href="configparser.html" />
     <link rel="prev" title="檔案格式" href="fileformats.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/csv.html" />
     
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,59 +86,10 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV 檔案讀取及寫入</a><ul>
-<li><a class="reference internal" href="#module-contents">模組內容</a><ul>
-<li><a class="reference internal" href="#csv.reader"><code class="docutils literal notranslate"><span class="pre">reader()</span></code></a></li>
-<li><a class="reference internal" href="#csv.writer"><code class="docutils literal notranslate"><span class="pre">writer()</span></code></a></li>
-<li><a class="reference internal" href="#csv.register_dialect"><code class="docutils literal notranslate"><span class="pre">register_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.unregister_dialect"><code class="docutils literal notranslate"><span class="pre">unregister_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.get_dialect"><code class="docutils literal notranslate"><span class="pre">get_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.list_dialects"><code class="docutils literal notranslate"><span class="pre">list_dialects()</span></code></a></li>
-<li><a class="reference internal" href="#csv.field_size_limit"><code class="docutils literal notranslate"><span class="pre">field_size_limit()</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictReader"><code class="docutils literal notranslate"><span class="pre">DictReader</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictWriter"><code class="docutils literal notranslate"><span class="pre">DictWriter</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect"><code class="docutils literal notranslate"><span class="pre">Dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.excel"><code class="docutils literal notranslate"><span class="pre">excel</span></code></a></li>
-<li><a class="reference internal" href="#csv.excel_tab"><code class="docutils literal notranslate"><span class="pre">excel_tab</span></code></a></li>
-<li><a class="reference internal" href="#csv.unix_dialect"><code class="docutils literal notranslate"><span class="pre">unix_dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.Sniffer"><code class="docutils literal notranslate"><span class="pre">Sniffer</span></code></a><ul>
-<li><a class="reference internal" href="#csv.Sniffer.sniff"><code class="docutils literal notranslate"><span class="pre">Sniffer.sniff()</span></code></a></li>
-<li><a class="reference internal" href="#csv.Sniffer.has_header"><code class="docutils literal notranslate"><span class="pre">Sniffer.has_header()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#csv.QUOTE_ALL"><code class="docutils literal notranslate"><span class="pre">QUOTE_ALL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_MINIMAL"><code class="docutils literal notranslate"><span class="pre">QUOTE_MINIMAL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NONNUMERIC"><code class="docutils literal notranslate"><span class="pre">QUOTE_NONNUMERIC</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NONE"><code class="docutils literal notranslate"><span class="pre">QUOTE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NOTNULL"><code class="docutils literal notranslate"><span class="pre">QUOTE_NOTNULL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_STRINGS"><code class="docutils literal notranslate"><span class="pre">QUOTE_STRINGS</span></code></a></li>
-<li><a class="reference internal" href="#csv.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialect 與格式參數</a><ul>
-<li><a class="reference internal" href="#csv.Dialect.delimiter"><code class="docutils literal notranslate"><span class="pre">Dialect.delimiter</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.doublequote"><code class="docutils literal notranslate"><span class="pre">Dialect.doublequote</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.escapechar"><code class="docutils literal notranslate"><span class="pre">Dialect.escapechar</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.lineterminator"><code class="docutils literal notranslate"><span class="pre">Dialect.lineterminator</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.quotechar"><code class="docutils literal notranslate"><span class="pre">Dialect.quotechar</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.quoting"><code class="docutils literal notranslate"><span class="pre">Dialect.quoting</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.skipinitialspace"><code class="docutils literal notranslate"><span class="pre">Dialect.skipinitialspace</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.strict"><code class="docutils literal notranslate"><span class="pre">Dialect.strict</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#reader-objects">讀取器物件</a><ul>
-<li><a class="reference internal" href="#csv.csvreader.__next__"><code class="docutils literal notranslate"><span class="pre">csvreader.__next__()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvreader.dialect"><code class="docutils literal notranslate"><span class="pre">csvreader.dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvreader.line_num"><code class="docutils literal notranslate"><span class="pre">csvreader.line_num</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictReader.fieldnames"><code class="docutils literal notranslate"><span class="pre">DictReader.fieldnames</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#writer-objects">寫入器物件</a><ul>
-<li><a class="reference internal" href="#csv.csvwriter.writerow"><code class="docutils literal notranslate"><span class="pre">csvwriter.writerow()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvwriter.writerows"><code class="docutils literal notranslate"><span class="pre">csvwriter.writerows()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvwriter.dialect"><code class="docutils literal notranslate"><span class="pre">csvwriter.dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictWriter.writeheader"><code class="docutils literal notranslate"><span class="pre">DictWriter.writeheader()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-contents">模組內容</a></li>
+<li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialect 與格式參數</a></li>
+<li><a class="reference internal" href="#reader-objects">讀取器物件</a></li>
+<li><a class="reference internal" href="#writer-objects">寫入器物件</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 </ul>
 </li>
@@ -153,7 +104,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="configparser.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- 設定檔剖析器</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -181,13 +132,13 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="configparser.html" title="configparser --- Configuration file parser"
+          <a href="configparser.html" title="configparser --- 設定檔剖析器"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="fileformats.html" title="檔案格式"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -197,7 +148,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -252,7 +203,7 @@
 <dl class="py function" id="index-3">
 <dt class="sig sig-object py" id="csv.reader">
 <span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csvfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fmtparams</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.reader" title="Link to this definition">¶</a></dt>
-<dd><p>回傳一個讀取器物件 (reader object) 並在指定的 <em>csvfile</em> 中逐行疊代 (iterate)，<em>csvfile</em> 可以成為任何物件並支援 <a class="reference internal" href="../glossary.html#term-iterator"><span class="xref std std-term">iterator</span></a> 協定，每次呼叫 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code> method（方法）時皆會回傳一個字串，<a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">檔案物件 (file object)</span></a> 及串列物件 (list object) 皆適用。如果 <em>csvfile</em> 是個檔案物件，則需開啟時使用 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code>。 <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <em>dialect</em> 為一個可選填的參數，可以用為特定的 CSV dialect（方言） 定義一組參數。它可能為 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的一個子類別 (subclass) 的實例或是由 <a class="reference internal" href="#csv.list_dialects" title="csv.list_dialects"><code class="xref py py-func docutils literal notranslate"><span class="pre">list_dialects()</span></code></a> 函式回傳的多個字串中的其中之一。另一個可選填的關鍵字引數 <em>fmtparams</em> 可以在這個 dialect 中覆寫 (override) 個別的格式化參數 (formatting parameter)。關於 dialect 及格式化參數的完整說明，請見段落 <a class="reference internal" href="#csv-fmt-params"><span class="std std-ref">Dialect 與格式參數</span></a>。</p>
+<dd><p>回傳一個<a class="reference internal" href="#reader-objects"><span class="std std-ref">讀取器物件 (reader object)</span></a> 並處理在指定的 <em>csvfile</em> 中的每一行，csvfile 必須是字串的可疊代物件 (iterable of strings)，其中每個字串都要是讀取器所定義的 csv 格式，csvfile 通常是個類檔案物件或者 list。如果 <em>csvfile</em> 是個檔案物件，則需開啟時使用 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code>。 <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <em>dialect</em> 為一個可選填的參數，可以用為特定的 CSV dialect（方言） 定義一組參數。它可能為 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的一個子類別 (subclass) 的實例或是由 <a class="reference internal" href="#csv.list_dialects" title="csv.list_dialects"><code class="xref py py-func docutils literal notranslate"><span class="pre">list_dialects()</span></code></a> 函式回傳的多個字串中的其中之一。另一個可選填的關鍵字引數 <em>fmtparams</em> 可以在這個 dialect 中覆寫 (override) 個別的格式化參數 (formatting parameter)。關於 dialect 及格式化參數的完整說明，請見段落 <a class="reference internal" href="#csv-fmt-params"><span class="std std-ref">Dialect 與格式參數</span></a>。</p>
 <p>從 CSV 檔案讀取的每一列會回傳為一個字串列表。除非格式選項 <code class="docutils literal notranslate"><span class="pre">QUOTE_NONNUMERIC</span></code> 有被指定（在這個情況之下，沒有引號的欄位都會被轉換成浮點數），否則不會進行自動資料型別轉換。</p>
 <p>一個簡短的用法範例：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">csv</span>
@@ -269,7 +220,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="csv.writer">
 <span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csvfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fmtparams</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.writer" title="Link to this definition">¶</a></dt>
-<dd><p>回傳一個寫入器物件 (writer object)，其負責在給定的類檔案物件 (file-like object) 上將使用者的資料轉換為分隔字串 (delimited string)。<em>csvfile</em> 可以為具有 <code class="xref py py-func docutils literal notranslate"><span class="pre">write()</span></code> method 的任何物件。若 <em>csvfile</em> 為一個檔案物件，它應該使用 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code> 開啟 <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 。<em>dialect</em> 為一個可選填的參數，可以用為特定的 CSV dialect 定義一組參數。它可能為 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的一個子類別的實例或是由 <a class="reference internal" href="#csv.list_dialects" title="csv.list_dialects"><code class="xref py py-func docutils literal notranslate"><span class="pre">list_dialects()</span></code></a> 函式回傳的多個字串中的其中之一。另一個可選填的關鍵字引數 <em>fmtparams</em> 可以在這個 dialect 中覆寫個別的格式化參數。關於 dialect 及格式化參數的完整說明，請見段落 <a class="reference internal" href="#csv-fmt-params"><span class="std std-ref">Dialect 與格式參數</span></a>。為了更容易與有實作 DB API 的模組互相接合，<a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a> 值會被寫成空字串。雖然這不是一個可逆的變換，這使得dump （傾印） SQL NULL 資料值到 CSV 檔案上就無需讓 <code class="docutils literal notranslate"><span class="pre">cursor.fetch*</span></code> 呼叫回傳的資料進行預處理 (preprocessing)。其餘非字串的資料則會在寫入之前用 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 函式進行字串化 (stringify)。</p>
+<dd><p>回傳一個寫入器物件 (writer object)，其負責在給定的類檔案物件 (file-like object) 上將使用者的資料轉換為分隔字串 (delimited string)。<em>csvfile</em> 可以為具有 <a class="reference internal" href="io.html#io.TextIOBase.write" title="io.TextIOBase.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> method 的任何物件。若 <em>csvfile</em> 為一個檔案物件，它應該使用 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code> 開啟 <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> 。<em>dialect</em> 為一個可選填的參數，可以用為特定的 CSV dialect 定義一組參數。它可能為 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的一個子類別的實例或是由 <a class="reference internal" href="#csv.list_dialects" title="csv.list_dialects"><code class="xref py py-func docutils literal notranslate"><span class="pre">list_dialects()</span></code></a> 函式回傳的多個字串中的其中之一。另一個可選填的關鍵字引數 <em>fmtparams</em> 可以在這個 dialect 中覆寫個別的格式化參數。關於 dialect 及格式化參數的完整說明，請見段落 <a class="reference internal" href="#csv-fmt-params"><span class="std std-ref">Dialect 與格式參數</span></a>。為了更容易與有實作 DB API 的模組互相接合，<a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a> 值會被寫成空字串。雖然這不是一個可逆的變換，這使得dump （傾印） SQL NULL 資料值到 CSV 檔案上就無需讓 <code class="docutils literal notranslate"><span class="pre">cursor.fetch*</span></code> 呼叫回傳的資料進行預處理 (preprocessing)。其餘非字串的資料則會在寫入之前用 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 函式進行字串化 (stringify)。</p>
 <p>一個簡短的用法範例：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eggs.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
@@ -345,7 +296,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.DictWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">DictWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrasaction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.DictWriter" title="Link to this definition">¶</a></dt>
-<dd><p>建立一個物件，其運作上就像一般的寫入器，但可以將 dictionary map 到輸出的列上。參數 <em>fieldnames</em> 是一個鍵值的 <a class="reference internal" href="collections.abc.html#module-collections.abc" title="collections.abc: Abstract base classes for containers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sequence</span></code></a> 且可以辨識 dictionary 中傳遞至 <code class="xref py py-meth docutils literal notranslate"><span class="pre">writerow()</span></code> method 寫入至檔案 <em>f</em> 中的值。如果 dictionary 中缺少了 <em>fieldnames</em> 的鍵值，則會寫入選填的參數 <em>restval</em> 的值。如果傳遞至 <code class="xref py py-meth docutils literal notranslate"><span class="pre">writerow()</span></code> method 的 dictionary 包含了一個 <em>fieldnames</em> 中不存在的鍵值，選填的參數 <em>extrasaction</em> 可以指出該執行的動作。如果它被設定為 <code class="docutils literal notranslate"><span class="pre">'raise'</span></code>，預設會觸發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>。如果它被設定為 <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>，dictionary 中額外的值會被忽略。其他選填的引數或關鍵字引數皆會傳遞至下層的 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 實例。</p>
+<dd><p>建立一個物件，其運作上就像一般的寫入器，但可以將 dictionary map 到輸出的列上。參數 <em>fieldnames</em> 是一個鍵值的 <a class="reference internal" href="collections.abc.html#module-collections.abc" title="collections.abc: Abstract base classes for containers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sequence</span></code></a> 且可以辨識 dictionary 中傳遞至 <a class="reference internal" href="#csv.csvwriter.writerow" title="csv.csvwriter.writerow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writerow()</span></code></a> method 寫入至檔案 <em>f</em> 中的值。如果 dictionary 中缺少了 <em>fieldnames</em> 的鍵值，則會寫入選填的參數 <em>restval</em> 的值。如果傳遞至 <a class="reference internal" href="#csv.csvwriter.writerow" title="csv.csvwriter.writerow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writerow()</span></code></a> method 的 dictionary 包含了一個 <em>fieldnames</em> 中不存在的鍵值，選填的參數 <em>extrasaction</em> 可以指出該執行的動作。如果它被設定為 <code class="docutils literal notranslate"><span class="pre">'raise'</span></code>，預設會觸發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>。如果它被設定為 <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code>，dictionary 中額外的值會被忽略。其他選填的引數或關鍵字引數皆會傳遞至下層的 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 實例。</p>
 <p>請記得這不像類別 <a class="reference internal" href="#csv.DictReader" title="csv.DictReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictReader</span></code></a>，在類別 <a class="reference internal" href="#csv.DictWriter" title="csv.DictWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictWriter</span></code></a> 中，參數 <em>fieldnames</em> 並不是選填的。</p>
 <p>如果傳遞至 <em>fieldnames</em> 的引數是個疊代器，則會被迫成為一個 <a class="reference internal" href="stdtypes.html#list" title="list"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>。</p>
 <p>一個簡短的用法範例：</p>
@@ -372,7 +323,6 @@
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;students.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;unix&#39;</span><span class="p">)</span>
-                                 <span class="o">^^^^^^^^^^^^^^</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -434,7 +384,7 @@
     <span class="c1"># ... process CSV file contents here ...</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> 模組定義了以下常數：</p>
+<p id="csv-constants"><a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> 模組定義了以下常數：</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="csv.QUOTE_ALL">
 <span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">QUOTE_ALL</span></span><a class="headerlink" href="#csv.QUOTE_ALL" title="Link to this definition">¶</a></dt>
@@ -466,6 +416,9 @@
 <span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">QUOTE_NOTNULL</span></span><a class="headerlink" href="#csv.QUOTE_NOTNULL" title="Link to this definition">¶</a></dt>
 <dd><p>引導 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件引用所有非 <code class="docutils literal notranslate"><span class="pre">None</span></code> 的欄位。這與 <a class="reference internal" href="#csv.QUOTE_ALL" title="csv.QUOTE_ALL"><code class="xref py py-data docutils literal notranslate"><span class="pre">QUOTE_ALL</span></code></a> 相似，除非如果欄位值為 <code class="docutils literal notranslate"><span class="pre">None</span></code>，該欄位則被寫成空（沒有引號）字串。</p>
 <p>引導 <a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> 物件將空（沒有引號）欄位直譯 (interpret) 為 None，否則會和 <a class="reference internal" href="#csv.QUOTE_ALL" title="csv.QUOTE_ALL"><code class="xref py py-data docutils literal notranslate"><span class="pre">QUOTE_ALL</span></code></a> 有相同的表現方式。</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.12 版新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -473,6 +426,9 @@
 <span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">QUOTE_STRINGS</span></span><a class="headerlink" href="#csv.QUOTE_STRINGS" title="Link to this definition">¶</a></dt>
 <dd><p>引導 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件永遠在字串的欄位前後放置引號。這與 <a class="reference internal" href="#csv.QUOTE_NONNUMERIC" title="csv.QUOTE_NONNUMERIC"><code class="xref py py-data docutils literal notranslate"><span class="pre">QUOTE_NONNUMERIC</span></code></a> 相似，除非如果欄位值為 <code class="docutils literal notranslate"><span class="pre">None</span></code>，該欄位則被寫成空（沒有引號）字串。</p>
 <p>引導 <a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> 物件將空（沒有引號）字串直譯為 <code class="docutils literal notranslate"><span class="pre">None</span></code>，否則會和 <a class="reference internal" href="#csv.QUOTE_ALL" title="csv.QUOTE_ALL"><code class="xref py py-data docutils literal notranslate"><span class="pre">QUOTE_ALL</span></code></a> 有相同的表現方式。</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.12 版新加入.</span></p>
+</div>
 </dd></dl>
 
 <p><a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> 模組定義下列例外：</p>
@@ -485,7 +441,7 @@
 </section>
 <section id="dialects-and-formatting-parameters">
 <span id="csv-fmt-params"></span><h2>Dialect 與格式參數<a class="headerlink" href="#dialects-and-formatting-parameters" title="Link to this heading">¶</a></h2>
-<p>為了讓指定輸入及輸出紀錄的格式更方便，特定的格式化參數會被組成 dialect。一個 dialect 是 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> class 的子類別，其有一組特定的方法及單獨的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">validate()</span></code> 方法。當建立 <a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> 或 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件時，程式設計師可以指定一個字串或是一個 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的子類別作為 dialect 參數。此外，或是作為替代，在<em>dialect</em>參數中，程式設計師可以指定個別的格式化參數，其與 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 類別定義的屬性具有相同的名字。</p>
+<p>為了讓指定輸入及輸出紀錄的格式更方便，特定的格式化參數會被組成 dialect。一個 dialect 是 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> class 的子類別，其包含多個描述 CSV 檔案格式的多個屬性。當建立 <a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> 或 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件時，程式設計師可以指定一個字串或是一個 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 的子類別作為 dialect 參數。此外，或是作為替代，在<em>dialect</em>參數中，程式設計師可以指定個別的格式化參數，其與 <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> 類別定義的屬性具有相同的名字。</p>
 <p>Dialect 支援下列屬性：</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="csv.Dialect.delimiter">
@@ -515,7 +471,7 @@
 <dd><p>由 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 產生被用來分行的字串。預設為 <code class="docutils literal notranslate"><span class="pre">'\r\n'</span></code>。</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">reader`是</span> <span class="pre">hard-coded</span> <span class="pre">辨別</span> <span class="pre">`</span></code>'r'`` or <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> 作為行尾 (end-of-line)，並忽略<em>分行符號</em>。未來可能會改變這個行為。</p>
+<p><a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> 是 hard-coded 辨別 <code class="docutils literal notranslate"><span class="pre">'\r'</span></code> or <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> 作為行尾 (end-of-line)，並忽略<em>分行符號</em>。未來可能會改變這個行為。</p>
 </div>
 </dd></dl>
 
@@ -531,7 +487,7 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="csv.Dialect.quoting">
 <span class="sig-prename descclassname"><span class="pre">Dialect.</span></span><span class="sig-name descname"><span class="pre">quoting</span></span><a class="headerlink" href="#csv.Dialect.quoting" title="Link to this definition">¶</a></dt>
-<dd><p>控制 writer 何時產生引號，以及 reader 如何辨識引號。他可以使用任何 <code class="xref py py-const docutils literal notranslate"><span class="pre">QUOTE_*</span></code> 常數（請見段落 <a class="reference internal" href="#csv-contents"><span class="std std-ref">模組內容</span></a>）且預設為 <a class="reference internal" href="#csv.QUOTE_MINIMAL" title="csv.QUOTE_MINIMAL"><code class="xref py py-const docutils literal notranslate"><span class="pre">QUOTE_MINIMAL</span></code></a>。</p>
+<dd><p>控制 writer 何時產生引號，以及 reader 如何辨識引號。他可以使用任何 <a class="reference internal" href="#csv-constants"><span class="std std-ref">QUOTE_* 常數</span></a>且預設為 <a class="reference internal" href="#csv.QUOTE_MINIMAL" title="csv.QUOTE_MINIMAL"><code class="xref py py-const docutils literal notranslate"><span class="pre">QUOTE_MINIMAL</span></code></a>。</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -548,7 +504,7 @@
 
 </section>
 <section id="reader-objects">
-<h2>讀取器物件<a class="headerlink" href="#reader-objects" title="Link to this heading">¶</a></h2>
+<span id="id3"></span><h2>讀取器物件<a class="headerlink" href="#reader-objects" title="Link to this heading">¶</a></h2>
 <p>讀取器物件（<a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-func docutils literal notranslate"><span class="pre">reader()</span></code></a> 函式回傳的 <a class="reference internal" href="#csv.DictReader" title="csv.DictReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictReader</span></code></a> 實例與物件）有下列公用方法 (public method)：</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="csv.csvreader.__next__">
@@ -579,7 +535,7 @@
 </section>
 <section id="writer-objects">
 <h2>寫入器物件<a class="headerlink" href="#writer-objects" title="Link to this heading">¶</a></h2>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Writer</span></code> 物件（<a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-func docutils literal notranslate"><span class="pre">writer()</span></code></a> 函式回傳的 <a class="reference internal" href="#csv.DictWriter" title="csv.DictWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictWriter</span></code></a> 實例與物件）有下列公用方法。對於 <code class="xref py py-class docutils literal notranslate"><span class="pre">Writer</span></code> 物件而言，一個<em>列</em>中必須為一個可疊代的字串或是數字；對於 <a class="reference internal" href="#csv.DictWriter" title="csv.DictWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictWriter</span></code></a> 物件而言，則必須為一個 dictionary ，且可以對應欄位標題至字串或數字（會先透過 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 進行傳遞）。請注意，在寫入複數 (complex number) 時會用小括號 (parens) 包起來。這可能在其他程式讀取 CSV 檔案時導致某些問題（假設他們完全支援複雜數字）。</p>
+<p><a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件（<a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-func docutils literal notranslate"><span class="pre">writer()</span></code></a> 函式回傳的 <a class="reference internal" href="#csv.DictWriter" title="csv.DictWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictWriter</span></code></a> 實例與物件）有下列公用方法。對於 <a class="reference internal" href="#csv.writer" title="csv.writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">writer</span></code></a> 物件而言，一個<em>列</em>中必須為一個可疊代的字串或是數字；對於 <a class="reference internal" href="#csv.DictWriter" title="csv.DictWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictWriter</span></code></a> 物件而言，則必須為一個 dictionary ，且可以對應欄位標題至字串或數字（會先透過 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 進行傳遞）。請注意，在寫入複數 (complex number) 時會用小括號 (parens) 包起來。這可能在其他程式讀取 CSV 檔案時導致某些問題（假設他們完全支援複雜數字）。</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="csv.csvwriter.writerow">
 <span class="sig-prename descclassname"><span class="pre">csvwriter.</span></span><span class="sig-name descname"><span class="pre">writerow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.csvwriter.writerow" title="Link to this definition">¶</a></dt>
@@ -677,7 +633,7 @@
 </div>
 <p class="rubric">註解</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
 <p>如果 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code> 沒有被指定，則嵌入引號中的換行符號不會被正確直譯，使用 <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> 行尾 (linending) 的平台會寫入額外的 <code class="docutils literal notranslate"><span class="pre">\r</span></code>。自從 csv 模組有自己 (<a class="reference internal" href="../glossary.html#term-universal-newlines"><span class="xref std std-term">統一的</span></a>) 換行處理方式，因此指定 <code class="docutils literal notranslate"><span class="pre">newline=''</span></code> 會永遠是安全的。</p>
@@ -697,59 +653,10 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV 檔案讀取及寫入</a><ul>
-<li><a class="reference internal" href="#module-contents">模組內容</a><ul>
-<li><a class="reference internal" href="#csv.reader"><code class="docutils literal notranslate"><span class="pre">reader()</span></code></a></li>
-<li><a class="reference internal" href="#csv.writer"><code class="docutils literal notranslate"><span class="pre">writer()</span></code></a></li>
-<li><a class="reference internal" href="#csv.register_dialect"><code class="docutils literal notranslate"><span class="pre">register_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.unregister_dialect"><code class="docutils literal notranslate"><span class="pre">unregister_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.get_dialect"><code class="docutils literal notranslate"><span class="pre">get_dialect()</span></code></a></li>
-<li><a class="reference internal" href="#csv.list_dialects"><code class="docutils literal notranslate"><span class="pre">list_dialects()</span></code></a></li>
-<li><a class="reference internal" href="#csv.field_size_limit"><code class="docutils literal notranslate"><span class="pre">field_size_limit()</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictReader"><code class="docutils literal notranslate"><span class="pre">DictReader</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictWriter"><code class="docutils literal notranslate"><span class="pre">DictWriter</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect"><code class="docutils literal notranslate"><span class="pre">Dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.excel"><code class="docutils literal notranslate"><span class="pre">excel</span></code></a></li>
-<li><a class="reference internal" href="#csv.excel_tab"><code class="docutils literal notranslate"><span class="pre">excel_tab</span></code></a></li>
-<li><a class="reference internal" href="#csv.unix_dialect"><code class="docutils literal notranslate"><span class="pre">unix_dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.Sniffer"><code class="docutils literal notranslate"><span class="pre">Sniffer</span></code></a><ul>
-<li><a class="reference internal" href="#csv.Sniffer.sniff"><code class="docutils literal notranslate"><span class="pre">Sniffer.sniff()</span></code></a></li>
-<li><a class="reference internal" href="#csv.Sniffer.has_header"><code class="docutils literal notranslate"><span class="pre">Sniffer.has_header()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#csv.QUOTE_ALL"><code class="docutils literal notranslate"><span class="pre">QUOTE_ALL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_MINIMAL"><code class="docutils literal notranslate"><span class="pre">QUOTE_MINIMAL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NONNUMERIC"><code class="docutils literal notranslate"><span class="pre">QUOTE_NONNUMERIC</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NONE"><code class="docutils literal notranslate"><span class="pre">QUOTE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_NOTNULL"><code class="docutils literal notranslate"><span class="pre">QUOTE_NOTNULL</span></code></a></li>
-<li><a class="reference internal" href="#csv.QUOTE_STRINGS"><code class="docutils literal notranslate"><span class="pre">QUOTE_STRINGS</span></code></a></li>
-<li><a class="reference internal" href="#csv.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialect 與格式參數</a><ul>
-<li><a class="reference internal" href="#csv.Dialect.delimiter"><code class="docutils literal notranslate"><span class="pre">Dialect.delimiter</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.doublequote"><code class="docutils literal notranslate"><span class="pre">Dialect.doublequote</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.escapechar"><code class="docutils literal notranslate"><span class="pre">Dialect.escapechar</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.lineterminator"><code class="docutils literal notranslate"><span class="pre">Dialect.lineterminator</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.quotechar"><code class="docutils literal notranslate"><span class="pre">Dialect.quotechar</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.quoting"><code class="docutils literal notranslate"><span class="pre">Dialect.quoting</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.skipinitialspace"><code class="docutils literal notranslate"><span class="pre">Dialect.skipinitialspace</span></code></a></li>
-<li><a class="reference internal" href="#csv.Dialect.strict"><code class="docutils literal notranslate"><span class="pre">Dialect.strict</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#reader-objects">讀取器物件</a><ul>
-<li><a class="reference internal" href="#csv.csvreader.__next__"><code class="docutils literal notranslate"><span class="pre">csvreader.__next__()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvreader.dialect"><code class="docutils literal notranslate"><span class="pre">csvreader.dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvreader.line_num"><code class="docutils literal notranslate"><span class="pre">csvreader.line_num</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictReader.fieldnames"><code class="docutils literal notranslate"><span class="pre">DictReader.fieldnames</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#writer-objects">寫入器物件</a><ul>
-<li><a class="reference internal" href="#csv.csvwriter.writerow"><code class="docutils literal notranslate"><span class="pre">csvwriter.writerow()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvwriter.writerows"><code class="docutils literal notranslate"><span class="pre">csvwriter.writerows()</span></code></a></li>
-<li><a class="reference internal" href="#csv.csvwriter.dialect"><code class="docutils literal notranslate"><span class="pre">csvwriter.dialect</span></code></a></li>
-<li><a class="reference internal" href="#csv.DictWriter.writeheader"><code class="docutils literal notranslate"><span class="pre">DictWriter.writeheader()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-contents">模組內容</a></li>
+<li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialect 與格式參數</a></li>
+<li><a class="reference internal" href="#reader-objects">讀取器物件</a></li>
+<li><a class="reference internal" href="#writer-objects">寫入器物件</a></li>
 <li><a class="reference internal" href="#examples">範例</a></li>
 </ul>
 </li>
@@ -764,7 +671,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="configparser.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- 設定檔剖析器</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -795,13 +702,13 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="configparser.html" title="configparser --- Configuration file parser"
+          <a href="configparser.html" title="configparser --- 設定檔剖析器"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="fileformats.html" title="檔案格式"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -811,7 +718,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -841,13 +748,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -855,7 +763,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

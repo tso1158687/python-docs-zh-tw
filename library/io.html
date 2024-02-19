@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>io — 處理資料串流的核心工具 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>io — 處理資料串流的核心工具 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -96,114 +96,12 @@
 <li><a class="reference internal" href="#opt-in-encodingwarning">選擇性加入的編碼警告</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#high-level-module-interface">高階模組介面</a><ul>
-<li><a class="reference internal" href="#io.DEFAULT_BUFFER_SIZE"><code class="docutils literal notranslate"><span class="pre">DEFAULT_BUFFER_SIZE</span></code></a></li>
-<li><a class="reference internal" href="#io.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#io.open_code"><code class="docutils literal notranslate"><span class="pre">open_code()</span></code></a></li>
-<li><a class="reference internal" href="#io.text_encoding"><code class="docutils literal notranslate"><span class="pre">text_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#io.BlockingIOError"><code class="docutils literal notranslate"><span class="pre">BlockingIOError</span></code></a></li>
-<li><a class="reference internal" href="#io.UnsupportedOperation"><code class="docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#high-level-module-interface">高階模組介面</a></li>
 <li><a class="reference internal" href="#class-hierarchy">類別階層</a><ul>
-<li><a class="reference internal" href="#i-o-base-classes">I/O Base Classes</a><ul>
-<li><a class="reference internal" href="#io.IOBase"><code class="docutils literal notranslate"><span class="pre">IOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.IOBase.close"><code class="docutils literal notranslate"><span class="pre">IOBase.close()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.closed"><code class="docutils literal notranslate"><span class="pre">IOBase.closed</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.fileno"><code class="docutils literal notranslate"><span class="pre">IOBase.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.flush"><code class="docutils literal notranslate"><span class="pre">IOBase.flush()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.isatty"><code class="docutils literal notranslate"><span class="pre">IOBase.isatty()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readable"><code class="docutils literal notranslate"><span class="pre">IOBase.readable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readline"><code class="docutils literal notranslate"><span class="pre">IOBase.readline()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readlines"><code class="docutils literal notranslate"><span class="pre">IOBase.readlines()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.seek"><code class="docutils literal notranslate"><span class="pre">IOBase.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.seekable"><code class="docutils literal notranslate"><span class="pre">IOBase.seekable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.tell"><code class="docutils literal notranslate"><span class="pre">IOBase.tell()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.truncate"><code class="docutils literal notranslate"><span class="pre">IOBase.truncate()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.writable"><code class="docutils literal notranslate"><span class="pre">IOBase.writable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.writelines"><code class="docutils literal notranslate"><span class="pre">IOBase.writelines()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.__del__"><code class="docutils literal notranslate"><span class="pre">IOBase.__del__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.RawIOBase"><code class="docutils literal notranslate"><span class="pre">RawIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.RawIOBase.read"><code class="docutils literal notranslate"><span class="pre">RawIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.readall"><code class="docutils literal notranslate"><span class="pre">RawIOBase.readall()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.readinto"><code class="docutils literal notranslate"><span class="pre">RawIOBase.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.write"><code class="docutils literal notranslate"><span class="pre">RawIOBase.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedIOBase"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedIOBase.raw"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.raw</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.detach"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.detach()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.read"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.read1"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.read1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.readinto"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.readinto1"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.readinto1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.write"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.write()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#raw-file-i-o">Raw File I/O</a><ul>
-<li><a class="reference internal" href="#io.FileIO"><code class="docutils literal notranslate"><span class="pre">FileIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.FileIO.mode"><code class="docutils literal notranslate"><span class="pre">FileIO.mode</span></code></a></li>
-<li><a class="reference internal" href="#io.FileIO.name"><code class="docutils literal notranslate"><span class="pre">FileIO.name</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#buffered-streams">Buffered Streams</a><ul>
-<li><a class="reference internal" href="#io.BytesIO"><code class="docutils literal notranslate"><span class="pre">BytesIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.BytesIO.getbuffer"><code class="docutils literal notranslate"><span class="pre">BytesIO.getbuffer()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.getvalue"><code class="docutils literal notranslate"><span class="pre">BytesIO.getvalue()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.read1"><code class="docutils literal notranslate"><span class="pre">BytesIO.read1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.readinto1"><code class="docutils literal notranslate"><span class="pre">BytesIO.readinto1()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedReader"><code class="docutils literal notranslate"><span class="pre">BufferedReader</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedReader.peek"><code class="docutils literal notranslate"><span class="pre">BufferedReader.peek()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedReader.read"><code class="docutils literal notranslate"><span class="pre">BufferedReader.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedReader.read1"><code class="docutils literal notranslate"><span class="pre">BufferedReader.read1()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedWriter"><code class="docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedWriter.flush"><code class="docutils literal notranslate"><span class="pre">BufferedWriter.flush()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedWriter.write"><code class="docutils literal notranslate"><span class="pre">BufferedWriter.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedRandom"><code class="docutils literal notranslate"><span class="pre">BufferedRandom</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedRWPair"><code class="docutils literal notranslate"><span class="pre">BufferedRWPair</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id1">文字 I/O</a><ul>
-<li><a class="reference internal" href="#io.TextIOBase"><code class="docutils literal notranslate"><span class="pre">TextIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.TextIOBase.encoding"><code class="docutils literal notranslate"><span class="pre">TextIOBase.encoding</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.errors"><code class="docutils literal notranslate"><span class="pre">TextIOBase.errors</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.newlines"><code class="docutils literal notranslate"><span class="pre">TextIOBase.newlines</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.buffer"><code class="docutils literal notranslate"><span class="pre">TextIOBase.buffer</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.detach"><code class="docutils literal notranslate"><span class="pre">TextIOBase.detach()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.read"><code class="docutils literal notranslate"><span class="pre">TextIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.readline"><code class="docutils literal notranslate"><span class="pre">TextIOBase.readline()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.seek"><code class="docutils literal notranslate"><span class="pre">TextIOBase.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.tell"><code class="docutils literal notranslate"><span class="pre">TextIOBase.tell()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.write"><code class="docutils literal notranslate"><span class="pre">TextIOBase.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.TextIOWrapper"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper</span></code></a><ul>
-<li><a class="reference internal" href="#io.TextIOWrapper.line_buffering"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.line_buffering</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.write_through"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.write_through</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.reconfigure"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.reconfigure()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.seek"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.tell"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.tell()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.StringIO"><code class="docutils literal notranslate"><span class="pre">StringIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.StringIO.getvalue"><code class="docutils literal notranslate"><span class="pre">StringIO.getvalue()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.IncrementalNewlineDecoder"><code class="docutils literal notranslate"><span class="pre">IncrementalNewlineDecoder</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#i-o-base-classes">I/O 基礎類別</a></li>
+<li><a class="reference internal" href="#raw-file-i-o">Raw File I/O</a></li>
+<li><a class="reference internal" href="#buffered-streams">Buffered Streams</a></li>
+<li><a class="reference internal" href="#id1">文字 I/O</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#performance">Performance</a><ul>
@@ -260,7 +158,7 @@
           <a href="os.html" title="os --- 各種作業系統介面"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -270,7 +168,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -451,249 +349,177 @@
 </section>
 <section id="class-hierarchy">
 <h2>類別階層<a class="headerlink" href="#class-hierarchy" title="Link to this heading">¶</a></h2>
-<p>The implementation of I/O streams is organized as a hierarchy of classes.  First
-<a class="reference internal" href="../glossary.html#term-abstract-base-class"><span class="xref std std-term">abstract base classes</span></a> (ABCs), which are used to
-specify the various categories of streams, then concrete classes providing the
-standard stream implementations.</p>
+<p>I/O 串流的實作是由多個類別組合成的階層結構所構成。首先是 <a class="reference internal" href="../glossary.html#term-abstract-base-class"><span class="xref std std-term">abstract base classes</span></a> （抽象基底類別，ABCs），它們被用來規範各種不同類型的串流，接著具體類別會提供標準串流的實作。</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>The abstract base classes also provide default implementations of some
-methods in order to help implementation of concrete stream classes.  For
-example, <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> provides unoptimized implementations of
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code>.</p>
+<p>為了協助具體串流類別的實作，抽象基底類別提供了某些方法的預設實作。舉例來說，<a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> 提供未經最佳化的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code> 與 <code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code> 實作。</p>
 </div>
-<p>At the top of the I/O hierarchy is the abstract base class <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.  It
-defines the basic interface to a stream.  Note, however, that there is no
-separation between reading and writing to streams; implementations are allowed
-to raise <a class="reference internal" href="#io.UnsupportedOperation" title="io.UnsupportedOperation"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a> if they do not support a given operation.</p>
-<p>The <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> ABC extends <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.  It deals with the reading
-and writing of bytes to a stream.  <a class="reference internal" href="#io.FileIO" title="io.FileIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileIO</span></code></a> subclasses <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>
-to provide an interface to files in the machine's file system.</p>
-<p>The <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> ABC extends <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.  It deals with
-buffering on a raw binary stream (<a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>).  Its subclasses,
-<a class="reference internal" href="#io.BufferedWriter" title="io.BufferedWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a>, <a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a>, and <a class="reference internal" href="#io.BufferedRWPair" title="io.BufferedRWPair"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedRWPair</span></code></a>
-buffer raw binary streams that are writable, readable, and both readable and writable,
-respectively. <a class="reference internal" href="#io.BufferedRandom" title="io.BufferedRandom"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedRandom</span></code></a> provides a buffered interface to seekable streams.
-Another <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> subclass, <a class="reference internal" href="#io.BytesIO" title="io.BytesIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesIO</span></code></a>, is a stream of
-in-memory bytes.</p>
-<p>The <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a> ABC extends <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.  It deals with
-streams whose bytes represent text, and handles encoding and decoding to and
-from strings.  <a class="reference internal" href="#io.TextIOWrapper" title="io.TextIOWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOWrapper</span></code></a>, which extends <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a>, is a buffered text
-interface to a buffered raw stream (<a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>).  Finally,
-<a class="reference internal" href="#io.StringIO" title="io.StringIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringIO</span></code></a> is an in-memory stream for text.</p>
+<p>I/O 階層結構的最上層是抽象基底類別 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。它定義了串流的基礎的介面。然而，請注意，讀取串流與寫入串流之間並沒有分離；若不支援給定的操作，實作是允許引發 <a class="reference internal" href="#io.UnsupportedOperation" title="io.UnsupportedOperation"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a> 例外的。</p>
+<p>抽象基底類別 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 繼承 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。此類別處理對串流的位元組讀寫。<a class="reference internal" href="#io.FileIO" title="io.FileIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileIO</span></code></a> 則繼承 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 來提供一個介面以存取機器檔案系統內的檔案。</p>
+<p>抽象基底類別 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> 繼承 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。此類別緩衝原始二進位串流 (<a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>)。它的子類別 <a class="reference internal" href="#io.BufferedWriter" title="io.BufferedWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a>、<a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a> 與 <a class="reference internal" href="#io.BufferedRWPair" title="io.BufferedRWPair"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedRWPair</span></code></a> 分別緩衝可寫、可讀、可讀也可寫的的原始二進位串流。類別 <a class="reference internal" href="#io.BufferedRandom" title="io.BufferedRandom"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedRandom</span></code></a> 則提供一個對可搜尋串流 (seekable stream) 的緩衝介面。另一個類別 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> 的子類別 <a class="reference internal" href="#io.BytesIO" title="io.BytesIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesIO</span></code></a>，是一個記憶體內位元組串流。</p>
+<p>抽象基底類別 <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a> 繼承 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。此類別處理文本位元組串流，並處理字串的編碼和解碼。類別 <a class="reference internal" href="#io.TextIOWrapper" title="io.TextIOWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOWrapper</span></code></a> 繼承自 <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a>，這是個對緩衝原始串流 (<a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>) 的緩衝文本介面。最後，<a class="reference internal" href="#io.StringIO" title="io.StringIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringIO</span></code></a> 是個文字記憶體內串流。</p>
 <p>引數名稱不是規範的一部份，只有 <a class="reference internal" href="functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> 的引數將作為關鍵字引數。</p>
-<p>以下表格總結了 <a class="reference internal" href="#module-io" title="io: Core tools for working with streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> 模組提供的抽象基礎類別 (ABC)：</p>
+<p>以下表格總結了 <a class="reference internal" href="#module-io" title="io: Core tools for working with streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> 模組提供的抽象基底類別 (ABC)：</p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>ABC</p></th>
-<th class="head"><p>Inherits</p></th>
-<th class="head"><p>Stub Methods</p></th>
-<th class="head"><p>Mixin Methods and Properties</p></th>
+<tr class="row-odd"><th class="head"><p>抽象基底類別 (ABC)</p></th>
+<th class="head"><p>繼承</p></th>
+<th class="head"><p>Stub 方法</p></th>
+<th class="head"><p>Mixin 方法與屬性</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a></p></td>
 <td></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">fileno</span></code>、<code class="docutils literal notranslate"><span class="pre">seek</span></code> 和 <code class="docutils literal notranslate"><span class="pre">truncate</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">close</span></code>, <code class="docutils literal notranslate"><span class="pre">closed</span></code>, <code class="docutils literal notranslate"><span class="pre">__enter__</span></code>,
-<code class="docutils literal notranslate"><span class="pre">__exit__</span></code>, <code class="docutils literal notranslate"><span class="pre">flush</span></code>, <code class="docutils literal notranslate"><span class="pre">isatty</span></code>, <code class="docutils literal notranslate"><span class="pre">__iter__</span></code>,
-<code class="docutils literal notranslate"><span class="pre">__next__</span></code>, <code class="docutils literal notranslate"><span class="pre">readable</span></code>, <code class="docutils literal notranslate"><span class="pre">readline</span></code>,
-<code class="docutils literal notranslate"><span class="pre">readlines</span></code>, <code class="docutils literal notranslate"><span class="pre">seekable</span></code>, <code class="docutils literal notranslate"><span class="pre">tell</span></code>,
-<code class="docutils literal notranslate"><span class="pre">writable</span></code>, and <code class="docutils literal notranslate"><span class="pre">writelines</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">close</span></code>、<code class="docutils literal notranslate"><span class="pre">closed</span></code>、<code class="docutils literal notranslate"><span class="pre">__enter__</span></code>、<code class="docutils literal notranslate"><span class="pre">__exit__</span></code>、<code class="docutils literal notranslate"><span class="pre">flush</span></code>、<code class="docutils literal notranslate"><span class="pre">isatty</span></code>、<code class="docutils literal notranslate"><span class="pre">__iter__</span></code>、<code class="docutils literal notranslate"><span class="pre">__next__</span></code>、<code class="docutils literal notranslate"><span class="pre">readable</span></code>、<code class="docutils literal notranslate"><span class="pre">readline</span></code>、<code class="docutils literal notranslate"><span class="pre">readlines</span></code>、<code class="docutils literal notranslate"><span class="pre">seekable</span></code>、<code class="docutils literal notranslate"><span class="pre">tell</span></code>、<code class="docutils literal notranslate"><span class="pre">writable</span></code> 與 <code class="docutils literal notranslate"><span class="pre">writelines</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a></p></td>
 <td><p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">readinto</span></code> 和 <code class="docutils literal notranslate"><span class="pre">write</span></code></p></td>
-<td><p>Inherited <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> methods, <code class="docutils literal notranslate"><span class="pre">read</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">readall</span></code></p></td>
+<td><p>繼承自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 的方法，<code class="docutils literal notranslate"><span class="pre">read</span></code> 與 <code class="docutils literal notranslate"><span class="pre">readall</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a></p></td>
 <td><p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">detach</span></code>、<code class="docutils literal notranslate"><span class="pre">read</span></code>、<code class="docutils literal notranslate"><span class="pre">read1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">write</span></code></p></td>
-<td><p>Inherited <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> methods, <code class="docutils literal notranslate"><span class="pre">readinto</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">readinto1</span></code></p></td>
+<td><p>繼承自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 的方法，<code class="docutils literal notranslate"><span class="pre">readinto</span></code> 與 <code class="docutils literal notranslate"><span class="pre">readinto1</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a></p></td>
 <td><p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">detach</span></code>、<code class="docutils literal notranslate"><span class="pre">read</span></code>、<code class="docutils literal notranslate"><span class="pre">readline</span></code> 和 <code class="docutils literal notranslate"><span class="pre">write</span></code></p></td>
-<td><p>Inherited <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> methods, <code class="docutils literal notranslate"><span class="pre">encoding</span></code>,
-<code class="docutils literal notranslate"><span class="pre">errors</span></code>, and <code class="docutils literal notranslate"><span class="pre">newlines</span></code></p></td>
+<td><p>繼承自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 的方法，<code class="docutils literal notranslate"><span class="pre">encoding</span></code>、<code class="docutils literal notranslate"><span class="pre">errors</span></code> 與 <code class="docutils literal notranslate"><span class="pre">newlines</span></code></p></td>
 </tr>
 </tbody>
 </table>
 <section id="i-o-base-classes">
-<h3>I/O Base Classes<a class="headerlink" href="#i-o-base-classes" title="Link to this heading">¶</a></h3>
+<h3>I/O 基礎類別<a class="headerlink" href="#i-o-base-classes" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="io.IOBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">IOBase</span></span><a class="headerlink" href="#io.IOBase" title="Link to this definition">¶</a></dt>
-<dd><p>The abstract base class for all I/O classes.</p>
-<p>This class provides empty abstract implementations for many methods
-that derived classes can override selectively; the default
-implementations represent a file that cannot be read, written or
-seeked.</p>
-<p>Even though <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> does not declare <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code>
-or <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> because their signatures will vary, implementations and
-clients should consider those methods part of the interface.  Also,
-implementations may raise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> (or <a class="reference internal" href="#io.UnsupportedOperation" title="io.UnsupportedOperation"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a>)
-when operations they do not support are called.</p>
+<dd><p>所有 I/O 類別的抽象基礎類別。</p>
+<p>為許多方法提供了空的抽象實作，衍生類別可以選擇性地覆寫這些方法；預設的實作代表一個無法讀取、寫入或搜尋的檔案。</p>
+<p>即使 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 因為實作的簽名差異巨大而沒有宣告 <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> 或 <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> 方法，實作與用戶端應把這些方法視為介面的一部份。此外，當呼叫不被它們支援的操作時，可能會引發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> （或 <a class="reference internal" href="#io.UnsupportedOperation" title="io.UnsupportedOperation"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a>）例外。</p>
 <p>The basic type used for binary data read from or written to a file is
 <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.  Other <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> are
 accepted as method arguments too.  Text I/O classes work with <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> data.</p>
-<p>Note that calling any method (even inquiries) on a closed stream is
-undefined.  Implementations may raise <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> in this case.</p>
+<p>請注意，在一個已經關閉的串流上呼叫任何方法（即使只是查詢）都是未定義的。在這種情況下，實作可能會引發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> 例外。</p>
 <p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> (and its subclasses) supports the iterator protocol, meaning
 that an <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> object can be iterated over yielding the lines in a
 stream.  Lines are defined slightly differently depending on whether the
 stream is a binary stream (yielding bytes), or a text stream (yielding
 character strings).  See <a class="reference internal" href="#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> below.</p>
-<p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> is also a context manager and therefore supports the
-<a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement.  In this example, <em>file</em> is closed after the
-<code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> statement's suite is finished---even if an exception occurs:</p>
+<p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 也是個情境管理器，因此支援 <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> 陳述式。在這個例子中，<em>file</em> 會在 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> 陳述式執行完畢後關閉——即使發生了異常。</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;spam.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Spam and eggs!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> provides these data attributes and methods:</p>
+<p><a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 提供這些資料屬性與方法：</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.close" title="Link to this definition">¶</a></dt>
-<dd><p>Flush and close this stream. This method has no effect if the file is
-already closed. Once the file is closed, any operation on the file
-(e.g. reading or writing) will raise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>.</p>
-<p>As a convenience, it is allowed to call this method more than once;
-only the first call, however, will have an effect.</p>
+<dd><p>清除並關閉這個串流。若檔案已經關閉，則此方法沒有作用。一旦檔案被關閉，任何對檔案的操作（例如讀取或寫入）將引發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> 異常。</p>
+<p>為了方便起見，允許多次呼叫這個方法；然而，只有第一次呼叫會有效果。</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="io.IOBase.closed">
 <span class="sig-name descname"><span class="pre">closed</span></span><a class="headerlink" href="#io.IOBase.closed" title="Link to this definition">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the stream is closed.</p>
+<dd><p>如果串流已關閉，則為 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.fileno">
 <span class="sig-name descname"><span class="pre">fileno</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.fileno" title="Link to this definition">¶</a></dt>
-<dd><p>Return the underlying file descriptor (an integer) of the stream if it
-exists.  An <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised if the IO object does not use a file
-descriptor.</p>
+<dd><p>如果串流存在，則回傳其底層的檔案描述器（一個整數）。如果 IO 物件不使用檔案描述器，則會引發一個 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> 例外。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.flush">
 <span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.flush" title="Link to this definition">¶</a></dt>
-<dd><p>Flush the write buffers of the stream if applicable.  This does nothing
-for read-only and non-blocking streams.</p>
+<dd><p>如果適用，清空串流的寫入緩衝區。對於唯讀和非阻塞串流，此操作不會執行任何操作。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.isatty">
 <span class="sig-name descname"><span class="pre">isatty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.isatty" title="Link to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the stream is interactive (i.e., connected to
-a terminal/tty device).</p>
+<dd><p>如果串流是互動式的（即連接到終端機/tty 設備），則回傳 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.readable">
 <span class="sig-name descname"><span class="pre">readable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.readable" title="Link to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the stream can be read from.
-If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> will raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
+<dd><p>如果串流可以被讀取，則回傳 <code class="docutils literal notranslate"><span class="pre">True</span></code>。如果是 <code class="docutils literal notranslate"><span class="pre">False</span></code>，<code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> 將會引發 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> 例外。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.readline">
 <span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.readline" title="Link to this definition">¶</a></dt>
-<dd><p>Read and return one line from the stream.  If <em>size</em> is specified, at
-most <em>size</em> bytes will be read.</p>
-<p>The line terminator is always <code class="docutils literal notranslate"><span class="pre">b'\n'</span></code> for binary files; for text files,
-the <em>newline</em> argument to <a class="reference internal" href="functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> can be used to select the line
-terminator(s) recognized.</p>
+<dd><p>從串流讀取並回傳一行。如果指定了 <em>size</em>，則最多讀取 <em>size</em> 個位元組。</p>
+<p>對於二進位檔案，行結束符總是 <code class="docutils literal notranslate"><span class="pre">b'\n'</span></code>；對於文字檔案，可以使用 <a class="reference internal" href="functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> 函式的 <em>newline</em> 引數來選擇識別的行結束符號。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.readlines">
 <span class="sig-name descname"><span class="pre">readlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.readlines" title="Link to this definition">¶</a></dt>
-<dd><p>Read and return a list of lines from the stream.  <em>hint</em> can be specified
-to control the number of lines read: no more lines will be read if the
-total size (in bytes/characters) of all lines so far exceeds <em>hint</em>.</p>
-<p><em>hint</em> values of <code class="docutils literal notranslate"><span class="pre">0</span></code> or less, as well as <code class="docutils literal notranslate"><span class="pre">None</span></code>, are treated as no
-hint.</p>
-<p>Note that it's already possible to iterate on file objects using <code class="docutils literal notranslate"><span class="pre">for</span>
-<span class="pre">line</span> <span class="pre">in</span> <span class="pre">file:</span> <span class="pre">...</span></code> without calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">file.readlines()</span></code>.</p>
+<dd><p>從串流讀取並回傳一個含有一或多行的 list。可以指定 <em>hint</em> 來控制讀取的行數：如果到目前為止所有行的總大小（以位元組/字元計）超過 <em>hint</em>，則不會再讀取更多行。</p>
+<p><em>hint</em> 值為 <code class="docutils literal notranslate"><span class="pre">0</span></code> 或更小，以及 <code class="docutils literal notranslate"><span class="pre">None</span></code>，都被視為沒有提供 hint。</p>
+<p>請注意，已經可以使用 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">line</span> <span class="pre">in</span> <span class="pre">file:</span> <span class="pre">...</span></code> 在檔案物件上進行疊代，而不一定需要呼叫 <code class="xref py py-meth docutils literal notranslate"><span class="pre">file.readlines()</span></code>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.seek">
 <span class="sig-name descname"><span class="pre">seek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">os.SEEK_SET</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.seek" title="Link to this definition">¶</a></dt>
-<dd><p>Change the stream position to the given byte <em>offset</em>,
-interpreted relative to the position indicated by <em>whence</em>,
-and return the new absolute position.
-Values for <em>whence</em> are:</p>
+<dd><p>將串流位置改變到給定的位元組 <em>offset</em>，此位置是相對於由 <em>whence</em> 指示的位置解釋的，並回傳新的絕對位置。<em>whence</em> 的值可為：</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="os.html#os.SEEK_SET" title="os.SEEK_SET"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_SET</span></code></a> or <code class="docutils literal notranslate"><span class="pre">0</span></code> -- start of the stream (the default);
-<em>offset</em> should be zero or positive</p></li>
-<li><p><a class="reference internal" href="os.html#os.SEEK_CUR" title="os.SEEK_CUR"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_CUR</span></code></a> or <code class="docutils literal notranslate"><span class="pre">1</span></code> -- current stream position;
-<em>offset</em> may be negative</p></li>
-<li><p><a class="reference internal" href="os.html#os.SEEK_END" title="os.SEEK_END"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_END</span></code></a> or <code class="docutils literal notranslate"><span class="pre">2</span></code> -- end of the stream;
-<em>offset</em> is usually negative</p></li>
+<li><p><a class="reference internal" href="os.html#os.SEEK_SET" title="os.SEEK_SET"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_SET</span></code></a> 或 <code class="docutils literal notranslate"><span class="pre">0</span></code> -- 串流的起點（預設值）；<em>offset</em> 應為零或正數</p></li>
+<li><p><a class="reference internal" href="os.html#os.SEEK_CUR" title="os.SEEK_CUR"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_CUR</span></code></a> 或 <code class="docutils literal notranslate"><span class="pre">1</span></code> -- 目前串流位置；<em>offset</em> 可以是負數</p></li>
+<li><p><a class="reference internal" href="os.html#os.SEEK_END" title="os.SEEK_END"><code class="xref py py-data docutils literal notranslate"><span class="pre">os.SEEK_END</span></code></a> 或 <code class="docutils literal notranslate"><span class="pre">2</span></code> -- 串流的結尾；<em>offset</em> 通常是負數</p></li>
 </ul>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.1 版新加入: </span>The <code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_*</span></code> constants.</p>
+<p><span class="versionmodified added">在 3.1 版新加入: </span><code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_*</span></code> 常數。</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.3 版新加入: </span>Some operating systems could support additional values, like
-<a class="reference internal" href="os.html#os.SEEK_HOLE" title="os.SEEK_HOLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">os.SEEK_HOLE</span></code></a> or <a class="reference internal" href="os.html#os.SEEK_DATA" title="os.SEEK_DATA"><code class="xref py py-const docutils literal notranslate"><span class="pre">os.SEEK_DATA</span></code></a>. The valid values
-for a file could depend on it being open in text or binary mode.</p>
+<p><span class="versionmodified added">在 3.3 版新加入: </span>某些作業系統可以支援額外的值，例如 <a class="reference internal" href="os.html#os.SEEK_HOLE" title="os.SEEK_HOLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">os.SEEK_HOLE</span></code></a> 或 <a class="reference internal" href="os.html#os.SEEK_DATA" title="os.SEEK_DATA"><code class="xref py py-const docutils literal notranslate"><span class="pre">os.SEEK_DATA</span></code></a>。檔案的合法值取決於它是以文字模式還是二進位模式開啟。</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.seekable">
 <span class="sig-name descname"><span class="pre">seekable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.seekable" title="Link to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the stream supports random access.  If <code class="docutils literal notranslate"><span class="pre">False</span></code>,
-<a class="reference internal" href="#io.IOBase.seek" title="io.IOBase.seek"><code class="xref py py-meth docutils literal notranslate"><span class="pre">seek()</span></code></a>, <a class="reference internal" href="#io.IOBase.tell" title="io.IOBase.tell"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tell()</span></code></a> and <a class="reference internal" href="#io.IOBase.truncate" title="io.IOBase.truncate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code></a> will raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
+<dd><p>如果串流支援隨機存取，則回傳 <code class="docutils literal notranslate"><span class="pre">True</span></code>。如果是 <code class="docutils literal notranslate"><span class="pre">False</span></code>，則 <a class="reference internal" href="#io.IOBase.seek" title="io.IOBase.seek"><code class="xref py py-meth docutils literal notranslate"><span class="pre">seek()</span></code></a>、<a class="reference internal" href="#io.IOBase.tell" title="io.IOBase.tell"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tell()</span></code></a> 和 <a class="reference internal" href="#io.IOBase.truncate" title="io.IOBase.truncate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code></a> 會引發 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.tell">
 <span class="sig-name descname"><span class="pre">tell</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.tell" title="Link to this definition">¶</a></dt>
-<dd><p>Return the current stream position.</p>
+<dd><p>回傳目前串流的位置。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.truncate">
 <span class="sig-name descname"><span class="pre">truncate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.truncate" title="Link to this definition">¶</a></dt>
-<dd><p>Resize the stream to the given <em>size</em> in bytes (or the current position
-if <em>size</em> is not specified).  The current stream position isn't changed.
-This resizing can extend or reduce the current file size.  In case of
-extension, the contents of the new file area depend on the platform
-(on most systems, additional bytes are zero-filled).  The new file size
-is returned.</p>
+<dd><p>將串流的大小調整為指定的 <em>size</em> 位元組（如果沒有指定 <em>size</em>，則調整為目前位置）。目前串流位置不會改變。這種調整可以擴展或縮減當前檔案大小。在擴展的情況下，新檔案區域的內容取決於平台（在大多數系統上，額外的位元組會被填充為零）。回傳新的檔案大小。</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.5 版的變更: </span>Windows will now zero-fill files when extending.</p>
+<p><span class="versionmodified changed">在 3.5 版的變更: </span>Windows 現在在擴展時會對檔案進行零填充 (zero-fill)。</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.writable">
 <span class="sig-name descname"><span class="pre">writable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.writable" title="Link to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the stream supports writing.  If <code class="docutils literal notranslate"><span class="pre">False</span></code>,
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> and <a class="reference internal" href="#io.IOBase.truncate" title="io.IOBase.truncate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code></a> will raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
+<dd><p>如果串流支援寫入，則回傳 <code class="docutils literal notranslate"><span class="pre">True</span></code>。如果是 <code class="docutils literal notranslate"><span class="pre">False</span></code>，<code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> 和 <a class="reference internal" href="#io.IOBase.truncate" title="io.IOBase.truncate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code></a> 將會引發 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.writelines">
 <span class="sig-name descname"><span class="pre">writelines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.writelines" title="Link to this definition">¶</a></dt>
-<dd><p>Write a list of lines to the stream.  Line separators are not added, so it
-is usual for each of the lines provided to have a line separator at the
-end.</p>
+<dd><p>將一個包含每一行的 list 寫入串流。這不會新增行分隔符號，因此通常提供的每一行末尾都有一個行分隔符號。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.IOBase.__del__">
 <span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.IOBase.__del__" title="Link to this definition">¶</a></dt>
-<dd><p>Prepare for object destruction. <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> provides a default
-implementation of this method that calls the instance's
-<a class="reference internal" href="#io.IOBase.close" title="io.IOBase.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method.</p>
+<dd><p>為物件銷毀做準備。<a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 提供了這個方法的預設實作，該實作會呼叫實例的 <a class="reference internal" href="#io.IOBase.close" title="io.IOBase.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> 方法。</p>
 </dd></dl>
 
 </dd></dl>
@@ -701,56 +527,33 @@ implementation of this method that calls the instance's
 <dl class="py class">
 <dt class="sig sig-object py" id="io.RawIOBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">RawIOBase</span></span><a class="headerlink" href="#io.RawIOBase" title="Link to this definition">¶</a></dt>
-<dd><p>Base class for raw binary streams.  It inherits <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.</p>
-<p>Raw binary streams typically provide low-level access to an underlying OS
-device or API, and do not try to encapsulate it in high-level primitives
-(this functionality is done at a higher-level in buffered binary streams and text streams, described later
-in this page).</p>
-<p><a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> provides these methods in addition to those from
-<a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>:</p>
+<dd><p>原始二進位串流的基底類別。它繼承自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。</p>
+<p>原始二進位串流通常提供對底層作業系統設備或 API 的低階存取，並不嘗試將其封裝在高階基元 (primitive) 中（這項功能在緩衝二進位串流和文字串流中的更高階層級完成，後面的頁面會有描述）。</p>
+<p><a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 除了 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 的方法外，還提供以下這些方法：</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="io.RawIOBase.read">
 <span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.RawIOBase.read" title="Link to this definition">¶</a></dt>
-<dd><p>Read up to <em>size</em> bytes from the object and return them.  As a convenience,
-if <em>size</em> is unspecified or -1, all bytes until EOF are returned.
-Otherwise, only one system call is ever made.  Fewer than <em>size</em> bytes may
-be returned if the operating system call returns fewer than <em>size</em> bytes.</p>
-<p>If 0 bytes are returned, and <em>size</em> was not 0, this indicates end of file.
-If the object is in non-blocking mode and no bytes are available,
-<code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
-<p>The default implementation defers to <a class="reference internal" href="#io.RawIOBase.readall" title="io.RawIOBase.readall"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readall()</span></code></a> and
-<a class="reference internal" href="#io.RawIOBase.readinto" title="io.RawIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a>.</p>
+<dd><p>從物件中讀取最多 <em>size</em> 個位元組並回傳。方便起見，如果 <em>size</em> 未指定或為 -1，則回傳直到檔案結尾 (EOF) 的所有位元組。否則，只會進行一次系統呼叫。如果作業系統呼叫回傳的位元組少於 <em>size</em>，則可能回傳少於 <em>size</em> 的位元組。</p>
+<p>如果回傳了 0 位元組，且 <em>size</em> 不是 0，這表示檔案結尾 (end of file)。如果物件處於非阻塞模式且沒有可用的位元組，則回傳 <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p>
+<p>預設的實作會遵守 <a class="reference internal" href="#io.RawIOBase.readall" title="io.RawIOBase.readall"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readall()</span></code></a> 和 <a class="reference internal" href="#io.RawIOBase.readinto" title="io.RawIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a> 的實作。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.RawIOBase.readall">
 <span class="sig-name descname"><span class="pre">readall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.RawIOBase.readall" title="Link to this definition">¶</a></dt>
-<dd><p>Read and return all the bytes from the stream until EOF, using multiple
-calls to the stream if necessary.</p>
+<dd><p>讀取並回傳串流中直到檔案結尾的所有位元組，必要時使用多次對串流的呼叫。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.RawIOBase.readinto">
 <span class="sig-name descname"><span class="pre">readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.RawIOBase.readinto" title="Link to this definition">¶</a></dt>
-<dd><p>Read bytes into a pre-allocated, writable
-<a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> <em>b</em>, and return the
-number of bytes read.  For example, <em>b</em> might be a <a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>.
-If the object is in non-blocking mode and no bytes
-are available, <code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+<dd><p>將位元組讀入一個預先分配的、可寫的 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> （類位元組物件） <em>b</em> 中，並回傳讀取的位元組數量。例如，<em>b</em> 可能是一個 <a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>。如果物件處於非阻塞模式且沒有可用的位元組，則回傳 <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="io.RawIOBase.write">
 <span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.RawIOBase.write" title="Link to this definition">¶</a></dt>
-<dd><p>Write the given <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>, <em>b</em>, to the
-underlying raw stream, and return the number of
-bytes written.  This can be less than the length of <em>b</em> in
-bytes, depending on specifics of the underlying raw
-stream, and especially if it is in non-blocking mode.  <code class="docutils literal notranslate"><span class="pre">None</span></code> is
-returned if the raw stream is set not to block and no single byte could
-be readily written to it.  The caller may release or mutate <em>b</em> after
-this method returns, so the implementation should only access <em>b</em>
-during the method call.</p>
+<dd><p>將給定的 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> （類位元組物件），<em>b</em>，寫入底層的原始串流，並回傳寫入的位元組大小。根據底層原始串流的具體情況，這可能少於 <em>b</em> 的位元組長度，尤其是當它處於非阻塞模式時。如果原始串流設置為非阻塞且無法立即寫入任何單一位元組，則回傳 <code class="docutils literal notranslate"><span class="pre">None</span></code>。呼叫者在此方法回傳後可以釋放或變更 <em>b</em>，因此實作應該只在方法呼叫期間存取 <em>b</em>。</p>
 </dd></dl>
 
 </dd></dl>
@@ -758,23 +561,12 @@ during the method call.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="io.BufferedIOBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BufferedIOBase</span></span><a class="headerlink" href="#io.BufferedIOBase" title="Link to this definition">¶</a></dt>
-<dd><p>Base class for binary streams that support some kind of buffering.
-It inherits <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.</p>
-<p>The main difference with <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> is that methods <a class="reference internal" href="#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a>,
-<a class="reference internal" href="#io.BufferedIOBase.readinto" title="io.BufferedIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a> and <a class="reference internal" href="#io.BufferedIOBase.write" title="io.BufferedIOBase.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> will try (respectively) to read as much
-input as requested or to consume all given output, at the expense of
-making perhaps more than one system call.</p>
-<p>In addition, those methods can raise <a class="reference internal" href="exceptions.html#BlockingIOError" title="BlockingIOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BlockingIOError</span></code></a> if the
-underlying raw stream is in non-blocking mode and cannot take or give
-enough data; unlike their <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> counterparts, they will
-never return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<p>Besides, the <a class="reference internal" href="#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> method does not have a default
-implementation that defers to <a class="reference internal" href="#io.BufferedIOBase.readinto" title="io.BufferedIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a>.</p>
-<p>A typical <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> implementation should not inherit from a
-<a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> implementation, but wrap one, like
-<a class="reference internal" href="#io.BufferedWriter" title="io.BufferedWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a> and <a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a> do.</p>
-<p><a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> provides or overrides these data attributes and
-methods in addition to those from <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>:</p>
+<dd><p>支援某種緩衝的二進位串流的基底類別。它繼承自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>。</p>
+<p>與 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 的主要差異在於，<a class="reference internal" href="#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a>、<a class="reference internal" href="#io.BufferedIOBase.readinto" title="io.BufferedIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a> 及 <a class="reference internal" href="#io.BufferedIOBase.write" title="io.BufferedIOBase.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> 方法將分別嘗試讀取所請求的盡可能多的輸入，或消耗所有給定的輸出，即使可能需要進行多於一次的系統呼叫。</p>
+<p>此外，如果底層的原始串流處於非阻塞模式且無法提供或接收足夠的資料，這些方法可能會引發 <a class="reference internal" href="exceptions.html#BlockingIOError" title="BlockingIOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BlockingIOError</span></code></a> 例外；與 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 不同之處在於，它們永遠不會回傳 <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p>
+<p>此外，<a class="reference internal" href="#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> 方法不存在一個遵從 <a class="reference internal" href="#io.BufferedIOBase.readinto" title="io.BufferedIOBase.readinto"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readinto()</span></code></a> 的預設實作。</p>
+<p>一個典型的 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> 實作不應該繼承自一個 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> 的實作，而是應該改用包裝的方式，像 <a class="reference internal" href="#io.BufferedWriter" title="io.BufferedWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a> 和 <a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a> 那樣的作法。</p>
+<p><a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> 除了提供或覆寫來自 <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a> 的資料屬性和方法以外，還包含了這些：</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="io.BufferedIOBase.raw">
 <span class="sig-name descname"><span class="pre">raw</span></span><a class="headerlink" href="#io.BufferedIOBase.raw" title="Link to this definition">¶</a></dt>
@@ -875,7 +667,7 @@ so the implementation should only access <em>b</em> during the method call.</p>
 <dt class="sig sig-object py" id="io.FileIO">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">FileIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closefd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opener</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.FileIO" title="Link to this definition">¶</a></dt>
 <dd><p>A raw binary stream representing an OS-level file containing bytes data.  It
-inherits <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>.</p>
+inherits from <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>.</p>
 <p>The <em>name</em> can be one of two things:</p>
 <ul class="simple">
 <li><p>a character string or <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object representing the path to the
@@ -936,7 +728,7 @@ than raw I/O does.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="io.BytesIO">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BytesIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_bytes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO" title="Link to this definition">¶</a></dt>
-<dd><p>A binary stream using an in-memory bytes buffer.  It inherits
+<dd><p>A binary stream using an in-memory bytes buffer.  It inherits from
 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>.  The buffer is discarded when the
 <a class="reference internal" href="#io.IOBase.close" title="io.IOBase.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method is called.</p>
 <p>The optional argument <em>initial_bytes</em> is a <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> that
@@ -996,7 +788,7 @@ resized or closed.</p>
 <dt class="sig sig-object py" id="io.BufferedReader">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BufferedReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_BUFFER_SIZE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.BufferedReader" title="Link to this definition">¶</a></dt>
 <dd><p>A buffered binary stream providing higher-level access to a readable, non
-seekable <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits
+seekable <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits from
 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>.</p>
 <p>When reading data from this object, a larger amount of data may be
 requested from the underlying raw stream, and kept in an internal buffer.
@@ -1038,7 +830,7 @@ Otherwise, one raw stream read call is made.</p>
 <dt class="sig sig-object py" id="io.BufferedWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BufferedWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_BUFFER_SIZE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.BufferedWriter" title="Link to this definition">¶</a></dt>
 <dd><p>A buffered binary stream providing higher-level access to a writeable, non
-seekable <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits
+seekable <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits from
 <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>.</p>
 <p>When writing to this object, data is normally placed into an internal
 buffer.  The buffer will be written out to the underlying <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a>
@@ -1076,7 +868,7 @@ the raw stream blocks.</p>
 <dt class="sig sig-object py" id="io.BufferedRandom">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BufferedRandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_BUFFER_SIZE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.BufferedRandom" title="Link to this definition">¶</a></dt>
 <dd><p>A buffered binary stream providing higher-level access to a seekable
-<a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits <a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a>
+<a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary stream.  It inherits from <a class="reference internal" href="#io.BufferedReader" title="io.BufferedReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedReader</span></code></a>
 and <a class="reference internal" href="#io.BufferedWriter" title="io.BufferedWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a>.</p>
 <p>The constructor creates a reader and writer for a seekable raw stream, given
 in the first argument.  If the <em>buffer_size</em> is omitted it defaults to
@@ -1091,7 +883,7 @@ in the first argument.  If the <em>buffer_size</em> is omitted it defaults to
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BufferedRWPair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_BUFFER_SIZE</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.BufferedRWPair" title="Link to this definition">¶</a></dt>
 <dd><p>A buffered binary stream providing higher-level access to two non seekable
 <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> raw binary streams---one readable, the other writeable.
-It inherits <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>.</p>
+It inherits from <a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a>.</p>
 <p><em>reader</em> and <em>writer</em> are <a class="reference internal" href="#io.RawIOBase" title="io.RawIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawIOBase</span></code></a> objects that are readable and
 writeable respectively.  If the <em>buffer_size</em> is omitted it defaults to
 <a class="reference internal" href="#io.DEFAULT_BUFFER_SIZE" title="io.DEFAULT_BUFFER_SIZE"><code class="xref py py-data docutils literal notranslate"><span class="pre">DEFAULT_BUFFER_SIZE</span></code></a>.</p>
@@ -1113,7 +905,7 @@ as reader and writer; use <a class="reference internal" href="#io.BufferedRandom
 <dt class="sig sig-object py" id="io.TextIOBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">TextIOBase</span></span><a class="headerlink" href="#io.TextIOBase" title="Link to this definition">¶</a></dt>
 <dd><p>Base class for text streams.  This class provides a character and line based
-interface to stream I/O.  It inherits <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.</p>
+interface to stream I/O.  It inherits from <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>.</p>
 <p><a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a> provides or overrides these data attributes and
 methods in addition to those from <a class="reference internal" href="#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOBase</span></code></a>:</p>
 <dl class="py attribute">
@@ -1194,7 +986,7 @@ are unsupported).</p></li>
 </ul>
 <p>Return the new absolute position as an opaque number.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">在 3.1 版新加入: </span>The <code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_*</span></code> constants.</p>
+<p><span class="versionmodified added">在 3.1 版新加入: </span><code class="xref py py-data docutils literal notranslate"><span class="pre">SEEK_*</span></code> 常數。</p>
 </div>
 </dd></dl>
 
@@ -1219,7 +1011,7 @@ written.</p>
 <dt class="sig sig-object py" id="io.TextIOWrapper">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">TextIOWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_buffering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_through</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.TextIOWrapper" title="Link to this definition">¶</a></dt>
 <dd><p>A buffered text stream providing higher-level access to a
-<a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> buffered binary stream.  It inherits
+<a class="reference internal" href="#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a> buffered binary stream.  It inherits from
 <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a>.</p>
 <p><em>encoding</em> gives the name of the encoding that the stream will be decoded or
 encoded with.  It defaults to <a class="reference internal" href="locale.html#locale.getencoding" title="locale.getencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">locale.getencoding()</span></code></a>.
@@ -1345,7 +1137,7 @@ to restore a previous stream position.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="io.StringIO">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">StringIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO" title="Link to this definition">¶</a></dt>
-<dd><p>A text stream using an in-memory text buffer.  It inherits
+<dd><p>A text stream using an in-memory text buffer.  It inherits from
 <a class="reference internal" href="#io.TextIOBase" title="io.TextIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextIOBase</span></code></a>.</p>
 <p>The text buffer is discarded when the <a class="reference internal" href="#io.IOBase.close" title="io.IOBase.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method is
 called.</p>
@@ -1392,7 +1184,7 @@ the stream position is not changed.</p>
 <dt class="sig sig-object py" id="io.IncrementalNewlineDecoder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">IncrementalNewlineDecoder</span></span><a class="headerlink" href="#io.IncrementalNewlineDecoder" title="Link to this definition">¶</a></dt>
 <dd><p>A helper codec that decodes newlines for <a class="reference internal" href="../glossary.html#term-universal-newlines"><span class="xref std std-term">universal newlines</span></a> mode.
-It inherits <a class="reference internal" href="codecs.html#codecs.IncrementalDecoder" title="codecs.IncrementalDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">codecs.IncrementalDecoder</span></code></a>.</p>
+It inherits from <a class="reference internal" href="codecs.html#codecs.IncrementalDecoder" title="codecs.IncrementalDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">codecs.IncrementalDecoder</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1471,114 +1263,12 @@ well.</p>
 <li><a class="reference internal" href="#opt-in-encodingwarning">選擇性加入的編碼警告</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#high-level-module-interface">高階模組介面</a><ul>
-<li><a class="reference internal" href="#io.DEFAULT_BUFFER_SIZE"><code class="docutils literal notranslate"><span class="pre">DEFAULT_BUFFER_SIZE</span></code></a></li>
-<li><a class="reference internal" href="#io.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#io.open_code"><code class="docutils literal notranslate"><span class="pre">open_code()</span></code></a></li>
-<li><a class="reference internal" href="#io.text_encoding"><code class="docutils literal notranslate"><span class="pre">text_encoding()</span></code></a></li>
-<li><a class="reference internal" href="#io.BlockingIOError"><code class="docutils literal notranslate"><span class="pre">BlockingIOError</span></code></a></li>
-<li><a class="reference internal" href="#io.UnsupportedOperation"><code class="docutils literal notranslate"><span class="pre">UnsupportedOperation</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#high-level-module-interface">高階模組介面</a></li>
 <li><a class="reference internal" href="#class-hierarchy">類別階層</a><ul>
-<li><a class="reference internal" href="#i-o-base-classes">I/O Base Classes</a><ul>
-<li><a class="reference internal" href="#io.IOBase"><code class="docutils literal notranslate"><span class="pre">IOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.IOBase.close"><code class="docutils literal notranslate"><span class="pre">IOBase.close()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.closed"><code class="docutils literal notranslate"><span class="pre">IOBase.closed</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.fileno"><code class="docutils literal notranslate"><span class="pre">IOBase.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.flush"><code class="docutils literal notranslate"><span class="pre">IOBase.flush()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.isatty"><code class="docutils literal notranslate"><span class="pre">IOBase.isatty()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readable"><code class="docutils literal notranslate"><span class="pre">IOBase.readable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readline"><code class="docutils literal notranslate"><span class="pre">IOBase.readline()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.readlines"><code class="docutils literal notranslate"><span class="pre">IOBase.readlines()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.seek"><code class="docutils literal notranslate"><span class="pre">IOBase.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.seekable"><code class="docutils literal notranslate"><span class="pre">IOBase.seekable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.tell"><code class="docutils literal notranslate"><span class="pre">IOBase.tell()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.truncate"><code class="docutils literal notranslate"><span class="pre">IOBase.truncate()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.writable"><code class="docutils literal notranslate"><span class="pre">IOBase.writable()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.writelines"><code class="docutils literal notranslate"><span class="pre">IOBase.writelines()</span></code></a></li>
-<li><a class="reference internal" href="#io.IOBase.__del__"><code class="docutils literal notranslate"><span class="pre">IOBase.__del__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.RawIOBase"><code class="docutils literal notranslate"><span class="pre">RawIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.RawIOBase.read"><code class="docutils literal notranslate"><span class="pre">RawIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.readall"><code class="docutils literal notranslate"><span class="pre">RawIOBase.readall()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.readinto"><code class="docutils literal notranslate"><span class="pre">RawIOBase.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#io.RawIOBase.write"><code class="docutils literal notranslate"><span class="pre">RawIOBase.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedIOBase"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedIOBase.raw"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.raw</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.detach"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.detach()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.read"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.read1"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.read1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.readinto"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.readinto()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.readinto1"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.readinto1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedIOBase.write"><code class="docutils literal notranslate"><span class="pre">BufferedIOBase.write()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#raw-file-i-o">Raw File I/O</a><ul>
-<li><a class="reference internal" href="#io.FileIO"><code class="docutils literal notranslate"><span class="pre">FileIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.FileIO.mode"><code class="docutils literal notranslate"><span class="pre">FileIO.mode</span></code></a></li>
-<li><a class="reference internal" href="#io.FileIO.name"><code class="docutils literal notranslate"><span class="pre">FileIO.name</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#buffered-streams">Buffered Streams</a><ul>
-<li><a class="reference internal" href="#io.BytesIO"><code class="docutils literal notranslate"><span class="pre">BytesIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.BytesIO.getbuffer"><code class="docutils literal notranslate"><span class="pre">BytesIO.getbuffer()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.getvalue"><code class="docutils literal notranslate"><span class="pre">BytesIO.getvalue()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.read1"><code class="docutils literal notranslate"><span class="pre">BytesIO.read1()</span></code></a></li>
-<li><a class="reference internal" href="#io.BytesIO.readinto1"><code class="docutils literal notranslate"><span class="pre">BytesIO.readinto1()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedReader"><code class="docutils literal notranslate"><span class="pre">BufferedReader</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedReader.peek"><code class="docutils literal notranslate"><span class="pre">BufferedReader.peek()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedReader.read"><code class="docutils literal notranslate"><span class="pre">BufferedReader.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedReader.read1"><code class="docutils literal notranslate"><span class="pre">BufferedReader.read1()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedWriter"><code class="docutils literal notranslate"><span class="pre">BufferedWriter</span></code></a><ul>
-<li><a class="reference internal" href="#io.BufferedWriter.flush"><code class="docutils literal notranslate"><span class="pre">BufferedWriter.flush()</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedWriter.write"><code class="docutils literal notranslate"><span class="pre">BufferedWriter.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.BufferedRandom"><code class="docutils literal notranslate"><span class="pre">BufferedRandom</span></code></a></li>
-<li><a class="reference internal" href="#io.BufferedRWPair"><code class="docutils literal notranslate"><span class="pre">BufferedRWPair</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id1">文字 I/O</a><ul>
-<li><a class="reference internal" href="#io.TextIOBase"><code class="docutils literal notranslate"><span class="pre">TextIOBase</span></code></a><ul>
-<li><a class="reference internal" href="#io.TextIOBase.encoding"><code class="docutils literal notranslate"><span class="pre">TextIOBase.encoding</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.errors"><code class="docutils literal notranslate"><span class="pre">TextIOBase.errors</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.newlines"><code class="docutils literal notranslate"><span class="pre">TextIOBase.newlines</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.buffer"><code class="docutils literal notranslate"><span class="pre">TextIOBase.buffer</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.detach"><code class="docutils literal notranslate"><span class="pre">TextIOBase.detach()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.read"><code class="docutils literal notranslate"><span class="pre">TextIOBase.read()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.readline"><code class="docutils literal notranslate"><span class="pre">TextIOBase.readline()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.seek"><code class="docutils literal notranslate"><span class="pre">TextIOBase.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.tell"><code class="docutils literal notranslate"><span class="pre">TextIOBase.tell()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOBase.write"><code class="docutils literal notranslate"><span class="pre">TextIOBase.write()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.TextIOWrapper"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper</span></code></a><ul>
-<li><a class="reference internal" href="#io.TextIOWrapper.line_buffering"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.line_buffering</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.write_through"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.write_through</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.reconfigure"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.reconfigure()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.seek"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.seek()</span></code></a></li>
-<li><a class="reference internal" href="#io.TextIOWrapper.tell"><code class="docutils literal notranslate"><span class="pre">TextIOWrapper.tell()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.StringIO"><code class="docutils literal notranslate"><span class="pre">StringIO</span></code></a><ul>
-<li><a class="reference internal" href="#io.StringIO.getvalue"><code class="docutils literal notranslate"><span class="pre">StringIO.getvalue()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#io.IncrementalNewlineDecoder"><code class="docutils literal notranslate"><span class="pre">IncrementalNewlineDecoder</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#i-o-base-classes">I/O 基礎類別</a></li>
+<li><a class="reference internal" href="#raw-file-i-o">Raw File I/O</a></li>
+<li><a class="reference internal" href="#buffered-streams">Buffered Streams</a></li>
+<li><a class="reference internal" href="#id1">文字 I/O</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#performance">Performance</a><ul>
@@ -1638,7 +1328,7 @@ well.</p>
           <a href="os.html" title="os --- 各種作業系統介面"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1648,7 +1338,7 @@ well.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1678,13 +1368,14 @@ well.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1692,7 +1383,7 @@ well.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

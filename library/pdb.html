@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>pdb --- The Python Debugger &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdb --- The Python Debugger &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,19 +86,6 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pdb</span></code> --- The Python Debugger</a><ul>
-<li><a class="reference internal" href="#pdb.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.runeval"><code class="docutils literal notranslate"><span class="pre">runeval()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.runcall"><code class="docutils literal notranslate"><span class="pre">runcall()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.set_trace"><code class="docutils literal notranslate"><span class="pre">set_trace()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.post_mortem"><code class="docutils literal notranslate"><span class="pre">post_mortem()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.pm"><code class="docutils literal notranslate"><span class="pre">pm()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb"><code class="docutils literal notranslate"><span class="pre">Pdb</span></code></a><ul>
-<li><a class="reference internal" href="#pdb.Pdb.run"><code class="docutils literal notranslate"><span class="pre">Pdb.run()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.runeval"><code class="docutils literal notranslate"><span class="pre">Pdb.runeval()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.runcall"><code class="docutils literal notranslate"><span class="pre">Pdb.runcall()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.set_trace"><code class="docutils literal notranslate"><span class="pre">Pdb.set_trace()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#debugger-commands">Debugger Commands</a></li>
 </ul>
 </li>
@@ -147,7 +134,7 @@
           <a href="faulthandler.html" title="faulthandler --- Dump the Python traceback"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -157,7 +144,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -225,8 +212,8 @@ or on a user signal.</p>
 <p>at the location you want to break into the debugger, and then run the program.
 You can then step through the code following this statement, and continue
 running without the debugger using the <a class="reference internal" href="#pdbcommand-continue"><code class="xref std std-pdbcmd docutils literal notranslate"><span class="pre">continue</span></code></a> command.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入: </span>The built-in <a class="reference internal" href="functions.html#breakpoint" title="breakpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">breakpoint()</span></code></a>, when called with defaults, can be used
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>The built-in <a class="reference internal" href="functions.html#breakpoint" title="breakpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">breakpoint()</span></code></a>, when called with defaults, can be used
 instead of <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pdb;</span> <span class="pre">pdb.set_trace()</span></code>.</p>
 </div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -260,12 +247,12 @@ the program being debugged exits abnormally.  After post-mortem debugging (or
 after normal exit of the program), pdb will restart the program.  Automatic
 restarting preserves pdb's state (such as breakpoints) and in most cases is more
 useful than quitting the debugger upon program's exit.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span><code class="docutils literal notranslate"><span class="pre">-c</span></code> option is introduced to execute commands as if given
-in a <code class="file docutils literal notranslate"><span class="pre">.pdbrc</span></code> file, see <a class="reference internal" href="#debugger-commands"><span class="std std-ref">Debugger Commands</span></a>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option to execute commands as if given
+in a <code class="file docutils literal notranslate"><span class="pre">.pdbrc</span></code> file; see <a class="reference internal" href="#debugger-commands"><span class="std std-ref">Debugger Commands</span></a>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.7 版新加入: </span><code class="docutils literal notranslate"><span class="pre">-m</span></code> option is introduced to execute modules similar to the way
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.7 版的變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option to execute modules similar to the way
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> does. As with a script, the debugger will pause execution just
 before the first line of the module.</p>
 </div>
@@ -380,12 +367,12 @@ want Pdb not to touch the SIGINT handler, set <em>nosigint</em> to true.</p>
 </pre></div>
 </div>
 <p class="audit-hook">引發一個不附帶引數的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">pdb.Pdb</span></code>。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.1 版新加入: </span>The <em>skip</em> argument.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.1 版的變更: </span>Added the <em>skip</em> parameter.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span>The <em>nosigint</em> argument.  Previously, a SIGINT handler was never set by
-Pdb.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>Added the <em>nosigint</em> parameter.
+Previously, a SIGINT handler was never set by Pdb.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.6 版的變更: </span>The <em>readrc</em> argument.</p>
@@ -653,8 +640,8 @@ if the second argument is less than the first, it is interpreted as a count.</p>
 exception is being debugged, the line where the exception was originally
 raised or propagated is indicated by <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, if it differs from the current
 line.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.2 版新加入: </span>The <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> marker.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.2 版的變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> marker.</p>
 </div>
 </dd></dl>
 
@@ -883,19 +870,6 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pdb</span></code> --- The Python Debugger</a><ul>
-<li><a class="reference internal" href="#pdb.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.runeval"><code class="docutils literal notranslate"><span class="pre">runeval()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.runcall"><code class="docutils literal notranslate"><span class="pre">runcall()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.set_trace"><code class="docutils literal notranslate"><span class="pre">set_trace()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.post_mortem"><code class="docutils literal notranslate"><span class="pre">post_mortem()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.pm"><code class="docutils literal notranslate"><span class="pre">pm()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb"><code class="docutils literal notranslate"><span class="pre">Pdb</span></code></a><ul>
-<li><a class="reference internal" href="#pdb.Pdb.run"><code class="docutils literal notranslate"><span class="pre">Pdb.run()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.runeval"><code class="docutils literal notranslate"><span class="pre">Pdb.runeval()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.runcall"><code class="docutils literal notranslate"><span class="pre">Pdb.runcall()</span></code></a></li>
-<li><a class="reference internal" href="#pdb.Pdb.set_trace"><code class="docutils literal notranslate"><span class="pre">Pdb.set_trace()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#debugger-commands">Debugger Commands</a></li>
 </ul>
 </li>
@@ -947,7 +921,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
           <a href="faulthandler.html" title="faulthandler --- Dump the Python traceback"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -957,7 +931,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -987,13 +961,14 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1001,7 +976,7 @@ is determined by the <code class="docutils literal notranslate"><span class="pre
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

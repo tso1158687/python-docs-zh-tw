@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>內建型別 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內建型別 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -91,30 +91,13 @@
 <li><a class="reference internal" href="#comparisons">比較運算</a></li>
 <li><a class="reference internal" href="#numeric-types-int-float-complex">Numeric Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code></a><ul>
 <li><a class="reference internal" href="#bitwise-operations-on-integer-types">Bitwise Operations on Integer Types</a></li>
-<li><a class="reference internal" href="#additional-methods-on-integer-types">Additional Methods on Integer Types</a><ul>
-<li><a class="reference internal" href="#int.bit_length"><code class="docutils literal notranslate"><span class="pre">int.bit_length()</span></code></a></li>
-<li><a class="reference internal" href="#int.bit_count"><code class="docutils literal notranslate"><span class="pre">int.bit_count()</span></code></a></li>
-<li><a class="reference internal" href="#int.to_bytes"><code class="docutils literal notranslate"><span class="pre">int.to_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#int.from_bytes"><code class="docutils literal notranslate"><span class="pre">int.from_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#int.as_integer_ratio"><code class="docutils literal notranslate"><span class="pre">int.as_integer_ratio()</span></code></a></li>
-<li><a class="reference internal" href="#int.is_integer"><code class="docutils literal notranslate"><span class="pre">int.is_integer()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#additional-methods-on-float">Additional Methods on Float</a><ul>
-<li><a class="reference internal" href="#float.as_integer_ratio"><code class="docutils literal notranslate"><span class="pre">float.as_integer_ratio()</span></code></a></li>
-<li><a class="reference internal" href="#float.is_integer"><code class="docutils literal notranslate"><span class="pre">float.is_integer()</span></code></a></li>
-<li><a class="reference internal" href="#float.hex"><code class="docutils literal notranslate"><span class="pre">float.hex()</span></code></a></li>
-<li><a class="reference internal" href="#float.fromhex"><code class="docutils literal notranslate"><span class="pre">float.fromhex()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#additional-methods-on-integer-types">Additional Methods on Integer Types</a></li>
+<li><a class="reference internal" href="#additional-methods-on-float">Additional Methods on Float</a></li>
 <li><a class="reference internal" href="#hashing-of-numeric-types">Hashing of numeric types</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#boolean-type-bool">Boolean Type - <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></li>
 <li><a class="reference internal" href="#iterator-types">Iterator Types</a><ul>
-<li><a class="reference internal" href="#container.__iter__"><code class="docutils literal notranslate"><span class="pre">container.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#iterator.__iter__"><code class="docutils literal notranslate"><span class="pre">iterator.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#iterator.__next__"><code class="docutils literal notranslate"><span class="pre">iterator.__next__()</span></code></a></li>
 <li><a class="reference internal" href="#generator-types">Generator Types</a></li>
 </ul>
 </li>
@@ -122,268 +105,34 @@
 <li><a class="reference internal" href="#common-sequence-operations">Common Sequence Operations</a></li>
 <li><a class="reference internal" href="#immutable-sequence-types">Immutable Sequence Types</a></li>
 <li><a class="reference internal" href="#mutable-sequence-types">Mutable Sequence Types</a></li>
-<li><a class="reference internal" href="#lists">List（串列）</a><ul>
-<li><a class="reference internal" href="#list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a><ul>
-<li><a class="reference internal" href="#list.sort"><code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tuples">Tuples</a><ul>
-<li><a class="reference internal" href="#tuple"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#ranges">Ranges</a><ul>
-<li><a class="reference internal" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a><ul>
-<li><a class="reference internal" href="#range.start"><code class="docutils literal notranslate"><span class="pre">range.start</span></code></a></li>
-<li><a class="reference internal" href="#range.stop"><code class="docutils literal notranslate"><span class="pre">range.stop</span></code></a></li>
-<li><a class="reference internal" href="#range.step"><code class="docutils literal notranslate"><span class="pre">range.step</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#lists">List（串列）</a></li>
+<li><a class="reference internal" href="#tuples">Tuples</a></li>
+<li><a class="reference internal" href="#ranges">Ranges</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#text-sequence-type-str">Text Sequence Type --- <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a><ul>
-<li><a class="reference internal" href="#str"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
-<li><a class="reference internal" href="#string-methods">String Methods</a><ul>
-<li><a class="reference internal" href="#str.capitalize"><code class="docutils literal notranslate"><span class="pre">str.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#str.casefold"><code class="docutils literal notranslate"><span class="pre">str.casefold()</span></code></a></li>
-<li><a class="reference internal" href="#str.center"><code class="docutils literal notranslate"><span class="pre">str.center()</span></code></a></li>
-<li><a class="reference internal" href="#str.count"><code class="docutils literal notranslate"><span class="pre">str.count()</span></code></a></li>
-<li><a class="reference internal" href="#str.encode"><code class="docutils literal notranslate"><span class="pre">str.encode()</span></code></a></li>
-<li><a class="reference internal" href="#str.endswith"><code class="docutils literal notranslate"><span class="pre">str.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#str.expandtabs"><code class="docutils literal notranslate"><span class="pre">str.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#str.find"><code class="docutils literal notranslate"><span class="pre">str.find()</span></code></a></li>
-<li><a class="reference internal" href="#str.format"><code class="docutils literal notranslate"><span class="pre">str.format()</span></code></a></li>
-<li><a class="reference internal" href="#str.format_map"><code class="docutils literal notranslate"><span class="pre">str.format_map()</span></code></a></li>
-<li><a class="reference internal" href="#str.index"><code class="docutils literal notranslate"><span class="pre">str.index()</span></code></a></li>
-<li><a class="reference internal" href="#str.isalnum"><code class="docutils literal notranslate"><span class="pre">str.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#str.isalpha"><code class="docutils literal notranslate"><span class="pre">str.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#str.isascii"><code class="docutils literal notranslate"><span class="pre">str.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#str.isdecimal"><code class="docutils literal notranslate"><span class="pre">str.isdecimal()</span></code></a></li>
-<li><a class="reference internal" href="#str.isdigit"><code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#str.isidentifier"><code class="docutils literal notranslate"><span class="pre">str.isidentifier()</span></code></a></li>
-<li><a class="reference internal" href="#str.islower"><code class="docutils literal notranslate"><span class="pre">str.islower()</span></code></a></li>
-<li><a class="reference internal" href="#str.isnumeric"><code class="docutils literal notranslate"><span class="pre">str.isnumeric()</span></code></a></li>
-<li><a class="reference internal" href="#str.isprintable"><code class="docutils literal notranslate"><span class="pre">str.isprintable()</span></code></a></li>
-<li><a class="reference internal" href="#str.isspace"><code class="docutils literal notranslate"><span class="pre">str.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#str.istitle"><code class="docutils literal notranslate"><span class="pre">str.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#str.isupper"><code class="docutils literal notranslate"><span class="pre">str.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#str.join"><code class="docutils literal notranslate"><span class="pre">str.join()</span></code></a></li>
-<li><a class="reference internal" href="#str.ljust"><code class="docutils literal notranslate"><span class="pre">str.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#str.lower"><code class="docutils literal notranslate"><span class="pre">str.lower()</span></code></a></li>
-<li><a class="reference internal" href="#str.lstrip"><code class="docutils literal notranslate"><span class="pre">str.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#str.maketrans"><code class="docutils literal notranslate"><span class="pre">str.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#str.partition"><code class="docutils literal notranslate"><span class="pre">str.partition()</span></code></a></li>
-<li><a class="reference internal" href="#str.removeprefix"><code class="docutils literal notranslate"><span class="pre">str.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#str.removesuffix"><code class="docutils literal notranslate"><span class="pre">str.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#str.replace"><code class="docutils literal notranslate"><span class="pre">str.replace()</span></code></a></li>
-<li><a class="reference internal" href="#str.rfind"><code class="docutils literal notranslate"><span class="pre">str.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#str.rindex"><code class="docutils literal notranslate"><span class="pre">str.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#str.rjust"><code class="docutils literal notranslate"><span class="pre">str.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#str.rpartition"><code class="docutils literal notranslate"><span class="pre">str.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#str.rsplit"><code class="docutils literal notranslate"><span class="pre">str.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#str.rstrip"><code class="docutils literal notranslate"><span class="pre">str.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#str.split"><code class="docutils literal notranslate"><span class="pre">str.split()</span></code></a></li>
-<li><a class="reference internal" href="#str.splitlines"><code class="docutils literal notranslate"><span class="pre">str.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#str.startswith"><code class="docutils literal notranslate"><span class="pre">str.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#str.strip"><code class="docutils literal notranslate"><span class="pre">str.strip()</span></code></a></li>
-<li><a class="reference internal" href="#str.swapcase"><code class="docutils literal notranslate"><span class="pre">str.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#str.title"><code class="docutils literal notranslate"><span class="pre">str.title()</span></code></a></li>
-<li><a class="reference internal" href="#str.translate"><code class="docutils literal notranslate"><span class="pre">str.translate()</span></code></a></li>
-<li><a class="reference internal" href="#str.upper"><code class="docutils literal notranslate"><span class="pre">str.upper()</span></code></a></li>
-<li><a class="reference internal" href="#str.zfill"><code class="docutils literal notranslate"><span class="pre">str.zfill()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#string-methods">String Methods</a></li>
 <li><a class="reference internal" href="#printf-style-string-formatting"><code class="docutils literal notranslate"><span class="pre">printf</span></code>-style String Formatting</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#binary-sequence-types-bytes-bytearray-memoryview">Binary Sequence Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a><ul>
-<li><a class="reference internal" href="#bytes-objects">Bytes Objects</a><ul>
-<li><a class="reference internal" href="#bytes"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></a><ul>
-<li><a class="reference internal" href="#bytes.fromhex"><code class="docutils literal notranslate"><span class="pre">bytes.fromhex()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.hex"><code class="docutils literal notranslate"><span class="pre">bytes.hex()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bytearray-objects">Bytearray Objects</a><ul>
-<li><a class="reference internal" href="#bytearray"><code class="docutils literal notranslate"><span class="pre">bytearray</span></code></a><ul>
-<li><a class="reference internal" href="#bytearray.fromhex"><code class="docutils literal notranslate"><span class="pre">bytearray.fromhex()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.hex"><code class="docutils literal notranslate"><span class="pre">bytearray.hex()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bytes-and-bytearray-operations">Bytes and Bytearray Operations</a><ul>
-<li><a class="reference internal" href="#bytes.count"><code class="docutils literal notranslate"><span class="pre">bytes.count()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.count"><code class="docutils literal notranslate"><span class="pre">bytearray.count()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.removeprefix"><code class="docutils literal notranslate"><span class="pre">bytes.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.removeprefix"><code class="docutils literal notranslate"><span class="pre">bytearray.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.removesuffix"><code class="docutils literal notranslate"><span class="pre">bytes.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.removesuffix"><code class="docutils literal notranslate"><span class="pre">bytearray.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.decode"><code class="docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.decode"><code class="docutils literal notranslate"><span class="pre">bytearray.decode()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.endswith"><code class="docutils literal notranslate"><span class="pre">bytes.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.endswith"><code class="docutils literal notranslate"><span class="pre">bytearray.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.find"><code class="docutils literal notranslate"><span class="pre">bytes.find()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.find"><code class="docutils literal notranslate"><span class="pre">bytearray.find()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.index"><code class="docutils literal notranslate"><span class="pre">bytes.index()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.index"><code class="docutils literal notranslate"><span class="pre">bytearray.index()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.join"><code class="docutils literal notranslate"><span class="pre">bytes.join()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.join"><code class="docutils literal notranslate"><span class="pre">bytearray.join()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.maketrans"><code class="docutils literal notranslate"><span class="pre">bytes.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.maketrans"><code class="docutils literal notranslate"><span class="pre">bytearray.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.partition"><code class="docutils literal notranslate"><span class="pre">bytes.partition()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.partition"><code class="docutils literal notranslate"><span class="pre">bytearray.partition()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.replace"><code class="docutils literal notranslate"><span class="pre">bytes.replace()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.replace"><code class="docutils literal notranslate"><span class="pre">bytearray.replace()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rfind"><code class="docutils literal notranslate"><span class="pre">bytes.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rfind"><code class="docutils literal notranslate"><span class="pre">bytearray.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rindex"><code class="docutils literal notranslate"><span class="pre">bytes.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rindex"><code class="docutils literal notranslate"><span class="pre">bytearray.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rpartition"><code class="docutils literal notranslate"><span class="pre">bytes.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rpartition"><code class="docutils literal notranslate"><span class="pre">bytearray.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.startswith"><code class="docutils literal notranslate"><span class="pre">bytes.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.startswith"><code class="docutils literal notranslate"><span class="pre">bytearray.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.translate"><code class="docutils literal notranslate"><span class="pre">bytes.translate()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.translate"><code class="docutils literal notranslate"><span class="pre">bytearray.translate()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.center"><code class="docutils literal notranslate"><span class="pre">bytes.center()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.center"><code class="docutils literal notranslate"><span class="pre">bytearray.center()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.ljust"><code class="docutils literal notranslate"><span class="pre">bytes.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.ljust"><code class="docutils literal notranslate"><span class="pre">bytearray.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.lstrip"><code class="docutils literal notranslate"><span class="pre">bytes.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.lstrip"><code class="docutils literal notranslate"><span class="pre">bytearray.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rjust"><code class="docutils literal notranslate"><span class="pre">bytes.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rjust"><code class="docutils literal notranslate"><span class="pre">bytearray.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rsplit"><code class="docutils literal notranslate"><span class="pre">bytes.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rsplit"><code class="docutils literal notranslate"><span class="pre">bytearray.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rstrip"><code class="docutils literal notranslate"><span class="pre">bytes.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rstrip"><code class="docutils literal notranslate"><span class="pre">bytearray.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.split"><code class="docutils literal notranslate"><span class="pre">bytes.split()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.split"><code class="docutils literal notranslate"><span class="pre">bytearray.split()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.strip"><code class="docutils literal notranslate"><span class="pre">bytes.strip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.strip"><code class="docutils literal notranslate"><span class="pre">bytearray.strip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.capitalize"><code class="docutils literal notranslate"><span class="pre">bytes.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.capitalize"><code class="docutils literal notranslate"><span class="pre">bytearray.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.expandtabs"><code class="docutils literal notranslate"><span class="pre">bytes.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.expandtabs"><code class="docutils literal notranslate"><span class="pre">bytearray.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isalnum"><code class="docutils literal notranslate"><span class="pre">bytes.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isalnum"><code class="docutils literal notranslate"><span class="pre">bytearray.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isalpha"><code class="docutils literal notranslate"><span class="pre">bytes.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isalpha"><code class="docutils literal notranslate"><span class="pre">bytearray.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isascii"><code class="docutils literal notranslate"><span class="pre">bytes.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isascii"><code class="docutils literal notranslate"><span class="pre">bytearray.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isdigit"><code class="docutils literal notranslate"><span class="pre">bytes.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isdigit"><code class="docutils literal notranslate"><span class="pre">bytearray.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.islower"><code class="docutils literal notranslate"><span class="pre">bytes.islower()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.islower"><code class="docutils literal notranslate"><span class="pre">bytearray.islower()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isspace"><code class="docutils literal notranslate"><span class="pre">bytes.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isspace"><code class="docutils literal notranslate"><span class="pre">bytearray.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.istitle"><code class="docutils literal notranslate"><span class="pre">bytes.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.istitle"><code class="docutils literal notranslate"><span class="pre">bytearray.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isupper"><code class="docutils literal notranslate"><span class="pre">bytes.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isupper"><code class="docutils literal notranslate"><span class="pre">bytearray.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.lower"><code class="docutils literal notranslate"><span class="pre">bytes.lower()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.lower"><code class="docutils literal notranslate"><span class="pre">bytearray.lower()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.splitlines"><code class="docutils literal notranslate"><span class="pre">bytes.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.splitlines"><code class="docutils literal notranslate"><span class="pre">bytearray.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.swapcase"><code class="docutils literal notranslate"><span class="pre">bytes.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.swapcase"><code class="docutils literal notranslate"><span class="pre">bytearray.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.title"><code class="docutils literal notranslate"><span class="pre">bytes.title()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.title"><code class="docutils literal notranslate"><span class="pre">bytearray.title()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.upper"><code class="docutils literal notranslate"><span class="pre">bytes.upper()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.upper"><code class="docutils literal notranslate"><span class="pre">bytearray.upper()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.zfill"><code class="docutils literal notranslate"><span class="pre">bytes.zfill()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.zfill"><code class="docutils literal notranslate"><span class="pre">bytearray.zfill()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#bytes-objects">Bytes Objects</a></li>
+<li><a class="reference internal" href="#bytearray-objects">Bytearray Objects</a></li>
+<li><a class="reference internal" href="#bytes-and-bytearray-operations">Bytes and Bytearray Operations</a></li>
 <li><a class="reference internal" href="#printf-style-bytes-formatting"><code class="docutils literal notranslate"><span class="pre">printf</span></code>-style Bytes Formatting</a></li>
-<li><a class="reference internal" href="#memory-views">Memory Views</a><ul>
-<li><a class="reference internal" href="#memoryview"><code class="docutils literal notranslate"><span class="pre">memoryview</span></code></a><ul>
-<li><a class="reference internal" href="#memoryview.__eq__"><code class="docutils literal notranslate"><span class="pre">memoryview.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.tobytes"><code class="docutils literal notranslate"><span class="pre">memoryview.tobytes()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.hex"><code class="docutils literal notranslate"><span class="pre">memoryview.hex()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.tolist"><code class="docutils literal notranslate"><span class="pre">memoryview.tolist()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.toreadonly"><code class="docutils literal notranslate"><span class="pre">memoryview.toreadonly()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.release"><code class="docutils literal notranslate"><span class="pre">memoryview.release()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.cast"><code class="docutils literal notranslate"><span class="pre">memoryview.cast()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.obj"><code class="docutils literal notranslate"><span class="pre">memoryview.obj</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.nbytes"><code class="docutils literal notranslate"><span class="pre">memoryview.nbytes</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.readonly"><code class="docutils literal notranslate"><span class="pre">memoryview.readonly</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.format"><code class="docutils literal notranslate"><span class="pre">memoryview.format</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.itemsize"><code class="docutils literal notranslate"><span class="pre">memoryview.itemsize</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.ndim"><code class="docutils literal notranslate"><span class="pre">memoryview.ndim</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.shape"><code class="docutils literal notranslate"><span class="pre">memoryview.shape</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.strides"><code class="docutils literal notranslate"><span class="pre">memoryview.strides</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.suboffsets"><code class="docutils literal notranslate"><span class="pre">memoryview.suboffsets</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.c_contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.c_contiguous</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.f_contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.f_contiguous</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.contiguous</span></code></a></li>
+<li><a class="reference internal" href="#memory-views">Memory Views</a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#set-types-set-frozenset">Set Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a><ul>
-<li><a class="reference internal" href="#set"><code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
-<li><a class="reference internal" href="#frozenset"><code class="docutils literal notranslate"><span class="pre">frozenset</span></code></a><ul>
-<li><a class="reference internal" href="#frozenset.isdisjoint"><code class="docutils literal notranslate"><span class="pre">frozenset.isdisjoint()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.issubset"><code class="docutils literal notranslate"><span class="pre">frozenset.issubset()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.issuperset"><code class="docutils literal notranslate"><span class="pre">frozenset.issuperset()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.union"><code class="docutils literal notranslate"><span class="pre">frozenset.union()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.intersection"><code class="docutils literal notranslate"><span class="pre">frozenset.intersection()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.difference"><code class="docutils literal notranslate"><span class="pre">frozenset.difference()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.symmetric_difference"><code class="docutils literal notranslate"><span class="pre">frozenset.symmetric_difference()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.copy"><code class="docutils literal notranslate"><span class="pre">frozenset.copy()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.update"><code class="docutils literal notranslate"><span class="pre">frozenset.update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.intersection_update"><code class="docutils literal notranslate"><span class="pre">frozenset.intersection_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.difference_update"><code class="docutils literal notranslate"><span class="pre">frozenset.difference_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.symmetric_difference_update"><code class="docutils literal notranslate"><span class="pre">frozenset.symmetric_difference_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.add"><code class="docutils literal notranslate"><span class="pre">frozenset.add()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.remove"><code class="docutils literal notranslate"><span class="pre">frozenset.remove()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.discard"><code class="docutils literal notranslate"><span class="pre">frozenset.discard()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.pop"><code class="docutils literal notranslate"><span class="pre">frozenset.pop()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.clear"><code class="docutils literal notranslate"><span class="pre">frozenset.clear()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-types-set-frozenset">Set Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a></li>
 <li><a class="reference internal" href="#mapping-types-dict">Mapping Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a><ul>
-<li><a class="reference internal" href="#dict"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul>
-<li><a class="reference internal" href="#dict.clear"><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></a></li>
-<li><a class="reference internal" href="#dict.copy"><code class="docutils literal notranslate"><span class="pre">dict.copy()</span></code></a></li>
-<li><a class="reference internal" href="#dict.fromkeys"><code class="docutils literal notranslate"><span class="pre">dict.fromkeys()</span></code></a></li>
-<li><a class="reference internal" href="#dict.get"><code class="docutils literal notranslate"><span class="pre">dict.get()</span></code></a></li>
-<li><a class="reference internal" href="#dict.items"><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></a></li>
-<li><a class="reference internal" href="#dict.keys"><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></a></li>
-<li><a class="reference internal" href="#dict.pop"><code class="docutils literal notranslate"><span class="pre">dict.pop()</span></code></a></li>
-<li><a class="reference internal" href="#dict.popitem"><code class="docutils literal notranslate"><span class="pre">dict.popitem()</span></code></a></li>
-<li><a class="reference internal" href="#dict.setdefault"><code class="docutils literal notranslate"><span class="pre">dict.setdefault()</span></code></a></li>
-<li><a class="reference internal" href="#dict.update"><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code></a></li>
-<li><a class="reference internal" href="#dict.values"><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#dictionary-view-objects">字典視圖物件</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#context-manager-types">Context Manager Types</a><ul>
-<li><a class="reference internal" href="#contextmanager.__enter__"><code class="docutils literal notranslate"><span class="pre">contextmanager.__enter__()</span></code></a></li>
-<li><a class="reference internal" href="#contextmanager.__exit__"><code class="docutils literal notranslate"><span class="pre">contextmanager.__exit__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#context-manager-types">Context Manager Types</a></li>
 <li><a class="reference internal" href="#type-annotation-types-generic-alias-union">Type Annotation Types --- <span class="xref std std-ref">Generic Alias</span>, <span class="xref std std-ref">Union</span></a><ul>
 <li><a class="reference internal" href="#generic-alias-type">Generic Alias Type</a><ul>
 <li><a class="reference internal" href="#standard-generic-classes">Standard Generic Classes</a></li>
-<li><a class="reference internal" href="#special-attributes-of-genericalias-objects">Special Attributes of <code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code> objects</a><ul>
-<li><a class="reference internal" href="#genericalias.__origin__"><code class="docutils literal notranslate"><span class="pre">genericalias.__origin__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__args__"><code class="docutils literal notranslate"><span class="pre">genericalias.__args__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__parameters__"><code class="docutils literal notranslate"><span class="pre">genericalias.__parameters__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__unpacked__"><code class="docutils literal notranslate"><span class="pre">genericalias.__unpacked__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#special-attributes-of-genericalias-objects">Special Attributes of <code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code> objects</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#union-type">Union Type</a></li>
@@ -402,18 +151,7 @@
 <li><a class="reference internal" href="#internal-objects">Internal Objects</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#special-attributes">Special Attributes</a><ul>
-<li><a class="reference internal" href="#object.__dict__"><code class="docutils literal notranslate"><span class="pre">object.__dict__</span></code></a></li>
-<li><a class="reference internal" href="#instance.__class__"><code class="docutils literal notranslate"><span class="pre">instance.__class__</span></code></a></li>
-<li><a class="reference internal" href="#class.__bases__"><code class="docutils literal notranslate"><span class="pre">class.__bases__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__name__"><code class="docutils literal notranslate"><span class="pre">definition.__name__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__qualname__"><code class="docutils literal notranslate"><span class="pre">definition.__qualname__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__type_params__"><code class="docutils literal notranslate"><span class="pre">definition.__type_params__</span></code></a></li>
-<li><a class="reference internal" href="#class.__mro__"><code class="docutils literal notranslate"><span class="pre">class.__mro__</span></code></a></li>
-<li><a class="reference internal" href="#class.mro"><code class="docutils literal notranslate"><span class="pre">class.mro()</span></code></a></li>
-<li><a class="reference internal" href="#class.__subclasses__"><code class="docutils literal notranslate"><span class="pre">class.__subclasses__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#special-attributes">Special Attributes</a></li>
 <li><a class="reference internal" href="#integer-string-conversion-length-limitation">Integer string conversion length limitation</a><ul>
 <li><a class="reference internal" href="#affected-apis">Affected APIs</a></li>
 <li><a class="reference internal" href="#configuring-the-limit">Configuring the limit</a></li>
@@ -467,7 +205,7 @@
           <a href="constants.html" title="內建常數"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -477,7 +215,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -521,7 +259,8 @@
 <span id="truth"></span><h2>真值檢測<a class="headerlink" href="#truth-value-testing" title="Link to this heading">¶</a></h2>
 <p id="index-1">任何物件都可以進行檢測以判斷是否為真值，以便在 <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> 或 <a class="reference internal" href="../reference/compound_stmts.html#while"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">while</span></code></a> 條件中使用，或是作為如下所述 boolean（布林）運算之運算元所用。</p>
 <p id="index-2">By default, an object is considered true unless its class defines either a
-<a class="reference internal" href="../reference/datamodel.html#object.__bool__" title="object.__bool__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__bool__()</span></code></a> method that returns <code class="docutils literal notranslate"><span class="pre">False</span></code> or a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code> method that
+<a class="reference internal" href="../reference/datamodel.html#object.__bool__" title="object.__bool__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__bool__()</span></code></a> method that returns <code class="docutils literal notranslate"><span class="pre">False</span></code> or a
+<a class="reference internal" href="../reference/datamodel.html#object.__len__" title="object.__len__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code></a> method that
 returns zero, when called with the object. <a class="footnote-reference brackets" href="#id12" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>  Here are most of the built-in
 objects considered false:</p>
 <ul class="simple" id="index-3">
@@ -604,7 +343,9 @@ objects considered false:</p>
 <p id="index-9">一個 class 的非相同實例通常會比較為不相等，除非 class 有定義 <a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> method。</p>
 <p>一個 class 的實例不可以與其他相同 class 的實例或其他物件的類別進行排序，除非 class 定義足夠的 method ，包含 <a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__le__" title="object.__le__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__le__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__gt__" title="object.__gt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__gt__()</span></code></a> 及 <a class="reference internal" href="../reference/datamodel.html#object.__ge__" title="object.__ge__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ge__()</span></code></a>（一般來說，使用 <a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a> 及 <a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> 就可以滿足常規意義上的比較運算子）。</p>
 <p>無法自定義 <a class="reference internal" href="../reference/expressions.html#is"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">is</span></code></a> 與 <a class="reference internal" href="../reference/expressions.html#is-not"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></a> 運算子的行為；這兩個運算子也可以運用在任意兩個物件且不會導致例外。</p>
-<p id="index-10">此外，擁有相同的語法優先序的 <a class="reference internal" href="../reference/expressions.html#in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">in</span></code></a> 及 <a class="reference internal" href="../reference/expressions.html#not-in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></a> 兩種運算皆被是 <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> 或者有實作 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__contains__()</span></code> method 的型別所支援。</p>
+<p id="index-10">Two more operations with the same syntactic priority, <a class="reference internal" href="../reference/expressions.html#in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">in</span></code></a> and
+<a class="reference internal" href="../reference/expressions.html#not-in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></a>, are supported by types that are <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> or
+implement the <a class="reference internal" href="../reference/datamodel.html#object.__contains__" title="object.__contains__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__contains__()</span></code></a> method.</p>
 </section>
 <section id="numeric-types-int-float-complex">
 <span id="typesnumeric"></span><h2>Numeric Types --- <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="functions.html#complex" title="complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code></a><a class="headerlink" href="#numeric-types-int-float-complex" title="Link to this heading">¶</a></h2>
@@ -1122,7 +863,7 @@ that's defined for any rational number, and hence applies to all instances of
 <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> and <a class="reference internal" href="fractions.html#fractions.Fraction" title="fractions.Fraction"><code class="xref py py-class docutils literal notranslate"><span class="pre">fractions.Fraction</span></code></a>, and all finite instances of
 <a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> and <a class="reference internal" href="decimal.html#decimal.Decimal" title="decimal.Decimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">decimal.Decimal</span></code></a>.  Essentially, this function is
 given by reduction modulo <code class="docutils literal notranslate"><span class="pre">P</span></code> for a fixed prime <code class="docutils literal notranslate"><span class="pre">P</span></code>.  The value of <code class="docutils literal notranslate"><span class="pre">P</span></code> is
-made available to Python as the <code class="xref py py-attr docutils literal notranslate"><span class="pre">modulus</span></code> attribute of
+made available to Python as the <a class="reference internal" href="sys.html#sys.hash_info.modulus" title="sys.hash_info.modulus"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modulus</span></code></a> attribute of
 <a class="reference internal" href="sys.html#sys.hash_info" title="sys.hash_info"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.hash_info</span></code></a>.</p>
 <div class="impl-detail compound">
 <p><strong>CPython 實作細節：</strong> Currently, the prime used is <code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">=</span> <span class="pre">2**31</span> <span class="pre">-</span> <span class="pre">1</span></code> on machines with 32-bit C
@@ -1276,7 +1017,7 @@ Implementations that do not obey this property are deemed broken.</p>
 <section id="generator-types">
 <span id="id3"></span><h3>Generator Types<a class="headerlink" href="#generator-types" title="Link to this heading">¶</a></h3>
 <p>Python's <a class="reference internal" href="../glossary.html#term-generator"><span class="xref std std-term">generator</span></a>s provide a convenient way to implement the iterator
-protocol.  If a container object's <code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code> method is implemented as a
+protocol.  If a container object's <a class="reference internal" href="#iterator.__iter__" title="iterator.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> method is implemented as a
 generator, it will automatically return an iterator object (technically, a
 generator object) supplying the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code> and <a class="reference internal" href="../reference/expressions.html#generator.__next__" title="generator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a>
 methods.
@@ -1836,7 +1577,7 @@ be included in the string literal.</p>
 between them will be implicitly converted to a single string literal. That
 is, <code class="docutils literal notranslate"><span class="pre">(&quot;spam</span> <span class="pre">&quot;</span> <span class="pre">&quot;eggs&quot;)</span> <span class="pre">==</span> <span class="pre">&quot;spam</span> <span class="pre">eggs&quot;</span></code>.</p>
 <p>See <a class="reference internal" href="../reference/lexical_analysis.html#strings"><span class="std std-ref">String and Bytes literals</span></a> for more about the various forms of string literal,
-including supported escape sequences, and the <code class="docutils literal notranslate"><span class="pre">r</span></code> (&quot;raw&quot;) prefix that
+including supported <a class="reference internal" href="../reference/lexical_analysis.html#escape-sequences"><span class="std std-ref">escape sequences</span></a>, and the <code class="docutils literal notranslate"><span class="pre">r</span></code> (&quot;raw&quot;) prefix that
 disables most escape sequence processing.</p>
 <p>Strings may also be created from other objects using the <a class="reference internal" href="#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>
 constructor.</p>
@@ -1883,7 +1624,7 @@ Python).  For example:</p>
 </div>
 <p>For more information on the <code class="docutils literal notranslate"><span class="pre">str</span></code> class and its methods, see
 <a class="reference internal" href="#textseq"><span class="std std-ref">Text Sequence Type --- str</span></a> and the <a class="reference internal" href="#string-methods"><span class="std std-ref">String Methods</span></a> section below.  To output
-formatted strings, see the <a class="reference internal" href="../reference/lexical_analysis.html#f-strings"><span class="std std-ref">Formatted string literals</span></a> and <a class="reference internal" href="string.html#formatstrings"><span class="std std-ref">格式化文字語法</span></a>
+formatted strings, see the <a class="reference internal" href="../reference/lexical_analysis.html#f-strings"><span class="std std-ref">f-string（f 字串）</span></a> and <a class="reference internal" href="string.html#formatstrings"><span class="std std-ref">格式化文字語法</span></a>
 sections.  In addition, see the <a class="reference internal" href="text.html#stringservices"><span class="std std-ref">文本處理 (Text Processing) 服務</span></a> section.</p>
 </dd></dl>
 
@@ -1893,7 +1634,7 @@ sections.  In addition, see the <a class="reference internal" href="text.html#st
 operations, along with the additional methods described below.</p>
 <p>Strings also support two styles of string formatting, one providing a large
 degree of flexibility and customization (see <a class="reference internal" href="#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a>,
-<a class="reference internal" href="string.html#formatstrings"><span class="std std-ref">格式化文字語法</span></a> and <a class="reference internal" href="string.html#string-formatting"><span class="std std-ref">Custom String Formatting</span></a>) and the other based on C
+<a class="reference internal" href="string.html#formatstrings"><span class="std std-ref">格式化文字語法</span></a> and <a class="reference internal" href="string.html#string-formatting"><span class="std std-ref">自訂字串格式</span></a>) and the other based on C
 <code class="docutils literal notranslate"><span class="pre">printf</span></code> style formatting that handles a narrower range of types and is
 slightly harder to use correctly, but is often faster for the cases it can
 handle (<a class="reference internal" href="#old-string-formatting"><span class="std std-ref">printf-style String Formatting</span></a>).</p>
@@ -4033,7 +3774,7 @@ byte objects).</p></td>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code></p></td>
 <td><p>Bytes (any object that follows the
 <a class="reference internal" href="../c-api/buffer.html#bufferobjects"><span class="std std-ref">buffer protocol</span></a> or has
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">__bytes__()</span></code>).</p></td>
+<a class="reference internal" href="../reference/datamodel.html#object.__bytes__" title="object.__bytes__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__bytes__()</span></code></a>).</p></td>
 <td><p>(5)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'s'</span></code></p></td>
@@ -4845,7 +4586,8 @@ not contained in the set.</p>
 <a class="reference internal" href="#frozenset.intersection_update" title="frozenset.intersection_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">intersection_update()</span></code></a>, <a class="reference internal" href="#frozenset.difference_update" title="frozenset.difference_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">difference_update()</span></code></a>, and
 <a class="reference internal" href="#frozenset.symmetric_difference_update" title="frozenset.symmetric_difference_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">symmetric_difference_update()</span></code></a> methods will accept any iterable as an
 argument.</p>
-<p>Note, the <em>elem</em> argument to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__contains__()</span></code>, <a class="reference internal" href="#frozenset.remove" title="frozenset.remove"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove()</span></code></a>, and
+<p>Note, the <em>elem</em> argument to the <a class="reference internal" href="../reference/datamodel.html#object.__contains__" title="object.__contains__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__contains__()</span></code></a>,
+<a class="reference internal" href="#frozenset.remove" title="frozenset.remove"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove()</span></code></a>, and
 <a class="reference internal" href="#frozenset.discard" title="frozenset.discard"><code class="xref py py-meth docutils literal notranslate"><span class="pre">discard()</span></code></a> methods may be a set.  To support searching for an equivalent
 frozenset, a temporary one is created from <em>elem</em>.</p>
 </dd></dl>
@@ -5692,7 +5434,7 @@ instantiated from the type:</p>
 <p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">__or__()</span></code> method for type objects was added to support the syntax
 <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">|</span> <span class="pre">Y</span></code>.  If a metaclass implements <code class="xref py py-meth docutils literal notranslate"><span class="pre">__or__()</span></code>, the Union may
 override it:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">M</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">M</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="s2">&quot;Hello&quot;</span>
 <span class="gp">...</span>
@@ -5702,7 +5444,7 @@ override it:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">|</span> <span class="nb">int</span>
 <span class="go">&#39;Hello&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span> <span class="o">|</span> <span class="n">C</span>
-<span class="go">int | __main__.C</span>
+<span class="go">int | C</span>
 </pre></div>
 </div>
 </div>
@@ -5754,24 +5496,27 @@ but the implementation is different, hence the different object types.</p>
 <section id="methods">
 <span id="typesmethods"></span><h3>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h3>
 <p id="index-61">Methods are functions that are called using the attribute notation. There are
-two flavors: built-in methods (such as <code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code> on lists) and class
-instance methods.  Built-in methods are described with the types that support
-them.</p>
+two flavors: <a class="reference internal" href="../reference/datamodel.html#builtin-methods"><span class="std std-ref">built-in methods</span></a> (such as <code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code>
+on lists) and <a class="reference internal" href="../reference/datamodel.html#instance-methods"><span class="std std-ref">class instance method</span></a>.
+Built-in methods are described with the types that support them.</p>
 <p>If you access a method (a function defined in a class namespace) through an
 instance, you get a special object: a <em class="dfn">bound method</em> (also called
-<em class="dfn">instance method</em>) object. When called, it will add the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument
+<a class="reference internal" href="../reference/datamodel.html#instance-methods"><span class="std std-ref">instance method</span></a>) object. When called, it will add
+the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument
 to the argument list.  Bound methods have two special read-only attributes:
-<code class="docutils literal notranslate"><span class="pre">m.__self__</span></code> is the object on which the method operates, and <code class="docutils literal notranslate"><span class="pre">m.__func__</span></code> is
+<a class="reference internal" href="../reference/datamodel.html#method.__self__" title="method.__self__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">m.__self__</span></code></a> is the object on which the method
+operates, and <a class="reference internal" href="../reference/datamodel.html#method.__func__" title="method.__func__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">m.__func__</span></code></a> is
 the function implementing the method.  Calling <code class="docutils literal notranslate"><span class="pre">m(arg-1,</span> <span class="pre">arg-2,</span> <span class="pre">...,</span> <span class="pre">arg-n)</span></code>
 is completely equivalent to calling <code class="docutils literal notranslate"><span class="pre">m.__func__(m.__self__,</span> <span class="pre">arg-1,</span> <span class="pre">arg-2,</span> <span class="pre">...,</span>
 <span class="pre">arg-n)</span></code>.</p>
-<p>Like function objects, bound method objects support getting arbitrary
+<p>Like <a class="reference internal" href="../reference/datamodel.html#user-defined-funcs"><span class="std std-ref">function objects</span></a>, bound method objects support
+getting arbitrary
 attributes.  However, since method attributes are actually stored on the
-underlying function object (<code class="docutils literal notranslate"><span class="pre">meth.__func__</span></code>), setting method attributes on
+underlying function object (<a class="reference internal" href="../reference/datamodel.html#method.__func__" title="method.__func__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">method.__func__</span></code></a>), setting method attributes on
 bound methods is disallowed.  Attempting to set an attribute on a method
 results in an <a class="reference internal" href="exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a> being raised.  In order to set a method
 attribute, you need to explicitly set it on the underlying function object:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">pass</span>
 <span class="gp">...</span>
@@ -5785,7 +5530,7 @@ attribute, you need to explicitly set it on the underlying function object:</p>
 <span class="go">&#39;my name is method&#39;</span>
 </pre></div>
 </div>
-<p>更多資訊請見 <a class="reference internal" href="../reference/datamodel.html#types"><span class="std std-ref">標準型別階層</span></a>。</p>
+<p>See <a class="reference internal" href="../reference/datamodel.html#instance-methods"><span class="std std-ref">Instance methods</span></a> for more information.</p>
 </section>
 <section id="code-objects">
 <span id="bltin-code-objects"></span><span id="index-62"></span><h3>Code Objects<a class="headerlink" href="#code-objects" title="Link to this heading">¶</a></h3>
@@ -5793,9 +5538,10 @@ attribute, you need to explicitly set it on the underlying function object:</p>
 executable Python code such as a function body. They differ from function
 objects because they don't contain a reference to their global execution
 environment.  Code objects are returned by the built-in <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a> function
-and can be extracted from function objects through their <code class="xref py py-attr docutils literal notranslate"><span class="pre">__code__</span></code>
-attribute. See also the <a class="reference internal" href="code.html#module-code" title="code: Facilities to implement read-eval-print loops."><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code></a> module.</p>
-<p>存取 <code class="docutils literal notranslate"><span class="pre">__code__</span></code> 會引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 與 <code class="docutils literal notranslate"><span class="pre">&quot;__code__&quot;</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">object.__getattr__</span></code>。</p>
+and can be extracted from function objects through their
+<a class="reference internal" href="../reference/datamodel.html#function.__code__" title="function.__code__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__code__</span></code></a> attribute. See also the <a class="reference internal" href="code.html#module-code" title="code: Facilities to implement read-eval-print loops."><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code></a> module.</p>
+<p>Accessing <a class="reference internal" href="../reference/datamodel.html#function.__code__" title="function.__code__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__code__</span></code></a> raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a>
+<code class="docutils literal notranslate"><span class="pre">object.__getattr__</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">obj</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;__code__&quot;</span></code>.</p>
 <p id="index-64">A code object can be executed or evaluated by passing it (instead of a source
 string) to the <a class="reference internal" href="functions.html#exec" title="exec"><code class="xref py py-func docutils literal notranslate"><span class="pre">exec()</span></code></a> or <a class="reference internal" href="functions.html#eval" title="eval"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval()</span></code></a>  built-in functions.</p>
 <p>更多資訊請見 <a class="reference internal" href="../reference/datamodel.html#types"><span class="std std-ref">標準型別階層</span></a>。</p>
@@ -5833,8 +5579,9 @@ information.  There is exactly one <code class="docutils literal notranslate"><s
 </section>
 <section id="internal-objects">
 <span id="typesinternal"></span><h3>Internal Objects<a class="headerlink" href="#internal-objects" title="Link to this heading">¶</a></h3>
-<p>See <a class="reference internal" href="../reference/datamodel.html#types"><span class="std std-ref">標準型別階層</span></a> for this information.  It describes stack frame objects,
-traceback objects, and slice objects.</p>
+<p>See <a class="reference internal" href="../reference/datamodel.html#types"><span class="std std-ref">標準型別階層</span></a> for this information.  It describes
+<a class="reference internal" href="../reference/datamodel.html#frame-objects"><span class="std std-ref">stack frame objects</span></a>,
+<a class="reference internal" href="../reference/datamodel.html#traceback-objects"><span class="std std-ref">traceback objects</span></a>, and slice objects.</p>
 </section>
 </section>
 <section id="special-attributes">
@@ -6108,30 +5855,13 @@ element is the tuple to be formatted.</p>
 <li><a class="reference internal" href="#comparisons">比較運算</a></li>
 <li><a class="reference internal" href="#numeric-types-int-float-complex">Numeric Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code></a><ul>
 <li><a class="reference internal" href="#bitwise-operations-on-integer-types">Bitwise Operations on Integer Types</a></li>
-<li><a class="reference internal" href="#additional-methods-on-integer-types">Additional Methods on Integer Types</a><ul>
-<li><a class="reference internal" href="#int.bit_length"><code class="docutils literal notranslate"><span class="pre">int.bit_length()</span></code></a></li>
-<li><a class="reference internal" href="#int.bit_count"><code class="docutils literal notranslate"><span class="pre">int.bit_count()</span></code></a></li>
-<li><a class="reference internal" href="#int.to_bytes"><code class="docutils literal notranslate"><span class="pre">int.to_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#int.from_bytes"><code class="docutils literal notranslate"><span class="pre">int.from_bytes()</span></code></a></li>
-<li><a class="reference internal" href="#int.as_integer_ratio"><code class="docutils literal notranslate"><span class="pre">int.as_integer_ratio()</span></code></a></li>
-<li><a class="reference internal" href="#int.is_integer"><code class="docutils literal notranslate"><span class="pre">int.is_integer()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#additional-methods-on-float">Additional Methods on Float</a><ul>
-<li><a class="reference internal" href="#float.as_integer_ratio"><code class="docutils literal notranslate"><span class="pre">float.as_integer_ratio()</span></code></a></li>
-<li><a class="reference internal" href="#float.is_integer"><code class="docutils literal notranslate"><span class="pre">float.is_integer()</span></code></a></li>
-<li><a class="reference internal" href="#float.hex"><code class="docutils literal notranslate"><span class="pre">float.hex()</span></code></a></li>
-<li><a class="reference internal" href="#float.fromhex"><code class="docutils literal notranslate"><span class="pre">float.fromhex()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#additional-methods-on-integer-types">Additional Methods on Integer Types</a></li>
+<li><a class="reference internal" href="#additional-methods-on-float">Additional Methods on Float</a></li>
 <li><a class="reference internal" href="#hashing-of-numeric-types">Hashing of numeric types</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#boolean-type-bool">Boolean Type - <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></li>
 <li><a class="reference internal" href="#iterator-types">Iterator Types</a><ul>
-<li><a class="reference internal" href="#container.__iter__"><code class="docutils literal notranslate"><span class="pre">container.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#iterator.__iter__"><code class="docutils literal notranslate"><span class="pre">iterator.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#iterator.__next__"><code class="docutils literal notranslate"><span class="pre">iterator.__next__()</span></code></a></li>
 <li><a class="reference internal" href="#generator-types">Generator Types</a></li>
 </ul>
 </li>
@@ -6139,268 +5869,34 @@ element is the tuple to be formatted.</p>
 <li><a class="reference internal" href="#common-sequence-operations">Common Sequence Operations</a></li>
 <li><a class="reference internal" href="#immutable-sequence-types">Immutable Sequence Types</a></li>
 <li><a class="reference internal" href="#mutable-sequence-types">Mutable Sequence Types</a></li>
-<li><a class="reference internal" href="#lists">List（串列）</a><ul>
-<li><a class="reference internal" href="#list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a><ul>
-<li><a class="reference internal" href="#list.sort"><code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tuples">Tuples</a><ul>
-<li><a class="reference internal" href="#tuple"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#ranges">Ranges</a><ul>
-<li><a class="reference internal" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a><ul>
-<li><a class="reference internal" href="#range.start"><code class="docutils literal notranslate"><span class="pre">range.start</span></code></a></li>
-<li><a class="reference internal" href="#range.stop"><code class="docutils literal notranslate"><span class="pre">range.stop</span></code></a></li>
-<li><a class="reference internal" href="#range.step"><code class="docutils literal notranslate"><span class="pre">range.step</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#lists">List（串列）</a></li>
+<li><a class="reference internal" href="#tuples">Tuples</a></li>
+<li><a class="reference internal" href="#ranges">Ranges</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#text-sequence-type-str">Text Sequence Type --- <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a><ul>
-<li><a class="reference internal" href="#str"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
-<li><a class="reference internal" href="#string-methods">String Methods</a><ul>
-<li><a class="reference internal" href="#str.capitalize"><code class="docutils literal notranslate"><span class="pre">str.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#str.casefold"><code class="docutils literal notranslate"><span class="pre">str.casefold()</span></code></a></li>
-<li><a class="reference internal" href="#str.center"><code class="docutils literal notranslate"><span class="pre">str.center()</span></code></a></li>
-<li><a class="reference internal" href="#str.count"><code class="docutils literal notranslate"><span class="pre">str.count()</span></code></a></li>
-<li><a class="reference internal" href="#str.encode"><code class="docutils literal notranslate"><span class="pre">str.encode()</span></code></a></li>
-<li><a class="reference internal" href="#str.endswith"><code class="docutils literal notranslate"><span class="pre">str.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#str.expandtabs"><code class="docutils literal notranslate"><span class="pre">str.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#str.find"><code class="docutils literal notranslate"><span class="pre">str.find()</span></code></a></li>
-<li><a class="reference internal" href="#str.format"><code class="docutils literal notranslate"><span class="pre">str.format()</span></code></a></li>
-<li><a class="reference internal" href="#str.format_map"><code class="docutils literal notranslate"><span class="pre">str.format_map()</span></code></a></li>
-<li><a class="reference internal" href="#str.index"><code class="docutils literal notranslate"><span class="pre">str.index()</span></code></a></li>
-<li><a class="reference internal" href="#str.isalnum"><code class="docutils literal notranslate"><span class="pre">str.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#str.isalpha"><code class="docutils literal notranslate"><span class="pre">str.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#str.isascii"><code class="docutils literal notranslate"><span class="pre">str.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#str.isdecimal"><code class="docutils literal notranslate"><span class="pre">str.isdecimal()</span></code></a></li>
-<li><a class="reference internal" href="#str.isdigit"><code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#str.isidentifier"><code class="docutils literal notranslate"><span class="pre">str.isidentifier()</span></code></a></li>
-<li><a class="reference internal" href="#str.islower"><code class="docutils literal notranslate"><span class="pre">str.islower()</span></code></a></li>
-<li><a class="reference internal" href="#str.isnumeric"><code class="docutils literal notranslate"><span class="pre">str.isnumeric()</span></code></a></li>
-<li><a class="reference internal" href="#str.isprintable"><code class="docutils literal notranslate"><span class="pre">str.isprintable()</span></code></a></li>
-<li><a class="reference internal" href="#str.isspace"><code class="docutils literal notranslate"><span class="pre">str.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#str.istitle"><code class="docutils literal notranslate"><span class="pre">str.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#str.isupper"><code class="docutils literal notranslate"><span class="pre">str.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#str.join"><code class="docutils literal notranslate"><span class="pre">str.join()</span></code></a></li>
-<li><a class="reference internal" href="#str.ljust"><code class="docutils literal notranslate"><span class="pre">str.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#str.lower"><code class="docutils literal notranslate"><span class="pre">str.lower()</span></code></a></li>
-<li><a class="reference internal" href="#str.lstrip"><code class="docutils literal notranslate"><span class="pre">str.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#str.maketrans"><code class="docutils literal notranslate"><span class="pre">str.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#str.partition"><code class="docutils literal notranslate"><span class="pre">str.partition()</span></code></a></li>
-<li><a class="reference internal" href="#str.removeprefix"><code class="docutils literal notranslate"><span class="pre">str.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#str.removesuffix"><code class="docutils literal notranslate"><span class="pre">str.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#str.replace"><code class="docutils literal notranslate"><span class="pre">str.replace()</span></code></a></li>
-<li><a class="reference internal" href="#str.rfind"><code class="docutils literal notranslate"><span class="pre">str.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#str.rindex"><code class="docutils literal notranslate"><span class="pre">str.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#str.rjust"><code class="docutils literal notranslate"><span class="pre">str.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#str.rpartition"><code class="docutils literal notranslate"><span class="pre">str.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#str.rsplit"><code class="docutils literal notranslate"><span class="pre">str.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#str.rstrip"><code class="docutils literal notranslate"><span class="pre">str.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#str.split"><code class="docutils literal notranslate"><span class="pre">str.split()</span></code></a></li>
-<li><a class="reference internal" href="#str.splitlines"><code class="docutils literal notranslate"><span class="pre">str.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#str.startswith"><code class="docutils literal notranslate"><span class="pre">str.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#str.strip"><code class="docutils literal notranslate"><span class="pre">str.strip()</span></code></a></li>
-<li><a class="reference internal" href="#str.swapcase"><code class="docutils literal notranslate"><span class="pre">str.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#str.title"><code class="docutils literal notranslate"><span class="pre">str.title()</span></code></a></li>
-<li><a class="reference internal" href="#str.translate"><code class="docutils literal notranslate"><span class="pre">str.translate()</span></code></a></li>
-<li><a class="reference internal" href="#str.upper"><code class="docutils literal notranslate"><span class="pre">str.upper()</span></code></a></li>
-<li><a class="reference internal" href="#str.zfill"><code class="docutils literal notranslate"><span class="pre">str.zfill()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#string-methods">String Methods</a></li>
 <li><a class="reference internal" href="#printf-style-string-formatting"><code class="docutils literal notranslate"><span class="pre">printf</span></code>-style String Formatting</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#binary-sequence-types-bytes-bytearray-memoryview">Binary Sequence Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a><ul>
-<li><a class="reference internal" href="#bytes-objects">Bytes Objects</a><ul>
-<li><a class="reference internal" href="#bytes"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></a><ul>
-<li><a class="reference internal" href="#bytes.fromhex"><code class="docutils literal notranslate"><span class="pre">bytes.fromhex()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.hex"><code class="docutils literal notranslate"><span class="pre">bytes.hex()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bytearray-objects">Bytearray Objects</a><ul>
-<li><a class="reference internal" href="#bytearray"><code class="docutils literal notranslate"><span class="pre">bytearray</span></code></a><ul>
-<li><a class="reference internal" href="#bytearray.fromhex"><code class="docutils literal notranslate"><span class="pre">bytearray.fromhex()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.hex"><code class="docutils literal notranslate"><span class="pre">bytearray.hex()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bytes-and-bytearray-operations">Bytes and Bytearray Operations</a><ul>
-<li><a class="reference internal" href="#bytes.count"><code class="docutils literal notranslate"><span class="pre">bytes.count()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.count"><code class="docutils literal notranslate"><span class="pre">bytearray.count()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.removeprefix"><code class="docutils literal notranslate"><span class="pre">bytes.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.removeprefix"><code class="docutils literal notranslate"><span class="pre">bytearray.removeprefix()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.removesuffix"><code class="docutils literal notranslate"><span class="pre">bytes.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.removesuffix"><code class="docutils literal notranslate"><span class="pre">bytearray.removesuffix()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.decode"><code class="docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.decode"><code class="docutils literal notranslate"><span class="pre">bytearray.decode()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.endswith"><code class="docutils literal notranslate"><span class="pre">bytes.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.endswith"><code class="docutils literal notranslate"><span class="pre">bytearray.endswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.find"><code class="docutils literal notranslate"><span class="pre">bytes.find()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.find"><code class="docutils literal notranslate"><span class="pre">bytearray.find()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.index"><code class="docutils literal notranslate"><span class="pre">bytes.index()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.index"><code class="docutils literal notranslate"><span class="pre">bytearray.index()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.join"><code class="docutils literal notranslate"><span class="pre">bytes.join()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.join"><code class="docutils literal notranslate"><span class="pre">bytearray.join()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.maketrans"><code class="docutils literal notranslate"><span class="pre">bytes.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.maketrans"><code class="docutils literal notranslate"><span class="pre">bytearray.maketrans()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.partition"><code class="docutils literal notranslate"><span class="pre">bytes.partition()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.partition"><code class="docutils literal notranslate"><span class="pre">bytearray.partition()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.replace"><code class="docutils literal notranslate"><span class="pre">bytes.replace()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.replace"><code class="docutils literal notranslate"><span class="pre">bytearray.replace()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rfind"><code class="docutils literal notranslate"><span class="pre">bytes.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rfind"><code class="docutils literal notranslate"><span class="pre">bytearray.rfind()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rindex"><code class="docutils literal notranslate"><span class="pre">bytes.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rindex"><code class="docutils literal notranslate"><span class="pre">bytearray.rindex()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rpartition"><code class="docutils literal notranslate"><span class="pre">bytes.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rpartition"><code class="docutils literal notranslate"><span class="pre">bytearray.rpartition()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.startswith"><code class="docutils literal notranslate"><span class="pre">bytes.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.startswith"><code class="docutils literal notranslate"><span class="pre">bytearray.startswith()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.translate"><code class="docutils literal notranslate"><span class="pre">bytes.translate()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.translate"><code class="docutils literal notranslate"><span class="pre">bytearray.translate()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.center"><code class="docutils literal notranslate"><span class="pre">bytes.center()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.center"><code class="docutils literal notranslate"><span class="pre">bytearray.center()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.ljust"><code class="docutils literal notranslate"><span class="pre">bytes.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.ljust"><code class="docutils literal notranslate"><span class="pre">bytearray.ljust()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.lstrip"><code class="docutils literal notranslate"><span class="pre">bytes.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.lstrip"><code class="docutils literal notranslate"><span class="pre">bytearray.lstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rjust"><code class="docutils literal notranslate"><span class="pre">bytes.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rjust"><code class="docutils literal notranslate"><span class="pre">bytearray.rjust()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rsplit"><code class="docutils literal notranslate"><span class="pre">bytes.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rsplit"><code class="docutils literal notranslate"><span class="pre">bytearray.rsplit()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.rstrip"><code class="docutils literal notranslate"><span class="pre">bytes.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.rstrip"><code class="docutils literal notranslate"><span class="pre">bytearray.rstrip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.split"><code class="docutils literal notranslate"><span class="pre">bytes.split()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.split"><code class="docutils literal notranslate"><span class="pre">bytearray.split()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.strip"><code class="docutils literal notranslate"><span class="pre">bytes.strip()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.strip"><code class="docutils literal notranslate"><span class="pre">bytearray.strip()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.capitalize"><code class="docutils literal notranslate"><span class="pre">bytes.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.capitalize"><code class="docutils literal notranslate"><span class="pre">bytearray.capitalize()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.expandtabs"><code class="docutils literal notranslate"><span class="pre">bytes.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.expandtabs"><code class="docutils literal notranslate"><span class="pre">bytearray.expandtabs()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isalnum"><code class="docutils literal notranslate"><span class="pre">bytes.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isalnum"><code class="docutils literal notranslate"><span class="pre">bytearray.isalnum()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isalpha"><code class="docutils literal notranslate"><span class="pre">bytes.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isalpha"><code class="docutils literal notranslate"><span class="pre">bytearray.isalpha()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isascii"><code class="docutils literal notranslate"><span class="pre">bytes.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isascii"><code class="docutils literal notranslate"><span class="pre">bytearray.isascii()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isdigit"><code class="docutils literal notranslate"><span class="pre">bytes.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isdigit"><code class="docutils literal notranslate"><span class="pre">bytearray.isdigit()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.islower"><code class="docutils literal notranslate"><span class="pre">bytes.islower()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.islower"><code class="docutils literal notranslate"><span class="pre">bytearray.islower()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isspace"><code class="docutils literal notranslate"><span class="pre">bytes.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isspace"><code class="docutils literal notranslate"><span class="pre">bytearray.isspace()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.istitle"><code class="docutils literal notranslate"><span class="pre">bytes.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.istitle"><code class="docutils literal notranslate"><span class="pre">bytearray.istitle()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.isupper"><code class="docutils literal notranslate"><span class="pre">bytes.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.isupper"><code class="docutils literal notranslate"><span class="pre">bytearray.isupper()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.lower"><code class="docutils literal notranslate"><span class="pre">bytes.lower()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.lower"><code class="docutils literal notranslate"><span class="pre">bytearray.lower()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.splitlines"><code class="docutils literal notranslate"><span class="pre">bytes.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.splitlines"><code class="docutils literal notranslate"><span class="pre">bytearray.splitlines()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.swapcase"><code class="docutils literal notranslate"><span class="pre">bytes.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.swapcase"><code class="docutils literal notranslate"><span class="pre">bytearray.swapcase()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.title"><code class="docutils literal notranslate"><span class="pre">bytes.title()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.title"><code class="docutils literal notranslate"><span class="pre">bytearray.title()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.upper"><code class="docutils literal notranslate"><span class="pre">bytes.upper()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.upper"><code class="docutils literal notranslate"><span class="pre">bytearray.upper()</span></code></a></li>
-<li><a class="reference internal" href="#bytes.zfill"><code class="docutils literal notranslate"><span class="pre">bytes.zfill()</span></code></a></li>
-<li><a class="reference internal" href="#bytearray.zfill"><code class="docutils literal notranslate"><span class="pre">bytearray.zfill()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#bytes-objects">Bytes Objects</a></li>
+<li><a class="reference internal" href="#bytearray-objects">Bytearray Objects</a></li>
+<li><a class="reference internal" href="#bytes-and-bytearray-operations">Bytes and Bytearray Operations</a></li>
 <li><a class="reference internal" href="#printf-style-bytes-formatting"><code class="docutils literal notranslate"><span class="pre">printf</span></code>-style Bytes Formatting</a></li>
-<li><a class="reference internal" href="#memory-views">Memory Views</a><ul>
-<li><a class="reference internal" href="#memoryview"><code class="docutils literal notranslate"><span class="pre">memoryview</span></code></a><ul>
-<li><a class="reference internal" href="#memoryview.__eq__"><code class="docutils literal notranslate"><span class="pre">memoryview.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.tobytes"><code class="docutils literal notranslate"><span class="pre">memoryview.tobytes()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.hex"><code class="docutils literal notranslate"><span class="pre">memoryview.hex()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.tolist"><code class="docutils literal notranslate"><span class="pre">memoryview.tolist()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.toreadonly"><code class="docutils literal notranslate"><span class="pre">memoryview.toreadonly()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.release"><code class="docutils literal notranslate"><span class="pre">memoryview.release()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.cast"><code class="docutils literal notranslate"><span class="pre">memoryview.cast()</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.obj"><code class="docutils literal notranslate"><span class="pre">memoryview.obj</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.nbytes"><code class="docutils literal notranslate"><span class="pre">memoryview.nbytes</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.readonly"><code class="docutils literal notranslate"><span class="pre">memoryview.readonly</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.format"><code class="docutils literal notranslate"><span class="pre">memoryview.format</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.itemsize"><code class="docutils literal notranslate"><span class="pre">memoryview.itemsize</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.ndim"><code class="docutils literal notranslate"><span class="pre">memoryview.ndim</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.shape"><code class="docutils literal notranslate"><span class="pre">memoryview.shape</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.strides"><code class="docutils literal notranslate"><span class="pre">memoryview.strides</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.suboffsets"><code class="docutils literal notranslate"><span class="pre">memoryview.suboffsets</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.c_contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.c_contiguous</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.f_contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.f_contiguous</span></code></a></li>
-<li><a class="reference internal" href="#memoryview.contiguous"><code class="docutils literal notranslate"><span class="pre">memoryview.contiguous</span></code></a></li>
+<li><a class="reference internal" href="#memory-views">Memory Views</a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#set-types-set-frozenset">Set Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a><ul>
-<li><a class="reference internal" href="#set"><code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
-<li><a class="reference internal" href="#frozenset"><code class="docutils literal notranslate"><span class="pre">frozenset</span></code></a><ul>
-<li><a class="reference internal" href="#frozenset.isdisjoint"><code class="docutils literal notranslate"><span class="pre">frozenset.isdisjoint()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.issubset"><code class="docutils literal notranslate"><span class="pre">frozenset.issubset()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.issuperset"><code class="docutils literal notranslate"><span class="pre">frozenset.issuperset()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.union"><code class="docutils literal notranslate"><span class="pre">frozenset.union()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.intersection"><code class="docutils literal notranslate"><span class="pre">frozenset.intersection()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.difference"><code class="docutils literal notranslate"><span class="pre">frozenset.difference()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.symmetric_difference"><code class="docutils literal notranslate"><span class="pre">frozenset.symmetric_difference()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.copy"><code class="docutils literal notranslate"><span class="pre">frozenset.copy()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.update"><code class="docutils literal notranslate"><span class="pre">frozenset.update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.intersection_update"><code class="docutils literal notranslate"><span class="pre">frozenset.intersection_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.difference_update"><code class="docutils literal notranslate"><span class="pre">frozenset.difference_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.symmetric_difference_update"><code class="docutils literal notranslate"><span class="pre">frozenset.symmetric_difference_update()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.add"><code class="docutils literal notranslate"><span class="pre">frozenset.add()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.remove"><code class="docutils literal notranslate"><span class="pre">frozenset.remove()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.discard"><code class="docutils literal notranslate"><span class="pre">frozenset.discard()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.pop"><code class="docutils literal notranslate"><span class="pre">frozenset.pop()</span></code></a></li>
-<li><a class="reference internal" href="#frozenset.clear"><code class="docutils literal notranslate"><span class="pre">frozenset.clear()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-types-set-frozenset">Set Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a></li>
 <li><a class="reference internal" href="#mapping-types-dict">Mapping Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a><ul>
-<li><a class="reference internal" href="#dict"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul>
-<li><a class="reference internal" href="#dict.clear"><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></a></li>
-<li><a class="reference internal" href="#dict.copy"><code class="docutils literal notranslate"><span class="pre">dict.copy()</span></code></a></li>
-<li><a class="reference internal" href="#dict.fromkeys"><code class="docutils literal notranslate"><span class="pre">dict.fromkeys()</span></code></a></li>
-<li><a class="reference internal" href="#dict.get"><code class="docutils literal notranslate"><span class="pre">dict.get()</span></code></a></li>
-<li><a class="reference internal" href="#dict.items"><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></a></li>
-<li><a class="reference internal" href="#dict.keys"><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></a></li>
-<li><a class="reference internal" href="#dict.pop"><code class="docutils literal notranslate"><span class="pre">dict.pop()</span></code></a></li>
-<li><a class="reference internal" href="#dict.popitem"><code class="docutils literal notranslate"><span class="pre">dict.popitem()</span></code></a></li>
-<li><a class="reference internal" href="#dict.setdefault"><code class="docutils literal notranslate"><span class="pre">dict.setdefault()</span></code></a></li>
-<li><a class="reference internal" href="#dict.update"><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code></a></li>
-<li><a class="reference internal" href="#dict.values"><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#dictionary-view-objects">字典視圖物件</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#context-manager-types">Context Manager Types</a><ul>
-<li><a class="reference internal" href="#contextmanager.__enter__"><code class="docutils literal notranslate"><span class="pre">contextmanager.__enter__()</span></code></a></li>
-<li><a class="reference internal" href="#contextmanager.__exit__"><code class="docutils literal notranslate"><span class="pre">contextmanager.__exit__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#context-manager-types">Context Manager Types</a></li>
 <li><a class="reference internal" href="#type-annotation-types-generic-alias-union">Type Annotation Types --- <span class="xref std std-ref">Generic Alias</span>, <span class="xref std std-ref">Union</span></a><ul>
 <li><a class="reference internal" href="#generic-alias-type">Generic Alias Type</a><ul>
 <li><a class="reference internal" href="#standard-generic-classes">Standard Generic Classes</a></li>
-<li><a class="reference internal" href="#special-attributes-of-genericalias-objects">Special Attributes of <code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code> objects</a><ul>
-<li><a class="reference internal" href="#genericalias.__origin__"><code class="docutils literal notranslate"><span class="pre">genericalias.__origin__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__args__"><code class="docutils literal notranslate"><span class="pre">genericalias.__args__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__parameters__"><code class="docutils literal notranslate"><span class="pre">genericalias.__parameters__</span></code></a></li>
-<li><a class="reference internal" href="#genericalias.__unpacked__"><code class="docutils literal notranslate"><span class="pre">genericalias.__unpacked__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#special-attributes-of-genericalias-objects">Special Attributes of <code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code> objects</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#union-type">Union Type</a></li>
@@ -6419,18 +5915,7 @@ element is the tuple to be formatted.</p>
 <li><a class="reference internal" href="#internal-objects">Internal Objects</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#special-attributes">Special Attributes</a><ul>
-<li><a class="reference internal" href="#object.__dict__"><code class="docutils literal notranslate"><span class="pre">object.__dict__</span></code></a></li>
-<li><a class="reference internal" href="#instance.__class__"><code class="docutils literal notranslate"><span class="pre">instance.__class__</span></code></a></li>
-<li><a class="reference internal" href="#class.__bases__"><code class="docutils literal notranslate"><span class="pre">class.__bases__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__name__"><code class="docutils literal notranslate"><span class="pre">definition.__name__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__qualname__"><code class="docutils literal notranslate"><span class="pre">definition.__qualname__</span></code></a></li>
-<li><a class="reference internal" href="#definition.__type_params__"><code class="docutils literal notranslate"><span class="pre">definition.__type_params__</span></code></a></li>
-<li><a class="reference internal" href="#class.__mro__"><code class="docutils literal notranslate"><span class="pre">class.__mro__</span></code></a></li>
-<li><a class="reference internal" href="#class.mro"><code class="docutils literal notranslate"><span class="pre">class.mro()</span></code></a></li>
-<li><a class="reference internal" href="#class.__subclasses__"><code class="docutils literal notranslate"><span class="pre">class.__subclasses__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#special-attributes">Special Attributes</a></li>
 <li><a class="reference internal" href="#integer-string-conversion-length-limitation">Integer string conversion length limitation</a><ul>
 <li><a class="reference internal" href="#affected-apis">Affected APIs</a></li>
 <li><a class="reference internal" href="#configuring-the-limit">Configuring the limit</a></li>
@@ -6487,7 +5972,7 @@ element is the tuple to be formatted.</p>
           <a href="constants.html" title="內建常數"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -6497,7 +5982,7 @@ element is the tuple to be formatted.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -6526,13 +6011,14 @@ element is the tuple to be formatted.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -6540,7 +6026,7 @@ element is the tuple to be formatted.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

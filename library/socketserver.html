@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>socketserver --- A framework for network servers &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socketserver --- A framework for network servers &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,13 +19,13 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="http.server --- HTTP servers" href="http.server.html" />
+    <link rel="next" title="http.server — HTTP 伺服器" href="http.server.html" />
     <link rel="prev" title="uuid --- RFC 4122 定義的 UUID 物件" href="uuid.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/socketserver.html" />
     
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,73 +86,9 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">socketserver</span></code> --- A framework for network servers</a><ul>
-<li><a class="reference internal" href="#socketserver.TCPServer"><code class="docutils literal notranslate"><span class="pre">TCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UDPServer"><code class="docutils literal notranslate"><span class="pre">UDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UnixStreamServer"><code class="docutils literal notranslate"><span class="pre">UnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">UnixDatagramServer</span></code></a></li>
-<li><a class="reference internal" href="#server-creation-notes">Server Creation Notes</a><ul>
-<li><a class="reference internal" href="#socketserver.ForkingMixIn"><code class="docutils literal notranslate"><span class="pre">ForkingMixIn</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn.block_on_close"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn.block_on_close</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn.daemon_threads"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn.daemon_threads</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#socketserver.ForkingTCPServer"><code class="docutils literal notranslate"><span class="pre">ForkingTCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUDPServer"><code class="docutils literal notranslate"><span class="pre">ForkingUDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingTCPServer"><code class="docutils literal notranslate"><span class="pre">ThreadingTCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUDPServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUnixStreamServer"><code class="docutils literal notranslate"><span class="pre">ForkingUnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">ForkingUnixDatagramServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUnixStreamServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUnixDatagramServer</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#server-objects">Server Objects</a><ul>
-<li><a class="reference internal" href="#socketserver.BaseServer"><code class="docutils literal notranslate"><span class="pre">BaseServer</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.BaseServer.fileno"><code class="docutils literal notranslate"><span class="pre">BaseServer.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.serve_forever"><code class="docutils literal notranslate"><span class="pre">BaseServer.serve_forever()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.service_actions"><code class="docutils literal notranslate"><span class="pre">BaseServer.service_actions()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.shutdown"><code class="docutils literal notranslate"><span class="pre">BaseServer.shutdown()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_close"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_close()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.address_family"><code class="docutils literal notranslate"><span class="pre">BaseServer.address_family</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.RequestHandlerClass"><code class="docutils literal notranslate"><span class="pre">BaseServer.RequestHandlerClass</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_address"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.socket"><code class="docutils literal notranslate"><span class="pre">BaseServer.socket</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.allow_reuse_address"><code class="docutils literal notranslate"><span class="pre">BaseServer.allow_reuse_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.request_queue_size"><code class="docutils literal notranslate"><span class="pre">BaseServer.request_queue_size</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.socket_type"><code class="docutils literal notranslate"><span class="pre">BaseServer.socket_type</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.timeout"><code class="docutils literal notranslate"><span class="pre">BaseServer.timeout</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.finish_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.finish_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.get_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.get_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_error"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_error()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_timeout"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_timeout()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.process_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.process_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_activate"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_activate()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_bind"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_bind()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.verify_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.verify_request()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#request-handler-objects">Request Handler Objects</a><ul>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.setup"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.setup()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.handle"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.handle()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.finish"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.finish()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.request"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.request</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.client_address"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.client_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.server"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.server</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#socketserver.StreamRequestHandler"><code class="docutils literal notranslate"><span class="pre">StreamRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler.rfile"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler.rfile</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler.wfile"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler.wfile</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#server-creation-notes">Server Creation Notes</a></li>
+<li><a class="reference internal" href="#server-objects">Server Objects</a></li>
+<li><a class="reference internal" href="#request-handler-objects">Request Handler Objects</a></li>
 <li><a class="reference internal" href="#examples">範例</a><ul>
 <li><a class="reference internal" href="#socketserver-tcpserver-example"><code class="xref py py-class docutils literal notranslate"><span class="pre">socketserver.TCPServer</span></code> 範例</a></li>
 <li><a class="reference internal" href="#socketserver-udpserver-example"><code class="xref py py-class docutils literal notranslate"><span class="pre">socketserver.UDPServer</span></code> 範例</a></li>
@@ -172,7 +108,7 @@
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="http.server.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> — HTTP 伺服器</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -200,13 +136,13 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="http.server.html" title="http.server --- HTTP servers"
+          <a href="http.server.html" title="http.server — HTTP 伺服器"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="uuid.html" title="uuid --- RFC 4122 定義的 UUID 物件"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -216,7 +152,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -761,7 +697,7 @@ Support the <a class="reference internal" href="io.html#io.BufferedIOBase" title
     <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># self.request is the TCP socket connected to the client</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> wrote:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client_address</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received from </span><span class="si">{}</span><span class="s2">:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client_address</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="c1"># just send back the same data, but upper-cased</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -793,8 +729,9 @@ objects that simplify communication by providing the standard file interface):</
 </div>
 <p>The difference is that the <code class="docutils literal notranslate"><span class="pre">readline()</span></code> call in the second handler will call
 <code class="docutils literal notranslate"><span class="pre">recv()</span></code> multiple times until it encounters a newline character, while the
-single <code class="docutils literal notranslate"><span class="pre">recv()</span></code> call in the first handler will just return what has been sent
-from the client in one <code class="docutils literal notranslate"><span class="pre">sendall()</span></code> call.</p>
+single <code class="docutils literal notranslate"><span class="pre">recv()</span></code> call in the first handler will just return what has been
+received so far from the client's <code class="docutils literal notranslate"><span class="pre">sendall()</span></code> call (typically all of it, but
+this is not guaranteed by the TCP protocol).</p>
 <p>This is the client side:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -957,73 +894,9 @@ Available only on POSIX platforms that support <a class="reference internal" hre
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">socketserver</span></code> --- A framework for network servers</a><ul>
-<li><a class="reference internal" href="#socketserver.TCPServer"><code class="docutils literal notranslate"><span class="pre">TCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UDPServer"><code class="docutils literal notranslate"><span class="pre">UDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UnixStreamServer"><code class="docutils literal notranslate"><span class="pre">UnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.UnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">UnixDatagramServer</span></code></a></li>
-<li><a class="reference internal" href="#server-creation-notes">Server Creation Notes</a><ul>
-<li><a class="reference internal" href="#socketserver.ForkingMixIn"><code class="docutils literal notranslate"><span class="pre">ForkingMixIn</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn.block_on_close"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn.block_on_close</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingMixIn.daemon_threads"><code class="docutils literal notranslate"><span class="pre">ThreadingMixIn.daemon_threads</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#socketserver.ForkingTCPServer"><code class="docutils literal notranslate"><span class="pre">ForkingTCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUDPServer"><code class="docutils literal notranslate"><span class="pre">ForkingUDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingTCPServer"><code class="docutils literal notranslate"><span class="pre">ThreadingTCPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUDPServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUDPServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUnixStreamServer"><code class="docutils literal notranslate"><span class="pre">ForkingUnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ForkingUnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">ForkingUnixDatagramServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUnixStreamServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUnixStreamServer</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.ThreadingUnixDatagramServer"><code class="docutils literal notranslate"><span class="pre">ThreadingUnixDatagramServer</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#server-objects">Server Objects</a><ul>
-<li><a class="reference internal" href="#socketserver.BaseServer"><code class="docutils literal notranslate"><span class="pre">BaseServer</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.BaseServer.fileno"><code class="docutils literal notranslate"><span class="pre">BaseServer.fileno()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.serve_forever"><code class="docutils literal notranslate"><span class="pre">BaseServer.serve_forever()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.service_actions"><code class="docutils literal notranslate"><span class="pre">BaseServer.service_actions()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.shutdown"><code class="docutils literal notranslate"><span class="pre">BaseServer.shutdown()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_close"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_close()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.address_family"><code class="docutils literal notranslate"><span class="pre">BaseServer.address_family</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.RequestHandlerClass"><code class="docutils literal notranslate"><span class="pre">BaseServer.RequestHandlerClass</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_address"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.socket"><code class="docutils literal notranslate"><span class="pre">BaseServer.socket</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.allow_reuse_address"><code class="docutils literal notranslate"><span class="pre">BaseServer.allow_reuse_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.request_queue_size"><code class="docutils literal notranslate"><span class="pre">BaseServer.request_queue_size</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.socket_type"><code class="docutils literal notranslate"><span class="pre">BaseServer.socket_type</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.timeout"><code class="docutils literal notranslate"><span class="pre">BaseServer.timeout</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.finish_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.finish_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.get_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.get_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_error"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_error()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.handle_timeout"><code class="docutils literal notranslate"><span class="pre">BaseServer.handle_timeout()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.process_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.process_request()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_activate"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_activate()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.server_bind"><code class="docutils literal notranslate"><span class="pre">BaseServer.server_bind()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseServer.verify_request"><code class="docutils literal notranslate"><span class="pre">BaseServer.verify_request()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#request-handler-objects">Request Handler Objects</a><ul>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.setup"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.setup()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.handle"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.handle()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.finish"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.finish()</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.request"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.request</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.client_address"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.client_address</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.BaseRequestHandler.server"><code class="docutils literal notranslate"><span class="pre">BaseRequestHandler.server</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#socketserver.StreamRequestHandler"><code class="docutils literal notranslate"><span class="pre">StreamRequestHandler</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler</span></code></a><ul>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler.rfile"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler.rfile</span></code></a></li>
-<li><a class="reference internal" href="#socketserver.DatagramRequestHandler.wfile"><code class="docutils literal notranslate"><span class="pre">DatagramRequestHandler.wfile</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#server-creation-notes">Server Creation Notes</a></li>
+<li><a class="reference internal" href="#server-objects">Server Objects</a></li>
+<li><a class="reference internal" href="#request-handler-objects">Request Handler Objects</a></li>
 <li><a class="reference internal" href="#examples">範例</a><ul>
 <li><a class="reference internal" href="#socketserver-tcpserver-example"><code class="xref py py-class docutils literal notranslate"><span class="pre">socketserver.TCPServer</span></code> 範例</a></li>
 <li><a class="reference internal" href="#socketserver-udpserver-example"><code class="xref py py-class docutils literal notranslate"><span class="pre">socketserver.UDPServer</span></code> 範例</a></li>
@@ -1043,7 +916,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
   <div>
     <h4>下個主題</h4>
     <p class="topless"><a href="http.server.html"
-                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> — HTTP 伺服器</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
@@ -1074,13 +947,13 @@ Available only on POSIX platforms that support <a class="reference internal" hre
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="http.server.html" title="http.server --- HTTP servers"
+          <a href="http.server.html" title="http.server — HTTP 伺服器"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="uuid.html" title="uuid --- RFC 4122 定義的 UUID 物件"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1090,7 +963,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1120,13 +993,14 @@ Available only on POSIX platforms that support <a class="reference internal" hre
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1134,7 +1008,7 @@ Available only on POSIX platforms that support <a class="reference internal" hre
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

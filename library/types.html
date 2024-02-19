@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,67 +86,10 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a><ul>
-<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a><ul>
-<li><a class="reference internal" href="#types.new_class"><code class="docutils literal notranslate"><span class="pre">new_class()</span></code></a></li>
-<li><a class="reference internal" href="#types.prepare_class"><code class="docutils literal notranslate"><span class="pre">prepare_class()</span></code></a></li>
-<li><a class="reference internal" href="#types.resolve_bases"><code class="docutils literal notranslate"><span class="pre">resolve_bases()</span></code></a></li>
-<li><a class="reference internal" href="#types.get_original_bases"><code class="docutils literal notranslate"><span class="pre">get_original_bases()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a><ul>
-<li><a class="reference internal" href="#types.NoneType"><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></a></li>
-<li><a class="reference internal" href="#types.FunctionType"><code class="docutils literal notranslate"><span class="pre">FunctionType</span></code></a></li>
-<li><a class="reference internal" href="#types.LambdaType"><code class="docutils literal notranslate"><span class="pre">LambdaType</span></code></a></li>
-<li><a class="reference internal" href="#types.GeneratorType"><code class="docutils literal notranslate"><span class="pre">GeneratorType</span></code></a></li>
-<li><a class="reference internal" href="#types.CoroutineType"><code class="docutils literal notranslate"><span class="pre">CoroutineType</span></code></a></li>
-<li><a class="reference internal" href="#types.AsyncGeneratorType"><code class="docutils literal notranslate"><span class="pre">AsyncGeneratorType</span></code></a></li>
-<li><a class="reference internal" href="#types.CodeType"><code class="docutils literal notranslate"><span class="pre">CodeType</span></code></a><ul>
-<li><a class="reference internal" href="#types.CodeType.replace"><code class="docutils literal notranslate"><span class="pre">CodeType.replace()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#types.CellType"><code class="docutils literal notranslate"><span class="pre">CellType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodType"><code class="docutils literal notranslate"><span class="pre">MethodType</span></code></a></li>
-<li><a class="reference internal" href="#types.BuiltinFunctionType"><code class="docutils literal notranslate"><span class="pre">BuiltinFunctionType</span></code></a></li>
-<li><a class="reference internal" href="#types.BuiltinMethodType"><code class="docutils literal notranslate"><span class="pre">BuiltinMethodType</span></code></a></li>
-<li><a class="reference internal" href="#types.WrapperDescriptorType"><code class="docutils literal notranslate"><span class="pre">WrapperDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodWrapperType"><code class="docutils literal notranslate"><span class="pre">MethodWrapperType</span></code></a></li>
-<li><a class="reference internal" href="#types.NotImplementedType"><code class="docutils literal notranslate"><span class="pre">NotImplementedType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">MethodDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.ClassMethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">ClassMethodDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType"><code class="docutils literal notranslate"><span class="pre">ModuleType</span></code></a><ul>
-<li><a class="reference internal" href="#types.ModuleType.__doc__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__loader__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__loader__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__name__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__name__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__package__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__package__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__spec__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__spec__</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#types.EllipsisType"><code class="docutils literal notranslate"><span class="pre">EllipsisType</span></code></a></li>
-<li><a class="reference internal" href="#types.GenericAlias"><code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code></a></li>
-<li><a class="reference internal" href="#types.UnionType"><code class="docutils literal notranslate"><span class="pre">UnionType</span></code></a></li>
-<li><a class="reference internal" href="#types.TracebackType"><code class="docutils literal notranslate"><span class="pre">TracebackType</span></code></a></li>
-<li><a class="reference internal" href="#types.FrameType"><code class="docutils literal notranslate"><span class="pre">FrameType</span></code></a></li>
-<li><a class="reference internal" href="#types.GetSetDescriptorType"><code class="docutils literal notranslate"><span class="pre">GetSetDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MemberDescriptorType"><code class="docutils literal notranslate"><span class="pre">MemberDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType"><code class="docutils literal notranslate"><span class="pre">MappingProxyType</span></code></a><ul>
-<li><a class="reference internal" href="#types.MappingProxyType.copy"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.copy()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.get"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.get()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.items"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.items()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.keys"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.keys()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.values"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.values()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a><ul>
-<li><a class="reference internal" href="#types.SimpleNamespace"><code class="docutils literal notranslate"><span class="pre">SimpleNamespace</span></code></a></li>
-<li><a class="reference internal" href="#types.DynamicClassAttribute"><code class="docutils literal notranslate"><span class="pre">DynamicClassAttribute()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a><ul>
-<li><a class="reference internal" href="#types.coroutine"><code class="docutils literal notranslate"><span class="pre">coroutine()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
+<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
+<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a></li>
+<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -194,7 +137,7 @@
           <a href="weakref.html" title="weakref --- Weak references"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -204,7 +147,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -423,20 +366,11 @@ asynchronous generator functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="types.CodeType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">CodeType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.CodeType" title="Link to this definition">¶</a></dt>
-<dd><p id="index-4">The type for code objects such as returned by <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a>.</p>
+<dd><p id="index-4">The type of <a class="reference internal" href="../reference/datamodel.html#code-objects"><span class="std std-ref">code objects</span></a> such as returned by <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a>.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">code</span></code>、<code class="docutils literal notranslate"><span class="pre">filename</span></code>、<code class="docutils literal notranslate"><span class="pre">name</span></code>、<code class="docutils literal notranslate"><span class="pre">argcount</span></code>、<code class="docutils literal notranslate"><span class="pre">posonlyargcount</span></code>、<code class="docutils literal notranslate"><span class="pre">kwonlyargcount</span></code>、<code class="docutils literal notranslate"><span class="pre">nlocals</span></code>、<code class="docutils literal notranslate"><span class="pre">stacksize</span></code>、<code class="docutils literal notranslate"><span class="pre">flags</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">code.__new__</span></code>。</p>
 <p>Note that the audited arguments may not match the names or positions
 required by the initializer.  The audit event only occurs for direct
 instantiation of code objects, and is not raised for normal compilation.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="types.CodeType.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.CodeType.replace" title="Link to this definition">¶</a></dt>
-<dd><p>Return a copy of the code object with new values for the specified fields.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.8 版新加入.</span></p>
-</div>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py data">
@@ -652,10 +586,8 @@ dynamically.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="types.FrameType">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">FrameType</span></span><a class="headerlink" href="#types.FrameType" title="Link to this definition">¶</a></dt>
-<dd><p>The type of frame objects such as found in <code class="docutils literal notranslate"><span class="pre">tb.tb_frame</span></code> if <code class="docutils literal notranslate"><span class="pre">tb</span></code> is a
-traceback object.</p>
-<p>See <a class="reference internal" href="../reference/datamodel.html#frame-objects"><span class="std std-ref">the language reference</span></a> for details of the
-available attributes and operations.</p>
+<dd><p>The type of <a class="reference internal" href="../reference/datamodel.html#frame-objects"><span class="std std-ref">frame objects</span></a> such as found in
+<a class="reference internal" href="../reference/datamodel.html#traceback.tb_frame" title="traceback.tb_frame"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tb.tb_frame</span></code></a> if <code class="docutils literal notranslate"><span class="pre">tb</span></code> is a traceback object.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -675,6 +607,9 @@ descriptor for object attributes; it has the same purpose as the
 as <code class="docutils literal notranslate"><span class="pre">datetime.timedelta.days</span></code>.  This type is used as descriptor for simple C
 data members which use standard conversion functions; it has the same purpose
 as the <a class="reference internal" href="functions.html#property" title="property"><code class="xref py py-class docutils literal notranslate"><span class="pre">property</span></code></a> type, but for classes defined in extension modules.</p>
+<p>In addition, when a class is defined with a <a class="reference internal" href="../reference/datamodel.html#object.__slots__" title="object.__slots__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__slots__</span></code></a> attribute, then for
+each slot, an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">MemberDescriptorType</span></code> will be added as an attribute
+on the class. This allows the slot to appear in the class's <a class="reference internal" href="stdtypes.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a>.</p>
 <div class="impl-detail compound">
 <p><strong>CPython 實作細節：</strong> In other implementations of Python, this type may be identical to
 <code class="docutils literal notranslate"><span class="pre">GetSetDescriptorType</span></code>.</p>
@@ -863,67 +798,10 @@ of objects will be returned as is.</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a><ul>
-<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a><ul>
-<li><a class="reference internal" href="#types.new_class"><code class="docutils literal notranslate"><span class="pre">new_class()</span></code></a></li>
-<li><a class="reference internal" href="#types.prepare_class"><code class="docutils literal notranslate"><span class="pre">prepare_class()</span></code></a></li>
-<li><a class="reference internal" href="#types.resolve_bases"><code class="docutils literal notranslate"><span class="pre">resolve_bases()</span></code></a></li>
-<li><a class="reference internal" href="#types.get_original_bases"><code class="docutils literal notranslate"><span class="pre">get_original_bases()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a><ul>
-<li><a class="reference internal" href="#types.NoneType"><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></a></li>
-<li><a class="reference internal" href="#types.FunctionType"><code class="docutils literal notranslate"><span class="pre">FunctionType</span></code></a></li>
-<li><a class="reference internal" href="#types.LambdaType"><code class="docutils literal notranslate"><span class="pre">LambdaType</span></code></a></li>
-<li><a class="reference internal" href="#types.GeneratorType"><code class="docutils literal notranslate"><span class="pre">GeneratorType</span></code></a></li>
-<li><a class="reference internal" href="#types.CoroutineType"><code class="docutils literal notranslate"><span class="pre">CoroutineType</span></code></a></li>
-<li><a class="reference internal" href="#types.AsyncGeneratorType"><code class="docutils literal notranslate"><span class="pre">AsyncGeneratorType</span></code></a></li>
-<li><a class="reference internal" href="#types.CodeType"><code class="docutils literal notranslate"><span class="pre">CodeType</span></code></a><ul>
-<li><a class="reference internal" href="#types.CodeType.replace"><code class="docutils literal notranslate"><span class="pre">CodeType.replace()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#types.CellType"><code class="docutils literal notranslate"><span class="pre">CellType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodType"><code class="docutils literal notranslate"><span class="pre">MethodType</span></code></a></li>
-<li><a class="reference internal" href="#types.BuiltinFunctionType"><code class="docutils literal notranslate"><span class="pre">BuiltinFunctionType</span></code></a></li>
-<li><a class="reference internal" href="#types.BuiltinMethodType"><code class="docutils literal notranslate"><span class="pre">BuiltinMethodType</span></code></a></li>
-<li><a class="reference internal" href="#types.WrapperDescriptorType"><code class="docutils literal notranslate"><span class="pre">WrapperDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodWrapperType"><code class="docutils literal notranslate"><span class="pre">MethodWrapperType</span></code></a></li>
-<li><a class="reference internal" href="#types.NotImplementedType"><code class="docutils literal notranslate"><span class="pre">NotImplementedType</span></code></a></li>
-<li><a class="reference internal" href="#types.MethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">MethodDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.ClassMethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">ClassMethodDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType"><code class="docutils literal notranslate"><span class="pre">ModuleType</span></code></a><ul>
-<li><a class="reference internal" href="#types.ModuleType.__doc__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__loader__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__loader__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__name__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__name__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__package__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__package__</span></code></a></li>
-<li><a class="reference internal" href="#types.ModuleType.__spec__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__spec__</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#types.EllipsisType"><code class="docutils literal notranslate"><span class="pre">EllipsisType</span></code></a></li>
-<li><a class="reference internal" href="#types.GenericAlias"><code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code></a></li>
-<li><a class="reference internal" href="#types.UnionType"><code class="docutils literal notranslate"><span class="pre">UnionType</span></code></a></li>
-<li><a class="reference internal" href="#types.TracebackType"><code class="docutils literal notranslate"><span class="pre">TracebackType</span></code></a></li>
-<li><a class="reference internal" href="#types.FrameType"><code class="docutils literal notranslate"><span class="pre">FrameType</span></code></a></li>
-<li><a class="reference internal" href="#types.GetSetDescriptorType"><code class="docutils literal notranslate"><span class="pre">GetSetDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MemberDescriptorType"><code class="docutils literal notranslate"><span class="pre">MemberDescriptorType</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType"><code class="docutils literal notranslate"><span class="pre">MappingProxyType</span></code></a><ul>
-<li><a class="reference internal" href="#types.MappingProxyType.copy"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.copy()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.get"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.get()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.items"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.items()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.keys"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.keys()</span></code></a></li>
-<li><a class="reference internal" href="#types.MappingProxyType.values"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.values()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a><ul>
-<li><a class="reference internal" href="#types.SimpleNamespace"><code class="docutils literal notranslate"><span class="pre">SimpleNamespace</span></code></a></li>
-<li><a class="reference internal" href="#types.DynamicClassAttribute"><code class="docutils literal notranslate"><span class="pre">DynamicClassAttribute()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a><ul>
-<li><a class="reference internal" href="#types.coroutine"><code class="docutils literal notranslate"><span class="pre">coroutine()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
+<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
+<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a></li>
+<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -974,7 +852,7 @@ of objects will be returned as is.</p>
           <a href="weakref.html" title="weakref --- Weak references"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -984,7 +862,7 @@ of objects will be returned as is.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -1014,13 +892,14 @@ of objects will be returned as is.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1028,7 +907,7 @@ of objects will be returned as is.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

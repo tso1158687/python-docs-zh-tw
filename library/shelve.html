@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>shelve --- Python object persistence &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shelve --- Python object persistence &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,14 +19,14 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="marshal --- 内部 Python 物件序列化" href="marshal.html" />
-    <link rel="prev" title="copyreg --- Register pickle support functions" href="copyreg.html" />
+    <link rel="prev" title="copyreg --- 註冊 pickle 支援函式" href="copyreg.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/shelve.html" />
     
       
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,15 +86,7 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shelve</span></code> --- Python object persistence</a><ul>
-<li><a class="reference internal" href="#shelve.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#shelve.Shelf.sync"><code class="docutils literal notranslate"><span class="pre">Shelf.sync()</span></code></a></li>
-<li><a class="reference internal" href="#shelve.Shelf.close"><code class="docutils literal notranslate"><span class="pre">Shelf.close()</span></code></a></li>
-<li><a class="reference internal" href="#restrictions">Restrictions</a><ul>
-<li><a class="reference internal" href="#shelve.Shelf"><code class="docutils literal notranslate"><span class="pre">Shelf</span></code></a></li>
-<li><a class="reference internal" href="#shelve.BsdDbShelf"><code class="docutils literal notranslate"><span class="pre">BsdDbShelf</span></code></a></li>
-<li><a class="reference internal" href="#shelve.DbfilenameShelf"><code class="docutils literal notranslate"><span class="pre">DbfilenameShelf</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#restrictions">Restrictions</a></li>
 <li><a class="reference internal" href="#example">範例</a></li>
 </ul>
 </li>
@@ -104,7 +96,7 @@
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="copyreg.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- 註冊 <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> 支援函式</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -140,10 +132,10 @@
           <a href="marshal.html" title="marshal --- 内部 Python 物件序列化"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="copyreg.html" title="copyreg --- Register pickle support functions"
+          <a href="copyreg.html" title="copyreg --- 註冊 pickle 支援函式"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -153,7 +145,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -273,8 +265,8 @@ dictionaries.</p>
 <section id="restrictions">
 <h2>Restrictions<a class="headerlink" href="#restrictions" title="Link to this heading">¶</a></h2>
 <ul class="simple" id="index-1">
-<li><p>The choice of which database package will be used (such as <a class="reference internal" href="dbm.html#module-dbm.ndbm" title="dbm.ndbm: The standard &quot;database&quot; interface, based on ndbm. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.ndbm</span></code></a> or
-<a class="reference internal" href="dbm.html#module-dbm.gnu" title="dbm.gnu: GNU's reinterpretation of dbm. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.gnu</span></code></a>) depends on which interface is available.  Therefore it is not
+<li><p>The choice of which database package will be used (such as <a class="reference internal" href="dbm.html#module-dbm.ndbm" title="dbm.ndbm: The New Database Manager (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.ndbm</span></code></a> or
+<a class="reference internal" href="dbm.html#module-dbm.gnu" title="dbm.gnu: GNU database manager (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.gnu</span></code></a>) depends on which interface is available.  Therefore it is not
 safe to open the database directly using <a class="reference internal" href="dbm.html#module-dbm" title="dbm: Interfaces to various Unix &quot;database&quot; formats."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code></a>.  The database is also
 (unfortunately) subject to the limitations of <a class="reference internal" href="dbm.html#module-dbm" title="dbm: Interfaces to various Unix &quot;database&quot; formats."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code></a>, if it is used ---
 this means that (the pickled representation of) the objects stored in the
@@ -286,6 +278,8 @@ program has a shelf open for writing, no other program should have it open for
 reading or writing.  Unix file locking can be used to solve this, but this
 differs across Unix versions and requires knowledge about the database
 implementation used.</p></li>
+<li><p>On macOS <a class="reference internal" href="dbm.html#module-dbm.ndbm" title="dbm.ndbm: The New Database Manager (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.ndbm</span></code></a> can silently corrupt the database file on updates,
+which can cause hard crashes when trying to read from the database.</p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="shelve.Shelf">
@@ -321,7 +315,8 @@ protocol.</p>
 <dt class="sig sig-object py" id="shelve.BsdDbShelf">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">shelve.</span></span><span class="sig-name descname"><span class="pre">BsdDbShelf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writeback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyencoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shelve.BsdDbShelf" title="Link to this definition">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#shelve.Shelf" title="shelve.Shelf"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shelf</span></code></a> which exposes <code class="xref py py-meth docutils literal notranslate"><span class="pre">first()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">next()</span></code>,
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">previous()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">last()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_location()</span></code> which are available
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">previous()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">last()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_location()</span></code> methods.
+These are available
 in the third-party <code class="xref py py-mod docutils literal notranslate"><span class="pre">bsddb</span></code> module from <a class="reference external" href="https://www.jcea.es/programacion/pybsddb.htm">pybsddb</a> but not in other database
 modules.  The <em>dict</em> object passed to the constructor must support those
 methods.  This is generally accomplished by calling one of
@@ -400,15 +395,7 @@ object):</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shelve</span></code> --- Python object persistence</a><ul>
-<li><a class="reference internal" href="#shelve.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#shelve.Shelf.sync"><code class="docutils literal notranslate"><span class="pre">Shelf.sync()</span></code></a></li>
-<li><a class="reference internal" href="#shelve.Shelf.close"><code class="docutils literal notranslate"><span class="pre">Shelf.close()</span></code></a></li>
-<li><a class="reference internal" href="#restrictions">Restrictions</a><ul>
-<li><a class="reference internal" href="#shelve.Shelf"><code class="docutils literal notranslate"><span class="pre">Shelf</span></code></a></li>
-<li><a class="reference internal" href="#shelve.BsdDbShelf"><code class="docutils literal notranslate"><span class="pre">BsdDbShelf</span></code></a></li>
-<li><a class="reference internal" href="#shelve.DbfilenameShelf"><code class="docutils literal notranslate"><span class="pre">DbfilenameShelf</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#restrictions">Restrictions</a></li>
 <li><a class="reference internal" href="#example">範例</a></li>
 </ul>
 </li>
@@ -418,7 +405,7 @@ object):</p>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="copyreg.html"
-                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- 註冊 <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> 支援函式</a></p>
   </div>
   <div>
     <h4>下個主題</h4>
@@ -457,10 +444,10 @@ object):</p>
           <a href="marshal.html" title="marshal --- 内部 Python 物件序列化"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="copyreg.html" title="copyreg --- Register pickle support functions"
+          <a href="copyreg.html" title="copyreg --- 註冊 pickle 支援函式"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -470,7 +457,7 @@ object):</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -500,13 +487,14 @@ object):</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -514,7 +502,7 @@ object):</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

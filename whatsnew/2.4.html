@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 2.4 有什麼新功能 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 2.4 有什麼新功能 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -163,7 +163,7 @@
           <a href="2.5.html" title="Python 2.5 有什麼新功能"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -173,7 +173,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
@@ -496,7 +496,8 @@ function, as previously described.  In other words, <code class="docutils litera
 </pre></div>
 </div>
 <p>Getting this right can be slightly brain-bending, but it's not too difficult.</p>
-<p>A small related change makes the <code class="xref py py-attr docutils literal notranslate"><span class="pre">func_name</span></code> attribute of functions
+<p>A small related change makes the <a class="reference internal" href="../reference/datamodel.html#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">func_name</span></code></a>
+attribute of functions
 writable.  This attribute is used to display function names in tracebacks, so
 decorators should change the name of any new function that's constructed and
 returned.</p>
@@ -555,7 +556,7 @@ capture standard output and standard error from the subprocess, but the naming
 is confusing.  The <a class="reference internal" href="../library/subprocess.html#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> module cleans  this up, providing a unified
 interface that offers all the features you might need.</p>
 <p>Instead of <code class="xref py py-mod docutils literal notranslate"><span class="pre">popen2</span></code>'s collection of classes, <a class="reference internal" href="../library/subprocess.html#module-subprocess" title="subprocess: Subprocess management."><code class="xref py py-mod docutils literal notranslate"><span class="pre">subprocess</span></code></a> contains a
-single class called <code class="xref py py-class docutils literal notranslate"><span class="pre">Popen</span></code>  whose constructor supports a number of
+single class called <a class="reference internal" href="../library/subprocess.html#subprocess.Popen" title="subprocess.Popen"><code class="xref py py-class docutils literal notranslate"><span class="pre">subprocess.Popen</span></code></a>  whose constructor supports a number of
 different keyword arguments.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Popen</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">bufsize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">stdin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1126,9 +1127,9 @@ end:</p>
 advantage of <a class="reference internal" href="../library/collections.html#collections.deque" title="collections.deque"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.deque</span></code></a> for improved performance.  (Contributed
 by Raymond Hettinger.)</p>
 </li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code> classes have been enhanced slightly. The <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code>
+<li><p>The <a class="reference internal" href="../library/configparser.html#module-configparser" title="configparser: Configuration file parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ConfigParser</span></code></a> classes have been enhanced slightly. The <a class="reference internal" href="../library/configparser.html#configparser.ConfigParser.read" title="configparser.ConfigParser.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a>
 method now returns a list of the files that were successfully parsed, and the
-<a class="reference internal" href="../library/stdtypes.html#set" title="set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method raises <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> if passed a <em>value</em> argument that
+<a class="reference internal" href="../library/configparser.html#configparser.ConfigParser.set" title="configparser.ConfigParser.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method raises <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> if passed a <em>value</em> argument that
 isn't a string.   (Contributed by John Belmonte and David Goodger.)</p></li>
 <li><p>The <a class="reference internal" href="../library/curses.html#module-curses" title="curses: An interface to the curses library, providing portable terminal handling. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code></a> module now supports the ncurses extension
 <code class="xref py py-func docutils literal notranslate"><span class="pre">use_default_colors()</span></code>.  On platforms where the terminal supports
@@ -1150,7 +1151,7 @@ improvement in speed makes the module suitable for handling high volumes of
 data.  In addition, the module has two new functions <code class="xref py py-func docutils literal notranslate"><span class="pre">nlargest()</span></code> and
 <code class="xref py py-func docutils literal notranslate"><span class="pre">nsmallest()</span></code> that use heaps to find the N largest or smallest values in a
 dataset without the expense of a full sort.  (Contributed by Raymond Hettinger.)</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code> module now contains constants for HTTP status codes defined
+<li><p>The <a class="reference internal" href="../library/http.html#module-http" title="http: HTTP status codes and messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httplib</span></code></a> module now contains constants for HTTP status codes defined
 in various HTTP-related RFC documents.  Constants have names such as
 <code class="xref py py-const docutils literal notranslate"><span class="pre">OK</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">CREATED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">CONTINUE</span></code>, and
 <code class="xref py py-const docutils literal notranslate"><span class="pre">MOVED_PERMANENTLY</span></code>; use pydoc to get a full list.  (Contributed by
@@ -1281,7 +1282,7 @@ now include the string <code class="docutils literal notranslate"><span class="p
 default value.  (Contributed by Greg Ward.)</p></li>
 <li><p>The long-term plan is to deprecate the <code class="xref py py-mod docutils literal notranslate"><span class="pre">rfc822</span></code> module in some future
 Python release in favor of the <a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a> package. To this end, the
-<code class="xref py py-func docutils literal notranslate"><span class="pre">email.Utils.formatdate()</span></code> function has been changed to make it usable as a
+<a class="reference internal" href="../library/email.utils.html#email.utils.formatdate" title="email.utils.formatdate"><code class="xref py py-func docutils literal notranslate"><span class="pre">email.Utils.formatdate</span></code></a> function has been changed to make it usable as a
 replacement for <code class="xref py py-func docutils literal notranslate"><span class="pre">rfc822.formatdate()</span></code>.  You may want to write new e-mail
 processing code with this in mind.  (Change implemented by Anthony Baxter.)</p></li>
 <li><p>A new <code class="docutils literal notranslate"><span class="pre">urandom(n)</span></code> function was added to the <a class="reference internal" href="../library/os.html#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> module, returning
@@ -1354,7 +1355,7 @@ comparable.  (Contributed by Raymond Hettinger.)</p></li>
 Python functions, class instances, sets, frozensets, deques, arrays, files,
 sockets, and regular expression pattern objects. (Contributed by Raymond
 Hettinger.)</p></li>
-<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code> module now supports a multi-call extension for
+<li><p>The <a class="reference internal" href="../library/xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpclib</span></code></a> module now supports a multi-call extension for
 transmitting multiple XML-RPC calls in a single HTTP operation. (Contributed by
 Brian Quinlan.)</p></li>
 <li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">mpz</span></code>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">rotor</span></code>, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">xreadlines</span></code> modules have  been
@@ -1362,8 +1363,8 @@ removed.</p></li>
 </ul>
 <section id="cookielib">
 <h3>cookielib<a class="headerlink" href="#cookielib" title="Link to this heading">¶</a></h3>
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code> library supports client-side handling for HTTP cookies,
-mirroring the <code class="xref py py-mod docutils literal notranslate"><span class="pre">Cookie</span></code> module's server-side cookie support. Cookies are
+<p>The <a class="reference internal" href="../library/http.cookiejar.html#module-http.cookiejar" title="http.cookiejar: Classes for automatic handling of HTTP cookies."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code></a> library supports client-side handling for HTTP cookies,
+mirroring the <a class="reference internal" href="../library/http.cookies.html#module-http.cookies" title="http.cookies: Support for HTTP state management (cookies)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">Cookie</span></code></a> module's server-side cookie support. Cookies are
 stored in cookie jars; the library transparently stores cookies offered by the
 web server in the cookie jar, and fetches the cookie from the jar when
 connecting to the server. As in web browsers, policy objects control whether
@@ -1372,7 +1373,7 @@ cookies are accepted or not.</p>
 are provided: one that stores cookies in the Netscape format so applications can
 use the Mozilla or Lynx cookie files, and one that stores cookies in the same
 format as the Perl libwww library.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib2</span></code> has been changed to interact with <code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code>:
+<p><a class="reference internal" href="../library/urllib.request.html#module-urllib.request" title="urllib.request: Extensible library for opening URLs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib2</span></code></a> has been changed to interact with <a class="reference internal" href="../library/http.cookiejar.html#module-http.cookiejar" title="http.cookiejar: Classes for automatic handling of HTTP cookies."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cookielib</span></code></a>:
 <code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPCookieProcessor</span></code> manages a cookie jar that is used when accessing
 URLs.</p>
 <p>This module was contributed by John J. Lee.</p>
@@ -1654,7 +1655,7 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
           <a href="2.5.html" title="Python 2.5 有什麼新功能"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1664,7 +1665,7 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
@@ -1693,13 +1694,14 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1707,7 +1709,7 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

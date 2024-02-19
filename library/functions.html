@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>內建函式 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內建函式 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -82,86 +82,6 @@
         <option value="dark">Dark</option>
     </select>
 </label>
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">內建函式</a><ul>
-<li><a class="reference internal" href="#abs"><code class="docutils literal notranslate"><span class="pre">abs()</span></code></a></li>
-<li><a class="reference internal" href="#aiter"><code class="docutils literal notranslate"><span class="pre">aiter()</span></code></a></li>
-<li><a class="reference internal" href="#all"><code class="docutils literal notranslate"><span class="pre">all()</span></code></a></li>
-<li><a class="reference internal" href="#anext"><code class="docutils literal notranslate"><span class="pre">anext()</span></code></a></li>
-<li><a class="reference internal" href="#any"><code class="docutils literal notranslate"><span class="pre">any()</span></code></a></li>
-<li><a class="reference internal" href="#ascii"><code class="docutils literal notranslate"><span class="pre">ascii()</span></code></a></li>
-<li><a class="reference internal" href="#bin"><code class="docutils literal notranslate"><span class="pre">bin()</span></code></a></li>
-<li><a class="reference internal" href="#bool"><code class="docutils literal notranslate"><span class="pre">bool</span></code></a></li>
-<li><a class="reference internal" href="#breakpoint"><code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code></a></li>
-<li><a class="reference internal" href="#callable"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></li>
-<li><a class="reference internal" href="#chr"><code class="docutils literal notranslate"><span class="pre">chr()</span></code></a></li>
-<li><a class="reference internal" href="#classmethod"><code class="docutils literal notranslate"><span class="pre">classmethod()</span></code></a></li>
-<li><a class="reference internal" href="#compile"><code class="docutils literal notranslate"><span class="pre">compile()</span></code></a></li>
-<li><a class="reference internal" href="#complex"><code class="docutils literal notranslate"><span class="pre">complex</span></code></a></li>
-<li><a class="reference internal" href="#delattr"><code class="docutils literal notranslate"><span class="pre">delattr()</span></code></a></li>
-<li><a class="reference internal" href="#dir"><code class="docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
-<li><a class="reference internal" href="#divmod"><code class="docutils literal notranslate"><span class="pre">divmod()</span></code></a></li>
-<li><a class="reference internal" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
-<li><a class="reference internal" href="#eval"><code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
-<li><a class="reference internal" href="#exec"><code class="docutils literal notranslate"><span class="pre">exec()</span></code></a></li>
-<li><a class="reference internal" href="#filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
-<li><a class="reference internal" href="#float"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
-<li><a class="reference internal" href="#format"><code class="docutils literal notranslate"><span class="pre">format()</span></code></a></li>
-<li><a class="reference internal" href="#getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li><a class="reference internal" href="#globals"><code class="docutils literal notranslate"><span class="pre">globals()</span></code></a></li>
-<li><a class="reference internal" href="#hasattr"><code class="docutils literal notranslate"><span class="pre">hasattr()</span></code></a></li>
-<li><a class="reference internal" href="#hash"><code class="docutils literal notranslate"><span class="pre">hash()</span></code></a></li>
-<li><a class="reference internal" href="#help"><code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
-<li><a class="reference internal" href="#hex"><code class="docutils literal notranslate"><span class="pre">hex()</span></code></a></li>
-<li><a class="reference internal" href="#id"><code class="docutils literal notranslate"><span class="pre">id()</span></code></a></li>
-<li><a class="reference internal" href="#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
-<li><a class="reference internal" href="#int"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
-<li><a class="reference internal" href="#isinstance"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code></a></li>
-<li><a class="reference internal" href="#issubclass"><code class="docutils literal notranslate"><span class="pre">issubclass()</span></code></a></li>
-<li><a class="reference internal" href="#iter"><code class="docutils literal notranslate"><span class="pre">iter()</span></code></a></li>
-<li><a class="reference internal" href="#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
-<li><a class="reference internal" href="#locals"><code class="docutils literal notranslate"><span class="pre">locals()</span></code></a></li>
-<li><a class="reference internal" href="#map"><code class="docutils literal notranslate"><span class="pre">map()</span></code></a></li>
-<li><a class="reference internal" href="#max"><code class="docutils literal notranslate"><span class="pre">max()</span></code></a></li>
-<li><a class="reference internal" href="#min"><code class="docutils literal notranslate"><span class="pre">min()</span></code></a></li>
-<li><a class="reference internal" href="#next"><code class="docutils literal notranslate"><span class="pre">next()</span></code></a></li>
-<li><a class="reference internal" href="#object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
-<li><a class="reference internal" href="#oct"><code class="docutils literal notranslate"><span class="pre">oct()</span></code></a></li>
-<li><a class="reference internal" href="#open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#ord"><code class="docutils literal notranslate"><span class="pre">ord()</span></code></a></li>
-<li><a class="reference internal" href="#pow"><code class="docutils literal notranslate"><span class="pre">pow()</span></code></a></li>
-<li><a class="reference internal" href="#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
-<li><a class="reference internal" href="#property"><code class="docutils literal notranslate"><span class="pre">property</span></code></a><ul>
-<li><a class="reference internal" href="#property.getter"><code class="docutils literal notranslate"><span class="pre">property.getter()</span></code></a></li>
-<li><a class="reference internal" href="#property.setter"><code class="docutils literal notranslate"><span class="pre">property.setter()</span></code></a></li>
-<li><a class="reference internal" href="#property.deleter"><code class="docutils literal notranslate"><span class="pre">property.deleter()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#repr"><code class="docutils literal notranslate"><span class="pre">repr()</span></code></a></li>
-<li><a class="reference internal" href="#reversed"><code class="docutils literal notranslate"><span class="pre">reversed()</span></code></a></li>
-<li><a class="reference internal" href="#round"><code class="docutils literal notranslate"><span class="pre">round()</span></code></a></li>
-<li><a class="reference internal" href="#setattr"><code class="docutils literal notranslate"><span class="pre">setattr()</span></code></a></li>
-<li><a class="reference internal" href="#slice"><code class="docutils literal notranslate"><span class="pre">slice</span></code></a><ul>
-<li><a class="reference internal" href="#slice.start"><code class="docutils literal notranslate"><span class="pre">slice.start</span></code></a></li>
-<li><a class="reference internal" href="#slice.stop"><code class="docutils literal notranslate"><span class="pre">slice.stop</span></code></a></li>
-<li><a class="reference internal" href="#slice.step"><code class="docutils literal notranslate"><span class="pre">slice.step</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sorted"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a></li>
-<li><a class="reference internal" href="#staticmethod"><code class="docutils literal notranslate"><span class="pre">staticmethod()</span></code></a></li>
-<li><a class="reference internal" href="#sum"><code class="docutils literal notranslate"><span class="pre">sum()</span></code></a></li>
-<li><a class="reference internal" href="#super"><code class="docutils literal notranslate"><span class="pre">super</span></code></a></li>
-<li><a class="reference internal" href="#type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
-<li><a class="reference internal" href="#vars"><code class="docutils literal notranslate"><span class="pre">vars()</span></code></a></li>
-<li><a class="reference internal" href="#zip"><code class="docutils literal notranslate"><span class="pre">zip()</span></code></a></li>
-<li><a class="reference internal" href="#import__"><code class="docutils literal notranslate"><span class="pre">__import__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="intro.html"
@@ -204,7 +124,7 @@
           <a href="intro.html" title="簡介"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -214,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -387,10 +307,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="abs">
 <span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abs" title="Link to this definition">¶</a></dt>
-<dd><p>Return the absolute value of a number.  The argument may be an
-integer, a floating point number, or an object implementing
-<a class="reference internal" href="../reference/datamodel.html#object.__abs__" title="object.__abs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__abs__()</span></code></a>.
-If the argument is a complex number, its magnitude is returned.</p>
+<dd><p>回傳一個數的絕對值，引數可以是整數、浮點數或有實現 <a class="reference internal" href="../reference/datamodel.html#object.__abs__" title="object.__abs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__abs__()</span></code></a> 的物件。如果引數是一個複數，回傳它的純量（大小）。</p>
 </dd></dl>
 
 <dl class="py function">
@@ -543,11 +460,7 @@ has been replaced.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="callable">
 <span class="sig-name descname"><span class="pre">callable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#callable" title="Link to this definition">¶</a></dt>
-<dd><p>Return <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> if the <em>object</em> argument appears callable,
-<a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> if not.  If this returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, it is still possible that a
-call fails, but if it is <code class="docutils literal notranslate"><span class="pre">False</span></code>, calling <em>object</em> will never succeed.
-Note that classes are callable (calling a class returns a new instance);
-instances are callable if their class has a <a class="reference internal" href="../reference/datamodel.html#object.__call__" title="object.__call__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__call__()</span></code></a> method.</p>
+<dd><p>如果引數 <em>object</em> 是可呼叫的，回傳 <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a>，否則回傳 <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a>。如果回傳 <code class="docutils literal notranslate"><span class="pre">True</span></code>，呼叫仍可能會失敗；但如果回傳 <code class="docutils literal notranslate"><span class="pre">False</span></code>，則呼叫 <em>object</em> 肯定會失敗。注意 class 是可呼叫的（呼叫 class 會回傳一個新的實例）；如果實例的 class 有定義 <a class="reference internal" href="../reference/datamodel.html#object.__call__" title="object.__call__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__call__()</span></code></a> method，則它是可呼叫的。</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.2 版新加入: </span>這個函式一開始在 Python 3.0 被移除，但在 Python 3.2 又被重新加入。</p>
 </div>
@@ -673,17 +586,8 @@ support for top-level <code class="docutils literal notranslate"><span class="pr
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>如果沒有引數，則回傳當前本地作用域中的名稱列表。如果有引數，它會嘗試回傳該物件的有效屬性列表。</p>
-<p>If the object has a method named <a class="reference internal" href="../reference/datamodel.html#object.__dir__" title="object.__dir__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__dir__()</span></code></a>,
-this method will be called and
-must return the list of attributes. This allows objects that implement a custom
-<a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> or <a class="reference internal" href="../reference/datamodel.html#object.__getattribute__" title="object.__getattribute__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattribute__()</span></code></a> function
-to customize the way
-<a class="reference internal" href="#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> reports their attributes.</p>
-<p>If the object does not provide <a class="reference internal" href="../reference/datamodel.html#object.__dir__" title="object.__dir__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__dir__()</span></code></a>,
-the function tries its best to gather information from the object's
-<a class="reference internal" href="stdtypes.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a> attribute, if defined, and
-from its type object.  The resulting list is not necessarily complete and may
-be inaccurate when the object has a custom <a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattr__()</span></code></a>.</p>
+<p>如果物件有一個名為 <a class="reference internal" href="../reference/datamodel.html#object.__dir__" title="object.__dir__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__dir__()</span></code></a> 的 method，那麼該 method 將被呼叫，並且必須回傳一個屬性列表。這允許實現自定義 <a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> 或 <a class="reference internal" href="../reference/datamodel.html#object.__getattribute__" title="object.__getattribute__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattribute__()</span></code></a> 函式的物件能夠自定義 <a class="reference internal" href="#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> 來報告它們的屬性。</p>
+<p>如果物件不提供 <a class="reference internal" href="../reference/datamodel.html#object.__dir__" title="object.__dir__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__dir__()</span></code></a>，這個函式會嘗試從物件已定義的 <a class="reference internal" href="stdtypes.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a> 屬性和型別物件收集資訊。結果列表並不總是完整的，如果物件有自定義 <a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__getattr__()</span></code></a>，那結果可能不準確。</p>
 <p>預設的 <a class="reference internal" href="#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> 機制對不同型別的物件有不同行為，它會試圖回傳最相關而非最完整的資訊：</p>
 <ul class="simple">
 <li><p>如果物件是 module 物件，則列表包含 module 的屬性名稱。</p></li>
@@ -802,13 +706,15 @@ referenced by the code object.</p>
 <strong id="grammar-token-float-sign">sign       </strong> ::=  &quot;+&quot; | &quot;-&quot;
 <strong id="grammar-token-float-infinity">infinity   </strong> ::=  &quot;Infinity&quot; | &quot;inf&quot;
 <strong id="grammar-token-float-nan">nan        </strong> ::=  &quot;nan&quot;
-<strong id="grammar-token-float-digitpart">digitpart  </strong> ::=  `!digit` ([&quot;_&quot;] `!digit`)*
+<strong id="grammar-token-float-digit">digit      </strong> ::=  &lt;a Unicode decimal digit, i.e. characters in Unicode general category Nd&gt;
+<strong id="grammar-token-float-digitpart">digitpart  </strong> ::=  <a class="reference internal" href="#grammar-token-float-digit"><code class="xref docutils literal notranslate"><span class="pre">digit</span></code></a> ([&quot;_&quot;] <a class="reference internal" href="#grammar-token-float-digit"><code class="xref docutils literal notranslate"><span class="pre">digit</span></code></a>)*
 <strong id="grammar-token-float-number">number     </strong> ::=  [<a class="reference internal" href="#grammar-token-float-digitpart"><code class="xref docutils literal notranslate"><span class="pre">digitpart</span></code></a>] &quot;.&quot; <a class="reference internal" href="#grammar-token-float-digitpart"><code class="xref docutils literal notranslate"><span class="pre">digitpart</span></code></a> | <a class="reference internal" href="#grammar-token-float-digitpart"><code class="xref docutils literal notranslate"><span class="pre">digitpart</span></code></a> [&quot;.&quot;]
 <strong id="grammar-token-float-exponent">exponent   </strong> ::=  (&quot;e&quot; | &quot;E&quot;) [&quot;+&quot; | &quot;-&quot;] <a class="reference internal" href="#grammar-token-float-digitpart"><code class="xref docutils literal notranslate"><span class="pre">digitpart</span></code></a>
 <strong id="grammar-token-float-floatnumber">floatnumber</strong> ::=  number [<a class="reference internal" href="#grammar-token-float-exponent"><code class="xref docutils literal notranslate"><span class="pre">exponent</span></code></a>]
 <strong id="grammar-token-float-floatvalue">floatvalue </strong> ::=  [<a class="reference internal" href="#grammar-token-float-sign"><code class="xref docutils literal notranslate"><span class="pre">sign</span></code></a>] (<a class="reference internal" href="#grammar-token-float-floatnumber"><code class="xref docutils literal notranslate"><span class="pre">floatnumber</span></code></a> | <a class="reference internal" href="#grammar-token-float-infinity"><code class="xref docutils literal notranslate"><span class="pre">infinity</span></code></a> | <a class="reference internal" href="#grammar-token-float-nan"><code class="xref docutils literal notranslate"><span class="pre">nan</span></code></a>)
 </pre>
-<p><code class="docutils literal notranslate"><span class="pre">digit</span></code> 是一個 Unicode 十進位數字（Unicode 一般分類 <code class="docutils literal notranslate"><span class="pre">Nd</span></code> 中的字元）。字母大小寫都可以，例如，&quot;inf&quot;、&quot;Inf&quot;、&quot;INFINITY&quot;、&quot;iNfINity&quot; 都可以表示正無窮大。</p>
+<p>Case is not significant, so, for example, &quot;inf&quot;, &quot;Inf&quot;, &quot;INFINITY&quot;, and
+&quot;iNfINity&quot; are all acceptable spellings for positive infinity.</p>
 <p>否則，如果引數是整數或浮點數，則回傳具有相同值（在 Python 浮點精度範圍內）的浮點數。如果引數在 Python 浮點精度範圍外，則會觸發 <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a>。</p>
 <p>對於一般的 Python 物件 <code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">float(x)</span></code> 指派給 <code class="docutils literal notranslate"><span class="pre">x.__float__()</span></code>。如果未定義 <a class="reference internal" href="../reference/datamodel.html#object.__float__" title="object.__float__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__float__()</span></code></a> 則回退使用 <a class="reference internal" href="../reference/datamodel.html#object.__index__" title="object.__index__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code></a>。</p>
 <p>如果沒有引數，則回傳 <code class="docutils literal notranslate"><span class="pre">0.0</span></code>。</p>
@@ -842,12 +748,7 @@ referenced by the code object.</p>
 <span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#format" title="Link to this definition">¶</a></dt>
 <dd><p>將 <em>value</em> 轉換為 <em>format_spec</em> 控制的 &quot;格式化&quot; 表示。<em>format_spec</em> 的解釋取決於 <em>value</em> 引數的型別，但是大多數內建型別使用標準格式化語法：<a class="reference internal" href="string.html#formatspec"><span class="std std-ref">格式規格 (Format Specification) 迷你語言</span></a>。</p>
 <p>預設的 <em>format_spec</em> 是一個空字串，它通常和呼叫 <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str(value)</span></code></a> 的效果相同。</p>
-<p>A call to <code class="docutils literal notranslate"><span class="pre">format(value,</span> <span class="pre">format_spec)</span></code> is translated to
-<code class="docutils literal notranslate"><span class="pre">type(value).__format__(value,</span> <span class="pre">format_spec)</span></code> which bypasses the instance
-dictionary when searching for the value's <a class="reference internal" href="../reference/datamodel.html#object.__format__" title="object.__format__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__format__()</span></code></a> method.
-A <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> exception is raised if the method search reaches
-<a class="reference internal" href="#object" title="object"><code class="xref py py-mod docutils literal notranslate"><span class="pre">object</span></code></a> and the <em>format_spec</em> is non-empty, or if either the
-<em>format_spec</em> or the return value are not strings.</p>
+<p>呼叫 <code class="docutils literal notranslate"><span class="pre">format(value,</span> <span class="pre">format_spec)</span></code> 會轉換成 <code class="docutils literal notranslate"><span class="pre">type(value).__format__(value,</span> <span class="pre">format_spec)</span></code>，當搜尋 value 的 <a class="reference internal" href="../reference/datamodel.html#object.__format__" title="object.__format__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__format__()</span></code></a> method 時，會忽略實例中的字典。如果搜尋到 <a class="reference internal" href="#object" title="object"><code class="xref py py-mod docutils literal notranslate"><span class="pre">object</span></code></a> 這個 method 但 <em>format_spec</em> 不為空，或是 <em>format_spec</em> 或回傳值不是字串，則會觸發 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>。</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.4 版的變更: </span>當 <em>format_spec</em> 不是空字串時，<code class="docutils literal notranslate"><span class="pre">object().__format__(format_spec)</span></code> 會觸發 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>。</p>
 </div>
@@ -1025,19 +926,7 @@ See the <a class="reference internal" href="stdtypes.html#int-max-str-digits"><s
 <span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#iter" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentinel</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return an <a class="reference internal" href="../glossary.html#term-iterator"><span class="xref std std-term">iterator</span></a> object.  The first argument is interpreted very
-differently depending on the presence of the second argument. Without a
-second argument, <em>object</em> must be a collection object which supports the
-<a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> protocol (the <a class="reference internal" href="../reference/datamodel.html#object.__iter__" title="object.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> method),
-or it must support
-the sequence protocol (the <a class="reference internal" href="../reference/datamodel.html#object.__getitem__" title="object.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code></a> method with integer arguments
-starting at <code class="docutils literal notranslate"><span class="pre">0</span></code>).  If it does not support either of those protocols,
-<a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> is raised. If the second argument, <em>sentinel</em>, is given,
-then <em>object</em> must be a callable object.  The iterator created in this case
-will call <em>object</em> with no arguments for each call to its
-<a class="reference internal" href="stdtypes.html#iterator.__next__" title="iterator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a> method; if the value returned is equal to
-<em>sentinel</em>, <a class="reference internal" href="exceptions.html#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a> will be raised, otherwise the value will
-be returned.</p>
+<dd><p>回傳一個 <a class="reference internal" href="../glossary.html#term-iterator"><span class="xref std std-term">iterator</span></a> 物件。根據是否存在第二個引數，第一個引數的意義是非常不同的。如果沒有第二個引數，<em>object</em> 必須是支援 <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> 協定（有 <a class="reference internal" href="../reference/datamodel.html#object.__iter__" title="object.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> method）的集合物件，或必須支援序列協定（有 <a class="reference internal" href="../reference/datamodel.html#object.__getitem__" title="object.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code></a> 方法，且數字引數從 <code class="docutils literal notranslate"><span class="pre">0</span></code> 開始）。如果它不支援這些協定，會觸發 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>。如果有第二個引數 <em>sentinel</em>，那麼 <em>object</em> 必須是可呼叫的物件，這種情況下生成的 iterator，每次疊代呼叫 <a class="reference internal" href="stdtypes.html#iterator.__next__" title="iterator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a> 時會不帶引數地呼叫 <em>object</em>；如果回傳的結果是 <em>sentinel</em> 則觸發 <a class="reference internal" href="exceptions.html#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a>，否則回傳呼叫結果。</p>
 <p>另請參閱 <a class="reference internal" href="stdtypes.html#typeiter"><span class="std std-ref">Iterator Types</span></a>。</p>
 <p>One useful application of the second form of <a class="reference internal" href="#iter" title="iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">iter()</span></code></a> is to build a
 block-reader. For example, reading fixed-width blocks from a binary
@@ -1095,8 +984,8 @@ database file until the end of file is reached:</p>
 <p>如果只提供了一個位置引數，它必須是個 <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a>，iterable 中最大的元素會被回傳。如果提供了兩個或以上的位置引數，則回傳最大的位置引數。</p>
 <p>這個函式有兩個選擇性僅限關鍵字的引數。<em>key</em> 引數指定一個只有一個引數的排序函式，如同 <a class="reference internal" href="stdtypes.html#list.sort" title="list.sort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list.sort()</span></code></a> 使用方式。<em>default</em> 引數是當 iterable 為空時回傳的值。如果 iterable 為空，並且沒有提供 <em>default</em>，則會觸發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>。</p>
 <p>如果有多個最大元素，則此函式將回傳第一個找到的。這和其他穩定排序工具如 <code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=keyfunc,</span> <span class="pre">reverse=True)[0]</span></code> 和 <code class="docutils literal notranslate"><span class="pre">heapq.nlargest(1,</span> <span class="pre">iterable,</span> <span class="pre">key=keyfunc)</span></code> 一致。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>default</em> 僅限關鍵字引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>Added the <em>default</em> keyword-only parameter.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>The <em>key</em> can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -1120,8 +1009,8 @@ database file until the end of file is reached:</p>
 <p>如果只提供了一個位置引數，它必須是 <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a>，iterable 中最小的元素會被回傳。如果提供了兩個或以上的位置引數，則回傳最小的位置引數。</p>
 <p>這個函式有兩個選擇性僅限關鍵字的引數。<em>key</em> 引數指定一個只有一個引數的排序函式，如同 <a class="reference internal" href="stdtypes.html#list.sort" title="list.sort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list.sort()</span></code></a> 使用方式。<em>default</em> 引數是當 iterable 為空時回傳的值。如果 iterable 為空，並且沒有提供 <em>default</em>，則會觸發 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>。</p>
 <p>如果有多個最小元素，則此函式將回傳第一個找到的。這和其他穩定排序工具如 <code class="docutils literal notranslate"><span class="pre">sorted(iterable,</span> <span class="pre">key=keyfunc)[0]</span></code> 和 <code class="docutils literal notranslate"><span class="pre">heapq.nsmallest(1,</span> <span class="pre">iterable,</span> <span class="pre">key=keyfunc)</span></code> 一致。</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.4 版新加入: </span><em>default</em> 僅限關鍵字引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.4 版的變更: </span>Added the <em>default</em> keyword-only parameter.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.8 版的變更: </span>The <em>key</em> can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -1173,7 +1062,7 @@ database file until the end of file is reached:</p>
 <span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closefd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opener</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#open" title="Link to this definition">¶</a></dt>
 <dd><p>開啟 <em>file</em> 並回傳對應的 <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a>。如果該檔案不能開啟，則觸發 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>。關於使用此函式的更多方法請參閱<a class="reference internal" href="../tutorial/inputoutput.html#tut-files"><span class="std std-ref">讀寫檔案</span></a>。</p>
 <p><em>file</em> 是一個 <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>，是將被開啟之檔案的路徑（絕對路徑或者當前工作目錄的相當路徑），或是被封裝的整數檔案描述器 (file descriptor)。（如果有提供檔案描述器，它會隨著回傳的 I/O 物件關閉而關閉，除非 <em>closefd</em> 被設為 <code class="docutils literal notranslate"><span class="pre">False</span></code>。）</p>
-<p><em>mode</em> 是一個選擇性字串，用於指定開啟檔案的模式。預設值是 <code class="docutils literal notranslate"><span class="pre">'r'</span></code>，這意味著它以文字模式開啟並讀取。其他常見模式有：寫入 <code class="docutils literal notranslate"><span class="pre">'w'</span></code>（會捨去已經存在的檔案）、唯一性創建 <code class="docutils literal notranslate"><span class="pre">'x'</span></code>、追加寫入 <code class="docutils literal notranslate"><span class="pre">'a'</span></code>（在<em>一些</em> Unix 系統上，無論當前的檔案指標在什麼位置，<em>所有</em> 寫入都會追加到檔案末尾）。在文字模式，如果沒有指定 <em>encoding</em>，則根據電腦平臺來決定使用的編碼：呼叫 <a class="reference internal" href="locale.html#locale.getencoding" title="locale.getencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">locale.getencoding()</span></code></a> 來獲取當前的本地編碼。（要讀取和寫入原始 bytes，請使用二進位制模式且不要指定 <em>encoding</em>。）可用的模式有：</p>
+<p><em>mode</em> 是一個選擇性字串，用於指定開啟檔案的模式。預設值是 <code class="docutils literal notranslate"><span class="pre">'r'</span></code>，這意味著它以文字模式開啟並讀取。其他常見模式有：寫入 <code class="docutils literal notranslate"><span class="pre">'w'</span></code>（會捨去已經存在的檔案）、唯一性建立 <code class="docutils literal notranslate"><span class="pre">'x'</span></code>、追加寫入 <code class="docutils literal notranslate"><span class="pre">'a'</span></code>（在<em>一些</em> Unix 系統上，無論當前的檔案指標在什麼位置，<em>所有</em> 寫入都會追加到檔案末尾）。在文字模式，如果沒有指定 <em>encoding</em>，則根據電腦平臺來決定使用的編碼：呼叫 <a class="reference internal" href="locale.html#locale.getencoding" title="locale.getencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">locale.getencoding()</span></code></a> 來獲取當前的本地編碼。（要讀取和寫入原始 bytes，請使用二進位制模式且不要指定 <em>encoding</em>。）可用的模式有：</p>
 <span id="filemodes"></span><table class="docutils align-default" id="index-6">
 <thead>
 <tr class="row-odd"><th class="head"><p>字元</p></th>
@@ -1188,7 +1077,7 @@ database file until the end of file is reached:</p>
 <td><p>open for writing, truncating the file first</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'x'</span></code></p></td>
-<td><p>唯一性創建，如果文件已存在則會失敗</p></td>
+<td><p>唯一性建立，如果文件已存在則會失敗</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code></p></td>
 <td><p>寫入，如果文件存在則在末尾追加寫入內容</p></td>
@@ -2034,86 +1923,6 @@ the environment variable <span class="target" id="index-16"></span><a class="ref
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">內建函式</a><ul>
-<li><a class="reference internal" href="#abs"><code class="docutils literal notranslate"><span class="pre">abs()</span></code></a></li>
-<li><a class="reference internal" href="#aiter"><code class="docutils literal notranslate"><span class="pre">aiter()</span></code></a></li>
-<li><a class="reference internal" href="#all"><code class="docutils literal notranslate"><span class="pre">all()</span></code></a></li>
-<li><a class="reference internal" href="#anext"><code class="docutils literal notranslate"><span class="pre">anext()</span></code></a></li>
-<li><a class="reference internal" href="#any"><code class="docutils literal notranslate"><span class="pre">any()</span></code></a></li>
-<li><a class="reference internal" href="#ascii"><code class="docutils literal notranslate"><span class="pre">ascii()</span></code></a></li>
-<li><a class="reference internal" href="#bin"><code class="docutils literal notranslate"><span class="pre">bin()</span></code></a></li>
-<li><a class="reference internal" href="#bool"><code class="docutils literal notranslate"><span class="pre">bool</span></code></a></li>
-<li><a class="reference internal" href="#breakpoint"><code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code></a></li>
-<li><a class="reference internal" href="#callable"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></li>
-<li><a class="reference internal" href="#chr"><code class="docutils literal notranslate"><span class="pre">chr()</span></code></a></li>
-<li><a class="reference internal" href="#classmethod"><code class="docutils literal notranslate"><span class="pre">classmethod()</span></code></a></li>
-<li><a class="reference internal" href="#compile"><code class="docutils literal notranslate"><span class="pre">compile()</span></code></a></li>
-<li><a class="reference internal" href="#complex"><code class="docutils literal notranslate"><span class="pre">complex</span></code></a></li>
-<li><a class="reference internal" href="#delattr"><code class="docutils literal notranslate"><span class="pre">delattr()</span></code></a></li>
-<li><a class="reference internal" href="#dir"><code class="docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
-<li><a class="reference internal" href="#divmod"><code class="docutils literal notranslate"><span class="pre">divmod()</span></code></a></li>
-<li><a class="reference internal" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a></li>
-<li><a class="reference internal" href="#eval"><code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
-<li><a class="reference internal" href="#exec"><code class="docutils literal notranslate"><span class="pre">exec()</span></code></a></li>
-<li><a class="reference internal" href="#filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
-<li><a class="reference internal" href="#float"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
-<li><a class="reference internal" href="#format"><code class="docutils literal notranslate"><span class="pre">format()</span></code></a></li>
-<li><a class="reference internal" href="#getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li><a class="reference internal" href="#globals"><code class="docutils literal notranslate"><span class="pre">globals()</span></code></a></li>
-<li><a class="reference internal" href="#hasattr"><code class="docutils literal notranslate"><span class="pre">hasattr()</span></code></a></li>
-<li><a class="reference internal" href="#hash"><code class="docutils literal notranslate"><span class="pre">hash()</span></code></a></li>
-<li><a class="reference internal" href="#help"><code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
-<li><a class="reference internal" href="#hex"><code class="docutils literal notranslate"><span class="pre">hex()</span></code></a></li>
-<li><a class="reference internal" href="#id"><code class="docutils literal notranslate"><span class="pre">id()</span></code></a></li>
-<li><a class="reference internal" href="#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
-<li><a class="reference internal" href="#int"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
-<li><a class="reference internal" href="#isinstance"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code></a></li>
-<li><a class="reference internal" href="#issubclass"><code class="docutils literal notranslate"><span class="pre">issubclass()</span></code></a></li>
-<li><a class="reference internal" href="#iter"><code class="docutils literal notranslate"><span class="pre">iter()</span></code></a></li>
-<li><a class="reference internal" href="#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
-<li><a class="reference internal" href="#locals"><code class="docutils literal notranslate"><span class="pre">locals()</span></code></a></li>
-<li><a class="reference internal" href="#map"><code class="docutils literal notranslate"><span class="pre">map()</span></code></a></li>
-<li><a class="reference internal" href="#max"><code class="docutils literal notranslate"><span class="pre">max()</span></code></a></li>
-<li><a class="reference internal" href="#min"><code class="docutils literal notranslate"><span class="pre">min()</span></code></a></li>
-<li><a class="reference internal" href="#next"><code class="docutils literal notranslate"><span class="pre">next()</span></code></a></li>
-<li><a class="reference internal" href="#object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
-<li><a class="reference internal" href="#oct"><code class="docutils literal notranslate"><span class="pre">oct()</span></code></a></li>
-<li><a class="reference internal" href="#open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
-<li><a class="reference internal" href="#ord"><code class="docutils literal notranslate"><span class="pre">ord()</span></code></a></li>
-<li><a class="reference internal" href="#pow"><code class="docutils literal notranslate"><span class="pre">pow()</span></code></a></li>
-<li><a class="reference internal" href="#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
-<li><a class="reference internal" href="#property"><code class="docutils literal notranslate"><span class="pre">property</span></code></a><ul>
-<li><a class="reference internal" href="#property.getter"><code class="docutils literal notranslate"><span class="pre">property.getter()</span></code></a></li>
-<li><a class="reference internal" href="#property.setter"><code class="docutils literal notranslate"><span class="pre">property.setter()</span></code></a></li>
-<li><a class="reference internal" href="#property.deleter"><code class="docutils literal notranslate"><span class="pre">property.deleter()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#repr"><code class="docutils literal notranslate"><span class="pre">repr()</span></code></a></li>
-<li><a class="reference internal" href="#reversed"><code class="docutils literal notranslate"><span class="pre">reversed()</span></code></a></li>
-<li><a class="reference internal" href="#round"><code class="docutils literal notranslate"><span class="pre">round()</span></code></a></li>
-<li><a class="reference internal" href="#setattr"><code class="docutils literal notranslate"><span class="pre">setattr()</span></code></a></li>
-<li><a class="reference internal" href="#slice"><code class="docutils literal notranslate"><span class="pre">slice</span></code></a><ul>
-<li><a class="reference internal" href="#slice.start"><code class="docutils literal notranslate"><span class="pre">slice.start</span></code></a></li>
-<li><a class="reference internal" href="#slice.stop"><code class="docutils literal notranslate"><span class="pre">slice.stop</span></code></a></li>
-<li><a class="reference internal" href="#slice.step"><code class="docutils literal notranslate"><span class="pre">slice.step</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sorted"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a></li>
-<li><a class="reference internal" href="#staticmethod"><code class="docutils literal notranslate"><span class="pre">staticmethod()</span></code></a></li>
-<li><a class="reference internal" href="#sum"><code class="docutils literal notranslate"><span class="pre">sum()</span></code></a></li>
-<li><a class="reference internal" href="#super"><code class="docutils literal notranslate"><span class="pre">super</span></code></a></li>
-<li><a class="reference internal" href="#type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
-<li><a class="reference internal" href="#vars"><code class="docutils literal notranslate"><span class="pre">vars()</span></code></a></li>
-<li><a class="reference internal" href="#zip"><code class="docutils literal notranslate"><span class="pre">zip()</span></code></a></li>
-<li><a class="reference internal" href="#import__"><code class="docutils literal notranslate"><span class="pre">__import__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-  <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="intro.html"
                           title="上一章">簡介</a></p>
@@ -2158,7 +1967,7 @@ the environment variable <span class="target" id="index-16"></span><a class="ref
           <a href="intro.html" title="簡介"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -2168,7 +1977,7 @@ the environment variable <span class="target" id="index-16"></span><a class="ref
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -2197,13 +2006,14 @@ the environment variable <span class="target" id="index-16"></span><a class="ref
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -2211,7 +2021,7 @@ the environment variable <span class="target" id="index-16"></span><a class="ref
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

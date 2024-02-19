@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. The import system &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. The import system &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -103,16 +103,7 @@
 <li><a class="reference internal" href="#loaders">5.4.1. Loaders</a></li>
 <li><a class="reference internal" href="#submodules">5.4.2. Submodules</a></li>
 <li><a class="reference internal" href="#module-spec">5.4.3. Module spec</a></li>
-<li><a class="reference internal" href="#import-related-module-attributes">5.4.4. Import-related module attributes</a><ul>
-<li><a class="reference internal" href="#name__"><code class="docutils literal notranslate"><span class="pre">__name__</span></code></a></li>
-<li><a class="reference internal" href="#loader__"><code class="docutils literal notranslate"><span class="pre">__loader__</span></code></a></li>
-<li><a class="reference internal" href="#package__"><code class="docutils literal notranslate"><span class="pre">__package__</span></code></a></li>
-<li><a class="reference internal" href="#spec__"><code class="docutils literal notranslate"><span class="pre">__spec__</span></code></a></li>
-<li><a class="reference internal" href="#path__"><code class="docutils literal notranslate"><span class="pre">__path__</span></code></a></li>
-<li><a class="reference internal" href="#file__"><code class="docutils literal notranslate"><span class="pre">__file__</span></code></a></li>
-<li><a class="reference internal" href="#cached__"><code class="docutils literal notranslate"><span class="pre">__cached__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#import-related-module-attributes">5.4.4. Import-related module attributes</a></li>
 <li><a class="reference internal" href="#module-path">5.4.5. module.__path__</a></li>
 <li><a class="reference internal" href="#module-reprs">5.4.6. Module reprs</a></li>
 <li><a class="reference internal" href="#cached-bytecode-invalidation">5.4.7. Cached bytecode invalidation</a></li>
@@ -177,7 +168,7 @@
           <a href="executionmodel.html" title="4. Execution model"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -187,7 +178,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 語言參考手冊</a> &#187;</li>
@@ -286,7 +277,7 @@ considered a package.</p>
 package name by a dot, akin to Python's standard attribute access syntax.  Thus
 you might have a package called <a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>, which in turn has a subpackage
 called <a class="reference internal" href="../library/email.mime.html#module-email.mime" title="email.mime: Build MIME messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code></a> and a module within that subpackage called
-<code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.text</span></code>.</p>
+<a class="reference internal" href="../library/email.mime.html#module-email.mime.text" title="email.mime.text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.text</span></code></a>.</p>
 <section id="regular-packages">
 <h3><span class="section-number">5.2.1. </span>Regular packages<a class="headerlink" href="#regular-packages" title="Link to this heading">¶</a></h3>
 <p id="index-4">Python defines two types of packages, <a class="reference internal" href="../glossary.html#term-regular-package"><span class="xref std std-term">regular packages</span></a> and <a class="reference internal" href="../glossary.html#term-namespace-package"><span class="xref std std-term">namespace packages</span></a>.  Regular
@@ -463,14 +454,15 @@ modules, and one that knows how to import modules from an <a class="reference in
 finders replaced <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code>, which
 is now deprecated.  While it will continue to work without change, the
 import machinery will try it only if the finder does not implement
-<code class="docutils literal notranslate"><span class="pre">find_spec()</span></code>.</p>
+<a class="reference internal" href="../library/importlib.html#importlib.abc.MetaPathFinder.find_spec" title="importlib.abc.MetaPathFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">find_spec()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.10 版的變更: </span>Use of <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code> by the import system
 now raises <a class="reference internal" href="../library/exceptions.html#ImportWarning" title="ImportWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportWarning</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.12 版的變更: </span><code class="docutils literal notranslate"><span class="pre">find_module()</span></code> has been removed.  Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_spec()</span></code> instead.</p>
+<p><span class="versionmodified changed">在 3.12 版的變更: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code> has been removed.
+Use <a class="reference internal" href="../library/importlib.html#importlib.abc.MetaPathFinder.find_spec" title="importlib.abc.MetaPathFinder.find_spec"><code class="xref py py-meth docutils literal notranslate"><span class="pre">find_spec()</span></code></a> instead.</p>
 </div>
 </section>
 </section>
@@ -900,7 +892,7 @@ customize how modules are found and loaded from the <a class="reference internal
 attributes on package objects are also used.  These provide additional ways
 that the import machinery can be customized.</p>
 <p><a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> contains a list of strings providing search locations for
-modules and packages.  It is initialized from the <code class="xref py py-data docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>
+modules and packages.  It is initialized from the <span class="target" id="index-18"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a>
 environment variable and various other installation- and
 implementation-specific defaults.  Entries in <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> can name
 directories on the file system, zip files, and potentially other &quot;locations&quot;
@@ -1102,18 +1094,18 @@ to populate the <code class="docutils literal notranslate"><span class="pre">__m
 <p>The import machinery has evolved considerably since Python's early days.  The
 original <a class="reference external" href="https://www.python.org/doc/essays/packages/">specification for packages</a> is still available to read,
 although some details have changed since the writing of that document.</p>
-<p>The original specification for <a class="reference internal" href="../library/sys.html#sys.meta_path" title="sys.meta_path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.meta_path</span></code></a> was <span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a>, with
-subsequent extension in <span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a>.</p>
-<p><span class="target" id="index-20"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a> introduced <a class="reference internal" href="../glossary.html#term-namespace-package"><span class="xref std std-term">namespace packages</span></a> for
-Python 3.3.  <span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a> also introduced the <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_loader()</span></code> protocol as an
+<p>The original specification for <a class="reference internal" href="../library/sys.html#sys.meta_path" title="sys.meta_path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.meta_path</span></code></a> was <span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0302/"><strong>PEP 302</strong></a>, with
+subsequent extension in <span class="target" id="index-20"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a>.</p>
+<p><span class="target" id="index-21"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a> introduced <a class="reference internal" href="../glossary.html#term-namespace-package"><span class="xref std std-term">namespace packages</span></a> for
+Python 3.3.  <span class="target" id="index-22"></span><a class="pep reference external" href="https://peps.python.org/pep-0420/"><strong>PEP 420</strong></a> also introduced the <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_loader()</span></code> protocol as an
 alternative to <code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code>.</p>
-<p><span class="target" id="index-22"></span><a class="pep reference external" href="https://peps.python.org/pep-0366/"><strong>PEP 366</strong></a> describes the addition of the <code class="docutils literal notranslate"><span class="pre">__package__</span></code> attribute for
+<p><span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0366/"><strong>PEP 366</strong></a> describes the addition of the <code class="docutils literal notranslate"><span class="pre">__package__</span></code> attribute for
 explicit relative imports in main modules.</p>
-<p><span class="target" id="index-23"></span><a class="pep reference external" href="https://peps.python.org/pep-0328/"><strong>PEP 328</strong></a> introduced absolute and explicit relative imports and initially
-proposed <code class="docutils literal notranslate"><span class="pre">__name__</span></code> for semantics <span class="target" id="index-24"></span><a class="pep reference external" href="https://peps.python.org/pep-0366/"><strong>PEP 366</strong></a> would eventually specify for
+<p><span class="target" id="index-24"></span><a class="pep reference external" href="https://peps.python.org/pep-0328/"><strong>PEP 328</strong></a> introduced absolute and explicit relative imports and initially
+proposed <code class="docutils literal notranslate"><span class="pre">__name__</span></code> for semantics <span class="target" id="index-25"></span><a class="pep reference external" href="https://peps.python.org/pep-0366/"><strong>PEP 366</strong></a> would eventually specify for
 <code class="docutils literal notranslate"><span class="pre">__package__</span></code>.</p>
-<p><span class="target" id="index-25"></span><a class="pep reference external" href="https://peps.python.org/pep-0338/"><strong>PEP 338</strong></a> defines executing modules as scripts.</p>
-<p><span class="target" id="index-26"></span><a class="pep reference external" href="https://peps.python.org/pep-0451/"><strong>PEP 451</strong></a> adds the encapsulation of per-module import state in spec
+<p><span class="target" id="index-26"></span><a class="pep reference external" href="https://peps.python.org/pep-0338/"><strong>PEP 338</strong></a> defines executing modules as scripts.</p>
+<p><span class="target" id="index-27"></span><a class="pep reference external" href="https://peps.python.org/pep-0451/"><strong>PEP 451</strong></a> adds the encapsulation of per-module import state in spec
 objects.  It also off-loads most of the boilerplate responsibilities of
 loaders back onto the import machinery.  These changes allow the
 deprecation of several APIs in the import system and also addition of new
@@ -1165,16 +1157,7 @@ Python implementations.</p>
 <li><a class="reference internal" href="#loaders">5.4.1. Loaders</a></li>
 <li><a class="reference internal" href="#submodules">5.4.2. Submodules</a></li>
 <li><a class="reference internal" href="#module-spec">5.4.3. Module spec</a></li>
-<li><a class="reference internal" href="#import-related-module-attributes">5.4.4. Import-related module attributes</a><ul>
-<li><a class="reference internal" href="#name__"><code class="docutils literal notranslate"><span class="pre">__name__</span></code></a></li>
-<li><a class="reference internal" href="#loader__"><code class="docutils literal notranslate"><span class="pre">__loader__</span></code></a></li>
-<li><a class="reference internal" href="#package__"><code class="docutils literal notranslate"><span class="pre">__package__</span></code></a></li>
-<li><a class="reference internal" href="#spec__"><code class="docutils literal notranslate"><span class="pre">__spec__</span></code></a></li>
-<li><a class="reference internal" href="#path__"><code class="docutils literal notranslate"><span class="pre">__path__</span></code></a></li>
-<li><a class="reference internal" href="#file__"><code class="docutils literal notranslate"><span class="pre">__file__</span></code></a></li>
-<li><a class="reference internal" href="#cached__"><code class="docutils literal notranslate"><span class="pre">__cached__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#import-related-module-attributes">5.4.4. Import-related module attributes</a></li>
 <li><a class="reference internal" href="#module-path">5.4.5. module.__path__</a></li>
 <li><a class="reference internal" href="#module-reprs">5.4.6. Module reprs</a></li>
 <li><a class="reference internal" href="#cached-bytecode-invalidation">5.4.7. Cached bytecode invalidation</a></li>
@@ -1242,7 +1225,7 @@ Python implementations.</p>
           <a href="executionmodel.html" title="4. Execution model"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1252,7 +1235,7 @@ Python implementations.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 語言參考手冊</a> &#187;</li>
@@ -1281,13 +1264,14 @@ Python implementations.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1295,7 +1279,7 @@ Python implementations.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

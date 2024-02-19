@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xmlrpc.client --- XML-RPC client access &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlrpc.client --- XML-RPC client access &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,57 +86,13 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy"><code class="docutils literal notranslate"><span class="pre">ServerProxy</span></code></a></li>
-<li><a class="reference internal" href="#serverproxy-objects">ServerProxy 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.listMethods"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.listMethods()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.methodSignature"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.methodSignature()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.methodHelp"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.methodHelp()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#datetime-objects">日期時間物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime"><code class="docutils literal notranslate"><span class="pre">DateTime</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime.decode"><code class="docutils literal notranslate"><span class="pre">DateTime.decode()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime.encode"><code class="docutils literal notranslate"><span class="pre">DateTime.encode()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#binary-objects">Binary Objects</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Binary"><code class="docutils literal notranslate"><span class="pre">Binary</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.data"><code class="docutils literal notranslate"><span class="pre">Binary.data</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.decode"><code class="docutils literal notranslate"><span class="pre">Binary.decode()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.encode"><code class="docutils literal notranslate"><span class="pre">Binary.encode()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#fault-objects">Fault Objects</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Fault"><code class="docutils literal notranslate"><span class="pre">Fault</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Fault.faultCode"><code class="docutils literal notranslate"><span class="pre">Fault.faultCode</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Fault.faultString"><code class="docutils literal notranslate"><span class="pre">Fault.faultString</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#protocolerror-objects">ProtocolError 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError"><code class="docutils literal notranslate"><span class="pre">ProtocolError</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.url"><code class="docutils literal notranslate"><span class="pre">ProtocolError.url</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.errcode"><code class="docutils literal notranslate"><span class="pre">ProtocolError.errcode</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.errmsg"><code class="docutils literal notranslate"><span class="pre">ProtocolError.errmsg</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.headers"><code class="docutils literal notranslate"><span class="pre">ProtocolError.headers</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#multicall-objects">MultiCall 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.MultiCall"><code class="docutils literal notranslate"><span class="pre">MultiCall</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#convenience-functions">Convenience Functions</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.dumps"><code class="docutils literal notranslate"><span class="pre">dumps()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.loads"><code class="docutils literal notranslate"><span class="pre">loads()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#serverproxy-objects">ServerProxy 物件</a></li>
+<li><a class="reference internal" href="#datetime-objects">日期時間物件</a></li>
+<li><a class="reference internal" href="#binary-objects">Binary Objects</a></li>
+<li><a class="reference internal" href="#fault-objects">Fault Objects</a></li>
+<li><a class="reference internal" href="#protocolerror-objects">ProtocolError 物件</a></li>
+<li><a class="reference internal" href="#multicall-objects">MultiCall 物件</a></li>
+<li><a class="reference internal" href="#convenience-functions">Convenience Functions</a></li>
 <li><a class="reference internal" href="#example-of-client-usage">Example of Client Usage</a></li>
 <li><a class="reference internal" href="#example-of-client-and-server-usage">Example of Client and Server Usage</a></li>
 </ul>
@@ -186,7 +142,7 @@
           <a href="xmlrpc.html" title="xmlrpc --- XMLRPC 伺服器與用戶模組"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -196,7 +152,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -483,8 +439,9 @@ use by the marshalling/unmarshalling code:</p>
 object.</p>
 </dd></dl>
 
-<p>It also supports certain of Python's built-in operators through rich comparison
-and <code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code> methods.</p>
+<p>It also supports certain of Python's built-in operators through
+<a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rich</span> <span class="pre">comparison</span></code></a> and <a class="reference internal" href="../reference/datamodel.html#object.__repr__" title="object.__repr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__repr__()</span></code></a>
+methods.</p>
 </dd></dl>
 
 <p>A working example follows. The server code:</p>
@@ -548,8 +505,8 @@ which was the de facto standard base64 specification when the
 XML-RPC spec was written.</p>
 </dd></dl>
 
-<p>It also supports certain of Python's built-in operators through <code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code>
-and <code class="xref py py-meth docutils literal notranslate"><span class="pre">__ne__()</span></code> methods.</p>
+<p>It also supports certain of Python's built-in operators through
+<a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> and <a class="reference internal" href="../reference/datamodel.html#object.__ne__" title="object.__ne__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ne__()</span></code></a> methods.</p>
 </dd></dl>
 
 <p>Example usage of the binary objects.  We're going to transfer an image over
@@ -833,57 +790,13 @@ transport.  The following example shows how:</p>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy"><code class="docutils literal notranslate"><span class="pre">ServerProxy</span></code></a></li>
-<li><a class="reference internal" href="#serverproxy-objects">ServerProxy 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.listMethods"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.listMethods()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.methodSignature"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.methodSignature()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ServerProxy.system.methodHelp"><code class="docutils literal notranslate"><span class="pre">ServerProxy.system.methodHelp()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#datetime-objects">日期時間物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime"><code class="docutils literal notranslate"><span class="pre">DateTime</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime.decode"><code class="docutils literal notranslate"><span class="pre">DateTime.decode()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.DateTime.encode"><code class="docutils literal notranslate"><span class="pre">DateTime.encode()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#binary-objects">Binary Objects</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Binary"><code class="docutils literal notranslate"><span class="pre">Binary</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.data"><code class="docutils literal notranslate"><span class="pre">Binary.data</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.decode"><code class="docutils literal notranslate"><span class="pre">Binary.decode()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Binary.encode"><code class="docutils literal notranslate"><span class="pre">Binary.encode()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#fault-objects">Fault Objects</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Fault"><code class="docutils literal notranslate"><span class="pre">Fault</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.Fault.faultCode"><code class="docutils literal notranslate"><span class="pre">Fault.faultCode</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.Fault.faultString"><code class="docutils literal notranslate"><span class="pre">Fault.faultString</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#protocolerror-objects">ProtocolError 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError"><code class="docutils literal notranslate"><span class="pre">ProtocolError</span></code></a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.url"><code class="docutils literal notranslate"><span class="pre">ProtocolError.url</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.errcode"><code class="docutils literal notranslate"><span class="pre">ProtocolError.errcode</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.errmsg"><code class="docutils literal notranslate"><span class="pre">ProtocolError.errmsg</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.ProtocolError.headers"><code class="docutils literal notranslate"><span class="pre">ProtocolError.headers</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#multicall-objects">MultiCall 物件</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.MultiCall"><code class="docutils literal notranslate"><span class="pre">MultiCall</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#convenience-functions">Convenience Functions</a><ul>
-<li><a class="reference internal" href="#xmlrpc.client.dumps"><code class="docutils literal notranslate"><span class="pre">dumps()</span></code></a></li>
-<li><a class="reference internal" href="#xmlrpc.client.loads"><code class="docutils literal notranslate"><span class="pre">loads()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#serverproxy-objects">ServerProxy 物件</a></li>
+<li><a class="reference internal" href="#datetime-objects">日期時間物件</a></li>
+<li><a class="reference internal" href="#binary-objects">Binary Objects</a></li>
+<li><a class="reference internal" href="#fault-objects">Fault Objects</a></li>
+<li><a class="reference internal" href="#protocolerror-objects">ProtocolError 物件</a></li>
+<li><a class="reference internal" href="#multicall-objects">MultiCall 物件</a></li>
+<li><a class="reference internal" href="#convenience-functions">Convenience Functions</a></li>
 <li><a class="reference internal" href="#example-of-client-usage">Example of Client Usage</a></li>
 <li><a class="reference internal" href="#example-of-client-and-server-usage">Example of Client and Server Usage</a></li>
 </ul>
@@ -936,7 +849,7 @@ transport.  The following example shows how:</p>
           <a href="xmlrpc.html" title="xmlrpc --- XMLRPC 伺服器與用戶模組"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -946,7 +859,7 @@ transport.  The following example shows how:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -976,13 +889,14 @@ transport.  The following example shows how:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -990,7 +904,7 @@ transport.  The following example shows how:</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

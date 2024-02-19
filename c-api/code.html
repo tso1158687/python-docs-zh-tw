@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>程式碼物件 &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式碼物件 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -132,7 +132,7 @@
           <a href="cell.html" title="Cell 物件"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -142,7 +142,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -193,13 +193,14 @@ fields of this type are subject to change at any time.</p>
 <dt class="sig sig-object c" id="c.PyCode_Type">
 <a class="reference internal" href="type.html#c.PyTypeObject" title="PyTypeObject"><span class="n"><span class="pre">PyTypeObject</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyCode_Type</span></span></span><a class="headerlink" href="#c.PyCode_Type" title="Link to this definition">¶</a><br /></dt>
 <dd><p>This is an instance of <a class="reference internal" href="type.html#c.PyTypeObject" title="PyTypeObject"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyTypeObject</span></code></a> representing the Python
-<a class="reference internal" href="../library/code.html#module-code" title="code: Facilities to implement read-eval-print loops."><code class="xref py py-class docutils literal notranslate"><span class="pre">code</span></code></a> type.</p>
+<a class="reference internal" href="../reference/datamodel.html#code-objects"><span class="std std-ref">code object</span></a>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyCode_Check">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyCode_Check</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">co</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyCode_Check" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Return true if <em>co</em> is a <a class="reference internal" href="../library/code.html#module-code" title="code: Facilities to implement read-eval-print loops."><code class="xref py py-class docutils literal notranslate"><span class="pre">code</span></code></a> object.  This function always succeeds.</p>
+<dd><p>Return true if <em>co</em> is a <a class="reference internal" href="../reference/datamodel.html#code-objects"><span class="std std-ref">code object</span></a>.
+This function always succeeds.</p>
 </dd></dl>
 
 <dl class="c function">
@@ -212,7 +213,7 @@ fields of this type are subject to change at any time.</p>
 <dt class="sig sig-object c" id="c.PyUnstable_Code_New">
 <a class="reference internal" href="#c.PyCodeObject" title="PyCodeObject"><span class="n"><span class="pre">PyCodeObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnstable_Code_New</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">argcount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">kwonlyargcount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">nlocals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">stacksize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flags</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">consts</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">varnames</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">freevars</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cellvars</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">qualname</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">firstlineno</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">linetable</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exceptiontable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnstable_Code_New" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="unstable-c-api warning admonition">
-<em>This is <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">Unstable API</span></a>. It may change without warning in minor releases.</em></div>
+<em>這是 <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">不穩定 API</span></a>，它可能在小版本發布中沒有任何警告地被變更。</em></div>
 <p>Return a new code object.  If you need a dummy code object to create a frame,
 use <a class="reference internal" href="#c.PyCode_NewEmpty" title="PyCode_NewEmpty"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyCode_NewEmpty()</span></code></a> instead.</p>
 <p>Since the definition of the bytecode changes often, calling
@@ -234,7 +235,7 @@ signature changes again.</p>
 <dt class="sig sig-object c" id="c.PyUnstable_Code_NewWithPosOnlyArgs">
 <a class="reference internal" href="#c.PyCodeObject" title="PyCodeObject"><span class="n"><span class="pre">PyCodeObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyUnstable_Code_NewWithPosOnlyArgs</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">argcount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">posonlyargcount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">kwonlyargcount</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">nlocals</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">stacksize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flags</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">consts</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">varnames</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">freevars</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cellvars</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">qualname</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">firstlineno</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">linetable</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exceptiontable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnstable_Code_NewWithPosOnlyArgs" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="unstable-c-api warning admonition">
-<em>This is <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">Unstable API</span></a>. It may change without warning in minor releases.</em></div>
+<em>這是 <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">不穩定 API</span></a>，它可能在小版本發布中沒有任何警告地被變更。</em></div>
 <p>Similar to <a class="reference internal" href="#c.PyUnstable_Code_New" title="PyUnstable_Code_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnstable_Code_New()</span></code></a>, but with an extra &quot;posonlyargcount&quot; for positional-only arguments.
 The same caveats that apply to <code class="docutils literal notranslate"><span class="pre">PyUnstable_Code_New</span></code> also apply to this function.</p>
 <div class="versionadded" id="index-2">
@@ -407,7 +408,7 @@ may change without deprecation warnings.</p>
 <dt class="sig sig-object c" id="c.PyUnstable_Eval_RequestCodeExtraIndex">
 <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnstable_Eval_RequestCodeExtraIndex</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="typeobj.html#c.freefunc" title="freefunc"><span class="n"><span class="pre">freefunc</span></span></a><span class="w"> </span><span class="n"><span class="pre">free</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnstable_Eval_RequestCodeExtraIndex" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="unstable-c-api warning admonition">
-<em>This is <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">Unstable API</span></a>. It may change without warning in minor releases.</em></div>
+<em>這是 <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">不穩定 API</span></a>，它可能在小版本發布中沒有任何警告地被變更。</em></div>
 <p>Return a new an opaque index value used to adding data to code objects.</p>
 <p>You generally call this function once (per interpreter) and use the result
 with <code class="docutils literal notranslate"><span class="pre">PyCode_GetExtra</span></code> and <code class="docutils literal notranslate"><span class="pre">PyCode_SetExtra</span></code> to manipulate
@@ -429,7 +430,7 @@ changes.</p>
 <dt class="sig sig-object c" id="c.PyUnstable_Code_GetExtra">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnstable_Code_GetExtra</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">index</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">extra</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnstable_Code_GetExtra" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="unstable-c-api warning admonition">
-<em>This is <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">Unstable API</span></a>. It may change without warning in minor releases.</em></div>
+<em>這是 <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">不穩定 API</span></a>，它可能在小版本發布中沒有任何警告地被變更。</em></div>
 <p>Set <em>extra</em> to the extra data stored under the given index.
 Return 0 on success. Set an exception and return -1 on failure.</p>
 <p>If no data was set under the index, set <em>extra</em> to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and return
@@ -448,7 +449,7 @@ changes.</p>
 <dt class="sig sig-object c" id="c.PyUnstable_Code_SetExtra">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyUnstable_Code_SetExtra</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">code</span></span>, <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_t"><span class="n"><span class="pre">Py_ssize_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">index</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">extra</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUnstable_Code_SetExtra" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="unstable-c-api warning admonition">
-<em>This is <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">Unstable API</span></a>. It may change without warning in minor releases.</em></div>
+<em>這是 <a class="reference internal" href="stable.html#unstable-c-api"><span class="std std-ref">不穩定 API</span></a>，它可能在小版本發布中沒有任何警告地被變更。</em></div>
 <p>Set the extra data stored under the given index to <em>extra</em>.
 Return 0 on success. Set an exception and return -1 on failure.</p>
 <div class="versionadded" id="index-5">
@@ -523,7 +524,7 @@ changes.</p>
           <a href="cell.html" title="Cell 物件"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -533,7 +534,7 @@ changes.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -563,13 +564,14 @@ changes.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -577,7 +579,7 @@ changes.</p>
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

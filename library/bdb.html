@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bdb --- Debugger framework &#8212; Python 3.12.0 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bdb --- 偵錯器框架 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=20e7bb27"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.0 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -82,79 +82,6 @@
         <option value="dark">Dark</option>
     </select>
 </label>
-  <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- Debugger framework</a><ul>
-<li><a class="reference internal" href="#bdb.BdbQuit"><code class="docutils literal notranslate"><span class="pre">BdbQuit</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint"><code class="docutils literal notranslate"><span class="pre">Breakpoint</span></code></a><ul>
-<li><a class="reference internal" href="#bdb.Breakpoint.deleteMe"><code class="docutils literal notranslate"><span class="pre">Breakpoint.deleteMe()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.enable"><code class="docutils literal notranslate"><span class="pre">Breakpoint.enable()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.disable"><code class="docutils literal notranslate"><span class="pre">Breakpoint.disable()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpformat"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpformat()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpprint"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpprint()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.file"><code class="docutils literal notranslate"><span class="pre">Breakpoint.file</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.line"><code class="docutils literal notranslate"><span class="pre">Breakpoint.line</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.temporary"><code class="docutils literal notranslate"><span class="pre">Breakpoint.temporary</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.cond"><code class="docutils literal notranslate"><span class="pre">Breakpoint.cond</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.funcname"><code class="docutils literal notranslate"><span class="pre">Breakpoint.funcname</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.enabled"><code class="docutils literal notranslate"><span class="pre">Breakpoint.enabled</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpbynumber"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpbynumber</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bplist"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bplist</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.ignore"><code class="docutils literal notranslate"><span class="pre">Breakpoint.ignore</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.hits"><code class="docutils literal notranslate"><span class="pre">Breakpoint.hits</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bdb.Bdb"><code class="docutils literal notranslate"><span class="pre">Bdb</span></code></a><ul>
-<li><a class="reference internal" href="#bdb.Bdb.canonic"><code class="docutils literal notranslate"><span class="pre">Bdb.canonic()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.reset"><code class="docutils literal notranslate"><span class="pre">Bdb.reset()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.trace_dispatch"><code class="docutils literal notranslate"><span class="pre">Bdb.trace_dispatch()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_line"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_call"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_call()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_return"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_exception"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_exception()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.is_skipped_line"><code class="docutils literal notranslate"><span class="pre">Bdb.is_skipped_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.stop_here"><code class="docutils literal notranslate"><span class="pre">Bdb.stop_here()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.break_here"><code class="docutils literal notranslate"><span class="pre">Bdb.break_here()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.break_anywhere"><code class="docutils literal notranslate"><span class="pre">Bdb.break_anywhere()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_call"><code class="docutils literal notranslate"><span class="pre">Bdb.user_call()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_line"><code class="docutils literal notranslate"><span class="pre">Bdb.user_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_return"><code class="docutils literal notranslate"><span class="pre">Bdb.user_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_exception"><code class="docutils literal notranslate"><span class="pre">Bdb.user_exception()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.do_clear"><code class="docutils literal notranslate"><span class="pre">Bdb.do_clear()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_step"><code class="docutils literal notranslate"><span class="pre">Bdb.set_step()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_next"><code class="docutils literal notranslate"><span class="pre">Bdb.set_next()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_return"><code class="docutils literal notranslate"><span class="pre">Bdb.set_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_until"><code class="docutils literal notranslate"><span class="pre">Bdb.set_until()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_trace"><code class="docutils literal notranslate"><span class="pre">Bdb.set_trace()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_continue"><code class="docutils literal notranslate"><span class="pre">Bdb.set_continue()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_quit"><code class="docutils literal notranslate"><span class="pre">Bdb.set_quit()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_break"><code class="docutils literal notranslate"><span class="pre">Bdb.set_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_break"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_bpbynumber"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_bpbynumber()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_all_file_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_all_file_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_all_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_all_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_bpbynumber"><code class="docutils literal notranslate"><span class="pre">Bdb.get_bpbynumber()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_break"><code class="docutils literal notranslate"><span class="pre">Bdb.get_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_file_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_file_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_all_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_all_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_stack"><code class="docutils literal notranslate"><span class="pre">Bdb.get_stack()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.format_stack_entry"><code class="docutils literal notranslate"><span class="pre">Bdb.format_stack_entry()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.run"><code class="docutils literal notranslate"><span class="pre">Bdb.run()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runeval"><code class="docutils literal notranslate"><span class="pre">Bdb.runeval()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runctx"><code class="docutils literal notranslate"><span class="pre">Bdb.runctx()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runcall"><code class="docutils literal notranslate"><span class="pre">Bdb.runcall()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bdb.checkfuncname"><code class="docutils literal notranslate"><span class="pre">checkfuncname()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.effective"><code class="docutils literal notranslate"><span class="pre">effective()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.set_trace"><code class="docutils literal notranslate"><span class="pre">set_trace()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
   <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="audit_events.html"
@@ -197,7 +124,7 @@
           <a href="audit_events.html" title="稽核事件表"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -207,12 +134,12 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="debug.html" accesskey="U">除錯與效能分析</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- Debugger framework</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- 偵錯器框架</a></li>
                 <li class="right">
                     
 
@@ -243,19 +170,19 @@
           <div class="body" role="main">
             
   <section id="module-bdb">
-<span id="bdb-debugger-framework"></span><h1><a class="reference internal" href="#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> --- Debugger framework<a class="headerlink" href="#module-bdb" title="Link to this heading">¶</a></h1>
+<span id="bdb-debugger-framework"></span><h1><a class="reference internal" href="#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> --- 偵錯器框架<a class="headerlink" href="#module-bdb" title="Link to this heading">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.12/Lib/bdb.py">Lib/bdb.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> module handles basic debugger functions, like setting breakpoints
 or managing execution via the debugger.</p>
-<p>The following exception is defined:</p>
+<p>有定義以下例外：</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="bdb.BdbQuit">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bdb.</span></span><span class="sig-name descname"><span class="pre">BdbQuit</span></span><a class="headerlink" href="#bdb.BdbQuit" title="Link to this definition">¶</a></dt>
-<dd><p>Exception raised by the <a class="reference internal" href="#bdb.Bdb" title="bdb.Bdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bdb</span></code></a> class for quitting the debugger.</p>
+<dd><p>由 <a class="reference internal" href="#bdb.Bdb" title="bdb.Bdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bdb</span></code></a> 類別所引發的例外，用來退出偵錯器。</p>
 </dd></dl>
 
-<p>The <a class="reference internal" href="#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> module also defines two classes:</p>
+<p><a class="reference internal" href="#module-bdb" title="bdb: Debugger framework."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code></a> 模組也定義了兩個類別：</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="bdb.Breakpoint">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bdb.</span></span><span class="sig-name descname"><span class="pre">Breakpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Breakpoint" title="Link to this definition">¶</a></dt>
@@ -270,7 +197,7 @@ be in canonical form.  If a <a class="reference internal" href="#bdb.Breakpoint.
 <a class="reference internal" href="#bdb.Breakpoint.hits" title="bdb.Breakpoint.hits"><code class="xref py py-attr docutils literal notranslate"><span class="pre">hit</span></code></a> will be counted when the first line of that function is
 executed.  A <a class="reference internal" href="#bdb.Breakpoint.cond" title="bdb.Breakpoint.cond"><code class="xref py py-attr docutils literal notranslate"><span class="pre">conditional</span></code></a> breakpoint always counts a
 <a class="reference internal" href="#bdb.Breakpoint.hits" title="bdb.Breakpoint.hits"><code class="xref py py-attr docutils literal notranslate"><span class="pre">hit</span></code></a>.</p>
-<p><a class="reference internal" href="#bdb.Breakpoint" title="bdb.Breakpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Breakpoint</span></code></a> instances have the following methods:</p>
+<p><a class="reference internal" href="#bdb.Breakpoint" title="bdb.Breakpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Breakpoint</span></code></a> 實例有以下方法：</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="bdb.Breakpoint.deleteMe">
 <span class="sig-name descname"><span class="pre">deleteMe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Breakpoint.deleteMe" title="Link to this definition">¶</a></dt>
@@ -351,7 +278,7 @@ entering the function.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="bdb.Breakpoint.enabled">
 <span class="sig-name descname"><span class="pre">enabled</span></span><a class="headerlink" href="#bdb.Breakpoint.enabled" title="Link to this definition">¶</a></dt>
-<dd><p>True if <a class="reference internal" href="#bdb.Breakpoint" title="bdb.Breakpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Breakpoint</span></code></a> is enabled.</p>
+<dd><p>如 <a class="reference internal" href="#bdb.Breakpoint" title="bdb.Breakpoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Breakpoint</span></code></a> 有被啟用則為 True。</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -393,8 +320,8 @@ module name patterns.  The debugger will not step into frames that
 originate in a module that matches one of these patterns. Whether a
 frame is considered to originate in a certain module is determined
 by the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> in the frame globals.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">在 3.1 版新加入: </span><em>skip</em> 引數。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.1 版的變更: </span>新增 <em>skip</em> 引數。</p>
 </div>
 <p>The following methods of <a class="reference internal" href="#bdb.Bdb" title="bdb.Bdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bdb</span></code></a> normally don't need to be overridden.</p>
 <dl class="py method">
@@ -410,7 +337,7 @@ generated in interactive mode, is returned unchanged.</p>
 <dt class="sig sig-object py" id="bdb.Bdb.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.reset" title="Link to this definition">¶</a></dt>
 <dd><p>Set the <code class="xref py py-attr docutils literal notranslate"><span class="pre">botframe</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">stopframe</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">returnframe</span></code> and
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code> attributes with values ready to start debugging.</p>
+<a class="reference internal" href="#bdb.Bdb.set_quit" title="bdb.Bdb.set_quit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code></a> attributes with values ready to start debugging.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -444,7 +371,7 @@ trace function.  For more information on code and frame objects, refer to
 <span class="sig-name descname"><span class="pre">dispatch_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.dispatch_line" title="Link to this definition">¶</a></dt>
 <dd><p>If the debugger should stop on the current line, invoke the
 <a class="reference internal" href="#bdb.Bdb.user_line" title="bdb.Bdb.user_line"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_line()</span></code></a> method (which should be overridden in subclasses).
-Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <code class="xref py py-attr docutils literal notranslate"><span class="pre">Bdb.quitting</span></code> flag is set
+Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <a class="reference internal" href="#bdb.Bdb.set_quit" title="bdb.Bdb.set_quit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code></a> flag is set
 (which can be set from <a class="reference internal" href="#bdb.Bdb.user_line" title="bdb.Bdb.user_line"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_line()</span></code></a>).  Return a reference to the
 <a class="reference internal" href="#bdb.Bdb.trace_dispatch" title="bdb.Bdb.trace_dispatch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">trace_dispatch()</span></code></a> method for further tracing in that scope.</p>
 </dd></dl>
@@ -454,7 +381,7 @@ Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><c
 <span class="sig-name descname"><span class="pre">dispatch_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.dispatch_call" title="Link to this definition">¶</a></dt>
 <dd><p>If the debugger should stop on this function call, invoke the
 <a class="reference internal" href="#bdb.Bdb.user_call" title="bdb.Bdb.user_call"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_call()</span></code></a> method (which should be overridden in subclasses).
-Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <code class="xref py py-attr docutils literal notranslate"><span class="pre">Bdb.quitting</span></code> flag is set
+Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <a class="reference internal" href="#bdb.Bdb.set_quit" title="bdb.Bdb.set_quit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code></a> flag is set
 (which can be set from <a class="reference internal" href="#bdb.Bdb.user_call" title="bdb.Bdb.user_call"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_call()</span></code></a>).  Return a reference to the
 <a class="reference internal" href="#bdb.Bdb.trace_dispatch" title="bdb.Bdb.trace_dispatch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">trace_dispatch()</span></code></a> method for further tracing in that scope.</p>
 </dd></dl>
@@ -464,7 +391,7 @@ Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><c
 <span class="sig-name descname"><span class="pre">dispatch_return</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.dispatch_return" title="Link to this definition">¶</a></dt>
 <dd><p>If the debugger should stop on this function return, invoke the
 <a class="reference internal" href="#bdb.Bdb.user_return" title="bdb.Bdb.user_return"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_return()</span></code></a> method (which should be overridden in subclasses).
-Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <code class="xref py py-attr docutils literal notranslate"><span class="pre">Bdb.quitting</span></code> flag is set
+Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <a class="reference internal" href="#bdb.Bdb.set_quit" title="bdb.Bdb.set_quit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code></a> flag is set
 (which can be set from <a class="reference internal" href="#bdb.Bdb.user_return" title="bdb.Bdb.user_return"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_return()</span></code></a>).  Return a reference to the
 <a class="reference internal" href="#bdb.Bdb.trace_dispatch" title="bdb.Bdb.trace_dispatch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">trace_dispatch()</span></code></a> method for further tracing in that scope.</p>
 </dd></dl>
@@ -474,7 +401,7 @@ Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><c
 <span class="sig-name descname"><span class="pre">dispatch_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.dispatch_exception" title="Link to this definition">¶</a></dt>
 <dd><p>If the debugger should stop at this exception, invokes the
 <a class="reference internal" href="#bdb.Bdb.user_exception" title="bdb.Bdb.user_exception"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_exception()</span></code></a> method (which should be overridden in subclasses).
-Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <code class="xref py py-attr docutils literal notranslate"><span class="pre">Bdb.quitting</span></code> flag is set
+Raise a <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> exception if the <a class="reference internal" href="#bdb.Bdb.set_quit" title="bdb.Bdb.set_quit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code></a> flag is set
 (which can be set from <a class="reference internal" href="#bdb.Bdb.user_exception" title="bdb.Bdb.user_exception"><code class="xref py py-meth docutils literal notranslate"><span class="pre">user_exception()</span></code></a>).  Return a reference to the
 <a class="reference internal" href="#bdb.Bdb.trace_dispatch" title="bdb.Bdb.trace_dispatch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">trace_dispatch()</span></code></a> method for further tracing in that scope.</p>
 </dd></dl>
@@ -587,7 +514,7 @@ set the system trace function to <code class="docutils literal notranslate"><spa
 <dl class="py method">
 <dt class="sig sig-object py" id="bdb.Bdb.set_quit">
 <span class="sig-name descname"><span class="pre">set_quit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bdb.Bdb.set_quit" title="Link to this definition">¶</a></dt>
-<dd><p>Set the <code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  This raises <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> in
+<dd><p id="index-0">Set the <code class="xref py py-attr docutils literal notranslate"><span class="pre">quitting</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  This raises <a class="reference internal" href="#bdb.BdbQuit" title="bdb.BdbQuit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BdbQuit</span></code></a> in
 the next call to one of the <code class="xref py py-meth docutils literal notranslate"><span class="pre">dispatch_*()</span></code> methods.</p>
 </dd></dl>
 
@@ -685,9 +612,9 @@ of frames below the frame where the debugger was invoked.</p>
 <code class="docutils literal notranslate"><span class="pre">(frame,</span> <span class="pre">lineno)</span></code> tuple.  The return string contains:</p>
 <ul class="simple">
 <li><p>The canonical filename which contains the frame.</p></li>
-<li><p>The function name or <code class="docutils literal notranslate"><span class="pre">&quot;&lt;lambda&gt;&quot;</span></code>.</p></li>
-<li><p>The input arguments.</p></li>
-<li><p>The return value.</p></li>
+<li><p>函式名稱或 <code class="docutils literal notranslate"><span class="pre">&quot;&lt;lambda&gt;&quot;</span></code>。</p></li>
+<li><p>輸入引數。</p></li>
+<li><p>回傳值。</p></li>
 <li><p>The line of code (if it exists).</p></li>
 </ul>
 </dd></dl>
@@ -770,79 +697,6 @@ temporary breakpoint should be deleted, is False only when the
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h3><a href="../contents.html">目錄</a></h3>
-    <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- Debugger framework</a><ul>
-<li><a class="reference internal" href="#bdb.BdbQuit"><code class="docutils literal notranslate"><span class="pre">BdbQuit</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint"><code class="docutils literal notranslate"><span class="pre">Breakpoint</span></code></a><ul>
-<li><a class="reference internal" href="#bdb.Breakpoint.deleteMe"><code class="docutils literal notranslate"><span class="pre">Breakpoint.deleteMe()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.enable"><code class="docutils literal notranslate"><span class="pre">Breakpoint.enable()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.disable"><code class="docutils literal notranslate"><span class="pre">Breakpoint.disable()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpformat"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpformat()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpprint"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpprint()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.file"><code class="docutils literal notranslate"><span class="pre">Breakpoint.file</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.line"><code class="docutils literal notranslate"><span class="pre">Breakpoint.line</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.temporary"><code class="docutils literal notranslate"><span class="pre">Breakpoint.temporary</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.cond"><code class="docutils literal notranslate"><span class="pre">Breakpoint.cond</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.funcname"><code class="docutils literal notranslate"><span class="pre">Breakpoint.funcname</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.enabled"><code class="docutils literal notranslate"><span class="pre">Breakpoint.enabled</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bpbynumber"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bpbynumber</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.bplist"><code class="docutils literal notranslate"><span class="pre">Breakpoint.bplist</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.ignore"><code class="docutils literal notranslate"><span class="pre">Breakpoint.ignore</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Breakpoint.hits"><code class="docutils literal notranslate"><span class="pre">Breakpoint.hits</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bdb.Bdb"><code class="docutils literal notranslate"><span class="pre">Bdb</span></code></a><ul>
-<li><a class="reference internal" href="#bdb.Bdb.canonic"><code class="docutils literal notranslate"><span class="pre">Bdb.canonic()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.reset"><code class="docutils literal notranslate"><span class="pre">Bdb.reset()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.trace_dispatch"><code class="docutils literal notranslate"><span class="pre">Bdb.trace_dispatch()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_line"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_call"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_call()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_return"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.dispatch_exception"><code class="docutils literal notranslate"><span class="pre">Bdb.dispatch_exception()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.is_skipped_line"><code class="docutils literal notranslate"><span class="pre">Bdb.is_skipped_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.stop_here"><code class="docutils literal notranslate"><span class="pre">Bdb.stop_here()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.break_here"><code class="docutils literal notranslate"><span class="pre">Bdb.break_here()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.break_anywhere"><code class="docutils literal notranslate"><span class="pre">Bdb.break_anywhere()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_call"><code class="docutils literal notranslate"><span class="pre">Bdb.user_call()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_line"><code class="docutils literal notranslate"><span class="pre">Bdb.user_line()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_return"><code class="docutils literal notranslate"><span class="pre">Bdb.user_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.user_exception"><code class="docutils literal notranslate"><span class="pre">Bdb.user_exception()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.do_clear"><code class="docutils literal notranslate"><span class="pre">Bdb.do_clear()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_step"><code class="docutils literal notranslate"><span class="pre">Bdb.set_step()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_next"><code class="docutils literal notranslate"><span class="pre">Bdb.set_next()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_return"><code class="docutils literal notranslate"><span class="pre">Bdb.set_return()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_until"><code class="docutils literal notranslate"><span class="pre">Bdb.set_until()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_trace"><code class="docutils literal notranslate"><span class="pre">Bdb.set_trace()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_continue"><code class="docutils literal notranslate"><span class="pre">Bdb.set_continue()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_quit"><code class="docutils literal notranslate"><span class="pre">Bdb.set_quit()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.set_break"><code class="docutils literal notranslate"><span class="pre">Bdb.set_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_break"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_bpbynumber"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_bpbynumber()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_all_file_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_all_file_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.clear_all_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.clear_all_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_bpbynumber"><code class="docutils literal notranslate"><span class="pre">Bdb.get_bpbynumber()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_break"><code class="docutils literal notranslate"><span class="pre">Bdb.get_break()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_file_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_file_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_all_breaks"><code class="docutils literal notranslate"><span class="pre">Bdb.get_all_breaks()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.get_stack"><code class="docutils literal notranslate"><span class="pre">Bdb.get_stack()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.format_stack_entry"><code class="docutils literal notranslate"><span class="pre">Bdb.format_stack_entry()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.run"><code class="docutils literal notranslate"><span class="pre">Bdb.run()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runeval"><code class="docutils literal notranslate"><span class="pre">Bdb.runeval()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runctx"><code class="docutils literal notranslate"><span class="pre">Bdb.runctx()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.Bdb.runcall"><code class="docutils literal notranslate"><span class="pre">Bdb.runcall()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#bdb.checkfuncname"><code class="docutils literal notranslate"><span class="pre">checkfuncname()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.effective"><code class="docutils literal notranslate"><span class="pre">effective()</span></code></a></li>
-<li><a class="reference internal" href="#bdb.set_trace"><code class="docutils literal notranslate"><span class="pre">set_trace()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-  <div>
     <h4>上個主題</h4>
     <p class="topless"><a href="audit_events.html"
                           title="上一章">稽核事件表</a></p>
@@ -887,7 +741,7 @@ temporary breakpoint should be deleted, is False only when the
           <a href="audit_events.html" title="稽核事件表"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -897,12 +751,12 @@ temporary breakpoint should be deleted, is False only when the
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.0 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="debug.html" >除錯與效能分析</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- Debugger framework</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bdb</span></code> --- 偵錯器框架</a></li>
                 <li class="right">
                     
 
@@ -927,13 +781,14 @@ temporary breakpoint should be deleted, is False only when the
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -941,7 +796,7 @@ temporary breakpoint should be deleted, is False only when the
 <br />
     <br />
 
-    最後更新於 Dec 06, 2023 (02:43 UTC)。
+    最後更新於 Feb 19, 2024 (02:43 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
