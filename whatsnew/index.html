@@ -5,21 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 有什麼新功能？ &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 有什麼新功能？ &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=056bc313"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/translations.js?v=d9a6981e"></script>
+    <script src="../_static/translations.js?v=1fe8cbde"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.2 說明文件 中搜尋"
+          title="在 Python 3.12.3 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -46,6 +46,92 @@
             <script type="text/javascript" src="../_static/menu.js"></script>
             <script type="text/javascript" src="../_static/search-focus.js"></script>
             <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+
+<meta name="readthedocs-addons-api-version" content="1">
+<script type="text/javascript">
+ function onSwitch(event) {
+     const option = event.target.selectedIndex;
+     const item = event.target.options[option];
+     window.location.href = item.dataset.url;
+ }
+
+ document.addEventListener("readthedocs-addons-data-ready", function(event) {
+   const config = event.detail.data()
+
+   // Add some mocked hardcoded versions pointing to the official
+   // documentation while migrating to Read the Docs.
+   // These are only for testing purposes.
+   // TODO: remove them when managing all the versions on Read the Docs,
+   // since all the "active, built and not hidden" versions will be shown automatically.
+   let versions = config.versions.active.concat([
+       {
+           slug: "dev (3.13)",
+           urls: {
+               documentation: "https://docs.python.org/3.13/",
+           }
+       },
+       {
+           slug: "3.12",
+           urls: {
+               documentation: "https://docs.python.org/3.12/",
+           }
+       },
+       {
+           slug: "3.11",
+           urls: {
+               documentation: "https://docs.python.org/3.11/",
+           }
+       },
+   ]);
+
+   const versionSelect = `
+   <select id="version_select">
+   ${ versions.map(
+       (version) => `
+       <option
+           value="${ version.slug }"
+           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+           data-url="${ version.urls.documentation }">
+           ${ version.slug }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Prepend the current language to the options on the selector
+   let languages = config.projects.translations.concat(config.projects.current);
+   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
+   const languageSelect = `
+   <select id="language_select">
+   ${ languages.map(
+       (translation) => `
+       <option
+           value="${ translation.slug }"
+           ${ config.projects.current.slug === translation.slug ? 'selected="selected"' : '' }
+           data-url="${ translation.urls.documentation }">
+           ${ translation.language.name }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Query all the placeholders because there are different ones for Desktop/Mobile
+   const versionPlaceholders = document.querySelectorAll(".version_switcher_placeholder");
+   for (placeholder of versionPlaceholders) {
+       placeholder.innerHTML = versionSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+
+   const languagePlaceholders = document.querySelectorAll(".language_switcher_placeholder");
+   for (placeholder of languagePlaceholders) {
+       placeholder.innerHTML = languageSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+ });
+</script>
 
   </head>
 <body>
@@ -134,7 +220,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 有什麼新功能？</a></li>
@@ -168,7 +254,7 @@
           <div class="body" role="main">
             
   <section id="what-s-new-in-python">
-<span id="whatsnew-index"></span><h1>Python 有什麼新功能？<a class="headerlink" href="#what-s-new-in-python" title="Link to this heading">¶</a></h1>
+<span id="whatsnew-index"></span><h1>Python 有什麼新功能？<a class="headerlink" href="#what-s-new-in-python" title="連結到這個標頭">¶</a></h1>
 <p>「Python 有什麼新功能」這系列的說明是讓使用者知道 Python 各個主要更新版本之間的重大改變的地方。對於希望在新版本釋出時立即了解版本差異的使用者們來說，這些說明被歸類為「必讀」的等級。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -187,6 +273,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3.12.html#porting-to-python-3-12">Porting to Python 3.12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.12.html#build-changes">Build Changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.12.html#c-api-changes">C API 變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.12.html#notable-changes-in-3-12-4">Notable changes in 3.12.4</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3.11.html">Python 3.11 有什麼新功能</a><ul>
@@ -242,10 +329,10 @@
 <li class="toctree-l2"><a class="reference internal" href="3.9.html#porting-to-python-3-9">Porting to Python 3.9</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.9.html#build-changes">Build Changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.9.html#c-api-changes">C API 變更</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-1">Notable changes in Python 3.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-2">Notable changes in Python 3.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-3">Notable changes in Python 3.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-5">Notable changes in Python 3.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-1">Python 3.9.1 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-2">Python 3.9.2 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-3">Python 3.9.3 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-python-3-9-5">Python 3.9.5 中顯著的變更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-security-feature-in-3-9-14">Notable security feature in 3.9.14</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.9.html#notable-changes-in-3-9-17">Notable changes in 3.9.17</a></li>
 </ul>
@@ -261,14 +348,14 @@
 <li class="toctree-l2"><a class="reference internal" href="3.8.html#deprecated">已棄用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.8.html#api-and-feature-removals">API and Feature Removals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.8.html#porting-to-python-3-8">Porting to Python 3.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-1">Notable changes in Python 3.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-2">Notable changes in Python 3.8.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-3">Notable changes in Python 3.8.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-8">Notable changes in Python 3.8.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-9">Notable changes in Python 3.8.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-10">Notable changes in Python 3.8.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#id1">Notable changes in Python 3.8.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-12">Notable changes in Python 3.8.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-1">Python 3.8.1 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-2">Python 3.8.2 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-3">Python 3.8.3 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-8">Python 3.8.8 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-9">Python 3.8.9 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-10">Python 3.8.10 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#id1">Python 3.8.10 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-python-3-8-12">Python 3.8.12 中顯著的變更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-security-feature-in-3-8-14">Notable security feature in 3.8.14</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.8.html#notable-changes-in-3-8-17">Notable changes in 3.8.17</a></li>
 </ul>
@@ -291,11 +378,11 @@
 <li class="toctree-l2"><a class="reference internal" href="3.7.html#module-removals">Module Removals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.7.html#windows-only-changes">Windows-only Changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.7.html#porting-to-python-3-7">Porting to Python 3.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-1">Notable changes in Python 3.7.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-2">Notable changes in Python 3.7.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-6">Notable changes in Python 3.7.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-10">Notable changes in Python 3.7.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-11">Notable changes in Python 3.7.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-1">Python 3.7.1 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-2">Python 3.7.2 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-6">Python 3.7.6 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-10">Python 3.7.10 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-changes-in-python-3-7-11">Python 3.7.11 中顯著的變更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.7.html#notable-security-feature-in-3-7-14">Notable security feature in 3.7.14</a></li>
 </ul>
 </li>
@@ -311,13 +398,13 @@
 <li class="toctree-l2"><a class="reference internal" href="3.6.html#deprecated">已棄用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.6.html#removed">已移除</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.6.html#porting-to-python-3-6">Porting to Python 3.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-2">Notable changes in Python 3.6.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-4">Notable changes in Python 3.6.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-5">Notable changes in Python 3.6.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-7">Notable changes in Python 3.6.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-10">Notable changes in Python 3.6.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-13">Notable changes in Python 3.6.13</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-14">Notable changes in Python 3.6.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-2">Python 3.6.2 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-4">Python 3.6.4 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-5">Python 3.6.5 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-7">Python 3.6.7 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-10">Python 3.6.10 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-13">Python 3.6.13 中顯著的變更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.6.html#notable-changes-in-python-3-6-14">Python 3.6.14 中顯著的變更</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3.5.html">Python 3.4 有什麼新功能</a><ul>
@@ -332,7 +419,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3.5.html#deprecated">已棄用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.5.html#removed">已移除</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.5.html#porting-to-python-3-5">Porting to Python 3.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.5.html#notable-changes-in-python-3-5-4">Notable changes in Python 3.5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.5.html#notable-changes-in-python-3-5-4">Python 3.5.4 中顯著的變更</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3.4.html">Python 3.4 有什麼新功能</a><ul>
@@ -396,7 +483,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3.1.html">Python 3.1 有什麼新功能</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="3.1.html#pep-372-ordered-dictionaries">PEP 372: Ordered Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.1.html#pep-372-ordered-dictionaries"><strong>PEP 372</strong>：有序字典</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.1.html#pep-378-format-specifier-for-thousands-separator">PEP 378: Format Specifier for Thousands Separator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.1.html#other-language-changes">其他語言更動</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.1.html#new-improved-and-deprecated-modules">New, Improved, and Deprecated Modules</a></li>
@@ -420,7 +507,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="2.7.html">Python 2.7 有什麼新功能</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="2.7.html#the-future-for-python-2-x">The Future for Python 2.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.7.html#the-future-for-python-2-x">Python 2.x 的未來</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.7.html#changes-to-the-handling-of-deprecation-warnings">Changes to the Handling of Deprecation Warnings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.7.html#python-3-1-features">Python 3.1 Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.7.html#pep-372-adding-an-ordered-dictionary-to-collections">PEP 372: Adding an Ordered Dictionary to collections</a></li>
@@ -581,11 +668,12 @@
 </li>
 </ul>
 </div>
-<p>「Changelog（更動日誌）」是從 <a class="reference external" href="https://github.com/python/cpython/tree/3.12/Misc/NEWS.d">Misc/NEWS.d</a> 目錄樹的內容<a class="reference external" href="https://pypi.org/project/blurb">建置</a>的一個 HTML 檔案版本，其中包含了 Python 目前版本中的<em>所有</em>重要變更。</p>
+<p>「Changelog（更動日誌）」是從 <a class="reference external" href="https://github.com/python/cpython/tree/3.12/Misc/NEWS.d">Misc/NEWS.d</a> 目錄樹內容<a class="reference external" href="https://pypi.org/project/blurb/">檔案建置</a>的一個 HTML 版本，其中包含了 Python 目前版本中的<em>所有</em>重要變更。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog（更動日誌）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#python-next">Python next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#python-3-12-3-final">Python 3.12.3 final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#python-3-12-2-final">Python 3.12.2 final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#python-3-12-1-final">Python 3.12.1 final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#python-3-12-0-final">Python 3.12.0 final</a></li>
@@ -757,7 +845,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 有什麼新功能？</a></li>
@@ -785,13 +873,21 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
+    &copy; 
+      <a href="../copyright.html">
+    
+    版權
+    
+      </a>
+     2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="/license.html">History and License</a> for more information.<br />
+    
+      See <a href="/license.html">History and License</a> for more information.<br />
+    
     
     <br />
 
@@ -799,12 +895,13 @@
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-
-    最後更新於 Feb 19, 2024 (02:43 UTC)。
-    <a href="/bugs.html">Found a bug</a>?
+      最後更新於 Apr 28, 2024 (15:16 UTC)。
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7 建立。
     </div>
 
   </body>

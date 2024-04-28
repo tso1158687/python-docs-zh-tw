@@ -5,21 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>XML 處理模組 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML 處理模組 &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=056bc313"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/translations.js?v=d9a6981e"></script>
+    <script src="../_static/translations.js?v=1fe8cbde"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.2 說明文件 中搜尋"
+          title="在 Python 3.12.3 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -46,6 +46,92 @@
             <script type="text/javascript" src="../_static/menu.js"></script>
             <script type="text/javascript" src="../_static/search-focus.js"></script>
             <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+
+<meta name="readthedocs-addons-api-version" content="1">
+<script type="text/javascript">
+ function onSwitch(event) {
+     const option = event.target.selectedIndex;
+     const item = event.target.options[option];
+     window.location.href = item.dataset.url;
+ }
+
+ document.addEventListener("readthedocs-addons-data-ready", function(event) {
+   const config = event.detail.data()
+
+   // Add some mocked hardcoded versions pointing to the official
+   // documentation while migrating to Read the Docs.
+   // These are only for testing purposes.
+   // TODO: remove them when managing all the versions on Read the Docs,
+   // since all the "active, built and not hidden" versions will be shown automatically.
+   let versions = config.versions.active.concat([
+       {
+           slug: "dev (3.13)",
+           urls: {
+               documentation: "https://docs.python.org/3.13/",
+           }
+       },
+       {
+           slug: "3.12",
+           urls: {
+               documentation: "https://docs.python.org/3.12/",
+           }
+       },
+       {
+           slug: "3.11",
+           urls: {
+               documentation: "https://docs.python.org/3.11/",
+           }
+       },
+   ]);
+
+   const versionSelect = `
+   <select id="version_select">
+   ${ versions.map(
+       (version) => `
+       <option
+           value="${ version.slug }"
+           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+           data-url="${ version.urls.documentation }">
+           ${ version.slug }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Prepend the current language to the options on the selector
+   let languages = config.projects.translations.concat(config.projects.current);
+   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
+   const languageSelect = `
+   <select id="language_select">
+   ${ languages.map(
+       (translation) => `
+       <option
+           value="${ translation.slug }"
+           ${ config.projects.current.slug === translation.slug ? 'selected="selected"' : '' }
+           data-url="${ translation.urls.documentation }">
+           ${ translation.language.name }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Query all the placeholders because there are different ones for Desktop/Mobile
+   const versionPlaceholders = document.querySelectorAll(".version_switcher_placeholder");
+   for (placeholder of versionPlaceholders) {
+       placeholder.innerHTML = versionSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+
+   const languagePlaceholders = document.querySelectorAll(".language_switcher_placeholder");
+   for (placeholder of languagePlaceholders) {
+       placeholder.innerHTML = languageSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+ });
+</script>
 
   </head>
 <body>
@@ -145,7 +231,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -181,7 +267,7 @@
           <div class="body" role="main">
             
   <section id="module-xml">
-<span id="xml-processing-modules"></span><span id="xml"></span><h1>XML 處理模組<a class="headerlink" href="#module-xml" title="Link to this heading">¶</a></h1>
+<span id="xml-processing-modules"></span><span id="xml"></span><h1>XML 處理模組<a class="headerlink" href="#module-xml" title="連結到這個標頭">¶</a></h1>
 <p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.12/Lib/xml/">Lib/xml/</a></p>
 <hr class="docutils" />
 <p>Python 處理 XML 的介面被歸類於 <code class="docutils literal notranslate"><span class="pre">xml</span></code> 套件中。</p>
@@ -205,7 +291,7 @@
 <li><p><a class="reference internal" href="pyexpat.html#module-xml.parsers.expat" title="xml.parsers.expat: An interface to the Expat non-validating XML parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.parsers.expat</span></code></a>：Expat 剖析器繫結</p></li>
 </ul>
 <section id="xml-vulnerabilities">
-<span id="id1"></span><h2>XML 漏洞<a class="headerlink" href="#xml-vulnerabilities" title="Link to this heading">¶</a></h2>
+<span id="id1"></span><h2>XML 漏洞<a class="headerlink" href="#xml-vulnerabilities" title="連結到這個標頭">¶</a></h2>
 <p>XML 處理模組無法抵禦惡意建構的資料。攻擊者可以濫用 XML 功能來執行阻斷服務攻擊 (denial of service attack)、存取本地檔案、生成與其他機器的網路連接或繞過防火牆。</p>
 <p>下表概述了已知的攻擊以及各個模組是否易有漏洞。</p>
 <table class="docutils align-default">
@@ -254,6 +340,13 @@
 <td><p>安全</p></td>
 <td><p><strong>脆弱</strong></p></td>
 </tr>
+<tr class="row-odd"><td><p>大型 token</p></td>
+<td><p><strong>脆弱</strong> (6)</p></td>
+<td><p><strong>脆弱</strong> (6)</p></td>
+<td><p><strong>脆弱</strong> (6)</p></td>
+<td><p><strong>脆弱</strong> (6)</p></td>
+<td><p><strong>脆弱</strong> (6)</p></td>
+</tr>
 </tbody>
 </table>
 <ol class="arabic simple">
@@ -262,6 +355,7 @@
 <li><p><a class="reference internal" href="xml.dom.minidom.html#module-xml.dom.minidom" title="xml.dom.minidom: Minimal Document Object Model (DOM) implementation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code></a> 不會擴展外部實體，只會逐字回傳未擴展的實體。</p></li>
 <li><p><a class="reference internal" href="xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code></a> 不會擴展外部實體且會忽略它們。</p></li>
 <li><p>從 Python 3.7.1 開始，預設情況下不再處理外部通用實體。</p></li>
+<li><p>Expat 2.6.0 及更新版本不易受到剖析大型 token 所導致的二次 runtime 阻斷服務的影響。由於可能依賴系統提供的函式庫，因此仍被列為易受攻擊的項目。請參考 <code class="xref py py-const docutils literal notranslate"><span class="pre">pyexpat.EXPAT_VERSION</span></code>。</p></li>
 </ol>
 <dl class="simple">
 <dt>十億笑聲 / 指數實體擴展</dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Billion_laughs">十億笑聲</a>攻擊（也稱為指數實體擴展 (exponential entity expansion)）使用多層巢狀實體。每個實體多次引用另一個實體，最終的實體定義包含一個小字串。指數擴展會產生數 GB 的文本，並消耗大量記憶體和 CPU 時間。</p>
@@ -274,11 +368,13 @@
 </dd>
 <dt>解壓縮炸彈 (decompression bomb)</dt><dd><p>解壓縮炸彈（又名 <a class="reference external" href="https://en.wikipedia.org/wiki/Zip_bomb">ZIP bomb</a>）適用於所有可以剖析壓縮 XML 串流（例如 gzip 壓縮的 HTTP 串流或 LZMA 壓縮檔案）的 XML 函式庫。對於攻擊者來說，它可以將傳輸的資料量減少三個或更多數量級。</p>
 </dd>
+<dt>大型 token</dt><dd><p>Expat 需要重新剖析未完成的 token；如果沒有 Expat 2.6.0 中引入的保護，這可能會導致二次 runtime 而導致剖析 XML 的應用程式出現阻斷服務。此問題記錄於 <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52425">CVE-2023-52425</a>。</p>
+</dd>
 </dl>
 <p>PyPI 上的 <a class="reference external" href="https://pypi.org/project/defusedxml/">defusedxml</a> 文件包含有關所有已知攻擊媒介 (attack vector) 的更多資訊以及範例和參考資料。</p>
 </section>
 <section id="the-defusedxml-package">
-<span id="defusedxml-package"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">defusedxml</span></code> 套件<a class="headerlink" href="#the-defusedxml-package" title="Link to this heading">¶</a></h2>
+<span id="defusedxml-package"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">defusedxml</span></code> 套件<a class="headerlink" href="#the-defusedxml-package" title="連結到這個標頭">¶</a></h2>
 <p><a class="reference external" href="https://pypi.org/project/defusedxml/">defusedxml</a> 是一個純 Python 套件，其中包含所有標準函式庫中 XML 剖析器的修正版本子類別，可防止任何潛在的惡意操作。當伺服器程式會剖析任何不受信任的 XML 資料時建議使用此套件。該套件還附帶了更多有關 XML 漏洞（例如 XPath 注入）的範例和延伸文件。</p>
 </section>
 </section>
@@ -356,7 +452,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -386,13 +482,21 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
+    &copy; 
+      <a href="../copyright.html">
+    
+    版權
+    
+      </a>
+     2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="/license.html">History and License</a> for more information.<br />
+    
+      See <a href="/license.html">History and License</a> for more information.<br />
+    
     
     <br />
 
@@ -400,12 +504,13 @@
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-
-    最後更新於 Feb 19, 2024 (02:43 UTC)。
-    <a href="/bugs.html">Found a bug</a>?
+      最後更新於 Apr 28, 2024 (15:16 UTC)。
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7 建立。
     </div>
 
   </body>

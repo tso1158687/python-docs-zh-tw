@@ -5,21 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>fcntl --- The fcntl and ioctl system calls &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fcntl --- The fcntl and ioctl system calls &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=056bc313"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/translations.js?v=d9a6981e"></script>
+    <script src="../_static/translations.js?v=1fe8cbde"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.2 說明文件 中搜尋"
+          title="在 Python 3.12.3 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -46,6 +46,92 @@
             <script type="text/javascript" src="../_static/menu.js"></script>
             <script type="text/javascript" src="../_static/search-focus.js"></script>
             <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+
+<meta name="readthedocs-addons-api-version" content="1">
+<script type="text/javascript">
+ function onSwitch(event) {
+     const option = event.target.selectedIndex;
+     const item = event.target.options[option];
+     window.location.href = item.dataset.url;
+ }
+
+ document.addEventListener("readthedocs-addons-data-ready", function(event) {
+   const config = event.detail.data()
+
+   // Add some mocked hardcoded versions pointing to the official
+   // documentation while migrating to Read the Docs.
+   // These are only for testing purposes.
+   // TODO: remove them when managing all the versions on Read the Docs,
+   // since all the "active, built and not hidden" versions will be shown automatically.
+   let versions = config.versions.active.concat([
+       {
+           slug: "dev (3.13)",
+           urls: {
+               documentation: "https://docs.python.org/3.13/",
+           }
+       },
+       {
+           slug: "3.12",
+           urls: {
+               documentation: "https://docs.python.org/3.12/",
+           }
+       },
+       {
+           slug: "3.11",
+           urls: {
+               documentation: "https://docs.python.org/3.11/",
+           }
+       },
+   ]);
+
+   const versionSelect = `
+   <select id="version_select">
+   ${ versions.map(
+       (version) => `
+       <option
+           value="${ version.slug }"
+           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+           data-url="${ version.urls.documentation }">
+           ${ version.slug }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Prepend the current language to the options on the selector
+   let languages = config.projects.translations.concat(config.projects.current);
+   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
+   const languageSelect = `
+   <select id="language_select">
+   ${ languages.map(
+       (translation) => `
+       <option
+           value="${ translation.slug }"
+           ${ config.projects.current.slug === translation.slug ? 'selected="selected"' : '' }
+           data-url="${ translation.urls.documentation }">
+           ${ translation.language.name }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Query all the placeholders because there are different ones for Desktop/Mobile
+   const versionPlaceholders = document.querySelectorAll(".version_switcher_placeholder");
+   for (placeholder of versionPlaceholders) {
+       placeholder.innerHTML = versionSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+
+   const languagePlaceholders = document.querySelectorAll(".language_switcher_placeholder");
+   for (placeholder of languagePlaceholders) {
+       placeholder.innerHTML = languageSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+ });
+</script>
 
   </head>
 <body>
@@ -134,7 +220,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -170,12 +256,12 @@
           <div class="body" role="main">
             
   <section id="module-fcntl">
-<span id="fcntl-the-fcntl-and-ioctl-system-calls"></span><h1><a class="reference internal" href="#module-fcntl" title="fcntl: The fcntl() and ioctl() system calls. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fcntl</span></code></a> --- The <code class="docutils literal notranslate"><span class="pre">fcntl</span></code> and <code class="docutils literal notranslate"><span class="pre">ioctl</span></code> system calls<a class="headerlink" href="#module-fcntl" title="Link to this heading">¶</a></h1>
+<span id="fcntl-the-fcntl-and-ioctl-system-calls"></span><h1><a class="reference internal" href="#module-fcntl" title="fcntl: The fcntl() and ioctl() system calls. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fcntl</span></code></a> --- The <code class="docutils literal notranslate"><span class="pre">fcntl</span></code> and <code class="docutils literal notranslate"><span class="pre">ioctl</span></code> system calls<a class="headerlink" href="#module-fcntl" title="連結到這個標頭">¶</a></h1>
 <hr class="docutils" id="index-0" />
-<p>This module performs file control and I/O control on file descriptors. It is an
-interface to the <code class="xref c c-func docutils literal notranslate"><span class="pre">fcntl()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> Unix routines.  For a
-complete description of these calls, see <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/fcntl(2)">fcntl(2)</a></em> and
-<em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/ioctl(2)">ioctl(2)</a></em> Unix manual pages.</p>
+<p>This module performs file and I/O control on file descriptors. It is an
+interface to the <code class="xref c c-func docutils literal notranslate"><span class="pre">fcntl()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> Unix routines.
+See the <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/fcntl(2)">fcntl(2)</a></em> and <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/ioctl(2)">ioctl(2)</a></em> Unix manual pages
+for full details.</p>
 <div class="availability docutils container">
 <p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">適用</span></a>：Unix、非 Emscripten、非 WASI。</p>
 </div>
@@ -219,7 +305,7 @@ XFS). This behavior is commonly referred to as &quot;copy-on-write&quot;.</p>
 <p>The module defines the following functions:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fcntl.fcntl">
-<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">fcntl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.fcntl" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">fcntl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.fcntl" title="連結到這個定義">¶</a></dt>
 <dd><p>Perform the operation <em>cmd</em> on file descriptor <em>fd</em> (file objects providing
 a <a class="reference internal" href="io.html#io.IOBase.fileno" title="io.IOBase.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a> method are accepted as well).  The values used
 for <em>cmd</em> are operating system dependent, and are available as constants
@@ -236,13 +322,13 @@ The length of the returned object will be the same as the length of the
 in the buffer by the operating system is larger than 1024 bytes, this is
 most likely to result in a segmentation violation or a more subtle data
 corruption.</p>
-<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">fcntl()</span></code> fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised.</p>
+<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">fcntl()</span></code> call fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">fd</span></code>、<code class="docutils literal notranslate"><span class="pre">cmd</span></code>、<code class="docutils literal notranslate"><span class="pre">arg</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">fcntl.fcntl</span></code>。</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fcntl.ioctl">
-<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">ioctl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutate_flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.ioctl" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">ioctl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutate_flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.ioctl" title="連結到這個定義">¶</a></dt>
 <dd><p>This function is identical to the <a class="reference internal" href="#fcntl.fcntl" title="fcntl.fcntl"><code class="xref py py-func docutils literal notranslate"><span class="pre">fcntl()</span></code></a> function, except
 that the argument handling is even more complicated.</p>
 <p>The <em>request</em> parameter is limited to values that can fit in 32-bits.
@@ -267,7 +353,7 @@ action of the <a class="reference internal" href="#fcntl.ioctl" title="fcntl.ioc
 supplied buffer is less than 1024 bytes long it is first copied into a static
 buffer 1024 bytes long which is then passed to <a class="reference internal" href="#fcntl.ioctl" title="fcntl.ioctl"><code class="xref py py-func docutils literal notranslate"><span class="pre">ioctl()</span></code></a> and copied back
 into the supplied buffer.</p>
-<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
+<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> call fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
 <p>範例：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">array</span><span class="o">,</span> <span class="nn">fcntl</span><span class="o">,</span> <span class="nn">struct</span><span class="o">,</span> <span class="nn">termios</span><span class="o">,</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getpgrp</span><span class="p">()</span>
@@ -286,32 +372,50 @@ into the supplied buffer.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fcntl.flock">
-<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">flock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.flock" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">flock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.flock" title="連結到這個定義">¶</a></dt>
 <dd><p>Perform the lock operation <em>operation</em> on file descriptor <em>fd</em> (file objects providing
 a <a class="reference internal" href="io.html#io.IOBase.fileno" title="io.IOBase.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a> method are accepted as well). See the Unix manual
 <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/flock(2)">flock(2)</a></em> for details.  (On some systems, this function is emulated
 using <code class="xref c c-func docutils literal notranslate"><span class="pre">fcntl()</span></code>.)</p>
-<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">flock()</span></code> fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
+<p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">flock()</span></code> call fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
 <p class="audit-hook">引發一個附帶引數 <code class="docutils literal notranslate"><span class="pre">fd</span></code>、<code class="docutils literal notranslate"><span class="pre">operation</span></code> 的<a class="reference internal" href="sys.html#auditing"><span class="std std-ref">稽核事件</span></a> <code class="docutils literal notranslate"><span class="pre">fcntl.flock</span></code>。</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fcntl.lockf">
-<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">lockf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.lockf" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">lockf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fcntl.lockf" title="連結到這個定義">¶</a></dt>
 <dd><p>This is essentially a wrapper around the <a class="reference internal" href="#fcntl.fcntl" title="fcntl.fcntl"><code class="xref py py-func docutils literal notranslate"><span class="pre">fcntl()</span></code></a> locking calls.
 <em>fd</em> is the file descriptor (file objects providing a <a class="reference internal" href="io.html#io.IOBase.fileno" title="io.IOBase.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a>
 method are accepted as well) of the file to lock or unlock, and <em>cmd</em>
 is one of the following values:</p>
-<ul class="simple">
-<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_UN</span></code> -- unlock</p></li>
-<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_SH</span></code> -- acquire a shared lock</p></li>
-<li><p><code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_EX</span></code> -- acquire an exclusive lock</p></li>
-</ul>
-<p>When <em>cmd</em> is <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_SH</span></code> or <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_EX</span></code>, it can also be
-bitwise ORed with <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_NB</span></code> to avoid blocking on lock acquisition.
-If <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_NB</span></code> is used and the lock cannot be acquired, an
+<dl class="py data">
+<dt class="sig sig-object py" id="fcntl.LOCK_UN">
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">LOCK_UN</span></span><a class="headerlink" href="#fcntl.LOCK_UN" title="連結到這個定義">¶</a></dt>
+<dd><p>Release an existing lock.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fcntl.LOCK_SH">
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">LOCK_SH</span></span><a class="headerlink" href="#fcntl.LOCK_SH" title="連結到這個定義">¶</a></dt>
+<dd><p>Acquire a shared lock.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fcntl.LOCK_EX">
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">LOCK_EX</span></span><a class="headerlink" href="#fcntl.LOCK_EX" title="連結到這個定義">¶</a></dt>
+<dd><p>Acquire an exclusive lock.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fcntl.LOCK_NB">
+<span class="sig-prename descclassname"><span class="pre">fcntl.</span></span><span class="sig-name descname"><span class="pre">LOCK_NB</span></span><a class="headerlink" href="#fcntl.LOCK_NB" title="連結到這個定義">¶</a></dt>
+<dd><p>Bitwise OR with any of the other three <code class="docutils literal notranslate"><span class="pre">LOCK_*</span></code> constants to make
+the request non-blocking.</p>
+</dd></dl>
+
+<p>If <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_NB</span></code> is used and the lock cannot be acquired, an
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> will be raised and the exception will have an <em>errno</em>
-attribute set to <code class="xref py py-const docutils literal notranslate"><span class="pre">EACCES</span></code> or <code class="xref py py-const docutils literal notranslate"><span class="pre">EAGAIN</span></code> (depending on the
+attribute set to <a class="reference internal" href="errno.html#errno.EACCES" title="errno.EACCES"><code class="xref py py-const docutils literal notranslate"><span class="pre">EACCES</span></code></a> or <a class="reference internal" href="errno.html#errno.EAGAIN" title="errno.EAGAIN"><code class="xref py py-const docutils literal notranslate"><span class="pre">EAGAIN</span></code></a> (depending on the
 operating system; for portability, check for both values).  On at least some
 systems, <code class="xref py py-const docutils literal notranslate"><span class="pre">LOCK_EX</span></code> can only be used if the file descriptor refers to a
 file opened for writing.</p>
@@ -417,7 +521,7 @@ functions.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -447,13 +551,21 @@ functions.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
+    &copy; 
+      <a href="../copyright.html">
+    
+    版權
+    
+      </a>
+     2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="/license.html">History and License</a> for more information.<br />
+    
+      See <a href="/license.html">History and License</a> for more information.<br />
+    
     
     <br />
 
@@ -461,12 +573,13 @@ functions.</p>
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-
-    最後更新於 Feb 19, 2024 (02:43 UTC)。
-    <a href="/bugs.html">Found a bug</a>?
+      最後更新於 Apr 28, 2024 (15:16 UTC)。
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7 建立。
     </div>
 
   </body>

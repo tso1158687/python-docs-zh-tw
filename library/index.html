@@ -5,21 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python 標準函式庫 (Standard Library) &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 標準函式庫 (Standard Library) &#8212; Python 3.12.3 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=bb723527" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=056bc313"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=17adff09"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/translations.js?v=d9a6981e"></script>
+    <script src="../_static/translations.js?v=1fe8cbde"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.2 說明文件 中搜尋"
+          title="在 Python 3.12.3 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -46,6 +46,92 @@
             <script type="text/javascript" src="../_static/menu.js"></script>
             <script type="text/javascript" src="../_static/search-focus.js"></script>
             <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+
+<meta name="readthedocs-addons-api-version" content="1">
+<script type="text/javascript">
+ function onSwitch(event) {
+     const option = event.target.selectedIndex;
+     const item = event.target.options[option];
+     window.location.href = item.dataset.url;
+ }
+
+ document.addEventListener("readthedocs-addons-data-ready", function(event) {
+   const config = event.detail.data()
+
+   // Add some mocked hardcoded versions pointing to the official
+   // documentation while migrating to Read the Docs.
+   // These are only for testing purposes.
+   // TODO: remove them when managing all the versions on Read the Docs,
+   // since all the "active, built and not hidden" versions will be shown automatically.
+   let versions = config.versions.active.concat([
+       {
+           slug: "dev (3.13)",
+           urls: {
+               documentation: "https://docs.python.org/3.13/",
+           }
+       },
+       {
+           slug: "3.12",
+           urls: {
+               documentation: "https://docs.python.org/3.12/",
+           }
+       },
+       {
+           slug: "3.11",
+           urls: {
+               documentation: "https://docs.python.org/3.11/",
+           }
+       },
+   ]);
+
+   const versionSelect = `
+   <select id="version_select">
+   ${ versions.map(
+       (version) => `
+       <option
+           value="${ version.slug }"
+           ${ config.versions.current.slug === version.slug ? 'selected="selected"' : '' }
+           data-url="${ version.urls.documentation }">
+           ${ version.slug }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Prepend the current language to the options on the selector
+   let languages = config.projects.translations.concat(config.projects.current);
+   languages = languages.sort((a, b) => a.language.name.localeCompare(b.language.name));
+
+   const languageSelect = `
+   <select id="language_select">
+   ${ languages.map(
+       (translation) => `
+       <option
+           value="${ translation.slug }"
+           ${ config.projects.current.slug === translation.slug ? 'selected="selected"' : '' }
+           data-url="${ translation.urls.documentation }">
+           ${ translation.language.name }
+       </option>`
+   ).join("\n") }
+   </select>
+   `;
+
+   // Query all the placeholders because there are different ones for Desktop/Mobile
+   const versionPlaceholders = document.querySelectorAll(".version_switcher_placeholder");
+   for (placeholder of versionPlaceholders) {
+       placeholder.innerHTML = versionSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+
+   const languagePlaceholders = document.querySelectorAll(".language_switcher_placeholder");
+   for (placeholder of languagePlaceholders) {
+       placeholder.innerHTML = languageSelect;
+       let selectElement = placeholder.querySelector("select");
+       selectElement.addEventListener("change", onSwitch);
+   }
+ });
+</script>
 
   </head>
 <body>
@@ -134,7 +220,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 標準函式庫 (Standard Library)</a></li>
@@ -168,7 +254,7 @@
           <div class="body" role="main">
             
   <section id="the-python-standard-library">
-<span id="library-index"></span><h1>Python 標準函式庫 (Standard Library)<a class="headerlink" href="#the-python-standard-library" title="Link to this heading">¶</a></h1>
+<span id="library-index"></span><h1>Python 標準函式庫 (Standard Library)<a class="headerlink" href="#the-python-standard-library" title="連結到這個標頭">¶</a></h1>
 <p><a class="reference internal" href="../reference/index.html#reference-index"><span class="std std-ref">Python 語言參考手冊</span></a>說明 Python 這門語言確切的文法及語意，而這份函式庫參考手冊則是說明隨著 Python 一起發佈的標準函式庫，除此之外，其內容也包含一些時常出現在 Python 發佈版本中的非必要套件。</p>
 <p>Python 的標準函式庫是非常龐大的，其提供了如下所述極多且涵蓋用途極廣的許多模組。包含一些用 C 語言撰寫，可以操作像是檔案讀寫等系統相關功能的內建模組，當然也有用 Python 撰寫，並使用標準解法解決許多常見問題的模組。其中有些模組則是特別針對 Python 的可攜性去設計的，為此特地將一些平台特殊相依性的功能抽象化成可跨平台的 API。</p>
 <p>Python 的 Windows 安裝檔基本上包含整個標準函式庫，且通常也包含許多附加的組件；而在類 Unix 作業系統方面，Python 通常是以一系列的套件被安裝，因此對於某些或全部的可選組件，可能都必須使用該作業系統提供的套件管理工具來安裝。</p>
@@ -204,13 +290,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">內建的例外</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-context">Exception context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-context">例外的情境</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#inheriting-from-built-in-exceptions">繼承自內建的例外</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#base-classes">Base classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#concrete-exceptions">Concrete exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#base-classes">基底類別 (base classes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#concrete-exceptions">實體例外</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#warnings">警告</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-groups">Exception groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-hierarchy">Exception hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-hierarchy">例外階層</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="text.html">文本處理 (Text Processing) 服務</a><ul>
@@ -250,7 +336,7 @@
 <li class="toctree-l1"><a class="reference internal" href="numeric.html">數值與數學模組</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- 數值的抽象基底類別</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- 數學函式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- 複數的數學函式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="decimal.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">decimal</span></code> --- Decimal fixed point and floating point arithmetic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fractions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fractions</span></code> --- Rational numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="random.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- 生成偽隨機數</a></li>
@@ -423,7 +509,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tkinter.colorchooser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.colorchooser</span></code> --- 顏色選擇對話框</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.font.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.font</span></code> --- Tkinter 字型包裝器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dialog.html">Tkinter Dialogs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tkinter.messagebox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.messagebox</span></code> --- Tkinter message prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.messagebox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.messagebox</span></code> --- Tkinter 訊息提示</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.scrolledtext.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.scrolledtext</span></code> --- Scrolled Text Widget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.dnd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.dnd</span></code> --- Drag and drop support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.ttk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.ttk</span></code> --- Tk themed widgets</a></li>
@@ -626,7 +712,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.2 Documentation</a> &#187;
+      <a href="../index.html">3.12.3 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 標準函式庫 (Standard Library)</a></li>
@@ -654,13 +740,21 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
+    &copy; 
+      <a href="../copyright.html">
+    
+    版權
+    
+      </a>
+     2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="/license.html">History and License</a> for more information.<br />
+    
+      See <a href="/license.html">History and License</a> for more information.<br />
+    
     
     <br />
 
@@ -668,12 +762,13 @@
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
-
-    最後更新於 Feb 19, 2024 (02:43 UTC)。
-    <a href="/bugs.html">Found a bug</a>?
+      最後更新於 Apr 28, 2024 (15:16 UTC)。
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7 建立。
     </div>
 
   </body>
